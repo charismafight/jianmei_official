@@ -1,0 +1,2434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简美装饰</title>
+</head>
+{% load static %}
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/D.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.cycle.all.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/doT.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.lazyload.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/default.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.SuperSlide.2.1.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/right.float.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/swiper.2.0.css' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/swiper.min.2.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/three.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/uevent.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'jianmei/css/global.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/css.css-0720.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/new_global.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/photo-sphere-viewer.min.css' %}">
+<body>
+<div class="head" style="z-index: 999">
+    {#    top#}
+    <div class="headCenter">
+        <!--城市切换-->
+        <div class="headArea" style="background: {% static 'jianmei/image/head_location.png' %}">房屋所在城市
+            <span style="color: rgb(255, 255, 255); cursor: pointer; padding: 0px 18px 0px 10px; background: no-repeat scroll right center;">宜昌</span>
+            <ul style="display: none">
+                <li>
+                    <a href="#">宜昌</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="headFunction" style="padding-right:176px">
+
+            <h2 class="headWelcome">欢迎来到简美装饰</h2>
+
+            <!--<a class="headLogin" href="/login.php" rel="nofollow">请登录</a>-->
+            <!--<a class="headLogin" href="/login.php?reg=1" rel="nofollow">免费注册</a>-->
+
+            <strong>免费咨询热线： xxxxxx </strong>
+            <!-- <a class="headApp" href="javascript:void(0)">APP</a>-->
+            <a class="headWechat" style="position: relative" href="#footerMa">
+                <img style="position: absolute; left: -10px; top: 38px; display: none; opacity: 1;" src="" width="160"
+                     height="160">
+            </a>
+
+
+            <a class="headWeibo" style="position: relative" href="#footerMa">
+                <img style="position: absolute; left: -10px; top: 38px; display: none; opacity: 1;"
+                     src=""
+                     width="160" height="160">
+            </a>
+        </div>
+    </div>
+
+    {#    导航#}
+    <div class="nav">
+        <div class="navCenter">
+            <h1 class="logo">
+                <a href="/">
+                    <img class="logoImg" src="{% static "jianmei/image/th.jpg" %}" alt="简美装饰"
+                         style="height: 79px;width: 206px;">
+                </a>
+            </h1>
+            <div class="navList" style="margin-right: 80px">
+                <li class="bigmenu" id="menu0"><a href="/" target="" class=""><span>首页</span></a></li>
+                <li id="menu1" data-id="21" class="bigmenu">
+                    <i class="navList-hot"></i>
+
+                    <a href="/lists/21">套餐</a>
+                </li>
+                <li id="menu2" data-id="18" class="bigmenu">
+
+                    <a href="/lists/18">实景样板间</a>
+                </li>
+                <li id="menu3" data-id="3" class="bigmenu">
+                    <i class="navList-hot"></i>
+
+                    <a href="/lists/3/fenzhan/91">装修案例</a>
+                </li>
+                <li id="menu4" data-id="1" class="bigmenu">
+                    <i class="navList-hot"></i>
+
+                    <a href="/page/1">家装黑科技</a></li>
+                <li id="menu5" data-id="6" class="bigmenu">
+
+                    <a href="/page/6">装修攻略</a></li>
+                <li class="bigmenu">
+                    <a target="_blank" href="http://shop237394971.taobao.com">
+                        天猫店铺
+                    </a>
+                </li>
+            </div>
+        </div>
+
+        <style>
+            .submenu {
+                height: 90px;
+                width: 100%;
+                position: absolute;
+                top: 97px;
+                background: white;
+                z-index: 9999;
+                display: none;
+            }
+
+            .submenu a {
+                display: inline-block;
+                margin: 5px 50px;
+                color: black;
+                text-align: center;
+            }
+
+            .submenu .submenuCenter {
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                height: 61px;
+            }
+        </style>
+
+        <div class="submenu" id="submenu21" style="display: none;">
+            <!---二级导航-->
+            <div class="submenuCenter">
+
+                <a href="#"><img src="5aab411cab750.png">
+                    <div align="center">网络特权优惠</div>
+                </a></div>
+        </div>
+        <div class="submenu" id="submenu3" style="display: none;">
+            <!---二级导航-->
+            <div class="submenuCenter">
+
+                <a href="/lists/63/fenzhan/91"><img
+                        src="/Websites/shenghuojia/Uploads/Picture/2018-03-16/5aab411cab750.png">
+                    <div align="center">热装楼盘</div>
+                </a>
+                <a href="/lists/84/fenzhan/91"><img
+                        src="/Websites/shenghuojia/Uploads/Picture/2018-06-15/5b23909e6393b.png">
+                    <div align="center">工地直播</div>
+                </a>
+            </div>
+        </div>
+        <div class="submenu" id="submenu6" style="display: none;">
+            <!---二级导航-->
+            <div class="submenuCenter">
+
+                <a href="/lists/8"><img src="5aab411cab750.png">
+                    <div align="center">装修设计</div>
+                </a>
+                <a href="/lists/32"><img src="5aab411cab750.png">
+                    <div align="center">装修材料</div>
+                </a>
+                <a href="/lists/7"><img src="5aab411cab750.png">
+                    <div align="center">装修日记</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        $(function () {
+            $('.headWechat').hover(function () {
+                $(this).find('img').stop().fadeToggle();
+            })
+            $('.headWeibo').hover(function () {
+                $(this).find('img').stop().fadeToggle();
+            })
+            $.get('/index.php?s=/Zhuangxiu/addUrl');
+        })
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $(".headArea span").bind("mouseover", function (e) {
+                $(".headArea").find("ul").show();
+            });
+            $(".headArea ul").bind("mouseleave", function (e) {
+                $(".headArea").find("ul").hide();
+            });
+
+            $(".navList li").mouseenter(function () {
+                var index = $(this).index();
+                $(this).stop().children(".list_none").fadeIn();
+                return false;
+            });
+            $(".navList li").mouseleave(function () {
+                var index = $(this).index();
+                $(this).children(".list_none").stop().fadeOut();
+                return false;
+            });
+
+            $(".bigmenu").mouseenter(function () {
+                $(".submenu").hide();
+                var id = $(this).attr("data-id");
+                $("#submenu" + id).fadeIn();
+            });
+            $(".submenu").mouseleave(function () {
+                $(".submenu").hide();
+            });
+            $(".head").mouseenter(function () {
+                $(".submenu").hide();
+            });
+        });
+    </script>
+
+    {#    大logo及报价#}
+    <div class="index-banvessel">
+        <div class="indexBanner">
+            <ul>
+                <!-- banner默认where='pattern=1 and fenzhan=分站'，具体在标签库cms.class.php -->
+                <li><a class="indexBannerA" title="活动" target="_blank"
+                       href="http://yichang.bjhtzsgs.com/Article/detail/id/3150.html"
+                       style="background:url(/Websites/shenghuojia/Uploads/Picture/2019-03-31/5ca084a720de4.jpg) no-repeat center top;"></a>
+                </li>
+            </ul>
+            <div class="indexNumber">
+            </div>
+            <script type="text/javascript">    //banner
+            $(document).ready(function () {
+                $('.indexBanner ul').cycle({
+                    fx: 'fade',
+                    timeout: 4000,
+                    pause: 1,
+                    pager: '.indexNumber',
+                    pagerEvent: 'mouseover',
+                    cleartype: !$.support.opacity,
+                    activePagerClass: 'indexNumber_hover',
+                    pagerAnchorBuilder: function (idx, slide) {
+                        idx += 1;
+                        return '<span href="javascript:void(0)" class="num' + idx + '">' + idx + '</span>';
+                    }
+                });
+            })</script>
+        </div>
+        <div class="index-formvessel">
+            <div class="index-form">
+                <ul class="index-form-head">
+                    <li class="on">免费报价</li>
+                    <li>免费设计</li>
+                </ul>
+                <div class="index-form-main">
+                    <div class="index-form-main-bj">
+                        <form onsubmit="return false">
+                            <input type="hidden" class="totalprice" name="totalprice" value="">
+                            <div class="index-form-bj-screen">
+                                <div class="index-form-screen-sz index-form-screen-ge">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
+                                         style="display: inline;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
+                                         style="display: none;">
+                                </div>
+                                <div class="index-form-screen-sz index-form-screen-shi">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
+                                         style="display: inline;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
+                                         style="display: none;">
+                                </div>
+                                <div class="index-form-screen-sz index-form-screen-bai">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
+                                         style="display: inline;">
+                                </div>
+                                <div class="index-form-screen-sz index-form-screen-qian">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
+                                         style="display: inline;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
+                                         style="display: none;">
+                                </div>
+                                <div class="index-form-screen-sz index-form-screen-wan">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
+                                         style="display: inline;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
+                                         style="display: none;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
+                                         style="display: none;">
+                                </div>
+                                <div class="index-form-screen-sz index-form-screen-shiwan">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
+                                         style="display: inline;">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png">
+                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png">
+                                </div>
+                                <span class="yuan">元</span>
+                            </div>
+                            <div class="index-form-bjbd index-form-bjbd2">
+                                <input type="text" name="name" placeholder="请输入您的称呼"
+                                       style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                            </div>
+                            <div class="index-form-bjbd index-form-bjbd2">
+                                <input type="text" name="phone" placeholder="您的手机号码">
+                            </div>
+                            <div class="index-form-bjbd index-form-bjbd2">
+                                <input type="text" name="mianji" maxlength="5" placeholder="请输入您的房屋面积">
+                                <span class="pf">㎡</span>
+                            </div>
+                            <div class="index-form-bjbd index-form-bjbd2">
+                                <input type="text" name="diqu" placeholder="请输入所在地区">
+                            </div>
+                            <input type="hidden" name="laiyuan" value="首页浮动免费报价">
+                            <select style="display:none" name="city">
+                                <option value="武汉">武汉</option>
+                            </select>
+                            <p class="index-form-bjxx">*您的信息将被严格保密</p>
+                            <a href="javascript:;" class="index-form-main-a a-fa1 index_float_baojia">智能装修报价</a>
+                            <div class="index_float_baojia_block index-main-yy-pop-vellse show-get-price">
+                                <div class="index-main-yy-pop-mask"></div>
+                                <div class="index-yy-pop">
+                                    <div class="index-yy-pop-close index-pop-close"></div>
+                                    <div class="index-yy-pop-head">海天装饰—5年专业沉淀 服务超过10万户中国家庭</div>
+                                    <div class="index-yy-pop-main">
+                                        <div class="index-yy-pop-main-head" id="get_price">
+                                            您的装修预算为：<em>189780</em><span>元</span>
+                                        </div>
+                                        <ul class="index-yy-pop-cen">
+                                            <li>
+                                                <p>24小时内客服致电</p>
+                                                <span>确认量尺时间</span>
+                                                <div class="index-yy-pop-cenimg scale_vessel">
+                                                    <img class="scale"
+                                                         src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0713/in_yy_img1.png"
+                                                         alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>48小时设计师上门</p>
+                                                <span>免费量尺</span>
+                                                <div class="index-yy-pop-cenimg scale_vessel">
+                                                    <img class="scale"
+                                                         src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0713/in_yy_img2.png"
+                                                         alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>三天免费设计家具</p>
+                                                <span>免费平面方案</span>
+                                                <div class="index-yy-pop-cenimg scale_vessel">
+                                                    <img class="scale"
+                                                         src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0713/in_yy_img3.png"
+                                                         alt="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="/lists/21.html" target="_blank">
+                                        <div class="index-yy-pop-zz">人工精准报价</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <input type="reset" style="display:none;" class="reset">
+                        </form>
+                    </div>
+                    <div class="index-form-main-yy">
+                        <form onsubmit="return false">
+                            <div class="btn-function" style="display:none"></div>
+                            <div class="index_float_yuyue_block index-main-yy-pop-vellse">
+                                <div class="index-main-yy-pop-mask"></div>
+                                <div class="index-yy-pop">
+                                    <div class="index-yy-pop-head">海天装饰—5年专业沉淀 服务超过10万户中国家庭</div>
+                                    <div class="index-yy-pop-main">
+                                        <div class="index-yy-pop-close index-pop-close"></div>
+                                        <div class="index-yy-pop-main-head">预约成功，接下来您可以享受以下服务</div>
+                                        <ul class="index-yy-pop-cen">
+                                            <li>
+                                                <p>24小时内客服致电</p>
+                                                <span>确认量尺时间</span>
+                                                <div class="index-yy-pop-cenimg scale_vessel">
+                                                    <img class="scale"
+                                                         src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0713/in_yy_img1.png"
+                                                         alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>48小时设计师上门</p>
+                                                <span>免费量尺</span>
+                                                <div class="index-yy-pop-cenimg scale_vessel">
+                                                    <img class="scale"
+                                                         src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0713/in_yy_img2.png"
+                                                         alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>三天免费设计家具</p>
+                                                <span>免费平面方案</span>
+                                                <div class="index-yy-pop-cenimg scale_vessel">
+                                                    <img class="scale"
+                                                         src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0713/in_yy_img3.png"
+                                                         alt="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <p class="index-yy-pop-main-xx">请留意并接听客服电话，客户顾问将与您沟通量尺事宜</p>
+                                    </div>
+                                    <div class="index-yy-pop-close index-yy-pop-zz">关闭</div>
+                                </div>
+                            </div>
+                            <div class="main-yy-head">0元设计免费抢<br>
+                                <span>今天还剩10个名额</span></div>
+                            <input type="text" name="name" placeholder="您的称呼" class="name">
+                            <input type="text" name="phone" placeholder="您的联系方式" class="phone">
+                            <input type="hidden" name="laiyuan" value="首页浮动免费设计">
+                            <select style="display:none" name="city">
+                                <option value="武汉">武汉</option>
+                            </select>
+                            <a href="javascript:;" class="index-form-main-a a-fa1 index_float_yuyue">立即免费预约</a>
+                            <div class="index-form-slide">
+                                <ul class="index-form-slide-ul">
+                                    <li><span>155********领取了免费设计</span></li>
+                                    <li><span>138********领取了免费设计</span></li>
+                                    <li><span>152********领取了免费设计</span></li>
+                                    <li><span>178********领取了免费设计</span></li>
+                                    <li><span>132********领取了免费设计</span></li>
+                                    <li><span>138********领取了免费设计</span></li>
+                                    <li><span>186********领取了免费设计</span></li>
+                                </ul>
+                            </div>
+                            <input type="reset" style="display:none;" class="reset">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $('.index_float_baojia').on('click', function () {
+                    var form = $(this).closest('form');
+                    var name = $.trim(form.find('input[name=name]').val());
+                    if ('' == name) {
+                        alert('请填写您的称呼');
+                        return false;
+                    }
+                    if (validatemobile(form.find('input[name=phone]').val())) {
+                        $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                            if (msg.status) {
+//                        $('.index_float_baojia_block').show();
+                                alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                                $(".reset").click();
+                            }
+                        })
+                    }
+                })
+
+                $('.index_float_yuyue').on('click', function () {
+                    var form = $(this).closest('form');
+                    var name = $.trim(form.find('input[name=name]').val());
+                    if ('' == name) {
+                        alert('请填写您的称呼');
+                        return false;
+                    }
+                    if (validatemobile(form.find('input[name=phone]').val())) {
+                        $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                            if (msg.status) {
+//                        $('.index_float_yuyue_block').show();
+                                alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                                $(".reset").click();
+                            }
+                        })
+                    }
+                })
+            })
+        </script>
+    </div>
+
+    {#    磁贴部分#}
+    <div class="column-vessel">
+        <ul class="column in-con">
+            <li class="column-li1 lace">
+                <h4>六大装修服务</h4>
+                <p>你领或不领，我就在这里</p>
+                <a href="/page/16.html" target="_blank" class="transition35"><span class="transition35"><i
+                        class="transition70">+</i>免费领取</span></a>
+            </li>
+            <li class="column-li2 lace">
+                <h4>网络特权优惠</h4>
+                <p>线上报名，独享特权优惠</p>
+                <a href="/page/80.html" target="_blank" class="transition35"><span class="transition35"><i
+                        class="transition70">+</i>去看看</span></a>
+            </li>
+            <li class="column-li4 lace">
+                <h4>工地工艺展示</h4>
+                <p>从开工到交房，一目了然</p>
+                <a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"
+                   class="transition35"><span class="transition35"><i class="transition70">+</i>去看看</span></a>
+            </li>
+        </ul>
+    </div>
+
+    {#    中间广告区域#}
+    <div class="h-bgcolor">
+        <div class="clear"></div>
+        <!--装修套餐-->
+        <div class="decoration clearfix">
+            <div class="wrap">
+                <!--left-->
+                <div class="decoration-slide1">
+                    <div class="decoration-banner1" style="width: 1544px; left: -772px;">
+                        <a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">
+                            <div class="decoration-left">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner666.jpg"
+                                     alt="装修攻略">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
+                                     class="img-gif">
+                            </div>
+                        </a>
+                        <a href="/lists/21.html" target="_blank">
+                            <div class="decoration-left slide_left">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner161.jpg"
+                                     alt="装修攻略">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
+                                     class="img-gif2">
+                            </div>
+                        </a>
+
+                        <a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">
+                            <div class="decoration-left">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner666.jpg"
+                                     alt="装修攻略">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
+                                     class="img-gif">
+                            </div>
+                        </a>
+                        <a href="/lists/21.html" target="_blank">
+                            <div class="decoration-left slide_left">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner161.jpg"
+                                     alt="装修攻略">
+                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
+                                     class="img-gif2">
+                            </div>
+                        </a>
+                    </div>
+                    <!--<div class="decoration-button-left"><span class="decoration-button1 slide_left"> </span></div>-->
+                </div>
+                <!--right-->
+                <div class="decoration-slide2">
+                    <!--<div class="vider_tp_pf"></div>-->
+                    <a href="/lists/21.html" target="_blank">
+                        <img class="decoration-slide2-video"
+                             src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/video_bg.jpg"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <style>
+            .index_loupan {
+                width: 100%;
+            }
+
+            .loupan_content li {
+                float: left;
+                width: 288px;
+                height: 274px;
+                overflow: hidden;
+                margin-right: 15px;
+                position: relative;
+            }
+
+            .loupan_content li img {
+                max-width: 100%;
+            }
+
+            .loupan_content li:nth-child(4) {
+                margin-right: 0;
+            }
+
+            .loupan_content li h2 {
+                height: 55px;
+                line-height: 55px;
+                text-align: center;
+                font-weight: normal;
+                width: 220px;
+                margin: 0 auto;
+                padding-top: 5px;
+                font-size: 24px;
+                font-weight: bold;
+                color: #444444;
+            }
+
+            .loupan_content li a {
+                display: block;
+                background: #f5f5f5;
+                color: black;
+                transition: 0.4s;
+            }
+
+            .loupan_content li p {
+                height: 35px;
+                line-height: 35px;
+                margin-bottom: 5px;
+            }
+
+            .loupan_content li p span {
+                padding: 0 5px;
+            }
+
+            .text-red, .text-red a {
+                color: #ff343f;
+            }
+
+            .loupan_content li a:hover {
+                background: #E60012;
+            }
+
+            .loupan_content p {
+                display: none;
+            }
+        </style>
+        <!--热装楼盘-->
+        <div class="index_loupan">
+            <div class="science wraper">
+                <div class="in-con-head">
+                    <div class="in-con-head-text">
+                        <h1 class="h1_color1">热装楼盘</h1>
+                        <p class="p_color1">专注热装楼盘，享受品质生活</p>
+                    </div>
+                    <input type="hidden" id="fenzhan" value="91">
+                    <div class="in-con-head-right"><a href="/lists/63/fenzhan/91.html" target="_blank">查看更多</a>
+                    </div>
+                </div>
+                <div class="loupan_content clearFix">
+                    <ul>
+                        <li>
+                            <a href="/Article/detail/id/2647.html" target="_blank" class="ZgPush">
+
+                                <p>
+                                    <span>咨询：<font class="text-red">160户</font></span>
+                                    <span>签约：<font class="text-red">26户</font></span>
+                                    <span>施工：<font class="text-red">户</font></span>
+                                </p>
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-15/5afa3f8e4a0fe.jpg"
+                                     width="289" height="216" alt="装修效果图" style="display: block;">
+                                <h2>山水华庭</h2>
+                            </a>
+                            <!--<div class="tips">免费参观工地<i></i></div>-->
+                        </li>
+                        <li>
+                            <a href="/Article/detail/id/2574.html" target="_blank" class="ZgPush">
+
+                                <p>
+                                    <span>咨询：<font class="text-red">180户</font></span>
+                                    <span>签约：<font class="text-red">40户</font></span>
+                                    <span>施工：<font class="text-red">户</font></span>
+                                </p>
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af801be3c46d.jpg"
+                                     width="289" height="216" alt="装修效果图" style="display: block;">
+                                <h2>城中金谷</h2>
+                            </a>
+                            <!--<div class="tips">免费参观工地<i></i></div>-->
+                        </li>
+                        <li>
+                            <a href="/Article/detail/id/2572.html" target="_blank" class="ZgPush">
+
+                                <p>
+                                    <span>咨询：<font class="text-red">120户</font></span>
+                                    <span>签约：<font class="text-red">35户</font></span>
+                                    <span>施工：<font class="text-red">户</font></span>
+                                </p>
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7fabf9db8e.jpg"
+                                     width="289" height="216" alt="装修效果图" style="display: block;">
+                                <h2>宏峰上上城</h2>
+                            </a>
+                            <!--<div class="tips">免费参观工地<i></i></div>-->
+                        </li>
+                        <li>
+                            <a href="/Article/detail/id/2571.html" target="_blank" class="ZgPush">
+
+                                <p>
+                                    <span>咨询：<font class="text-red">60户</font></span>
+                                    <span>签约：<font class="text-red">10户</font></span>
+                                    <span>施工：<font class="text-red">户</font></span>
+                                </p>
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7f9f96cda8.jpg"
+                                     width="289" height="216" alt="装修效果图" style="display: block;">
+                                <h2>天域水岸</h2>
+                            </a>
+                            <!--<div class="tips">免费参观工地<i></i></div>-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!--<link rel="stylesheet" href="http://wuhan.djzs.cn/Public/Home/css/common/common.css" type="text/css"/>-->
+        <!--<link rel="stylesheet" href="http://wuhan.djzs.cn/Public/Home/css/index.css" type="text/css"/>-->
+        <style>
+            .index_case {
+                width: 100%;
+            }
+
+            .wraper {
+                width: 1200px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            .subtitle {
+                padding-top: 50px;
+                text-align: center;
+            }
+
+            .index_case .label {
+                width: 842px;
+                margin: 16px auto 20px;
+            }
+
+            .index_case .label li {
+                width: 158px;
+                height: 42px;
+                border: 1px solid #bfbfbf;
+                font-size: 16px;
+                color: #000;
+                text-align: center;
+                line-height: 42px;
+                margin: 0 4px;
+            }
+
+            .index_case .case_content .left, .index_case .case_content .right {
+                width: 595px;
+                height: 800px;
+                overflow: hidden;
+            }
+
+            .case_content .left .img_b {
+                margin-bottom: 11px;
+            }
+
+            .case_content a {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+
+            .case_content .left .img_b img {
+                width: 595px;
+            }
+
+            .case_content .synopsis_box {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: rgba(240, 131, 0, .8);
+                display: none;
+            }
+
+            .fl {
+                float: left;
+            }
+
+            .case_content ul {
+                width: 606px;
+                height: 265px;
+                overflow: hidden;
+            }
+
+            .index_case .case_content .left, .index_case .case_content .right {
+                width: 595px;
+                height: 800px;
+                overflow: hidden;
+            }
+
+            .index_case .case_content .left, .index_case .case_content .right {
+                width: 595px;
+                height: 800px;
+                overflow: hidden;
+            }
+
+            .fr {
+                float: right;
+            }
+
+            .case_content ul li {
+                width: 292px;
+                height: 265px;
+                overflow: hidden;
+                margin-right: 11px;
+                position: relative;
+            }
+
+            .case_content .synopsis_box {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: rgba(892, 0, 6, 0.6);
+                display: none;
+            }
+
+            .case_content .img_b:hover .synopsis_box {
+                display: block;
+            }
+
+            .case_content ul li:hover .synopsis_box {
+                display: block;
+            }
+
+            .case_content .img_b .synopsis_box .synopsis {
+                width: 285px;
+                height: 285px;
+                border: 3px solid #fff;
+                margin: -142px 0 0 -142px;
+            }
+
+            .case_content .synopsis_box .synopsis {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+
+            .case_content .synopsis p {
+                width: 80%;
+                margin: 0 auto;
+                line-height: 100%;
+                color: #ffffff;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .case_content .img_b .synopsis p {
+                line-height: 22px;
+                font-size: 18px;
+                height: 66px;
+            }
+
+            .case_content .img_b .synopsis span {
+                display: block;
+                width: 85px;
+                border-top: 3px solid #ffffff;
+                margin: 28px auto 24px;
+            }
+
+            .case_content .img_b .synopsis h3 {
+                font-size: 30px;
+                margin-top: 70px;
+            }
+
+            .case_content .synopsis h3 {
+                font-weight: bold;
+                line-height: 100%;
+                color: #ffffff;
+            }
+
+            .case_content ul li .synopsis_box .synopsis {
+                width: 195px;
+                height: 195px;
+                border: 2px solid #fff;
+                margin: -97px 0 0 -97px;
+            }
+
+            .case_content .synopsis_box .synopsis {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+
+            .case_content ul li .synopsis h3 {
+                font-size: 20px;
+                margin-top: 46px;
+            }
+
+            .case_content .synopsis h3 {
+                font-weight: bold;
+                line-height: 100%;
+                color: #ffffff;
+            }
+
+            .case_content ul li .synopsis span {
+                display: block;
+                width: 58px;
+                border-top: 3px solid #ffffff;
+                margin: 16px auto 15px;
+            }
+
+            .case_content ul li .synopsis p {
+                height: 60px;
+                line-height: 20px;
+                font-size: 16px;
+            }
+
+            .case_content .synopsis p {
+                width: 80%;
+                margin: 0 auto;
+                line-height: 100%;
+                color: #ffffff;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            /*阻止遮罩*/
+            .prevent {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, .7);
+                color: #ffffff;
+                text-align: center;
+                font-size: 20px;
+                line-height: 100px;
+                top: 0;
+                left: 0;
+                display: none;
+            }
+
+            .case_content .img_b {
+                width: 100%;
+                height: 525px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .subtitle h2 {
+                width: 100%;
+                font-size: 36px;
+                line-height: 100%;
+                text-align: center;
+                font-weight: bold;
+                color: #2e2e2e;
+            }
+
+            .subtitle a {
+                font-size: 14px;
+                color: #eb6100;
+                display: inline-block;
+                padding-top: 15px;
+            }
+
+            .case_content .right .img_b {
+                margin-top: 11px;
+            }
+        </style>
+        <div class="index_case">
+            <div class="science wraper">
+                <div class="in-con-head">
+                    <div class="in-con-head-text">
+                        <h1 class="h1_color1">家装案例</h1>
+                        <p class="p_color1">海量实拍家装美图，发现新家装修灵感</p>
+                    </div>
+                    <div class="in-con-head-right"><a href="/lists/3/fenzhan/91.html" target="_blank">查看更多</a>
+                    </div>
+                </div>
+                <div class="case_content clearFix">
+                    <div class="left fl">
+                        <div class="img_b">
+                            <a href="/Article/detail/id/4670.html" target="_blank">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-08-14/5b72a3a25f03c.jpg"
+                                     width="100%" height="100%" alt="山水华庭-130-美式">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【山水华庭-130-美式】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <ul class="clearFis">
+                            <li class="fl">
+                                <a href="/Article/detail/id/3658.html" target="_blank">
+                                    <img src="/Websites/shenghuojia/Uploads/Picture/2018-06-30/5b3741b77a920.jpg"
+                                         width="100%" height="100%" alt="华鹏梧桐邑-110平-简约">
+                                    <div class="synopsis_box caseDIV">
+                                        <div class="synopsis">
+                                            <h3>【华鹏梧桐邑-110平-简约】</h3>
+                                            <span></span>
+                                            <p class="p2"></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="fl center">
+                                <a href="/Article/detail/id/3656.html" target="_blank">
+                                    <img src="/Websites/shenghuojia/Uploads/Picture/2018-06-30/5b373eb5b7e7c.jpg"
+                                         width="100%" height="100%" alt="华鹏梧桐邑-105平-中式">
+                                    <div class="synopsis_box caseDIV">
+                                        <div class="synopsis">
+                                            <h3>【华鹏梧桐邑-105平-中式】</h3>
+                                            <span></span>
+                                            <p class="p2"></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right fr">
+                        <ul class="clearFis">
+                            <li class="fl">
+                                <a href="/Article/detail/id/3652.html" target="_blank">
+                                    <img src="/Websites/shenghuojia/Uploads/Picture/2018-08-14/5b729e6754ff6.jpg"
+                                         width="100%" height="100%" alt="保利时代-127平-现代">
+                                    <div class="synopsis_box caseDIV">
+                                        <div class="synopsis">
+                                            <h3>【保利时代-127平-现代】</h3>
+                                            <span></span>
+                                            <p class="p2"></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="fl">
+                                <a href="/Article/detail/id/3650.html" target="_blank">
+                                    <img src="/Websites/shenghuojia/Uploads/Picture/2018-08-14/5b72a0255dc04.jpg"
+                                         width="100%" height="100%" alt="保利时代-127平-现代轻奢">
+                                    <div class="synopsis_box caseDIV">
+                                        <div class="synopsis">
+                                            <h3>【保利时代-127平-现代轻奢】</h3>
+                                            <span></span>
+                                            <p class="p2"></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="img_b">
+                            <a href="/Article/detail/id/3454.html" target="_blank">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-06-29/5b359f1b68999.jpg"
+                                     width="100%" height="100%" alt="巴黎香颂-140平-欧式">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【巴黎香颂-140平-欧式】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
+                                    </div>
+                                </div>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="index_360box">
+            <div class="index_360">
+                <div class="in-con-head">
+                    <div class="in-con-head-text">
+                        <h1 class="h1_color1">720°样板间</h1>
+                        <p class="p_color1">0距离感受海天装修成品案例</p>
+                    </div>
+                    <div class="in-con-head-right"><a href="/lists/18.html" target="_blank">查看更多</a>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <!--
+                            <div class="img-3d">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-07-07/5b4073127deb9.jpg" alt="香格里拉118平现代简约"/>
+                                <div class="mask"><a href="https://720yun.com/t/b23jerhwew8?scene_id=15357550&from=singlemessage&isappinstalled=0" target="_blank"><em></em></a></div>
+                            </div>
+                            <div class="text-3d">
+                                <strong><a href="https://720yun.com/t/b23jerhwew8?scene_id=15357550&from=singlemessage&isappinstalled=0" target="_blank">香格里拉118平现代简约..</a></strong>
+                                <span></span>
+                            </div>-->
+
+                        <a class="vr_link"
+                           href="https://720yun.com/t/b23jerhwew8?scene_id=15357550&amp;from=singlemessage&amp;isappinstalled=0"
+                           target="_blank">
+                            <div class="vr_img_right vr_img_right_top_4094">
+                                <div id="container-img-4094">
+                                    <div class="psv-container">
+                                        <div class="psv-loader-container" style="display: none;">
+                                            <div class="psv-loader">
+                                                <canvas class="psv-loader-canvas" width="380" height="380"></canvas>
+                                                <div class="psv-loader-text"
+                                                     style="max-width: 262px; max-height: 262px;">Loading...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="psv-navbar psv-navbar--open" style="display: none;"></div>
+                                        <div class="psv-hud" style="cursor: move;">
+                                            <svg class="psv-hud-svg-container"></svg>
+                                            <div class="psv-tooltip" style="top: -1000px; left: -1000px;">
+                                                <div class="psv-tooltip-arrow"></div>
+                                                <div class="psv-tooltip-content"></div>
+                                            </div>
+                                        </div>
+                                        <div class="psv-panel">
+                                            <div class="psv-panel-resizer"></div>
+                                            <div class="psv-panel-close-button"></div>
+                                            <div class="psv-panel-content"></div>
+                                        </div>
+                                        <div class="psv-canvas-container" style="opacity: 1;">
+                                            <canvas width="400" height="235" class="psv-canvas"
+                                                    style="width: 400px; height: 235px;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vr_state_img">
+                                    <img src="http://www.shjhome.com/assets/images/index_img/vr_play.png"
+                                         class="vr_play_btn_1">
+                                    <img src="http://www.shjhome.com/assets/images/index_img/vr_active_play.png"
+                                         class="vr_active_play_btn_1" style="display:none">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="text-3d">
+                            <strong><a
+                                    href="https://720yun.com/t/b23jerhwew8?scene_id=15357550&amp;from=singlemessage&amp;isappinstalled=0"
+                                    target="_blank">香格里拉118平现代简约..</a></strong>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="center">
+                        <!--
+                            <div class="img-3d">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-12/5af6aaf6b310d.png" alt="金家上城155㎡——中式"/>
+                                <div class="mask"><a href="http://720yun.com/t/173jz7tvey6?scene_id=9782180" target="_blank"><em></em></a></div>
+                            </div>
+                            <div class="text-3d">
+                                <strong><a href="http://720yun.com/t/173jz7tvey6?scene_id=9782180" target="_blank">金家上城155㎡——中式..</a></strong>
+                                <span></span>
+                            </div>-->
+
+                        <a class="vr_link" href="http://720yun.com/t/173jz7tvey6?scene_id=9782180" target="_blank">
+                            <div class="vr_img_right vr_img_right_top_2432">
+                                <div id="container-img-2432">
+                                    <div class="psv-container">
+                                        <div class="psv-loader-container" style="display: none;">
+                                            <div class="psv-loader">
+                                                <canvas class="psv-loader-canvas" width="380" height="380"></canvas>
+                                                <div class="psv-loader-text"
+                                                     style="max-width: 262px; max-height: 262px;">Loading...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="psv-navbar psv-navbar--open" style="display: none;"></div>
+                                        <div class="psv-hud" style="cursor: move;">
+                                            <svg class="psv-hud-svg-container"></svg>
+                                            <div class="psv-tooltip" style="top: -1000px; left: -1000px;">
+                                                <div class="psv-tooltip-arrow"></div>
+                                                <div class="psv-tooltip-content"></div>
+                                            </div>
+                                        </div>
+                                        <div class="psv-panel">
+                                            <div class="psv-panel-resizer"></div>
+                                            <div class="psv-panel-close-button"></div>
+                                            <div class="psv-panel-content"></div>
+                                        </div>
+                                        <div class="psv-canvas-container" style="opacity: 1;">
+                                            <canvas width="400" height="235" class="psv-canvas"
+                                                    style="width: 400px; height: 235px;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vr_state_img">
+                                    <img src="http://www.shjhome.com/assets/images/index_img/vr_play.png"
+                                         class="vr_play_btn_1">
+                                    <img src="http://www.shjhome.com/assets/images/index_img/vr_active_play.png"
+                                         class="vr_active_play_btn_1" style="display:none">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="text-3d">
+                            <strong><a href="http://720yun.com/t/173jz7tvey6?scene_id=9782180" target="_blank">金家上城155㎡——中式..</a></strong>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <!--
+                            <div class="img-3d">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-12/5af6aa087652f.png" alt="万景城124㎡——简约现代"/>
+                                <div class="mask"><a href="http://720yun.com/t/d1cjz7sfzk5?scene_id=10038648" target="_blank"><em></em></a></div>
+                            </div>
+                            <div class="text-3d">
+                                <strong><a href="http://720yun.com/t/d1cjz7sfzk5?scene_id=10038648" target="_blank">万景城124㎡——简约现..</a></strong>
+                                <span></span>
+                            </div>-->
+
+                        <a class="vr_link" href="http://720yun.com/t/d1cjz7sfzk5?scene_id=10038648" target="_blank">
+                            <div class="vr_img_right vr_img_right_top_2430">
+                                <div id="container-img-2430">
+                                    <div class="psv-container">
+                                        <div class="psv-loader-container" style="display: none;">
+                                            <div class="psv-loader">
+                                                <canvas class="psv-loader-canvas" width="380" height="380"></canvas>
+                                                <div class="psv-loader-text"
+                                                     style="max-width: 262px; max-height: 262px;">Loading...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="psv-navbar psv-navbar--open" style="display: none;"></div>
+                                        <div class="psv-hud" style="cursor: move;">
+                                            <svg class="psv-hud-svg-container"></svg>
+                                            <div class="psv-tooltip" style="top: -1000px; left: -1000px;">
+                                                <div class="psv-tooltip-arrow"></div>
+                                                <div class="psv-tooltip-content"></div>
+                                            </div>
+                                        </div>
+                                        <div class="psv-panel">
+                                            <div class="psv-panel-resizer"></div>
+                                            <div class="psv-panel-close-button"></div>
+                                            <div class="psv-panel-content"></div>
+                                        </div>
+                                        <div class="psv-canvas-container" style="opacity: 1;">
+                                            <canvas width="400" height="235" class="psv-canvas"
+                                                    style="width: 400px; height: 235px;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vr_state_img">
+                                    <img src="http://www.shjhome.com/assets/images/index_img/vr_play.png"
+                                         class="vr_play_btn_1">
+                                    <img src="http://www.shjhome.com/assets/images/index_img/vr_active_play.png"
+                                         class="vr_active_play_btn_1" style="display:none">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="text-3d">
+                            <strong><a href="http://720yun.com/t/d1cjz7sfzk5?scene_id=10038648" target="_blank">万景城124㎡——简约现..</a></strong>
+                            <span></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- VR展示-->
+        <link rel="stylesheet"
+              href="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/photo-sphere-viewer.min.css">
+        <style>
+            .vr_img_box {
+                margin-top: 50px;
+                margin-bottom: 50px;
+                overflow: hidden;
+            }
+
+            .vr_img_left_box {
+                width: 639px;
+                height: 480px;
+                position: relative;
+                float: left
+            }
+
+            .vr_img_left_img {
+                width: 639px;
+                height: 480px;
+                position: relative
+            }
+
+            .vr_img_right_box {
+                float: right
+            }
+
+            .vr_img_right_top {
+                width: 400px;
+                height: 235px;
+                position: relative
+            }
+
+            .vr_state_img {
+                display: block;
+                width: 120px;
+                height: 35px;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+            }
+
+            .vr_img_right div:nth-child(1) {
+                width: 400px;
+                height: 235px;
+            }
+
+            .vr_case_summery {
+                z-index: 21;
+                text-align: center;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                line-height: 40px;
+                font-size: 16px;
+                color: #fff;
+                transition: height 0.5s;
+                -moz-transition: height 0.5s;
+                -webkit-transition: height 0.5s;
+                -o-transition: height 0.5s;
+            }
+
+            .height1 {
+                height: 40px;
+            }
+
+            .height0 {
+                height: 0px;
+            }
+
+            .vr_img_right {
+                overflow: hidden;
+            }
+
+            .vr_img_right:hover .height0 {
+                height: 40px;
+            }
+
+            .vr_link {
+                display: block;
+                color: #fff
+            }
+
+            .vr_link span {
+                padding: 0 5px
+            }
+
+            .vr_img_right_bottom {
+                width: 552px;
+                height: 235px;
+                position: relative;
+                margin-top: 10px
+            }
+        </style>
+
+        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/three.min.js"></script>
+        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/D.min.js"></script>
+        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/doT.min.js"></script>
+        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/uevent.min.js"></script>
+        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/photo-sphere-viewer.min.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                $(".index_case ul li").eq(1).addClass("center");
+                $(".index_360 ul li").eq(1).addClass("center");
+            });
+            $(function () {
+                //全景图-左
+                try {
+                    var viewer = PhotoSphereViewer({
+                        container: $(".vr_img_right").eq(0).find("div").eq(0).attr("id"),
+                        panorama: '/773814c65bca4a119ad4797fd55e6757.jpg',
+                        autoload: true,
+                        allow_scroll_to_zoom: false,
+                        navbar: false,
+                        allow_user_interactions: false,
+                    });
+                    viewer.on('ready', function () {
+                        viewer1.stopAutorotate();
+                    })
+                    $(".vr_img_right").eq(0).hover(function () {
+                        viewer.startAutorotate();
+                    }, function () {
+                        viewer.stopAutorotate();
+                    })
+                    //全景图-右上
+                    var viewer1 = PhotoSphereViewer({
+                        container: $(".vr_img_right").eq(1).find("div").eq(0).attr("id"),
+                        panorama: '/11efcab3228f4a4faf8381d2b001b63e.jpg',
+                        autoload: true,
+                        navbar: false,
+                        allow_scroll_to_zoom: false,
+                        allow_user_interactions: false
+                    });
+                    viewer1.on('ready', function () {
+                        viewer1.stopAutorotate();
+                    })
+                    $(".vr_img_right").eq(1).hover(function () {
+                        viewer1.startAutorotate();
+                    }, function () {
+                        viewer1.stopAutorotate();
+                    })
+                    //全景图-右下
+                    var viewer2 = PhotoSphereViewer({
+                        container: $(".vr_img_right").eq(2).find("div").eq(0).attr("id"),
+                        panorama: '/236020bcac3a4a51823cdce528ada2db.jpg',
+                        autoload: true,
+                        navbar: false,
+                        allow_scroll_to_zoom: false,
+                        allow_user_interactions: false
+                    });
+                    viewer2.on('ready', function () {
+                        viewer2.stopAutorotate();
+                    })
+                    $(".vr_img_right").eq(2).hover(function () {
+                        viewer2.startAutorotate();
+                    }, function () {
+                        viewer2.stopAutorotate();
+                    })
+                } catch (e) {
+                    $('#container-img-1').css({
+                        backgroundColor: 'rgba(15,150,8,0.5)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center center'
+                    })
+                    $('#container-img-2').css({
+                        backgroundColor: 'rgba(15,150,8,0.5)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center center'
+                    })
+                    $('#container-img-3').css({
+                        backgroundColor: 'rgba(15,150,8,0.5)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center center'
+                    })
+                }
+
+            });
+        </script>
+        <div class="index_course">
+            <div class="in-con-head">
+                <div class="in-con-head-text">
+                    <h1 class="h1_color1">装修攻略</h1>
+                    <p class="p_color1">完整装修流程与攻略</p>
+                </div>
+                <div class="in-con-head-right"><a href="/page/6.html" target="_blank">查看更多</a>
+                </div>
+            </div>
+            <div class="left">
+                <ul class="left_nav">
+                    <li class="active"><img
+                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/course_knowledge_on.png"
+                            alt="装修百科"><a href="/page/6.html" target="_blank">
+                        <p>装修百科</p>
+                    </a></li>
+                    <li><img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/course_jour.png"><a
+                            target="_blank" href="/page/6.html">
+                        <p>装修学堂</p>
+                    </a></li>
+                </ul>
+                <div class="right_nav">
+                    <dl>
+                        <dd>
+                            <a href="/Article/detail/id/5190.html" target="_blank">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-22/5b03c9f91f2f5.jpg"
+                                     alt="阳台装修设计技巧以及注意事项">
+                                <p>阳台装修设计技巧以及..</p>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="/Article/detail/id/5191.html" target="_blank">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-21/5b022e900fc40.jpg"
+                                     alt="实用简单装修方案让家简约不简单">
+                                <p>实用简单装修方案让家..</p>
+                            </a>
+                        </dd>
+                    </dl>
+                    <div class="box">
+                        <h4>装修百科</h4>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="/Article/detail/id/5190.html">
+                                    <span>阳台装修设计技巧以及注意事项                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="阳台装修设计技巧以及注意事项">
+                                    </span>
+                                    <span>2018-11-12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="/Article/detail/id/5191.html">
+                                    <span>实用简单装修方案让家简约不简单                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="实用简单装修方案让家简约不简单">
+                                    </span>
+                                    <span>2018-11-12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="/Article/detail/id/5188.html">
+                                    <span>家居客厅装修的三大原则                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="家居客厅装修的三大原则">
+                                    </span>
+                                    <span>2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="/Article/detail/id/5187.html">
+                                    <span>厨房装修有哪些需要注意 小细节分享                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="厨房装修有哪些需要注意 小细节分享">
+                                    </span>
+                                    <span>2018-11-07</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right_nav" style="display:none;">
+                    <dl>
+                        <dd>
+                            <a href="/Article/detail/id/5490.html" target="_blank">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-12-06/5c088c2038fc6.jpg"
+                                     alt="吊顶怎么装修好看">
+                                <p>吊顶怎么装修好看</p>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="/Article/detail/id/5489.html" target="_blank">
+                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-12-06/5c088ba6289d6.jpg"
+                                     alt="地板拱起的原因有哪些">
+                                <p>地板拱起的原因有哪些</p>
+                            </a>
+                        </dd>
+                    </dl>
+                    <div class="box">
+                        <h4>装修学堂</h4>
+                        <ul>
+                            <li>
+                                <a href="/Article/detail/id/5490.html" target="_blank">
+                                    <span>吊顶怎么装修好看                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="吊顶怎么装修好看">
+                                    </span>
+                                    <span>2018-12-06</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Article/detail/id/5489.html" target="_blank">
+                                    <span>地板拱起的原因有哪些                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="地板拱起的原因有哪些">
+                                    </span>
+                                    <span>2018-12-06</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Article/detail/id/5193.html" target="_blank">
+                                    <span>几种常见的怎么处理墙面瓷砖空鼓的方法                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="几种常见的怎么处理墙面瓷砖空鼓的方法">
+                                    </span>
+                                    <span>2018-11-12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Article/detail/id/5192.html" target="_blank">
+                                    <span>如何选购优质瓷砖                                        <img
+                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
+                                            class="span-hot" alt="如何选购优质瓷砖">
+                                    </span>
+                                    <span>2018-11-12</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right"><strong>装修日记</strong>
+                <p class="ppp">了解装修新闻资讯</p>
+                <a href="/lists/7.html" target="_blank">立即查看</a>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                var left_index = 0;
+                $(".left .left_nav li").mouseover(function (e) {
+                    if (left_index == $(this).index()) return;
+                    else {
+                        left_index = $(this).index();
+                    }
+                    $(".left .left_nav li").removeClass("active");
+                    $(this).addClass("active");
+                    $(this).children("img").attr("src", $(this).children("img").attr("src").replace(".png", "_on.png"));
+                    $(this).siblings().children("img").attr("src", $(this).children("img").attr("src").replace("_on.png", ".png"));
+                    $(".left .right_nav").hide();
+                    $(".left .right_nav").eq($(this).index()).fadeIn();
+                });
+            });
+        </script>
+        <div class="index_Journalismbox">
+            <div class="index_Journalism">
+                <div class="in-con-head">
+                    <div class="in-con-head-text">
+                        <h1 class="h1_color1">设计团队</h1>
+                        <p class="p_color1">团队代替单个设计师，触动你的灵感</p>
+                    </div>
+                    <div class="in-con-head-right"><a href="/lists/2.html" target="_blank">查看更多</a>
+                    </div>
+                </div>
+                <ul class="left">
+
+                    <li>
+                        <div class="signer_all" style="display:block;">
+                            <div>
+                                <h4>对话人物</h4>
+                                <h5>李宁</h5>
+                                <p>设计独白：艺术源于生活，高于生活，而生活是艺术的来源，在生活中追求艺术之美的存在。</p>
+                                <a href="/Article/detail/id/3647.html" target="_blank">点击查看更多</a>
+                            </div>
+                            <img src="/Websites/shenghuojia/Uploads/Picture/2019-01-17/5c3fe75a71831.jpg" alt="贺鹏">
+                        </div>
+                        <div class="signer_right">
+                            <a target="_blank" class="title" href="/Article/detail/id/3647.html">李宁 海天装饰</a>
+                            <a class="context" href="/Article/detail/id/3647.html" target="_blank">设计风格： 简约 欧式 美式 北欧</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="signer_all">
+                            <div>
+                                <h4>对话人物</h4>
+                                <h5>张用</h5>
+                                <p>设计独白：发展装饰新主义，将现代美学和西方文化相结合，创造符合现代审美的优质作品。</p>
+                                <a href="/Article/detail/id/2920.html" target="_blank">点击查看更多</a>
+                            </div>
+                            <img src="/Websites/shenghuojia/Uploads/Picture/2018-07-25/5b58278371f77.jpg" alt="贺鹏">
+                        </div>
+                        <div class="signer_right">
+                            <a target="_blank" class="title" href="/Article/detail/id/2920.html">张用 海天装饰</a>
+                            <a class="context" href="/Article/detail/id/2920.html" target="_blank">设计风格： 简约 欧式 美式 混搭
+                                北欧</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="signer_all">
+                            <div>
+                                <h4>对话人物</h4>
+                                <h5>李辉</h5>
+                                <p>设计独白：用极其简单的线条勾勒出最具灵性的空间</p>
+                                <a href="/Article/detail/id/2562.html" target="_blank">点击查看更多</a>
+                            </div>
+                            <img src="/Websites/shenghuojia/Uploads/Picture/2019-01-17/5c3feadcba290.jpg" alt="贺鹏">
+                        </div>
+                        <div class="signer_right">
+                            <a target="_blank" class="title" href="/Article/detail/id/2562.html">李辉 海天装饰</a>
+                            <a class="context" href="/Article/detail/id/2562.html" target="_blank">设计风格： 简约 中式 美式 地中海
+                                北欧</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="signer_all">
+                            <div>
+                                <h4>对话人物</h4>
+                                <h5>赵炜</h5>
+                                <p>设计独白：设计不仅仅是形式上的展现，而是文化与内涵的体现。</p>
+                                <a href="/Article/detail/id/2549.html" target="_blank">点击查看更多</a>
+                            </div>
+                            <img src="/Websites/shenghuojia/Uploads/Picture/2019-01-17/5c3fe973cc35d.jpg" alt="贺鹏">
+                        </div>
+                        <div class="signer_right">
+                            <a target="_blank" class="title" href="/Article/detail/id/2549.html">赵炜 海天装饰</a>
+                            <a class="context" href="/Article/detail/id/2549.html" target="_blank">设计风格： 简约 中式 欧式 北欧</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="right"><a href="/lists/21.html" target="_blank"><img
+                        src="/Websites/shenghuojia/Templates/pc/Static/upload_files/label/8_20160816140829_gbq7d.jpg"
+                        width="389" height="165" border="0" alt="服务热线"></a>
+                    <div><strong>服务热线</strong>
+                        <p> 400-181-7588 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $(".index_Journalism .left li").eq(0).find(".signer_all").show();
+
+            $(".index_Journalism .left .signer_right").mouseover(function (e) {
+                var index = $(this).parents("li").index();
+                $(".index_Journalism .left").find(".signer_all").hide();
+                $(".index_Journalism .left .signer_all").eq(index).show();
+            });
+            $(".index_Journalism .left .signer_all img").each(function (index, element) {
+                $(this).attr("src", $(this).attr("src").replace(/\.gif/g, ''));
+            });
+
+            $(".index_Journalism .left .context").each(function (index, element) {
+                $(this).html($(this).html().replace(/\/\#\//g, ' '));
+            });
+
+        });
+    </script>
+    <style>
+        .index_pinpaishili .in-con-head-text {
+            float: none !important;
+            width: 100%;
+            text-align: center
+        }
+
+        .floor_pinpaishili {
+            background: #efeef3;
+            padding-bottom: 40px;
+        }
+
+        /*新css开始*/
+        .clearfloat:before, .clearfloat:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfloat:after {
+            clear: both;
+        }
+
+        /* For IE 6/7 (trigger hasLayout) */
+        .clearfloat {
+            *zoom: 1;
+        }
+
+        /* center class */
+        .ppsl_box_con {
+            margin-top: 30px;
+        }
+
+        .ppsl_floors .ppsl_box_con ul {
+            width: 110%;
+        }
+
+        .ppsl_floors .ppsl_box_con ul li {
+            width: 390px;
+            height: 180px;
+            float: left;
+            margin-right: 15px;
+            background: #fff;
+            /* -webkit-transition: transform 0.3s 0s ease-out;
+            transition: transform 0.3s 0s ease-out;
+            -ms-transition: transform 0.3s 0s ease-out;
+            -moz-transition: transform 0.3s 0s ease-out;
+            -o-transition: transform 0.3s 0s ease-out;
+            transition: transform 0.3s 0s ease-out; */
+            transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+        }
+
+        #ppsl_box {
+            background: #F5F5F5;
+            padding-bottom: 30px
+        }
+
+        #ppsl_box .ppsl_box_con ul li:hover {
+            box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
+            /* -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            transform: translateY(-5px);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            -ms-transform-origin: center center;
+            -moz-transform-origin: center center;
+            -o-transform-origin: center center; */
+            margin-top: -5px;
+        }
+
+        #ppsl_box .ppsl_box_con ul li:hover .font-titles {
+            color: #E60012
+        }
+
+        .ppsl_floors .ppsl_box_con ul li .con_img {
+            width: 100%;
+            height: 180px;
+            position: relative;
+        }
+
+        .con_content {
+            padding-top: 30px;
+            margin-left: 30px
+        }
+
+        .font-titles {
+            font-size: 20px;
+            color: #545454
+        }
+
+        .font-blod {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /*中间高的部分*/
+        .ppsl_box_middle {
+            margin-top: 15px;
+        }
+
+        .ppsl_floors .ppsl_box_middle ul {
+            width: 110%;
+        }
+
+        .ppsl_floors .ppsl_box_middle ul li {
+            width: 390px;
+            height: 276px;
+            float: left;
+            margin-right: 15px;
+            background: #fff;
+            /*  -webkit-transition: transform 0.3s 0s ease-out;
+             transition: transform 0.3s 0s ease-out;
+             -ms-transition: transform 0.3s 0s ease-out;
+             -moz-transition: transform 0.3s 0s ease-out;
+             -o-transition: transform 0.3s 0s ease-out;
+             transition: transform 0.3s 0s ease-out; */
+            transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+        }
+
+        #ppsl_box .ppsl_box_middle ul li:first-child:hover {
+            box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
+            /* -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            transform: translateY(-5px);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            -ms-transform-origin: center center;
+            -moz-transform-origin: center center;
+            -o-transform-origin: center center; */
+            margin-top: -5px;
+        }
+
+        #ppsl_box .ppsl_box_middle ul li:last-child:hover {
+            box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
+            /* -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            transform: translateY(-5px);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            -ms-transform-origin: center center;
+            -moz-transform-origin: center center;
+            -o-transform-origin: center center; */
+            margin-top: -5px;
+        }
+
+        #ppsl_box .ppsl_box_middle ul li:hover .font-titles {
+            color: #E60012
+        }
+
+        .ppsl_floors .ppsl_box_middle ul li .con_img {
+            width: 100%;
+            height: 276px;
+            position: relative;
+        }
+
+        .home_go_btn {
+            width: 130px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            background: #E60012;
+            display: block;
+            color: white;
+            font-size: 14px;
+            margin: auto
+        }
+
+        .shj_titles {
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            padding-top: 70px;
+        }
+
+        .shj_summery {
+            color: #fff;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        /*新css结束*/
+
+    </style>
+
+    {#品牌实力#}
+    <div class="index_pinpaishili">
+        <div class="science wraper">
+            <div class="in-con-head">
+                <div class="in-con-head-text">
+                    <h1 class="h1_color1">品牌实力</h1>
+                    <p class="p_color1">让每一个中国人都能享受品质家居</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="pinpaishili_content clearFix ppsl_floors" id="ppsl_box">
+            <div class="wraper">
+                <div class="main_box" style="overflow: inherit;">
+                    <div class="ppsl_box_con">
+                        <ul class="clearfloat">
+                            <li>
+
+                                <div class="con_img"
+                                     style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/ppjs7.jpg);">
+                                    <div class="con_content">
+                                        <p class="font-titles">品牌介绍</p>
+                                        <p class="font-titles font-blod">强势护航</p></div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="con_img"
+                                     style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/aztd.jpg);">
+                                    <div class="con_content">
+                                        <p class="font-titles">安装团队</p>
+                                        <p class="font-titles font-blod">专业安装团队</p></div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ppsl_box_con" style="margin-top: 15px;">
+                        <!--<ul class="clearfloat">
+                            <li>
+
+                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hbxs.jpg);">
+                                  <div class="con_content">
+                                    <p class="font-titles">环保系数</p>
+                                    <p class="font-titles font-blod">比肩国际标准</p></div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/qgls.jpg);">
+                                  <div class="con_content">  <p class="font-titles">实体门店</p>
+                                    <p class="font-titles font-blod">集团站点遍布全国</p></div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hjrz.jpg);">
+                                  <div class="con_content">
+                                    <p class="font-titles">获得奖项</p>
+                                    <p class="font-titles font-blod">权威认证</p></div>
+                                </div>
+
+                            </li>
+                          </ul>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    {#    服务流程#}
+    <div class="index_flowpath">
+        <div class="in-con-head">
+            <div class="in-con-head-text">
+                <h1 class="h1_color1">服务流程</h1>
+                <p>官网预约 先享服务后定装</p>
+            </div>
+            <!--<div class="in-con-head-right"><a href="#">查看更多</a></div>-->
+        </div>
+        <ol>
+            <li class="li1"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">在线预约</a>
+            </li>
+            <li class="li2"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">验房量房</a>
+            </li>
+            <li class="li3"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">设计报价</a>
+            </li>
+            <li class="li4"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">图纸精算</a>
+            </li>
+            <li class="li5"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">签订合同</a>
+            </li>
+            <li class="li6"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">工地施工</a>
+            </li>
+            <li class="li7"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">验收结算</a>
+            </li>
+            <li class="li8"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">售后服务</a>
+            </li>
+        </ol>
+        <style>
+            .f_banners {
+                margin-bottom: 30px;
+            }
+
+            .f_banners li {
+                float: left;
+                width: 300px;
+                text-align: center;
+            }
+
+            .f_banners li img {
+                max-width: 100%;
+            }
+        </style>
+        <!--banner-->
+        <div class="f_banners">
+            <ul>
+                <li><a href="http://www.bjhtzsgs.com/Article/detail/id/5505.html" target="_blank"><img
+                        src="/Websites/shenghuojia/Uploads/Picture/2019-04-03/5ca46b3217bc3.jpg"></a></li>
+                <li><a href="http://www.bjhtzsgs.com/lists/21.html" target="_blank"><img
+                        src="/Websites/shenghuojia/Uploads/Picture/2018-07-11/5b45c3ec20b93.jpg"></a></li>
+                <li><a href="http://www.bjhtzsgs.com/lists/18.html" target="_blank"><img
+                        src="/Websites/shenghuojia/Uploads/Picture/2018-03-17/5aacbb00bc55f.png"></a></li>
+                <li><a href="http://www.bjhtzsgs.com/lists/3/p/10/fenzhan/0.html" target="_blank"><img
+                        src="/Websites/shenghuojia/Uploads/Picture/2018-05-11/5af54f203e3c5.png"></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="friend">
+            <p>友情链接</p>
+            <ul class="friend_link">
+                <li>
+                    <a href="http://www.yhzhome.com" target="_blank">宜惠装家居馆</a></li>
+                <li></li>
+                <li>
+                    <a href="http://www.jc498.com" target="_blank">北京吉诚装饰</a></li>
+                <li></li>
+                <li>
+                    <a href="http://www.olundsjg.com" target="_blank">欧伦达装饰</a></li>
+                <li></li>
+            </ul>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        //  轮播
+        $(function () {
+            //lunbo两张图切换
+            var twow = $(".decoration-left").width();//左边盒子的
+            var twow_right = $(".decoration-right").width();//右边盒子的
+            var twol = 0;//左边盒子移动的宽度
+            var twol_right = 0;//右边盒子移动的宽度
+            var twotimer = null;
+            var twolen = $(".decoration-banner1 .decoration-left").length * 2;
+            $(".decoration-banner1").append($(".decoration-banner1").html()).css({
+                'width': twolen * twow,
+                'left': -twolen * twow / 2
+            });
+            $(".decoration-banner2").append($(".decoration-banner2").html()).css({
+                'width': twolen * twow_right,
+                'left': -twolen * twow_right / 2
+            });
+            //自动每5秒切换一次
+            twotimer = setInterval(init, 5000);
+
+            function init() {
+                $(".decoration-button-right .decoration-button2").trigger('click');
+            }
+
+            $(".decoration-button-left,.decoration-button-right").hover(function () {
+                clearInterval(twotimer);
+            }, function () {
+                twotimer = setInterval(init, 5000);
+            });
+
+            $(".decoration-button-left .decoration-button1").click(function () {
+                if ($(this).hasClass("slide_left")) {
+                    twol = parseInt($(".decoration-banner1").css("left")) + twow;  //这里要转成整数，因为后面带了px单位
+//			  twol_right=parseInt($(".decoration-banner2").css("left"))+twow_right;
+                    showCurrent(twol);
+                }
+                else {
+                    twol = parseInt($(".decoration-banner1").css("left")) - twow;//这里要转成整数，因为后面带了px单位
+//		     twol_right=parseInt($(".decoration-banner2").css("left"))-twow_right;
+                    showCurrent(twol);
+                }
+
+
+            });
+//		 $(".decoration-button-right .decoration-button2").click(function(){
+//		     twol=parseInt($(".decoration-banner1").css("left"))-twow;//这里要转成整数，因为后面带了px单位
+//		     twol_right=parseInt($(".decoration-banner2").css("left"))-twow_right;
+//			   showCurrent(twol,twol_right);
+//	  });
+//	   function showCurrent(twol,twol_right){
+            function showCurrent(twol) {
+                if ($(".decoration-banner1").is(':animated')) {
+                    return;
+                }
+                if ($(".decoration-banner2").is(':animated')) {
+                    return;
+                }
+                $(".decoration-banner1").animate({"left": twol}, 500, function () {
+                    if (twol == 0) {
+                        $(".decoration-button1").removeClass("slide_left").addClass("slide_right");
+                        $(".decoration-banner1").css("left", -twolen * twow / 2);
+                    } else if (twol == (1 - twolen) * twow) {
+                        $(".decoration-button1").removeClass("slide_right").addClass("slide_left");
+                        $(".decoration-banner1").css('left', (1 - twolen / 2) * twow);
+                    }
+                });
+
+//		     $(".decoration-banner2").animate({"left":twol_right},500,function(){
+//						if(twol_right==0){
+//					   $(".decoration-banner2").css("left",-twolen*twow_right/2);
+//					 }else if(twol_right==(1-twolen)*twow_right){
+//						 $(".decoration-banner2").css('left',(1-twolen/2)*twow_right);
+//						}
+//				  });
+            }
+        });
+    </script>
+
+    {#    底部#}
+    <div class="new-footer">
+        <div class="footer-cen" style="padding: 20px 0 93px 0">
+            <div class="footer-cen1">
+                <!--
+                    <ul>
+
+                        <li><a href="/" target="_blank"></a></li>
+                        <li><a href="/page/62" target="_blank">标准工艺</a></li><li><a href="/page/71" target="_blank">环保材料</a></li><li><a href="/page/12" target="_blank">公司简介</a></li>                    <li><a href="http://shop237394971.taobao.com" target="_blank">天猫店铺</a></li>
+                    </ul>
+                    -->
+            </div>
+
+            <!------>
+
+
+            <div class="footer-cen2">
+                <!--<h1>海天装饰设计工程有限公司</h1>-->
+                <p class="p1">联系我们</p>
+                <p class="p2">电话： 400-181-7588 </p>
+                <p class="p2">总部地址： 北京市朝阳区建外SOHO西区17号楼 </p>
+                <p class="p2">备案号： 京ICP备18006013号-1</p>
+                <p class="p2">版权所有：北京海天环艺家居装饰有限公司</p>
+            </div>
+
+
+            <div class="footer-form">
+                <div class="footer-form-head">
+                    <p>获取免费设计服务</p>
+                </div>
+                <form>
+                    <div class="footer-form-main">
+                        <input type="text" name="name" placeholder="请输入您的称呼">
+                        <input type="text" name="phone" placeholder="请输入您的手机号码">
+                        <!--<input type="hidden" name="action" value="postnew"/>-->
+                        <input type="hidden" name="laiyuan" value="宜昌首页底部留言">
+                        <select style="display: none;" name="city">
+                            <option value="武汉">武汉</option>
+                        </select>
+                        <a href="javascript:;" id="footer-form">立即免费获取</a>
+                    </div>
+                </form>
+                <script>
+                    $('#footer-form').on('click', function () {
+                        var form = $(this).closest('form');
+                        var name = $.trim(form.find('input[name=name]').val());
+                        if ('' == name) {
+                            alert('请填写您的称呼');
+                            return false;
+                        }
+                        if (validatemobile(form.find('input[name=phone]').val())) {
+                            $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                                if (msg.status) {
+                                    alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                                }
+                            })
+                        }
+                    })
+                    $(function () {
+                        $("#newBridge").hide();
+                    })
+                </script>
+            </div>
+
+            <!----->
+
+
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            setTimeout(function () {
+                $(".tanchu").fadeIn();
+            }, 60000);
+            $(".tanchu-close").click(function () {
+                $(".tanchu").fadeOut();
+            })
+        })
+    </script>
+
+    <div class="tanchu" style="display: none;">
+        <div class="tanchu-close"></div>
+        <form onsubmit="return false;">
+            <div class="tanchu-flex hidden-get-price">
+                <div class="tanchu-left">
+                    <div class="tanchu-left-head">
+                        <h3>免费方案 <span> 已有5895位业主在线预约</span></h3>
+                    </div>
+                    <div class="tanchu-left-form">
+                        <div class="tanchu-left-formcon tanchu-left-form1">
+                            <input name="name" type="text" placeholder="请输入您的称呼">
+                        </div>
+                        <div class="tanchu-left-formcon tanchu-left-form1">
+                            <input name="phone" type="text" placeholder="请输入您的手机号码">
+                        </div>
+                        <div class="tanchu-left-formcon tanchu-left-form1">
+                            <input name="mianji" type="text" placeholder="请输入房屋面积">
+                            <span class="pf">㎡</span>
+                        </div>
+                        <div class="tanchu-left-formcon tanchu-left-form1">
+                            <input name="laiyuan" type="text" placeholder="请输入所在地区">
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="laiyuan" value="浮动留言">
+                <div class="tanchu-fg">
+                    <div class="tanchu-fgx"></div>
+                    <div class="tanchu-fg-but">
+                        <div class="tanchu-fg-butrotate"></div>
+                        <a href="javascript:;" class="index_tanchu">点击预约</a></div>
+                </div>
+                <div class="tanchu-right">
+                    <a href="/Article/detail/id/3150.html" target="_blank">
+                        <img src="/Websites/shenghuojia/Uploads/Picture/2019-03-31/5ca0844ad9242.jpg" class="case_gg"
+                             width="290">
+                    </a></div>
+            </div>
+            <div class="tanchu-maincen show-get-price">
+                <div class="tanchu-maincen-jgleft">
+                    <p class="tanchu-maincen-jgleft-head" id="get_price">您的家装预算为<em>00</em>元</p>
+                    <div class="tanchu-maincen-jgleft-main">
+                        <div>
+                            <p class="cailiao">材料费：<em>？</em>元</p>
+                            <p class="rengong">人工费：<em>？</em>元</p>
+                            <p class="sheji">设计费：<em>？</em>元</p>
+                            <p class="zhijian">管理费：<em>？</em>元</p>
+                        </div>
+                    </div>
+                    <p class="tanchu-maincen-jgleft-dibz">*因材料品牌及工程量不同，具体报价以装修量房实测为准</p>
+                    <a href="zixun.html" class="tanchu-maincen-zixun" target="_blank">咨询在线客服</a></div>
+                <div class="tanchu-maincen-jgright">
+                    <div class="tanchu-maincen-jgright-head"></div>
+                    <div class="tanchu-jgright-point">
+                        <p>贷款金额</p>
+                        <input class="tanchu-jgright-poinput totalprice" maxlength="7" type="text">
+                        <span class="yuan">元</span></div>
+                    <div class="tanchu-jgright-point">
+                        <p>贷款期限(月)</p>
+                        <div class="tanchu-jgright-point-main bg1">
+                            <p>12</p>
+                            <p>24</p>
+                            <p>36</p>
+                        </div>
+                    </div>
+                    <div class="tanchu-jgright-poshow"><span class="s1">月供金额 </span> <span class="jg">0</span><span
+                            class="s2">元</span></div>
+                    <a href="do/alonepage.php-id=132.htm" class="tanchu-maincen-zixun" target="_blank">查询我的贷款额度</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function init_price() {
+            var Tprice = {
+                "price": 51000,
+                "cailiao": 30090,
+                "rengong": 13260,
+                "sheji": 3570,
+                "zhijian": 4080,
+            };
+            $(".get_price em").html(Tprice.price);
+            $(".cl em").html(Tprice.cailiao);
+            $(".rg em").html(Tprice.rengong);
+            $(".sj em").html(Tprice.sheji);
+            $(".zj em").html(Tprice.zhijian);
+
+        }
+
+        function change_price() {
+            var num = Math.ceil(Math.random() * 20000);
+
+            if (parseInt($(".get_price em").html()) > 160000) {
+                init_price();
+            }
+            $(".get_price em").html(parseInt($(".get_price em").html()) + num);
+            $(".cl em").html(parseInt($(".cl em").html()) + parseInt(num / 3));
+            $(".rg em").html(parseInt($(".rg em").html()) + parseInt(num / 7));
+            $(".sj em").html(parseInt($(".sj em").html()) + parseInt(num / 200));
+            $(".zj em").html(parseInt($(".zj em").html()) + parseInt(num / 200));
+
+        }
+
+        $(function () {
+            init_price();
+            var t = setInterval(change_price, 200);
+            var regObj = new RegExp("[^0-9]", "g");
+            var MonTime = 12;
+
+            function Mon() {
+                var Money = ($(".tanchu-jgright-poinput").val() / MonTime) + ($(".tanchu-jgright-poinput").val() * 0.0799 * (MonTime / 12) / MonTime);
+                $(".tanchu-jgright-poshow span.jg.htm"
+                ).html(Money.toFixed(2));
+            }
+
+            $(".tanchu-jgright-poinput").change(function () {
+                Mon();
+            })
+            $(".tanchu-jgright-point-main p").click(function () {
+                var index = $(this).index() + 1;
+                MonTime = index * 12;
+                $(".tanchu-jgright-point-main").removeClass("bg1").removeClass("bg2").removeClass("bg3").addClass("bg" + index);
+                Mon();
+
+            })
+            $(".tanchu-jgright-poinput").keydown(function () {
+                $(this).val($(this).val().replace(regObj, ""));
+                Mon();
+
+
+            })
+            $(".tanchu-jgright-poinput").keyup(function () {
+                $(this).val($(this).val().replace(regObj, ""));
+                Mon();
+            })
+
+        });
+
+        $('.index_tanchu').on('click', function () {
+//        $('.tanchu-maincen').show();
+//        $('.hidden-get-price').hide();
+            var form = $(this).closest('form');
+            var name = $.trim(form.find('input[name=name]').val());
+            if ('' == name) {
+                alert('请填写您的称呼');
+                return false;
+            }
+            if (validatemobile(form.find('input[name=phone]').val())) {
+                $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                    if (msg.status) {
+                        alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                        $('.tanchu-close').click();
+                    }
+                })
+            }
+        })
+    </script>
+    <style>
+        #newBridge {
+            display: none !important;
+        }
+    </style>
+    <script>
+        (function () {
+            var c = document.createElement('script');
+            c.src = '//kefu.ziyun.com.cn/vclient/?webid=110699';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(c, s);
+        })();
+    </script>
+</div>
+</body>
+</html>
