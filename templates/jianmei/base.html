@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简美装饰</title>
+</head>
+{% load static %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/D.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.cycle.all.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/doT.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.lazyload.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/default.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.SuperSlide.2.1.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/right.float.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/swiper.2.0.css' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/swiper.min.2.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/three.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/uevent.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/index.js' %}"></script>
+<link rel="stylesheet" href="{% static 'jianmei/css/global.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/css.css-0720.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/new_global.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/photo-sphere-viewer.min.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/index.css' %}">
+<div class="head" style="z-index: 999">
+    {#    top#}
+    <div class="headCenter">
+        <!--城市切换-->
+        <div class="headArea" style="background: {% static 'jianmei/image/head_location.png' %}">房屋所在城市
+            <span style="color: rgb(255, 255, 255); cursor: pointer; padding: 0px 18px 0px 10px; background: no-repeat scroll right center;">宜昌</span>
+            <ul style="display: none">
+                <li>
+                    <a href="#">宜昌</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="headFunction" style="padding-right:176px">
+
+            <h2 class="headWelcome">欢迎来到简美装饰</h2>
+
+            <strong>免费咨询热线： xxxxxx </strong>
+            <a class="headWechat" style="position: relative" href="#footerMa">
+                <img style="position: absolute; left: -10px; top: 38px; display: none; opacity: 1;" src="" width="160"
+                     height="160">
+            </a>
+
+
+            <a class="headWeibo" style="position: relative" href="#footerMa">
+                <img style="position: absolute; left: -10px; top: 38px; display: none; opacity: 1;"
+                     src=""
+                     width="160" height="160">
+            </a>
+        </div>
+    </div>
+    {#    导航#}
+    <div class="nav">
+        <div class="navCenter">
+            <h1 class="logo">
+                <a href="/">
+                    <img class="logoImg" src="{% static "jianmei/image/th.jpg" %}" alt="简美装饰"
+                         style="height: 79px;width: 206px;">
+                </a>
+            </h1>
+            <div class="navList" style="margin-right: 80px">
+                <li class="bigmenu" id="menu0">
+                    <a href="/" target="" class=""><span>首页</span></a>
+                </li>
+                <li id="menu1" data-id="21" class="bigmenu">
+                    <i class="navList-hot"></i>
+
+                    <a href="/lists/21">套餐</a>
+                </li>
+                <li id="menu2" data-id="18" class="bigmenu">
+
+                    <a href="/lists/18">实景样板间</a>
+                </li>
+                <li id="menu3" data-id="3" class="bigmenu">
+                    <i class="navList-hot"></i>
+
+                    <a href="/lists/3/fenzhan/91">装修案例</a>
+                </li>
+                <li id="menu4" data-id="1" class="bigmenu">
+                    <i class="navList-hot"></i>
+
+                    <a href="/page/1">家装黑科技</a></li>
+                <li id="menu5" data-id="6" class="bigmenu">
+
+                    <a href="/page/6">装修攻略</a></li>
+                <li class="bigmenu">
+                    <a target="_blank" href="http://shop237394971.taobao.com">
+                        天猫店铺
+                    </a>
+                </li>
+            </div>
+        </div>
+
+        <style>
+            .submenu {
+                height: 90px;
+                width: 100%;
+                position: absolute;
+                top: 97px;
+                background: white;
+                z-index: 9999;
+                display: none;
+            }
+
+            .submenu a {
+                display: inline-block;
+                margin: 5px 50px;
+                color: black;
+                text-align: center;
+            }
+
+            .submenu .submenuCenter {
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                height: 61px;
+            }
+        </style>
+
+        <div class="submenu" id="submenu21" style="display: none;">
+            <!---二级导航-->
+            <div class="submenuCenter">
+
+                <a href="#"><img src="{% static 'jianmei/image/net_privilege.jpg' %}">
+                    <div align="center">网络特权优惠</div>
+                </a></div>
+        </div>
+        <div class="submenu" id="submenu3" style="display: none;">
+            <!---二级导航-->
+            <div class="submenuCenter">
+
+                <a href="/lists/63/fenzhan/91"><img src="{% static 'jianmei/image/hot_houses.png' %}">
+                    <div align="center">热装楼盘</div>
+                </a>
+            </div>
+        </div>
+        <div class="submenu" id="submenu6" style="display: none;">
+            <!---二级导航-->
+            <div class="submenuCenter">
+
+                <a href="/lists/8"><img src="{% static 'jianmei/image/design.jpg' %}">
+                    <div align="center">装修设计</div>
+                </a>
+                <a href="/lists/32"><img src="{% static 'jianmei/image/material.jpg' %}">
+                    <div align="center">装修材料</div>
+                </a>
+                <a href="/lists/7"><img src="{% static 'jianmei/image/note.jpg' %}">
+                    <div align="center">装修日记</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% block body_block %}
+    {% endblock %}
+
+    {#    底部#}
+    <div class="new-footer">
+        <div class="footer-cen" style="padding: 20px 0 93px 0">
+            <div class="footer-cen1">
+            </div>
+
+            <div class="footer-cen2">
+                <p class="p1">联系我们</p>
+                <p class="p2">电话： 400-181-7588 </p>
+                <p class="p2">总部地址： 北京市朝阳区建外SOHO西区17号楼 </p>
+                <p class="p2">备案号： 京ICP备18006013号-1</p>
+                <p class="p2">版权所有：北京海天环艺家居装饰有限公司</p>
+            </div>
+
+
+            <div class="footer-form">
+                <div class="footer-form-head">
+                    <p>获取免费设计服务</p>
+                </div>
+                <form>
+                    <div class="footer-form-main">
+                        <input type="text" name="name" placeholder="请输入您的称呼">
+                        <input type="text" name="phone" placeholder="请输入您的手机号码">
+                        <!--<input type="hidden" name="action" value="postnew"/>-->
+                        <input type="hidden" name="laiyuan" value="宜昌首页底部留言">
+                        <select style="display: none;" name="city">
+                            <option value="武汉">武汉</option>
+                        </select>
+                        <a href="javascript:;" id="footer-form">立即免费获取</a>
+                    </div>
+                </form>
+                <script>
+                    $('#footer-form').on('click', function () {
+                        var form = $(this).closest('form');
+                        var name = $.trim(form.find('input[name=name]').val());
+                        if ('' == name) {
+                            alert('请填写您的称呼');
+                            return false;
+                        }
+                        if (validatemobile(form.find('input[name=phone]').val())) {
+                            $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                                if (msg.status) {
+                                    alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                                }
+                            })
+                        }
+                    })
+                    $(function () {
+                        $("#newBridge").hide();
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
