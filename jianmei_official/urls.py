@@ -20,4 +20,5 @@ from jianmei import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('house/', views.hot_house)
 ]

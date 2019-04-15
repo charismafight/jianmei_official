@@ -1198,7 +1198,6 @@ select::-ms-expand {
     display: block
 }
 
-
 .index-banvessel {
     width: 100%;
     overflow: hidden;
@@ -1419,7 +1418,7 @@ select::-ms-expand {
     width: 240px;
     margin: 0 auto;
     height: 65px;
-    background: url("../images/index20170716/bg_screen.png") center no-repeat;
+    background: url("../image/bg_screen.png") center no-repeat;
     box-sizing: border-box;
     padding: 9.5px 0;
     position: relative;
@@ -1585,7 +1584,6 @@ select::-ms-expand {
     background: url("../images/0713/tp_in_popoclose.png") center no-repeat;
     z-index: 10
 }
-
 
 .indexBanner {
     min-width: 1210px !important;
@@ -1868,7 +1866,6 @@ select::-ms-expand {
     text-decoration: underline;
 }
 
-
 /*右侧导航新*/
 .slideBox {
     background: #e0e0e0;
@@ -2066,7 +2063,6 @@ select::-ms-expand {
     color: #fff;
 }
 
-
 /*分页*/
 .Paging {
     margin: 0 4px;
@@ -2165,7 +2161,6 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-position: -29px 9px;
 }
-
 
 /*八大品牌*/
 .Brands {
@@ -2908,7 +2903,6 @@ select::-ms-expand {
     cursor: pointer;
     display: none;
 }
-
 
 .popupdiv {
     width: 494px;
@@ -3726,7 +3720,6 @@ select::-ms-expand {
     color: #e60012;
 }
 
-
 .popup {
     width: 400px;
     height: 250px;
@@ -3816,7 +3809,6 @@ select::-ms-expand {
     right: 14px;
     cursor: pointer
 }
-
 
 .tanchu {
     width: 791px;
@@ -4225,7 +4217,6 @@ select::-ms-expand {
 .tanchu-maincen-jgright .tanchu-maincen-zixun {
     width: 205px !important;
 }
-
 
 /*section0713*/
 /*.column-vessel{width:100%;background:#f5f5f5; padding:22px 0;}

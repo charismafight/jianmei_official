@@ -42,7 +42,7 @@
 
             <h2 class="headWelcome">欢迎来到简美装饰</h2>
 
-            <strong>免费咨询热线： xxxxxx </strong>
+            <strong>免费咨询热线： 0717-6590399 </strong>
             <a class="headWechat" style="position: relative" href="#footerMa">
                 <img style="position: absolute; left: -10px; top: 38px; display: none; opacity: 1;" src="" width="160"
                      height="160">
@@ -61,8 +61,8 @@
         <div class="navCenter">
             <h1 class="logo">
                 <a href="/">
-                    <img class="logoImg" src="{% static "jianmei/image/th.jpg" %}" alt="简美装饰"
-                         style="height: 79px;width: 206px;">
+                    <img class="logoImg" src="{% static "jianmei/image/logo.jpg" %}" alt="简美装饰"
+                         style="height: 61px;width: 206px;">
                 </a>
             </h1>
             <div class="navList" style="margin-right: 80px">
@@ -136,7 +136,7 @@
             <!---二级导航-->
             <div class="submenuCenter">
 
-                <a href="/lists/63/fenzhan/91"><img src="{% static 'jianmei/image/hot_houses.png' %}">
+                <a href="/house/"><img src="{% static 'jianmei/image/hot_houses.png' %}">
                     <div align="center">热装楼盘</div>
                 </a>
             </div>
@@ -169,12 +169,11 @@
 
             <div class="footer-cen2">
                 <p class="p1">联系我们</p>
-                <p class="p2">电话： 400-181-7588 </p>
-                <p class="p2">总部地址： 北京市朝阳区建外SOHO西区17号楼 </p>
-                <p class="p2">备案号： 京ICP备18006013号-1</p>
-                <p class="p2">版权所有：北京海天环艺家居装饰有限公司</p>
+                <p class="p2">电话： 0717-6590399 </p>
+                <p class="p2">总部地址： 宜昌市伍家岗区香山福久源10栋1005号 </p>
+                <p class="p2">备案号： </p>
+                <p class="p2">版权所有：宜昌市简美装饰有限公司</p>
             </div>
-
 
             <div class="footer-form">
                 <div class="footer-form-head">
@@ -192,26 +191,6 @@
                         <a href="javascript:;" id="footer-form">立即免费获取</a>
                     </div>
                 </form>
-                <script>
-                    $('#footer-form').on('click', function () {
-                        var form = $(this).closest('form');
-                        var name = $.trim(form.find('input[name=name]').val());
-                        if ('' == name) {
-                            alert('请填写您的称呼');
-                            return false;
-                        }
-                        if (validatemobile(form.find('input[name=phone]').val())) {
-                            $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
-                                if (msg.status) {
-                                    alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                                }
-                            })
-                        }
-                    })
-                    $(function () {
-                        $("#newBridge").hide();
-                    })
-                </script>
             </div>
         </div>
     </div>

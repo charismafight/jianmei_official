@@ -1,45 +1,10 @@
 {% extends 'jianmei/base.html' %}
 {% load static %}
 {% block body_block %}
-    <script type="text/javascript">
-        $(document).ready(function (e) {
-            $(".headArea span").bind("mouseover", function (e) {
-                $(".headArea").find("ul").show();
-            });
-            $(".headArea ul").bind("mouseleave", function (e) {
-                $(".headArea").find("ul").hide();
-            });
-
-            $(".navList li").mouseenter(function () {
-                var index = $(this).index();
-                $(this).stop().children(".list_none").fadeIn();
-                return false;
-            });
-            $(".navList li").mouseleave(function () {
-                var index = $(this).index();
-                $(this).children(".list_none").stop().fadeOut();
-                return false;
-            });
-
-            $(".bigmenu").mouseenter(function () {
-                $(".submenu").hide();
-                var id = $(this).attr("data-id");
-                $("#submenu" + id).fadeIn();
-            });
-            $(".submenu").mouseleave(function () {
-                $(".submenu").hide();
-            });
-            $(".head").mouseenter(function () {
-                $(".submenu").hide();
-            });
-        });
-    </script>
-
     {#    大logo及报价#}
     <div class="index-banvessel">
         <div class="indexBanner">
             <ul>
-                <!-- banner默认where='pattern=1 and fenzhan=分站'，具体在标签库cms.class.php -->
                 <li><a title="活动" target="_blank" href="javascript:void(0);"
                        style="background:url(/Websites/shenghuojia/Uploads/Picture/2019-03-31/5ca084a720de4.jpg) no-repeat center top;"></a>
                 </li>
@@ -75,127 +40,76 @@
                             <input type="hidden" class="totalprice" name="totalprice" value="">
                             <div class="index-form-bj-screen">
                                 <div class="index-form-screen-sz index-form-screen-ge">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
-                                         style="display: inline;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
-                                         style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/0.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/1.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/2.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/3.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/4.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/5.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/6.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/7.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/8.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/9.png' %}" style="display: none;">
                                 </div>
                                 <div class="index-form-screen-sz index-form-screen-shi">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
-                                         style="display: inline;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
-                                         style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/0.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/1.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/2.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/3.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/4.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/5.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/6.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/7.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/8.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/9.png' %}" style="display: none;">
                                 </div>
                                 <div class="index-form-screen-sz index-form-screen-bai">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
-                                         style="display: inline;">
+                                    <img src="{% static 'jianmei/image/number/0.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/1.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/2.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/3.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/4.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/5.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/6.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/7.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/8.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/9.png' %}" style="display: none;">
                                 </div>
                                 <div class="index-form-screen-sz index-form-screen-qian">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
-                                         style="display: inline;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
-                                         style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/0.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/1.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/2.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/3.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/4.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/5.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/6.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/7.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/8.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/9.png' %}" style="display: none;">
                                 </div>
                                 <div class="index-form-screen-sz index-form-screen-wan">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png"
-                                         style="display: inline;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png"
-                                         style="display: none;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png"
-                                         style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/0.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/1.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/2.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/3.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/4.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/5.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/6.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/7.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/8.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/9.png' %}" style="display: none;">
                                 </div>
                                 <div class="index-form-screen-sz index-form-screen-shiwan">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/0.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/1.png"
-                                         style="display: inline;">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/2.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/3.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/4.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/5.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/6.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/7.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/8.png">
-                                    <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/img_num/9.png">
+                                    <img src="{% static 'jianmei/image/number/0.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/1.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/2.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/3.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/4.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/5.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/6.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/7.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/8.png' %}" style="display: none;">
+                                    <img src="{% static 'jianmei/image/number/9.png' %}" style="display: none;">
                                 </div>
                                 <span class="yuan">元</span>
                             </div>
@@ -336,45 +250,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            $(function () {
-                $('.index_float_baojia').on('click', function () {
-                    var form = $(this).closest('form');
-                    var name = $.trim(form.find('input[name=name]').val());
-                    if ('' == name) {
-                        alert('请填写您的称呼');
-                        return false;
-                    }
-                    if (validatemobile(form.find('input[name=phone]').val())) {
-                        $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
-                            if (msg.status) {
-//                        $('.index_float_baojia_block').show();
-                                alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                                $(".reset").click();
-                            }
-                        })
-                    }
-                })
-
-                $('.index_float_yuyue').on('click', function () {
-                    var form = $(this).closest('form');
-                    var name = $.trim(form.find('input[name=name]').val());
-                    if ('' == name) {
-                        alert('请填写您的称呼');
-                        return false;
-                    }
-                    if (validatemobile(form.find('input[name=phone]').val())) {
-                        $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
-                            if (msg.status) {
-//                        $('.index_float_yuyue_block').show();
-                                alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                                $(".reset").click();
-                            }
-                        })
-                    }
-                })
-            })
-        </script>
     </div>
 
     {#    磁贴部分#}
@@ -529,8 +404,8 @@
                         <h1 class="h1_color1">热装楼盘</h1>
                         <p class="p_color1">专注热装楼盘，享受品质生活</p>
                     </div>
-                    <input type="hidden" id="fenzhan" value="91">
-                    <div class="in-con-head-right"><a href="/lists/63/fenzhan/91.html" target="_blank">查看更多</a>
+                    <div class="in-con-head-right">
+                        <a href="/house/" target="_blank">查看更多</a>
                     </div>
                 </div>
                 <div class="loupan_content clearFix">
@@ -1136,187 +1011,7 @@
                 </ul>
             </div>
         </div>
-        <!-- VR展示-->
-        <link rel="stylesheet"
-              href="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/photo-sphere-viewer.min.css">
-        <style>
-            .vr_img_box {
-                margin-top: 50px;
-                margin-bottom: 50px;
-                overflow: hidden;
-            }
 
-            .vr_img_left_box {
-                width: 639px;
-                height: 480px;
-                position: relative;
-                float: left
-            }
-
-            .vr_img_left_img {
-                width: 639px;
-                height: 480px;
-                position: relative
-            }
-
-            .vr_img_right_box {
-                float: right
-            }
-
-            .vr_img_right_top {
-                width: 400px;
-                height: 235px;
-                position: relative
-            }
-
-            .vr_state_img {
-                display: block;
-                width: 120px;
-                height: 35px;
-                position: absolute;
-                top: 30px;
-                right: 30px;
-            }
-
-            .vr_img_right div:nth-child(1) {
-                width: 400px;
-                height: 235px;
-            }
-
-            .vr_case_summery {
-                z-index: 21;
-                text-align: center;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                bottom: 0;
-                left: 0;
-                position: absolute;
-                line-height: 40px;
-                font-size: 16px;
-                color: #fff;
-                transition: height 0.5s;
-                -moz-transition: height 0.5s;
-                -webkit-transition: height 0.5s;
-                -o-transition: height 0.5s;
-            }
-
-            .height1 {
-                height: 40px;
-            }
-
-            .height0 {
-                height: 0px;
-            }
-
-            .vr_img_right {
-                overflow: hidden;
-            }
-
-            .vr_img_right:hover .height0 {
-                height: 40px;
-            }
-
-            .vr_link {
-                display: block;
-                color: #fff
-            }
-
-            .vr_link span {
-                padding: 0 5px
-            }
-
-            .vr_img_right_bottom {
-                width: 552px;
-                height: 235px;
-                position: relative;
-                margin-top: 10px
-            }
-        </style>
-
-        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/three.min.js"></script>
-        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/D.min.js"></script>
-        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/doT.min.js"></script>
-        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/uevent.min.js"></script>
-        <script src="/Websites/shenghuojia/Templates/pc/Static/style/201801/js/photo-sphere-viewer.min.js"></script>
-
-        <script type="text/javascript">
-            $(function () {
-                $(".index_case ul li").eq(1).addClass("center");
-                $(".index_360 ul li").eq(1).addClass("center");
-            });
-            $(function () {
-                //全景图-左
-                try {
-                    var viewer = PhotoSphereViewer({
-                        container: $(".vr_img_right").eq(0).find("div").eq(0).attr("id"),
-                        panorama: '/773814c65bca4a119ad4797fd55e6757.jpg',
-                        autoload: true,
-                        allow_scroll_to_zoom: false,
-                        navbar: false,
-                        allow_user_interactions: false,
-                    });
-                    viewer.on('ready', function () {
-                        viewer1.stopAutorotate();
-                    })
-                    $(".vr_img_right").eq(0).hover(function () {
-                        viewer.startAutorotate();
-                    }, function () {
-                        viewer.stopAutorotate();
-                    })
-                    //全景图-右上
-                    var viewer1 = PhotoSphereViewer({
-                        container: $(".vr_img_right").eq(1).find("div").eq(0).attr("id"),
-                        panorama: '/11efcab3228f4a4faf8381d2b001b63e.jpg',
-                        autoload: true,
-                        navbar: false,
-                        allow_scroll_to_zoom: false,
-                        allow_user_interactions: false
-                    });
-                    viewer1.on('ready', function () {
-                        viewer1.stopAutorotate();
-                    })
-                    $(".vr_img_right").eq(1).hover(function () {
-                        viewer1.startAutorotate();
-                    }, function () {
-                        viewer1.stopAutorotate();
-                    })
-                    //全景图-右下
-                    var viewer2 = PhotoSphereViewer({
-                        container: $(".vr_img_right").eq(2).find("div").eq(0).attr("id"),
-                        panorama: '/236020bcac3a4a51823cdce528ada2db.jpg',
-                        autoload: true,
-                        navbar: false,
-                        allow_scroll_to_zoom: false,
-                        allow_user_interactions: false
-                    });
-                    viewer2.on('ready', function () {
-                        viewer2.stopAutorotate();
-                    })
-                    $(".vr_img_right").eq(2).hover(function () {
-                        viewer2.startAutorotate();
-                    }, function () {
-                        viewer2.stopAutorotate();
-                    })
-                } catch (e) {
-                    $('#container-img-1').css({
-                        backgroundColor: 'rgba(15,150,8,0.5)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center'
-                    })
-                    $('#container-img-2').css({
-                        backgroundColor: 'rgba(15,150,8,0.5)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center'
-                    })
-                    $('#container-img-3').css({
-                        backgroundColor: 'rgba(15,150,8,0.5)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center'
-                    })
-                }
-
-            });
-        </script>
         <div class="index_course">
             <div class="in-con-head">
                 <div class="in-con-head-text">
@@ -2054,96 +1749,7 @@
             </div>
         </form>
     </div>
-    <script>
-        function init_price() {
-            var Tprice = {
-                "price": 51000,
-                "cailiao": 30090,
-                "rengong": 13260,
-                "sheji": 3570,
-                "zhijian": 4080,
-            };
-            $(".get_price em").html(Tprice.price);
-            $(".cl em").html(Tprice.cailiao);
-            $(".rg em").html(Tprice.rengong);
-            $(".sj em").html(Tprice.sheji);
-            $(".zj em").html(Tprice.zhijian);
 
-        }
-
-        function change_price() {
-            var num = Math.ceil(Math.random() * 20000);
-
-            if (parseInt($(".get_price em").html()) > 160000) {
-                init_price();
-            }
-            $(".get_price em").html(parseInt($(".get_price em").html()) + num);
-            $(".cl em").html(parseInt($(".cl em").html()) + parseInt(num / 3));
-            $(".rg em").html(parseInt($(".rg em").html()) + parseInt(num / 7));
-            $(".sj em").html(parseInt($(".sj em").html()) + parseInt(num / 200));
-            $(".zj em").html(parseInt($(".zj em").html()) + parseInt(num / 200));
-
-        }
-
-        $(function () {
-            init_price();
-            var t = setInterval(change_price, 200);
-            var regObj = new RegExp("[^0-9]", "g");
-            var MonTime = 12;
-
-            function Mon() {
-                var Money = ($(".tanchu-jgright-poinput").val() / MonTime) + ($(".tanchu-jgright-poinput").val() * 0.0799 * (MonTime / 12) / MonTime);
-                $(".tanchu-jgright-poshow span.jg.htm"
-                ).html(Money.toFixed(2));
-            }
-
-            $(".tanchu-jgright-poinput").change(function () {
-                Mon();
-            })
-            $(".tanchu-jgright-point-main p").click(function () {
-                var index = $(this).index() + 1;
-                MonTime = index * 12;
-                $(".tanchu-jgright-point-main").removeClass("bg1").removeClass("bg2").removeClass("bg3").addClass("bg" + index);
-                Mon();
-
-            })
-            $(".tanchu-jgright-poinput").keydown(function () {
-                $(this).val($(this).val().replace(regObj, ""));
-                Mon();
-
-
-            })
-            $(".tanchu-jgright-poinput").keyup(function () {
-                $(this).val($(this).val().replace(regObj, ""));
-                Mon();
-            })
-
-        });
-
-        $('.index_tanchu').on('click', function () {
-//        $('.tanchu-maincen').show();
-//        $('.hidden-get-price').hide();
-            var form = $(this).closest('form');
-            var name = $.trim(form.find('input[name=name]').val());
-            if ('' == name) {
-                alert('请填写您的称呼');
-                return false;
-            }
-            if (validatemobile(form.find('input[name=phone]').val())) {
-                $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
-                    if (msg.status) {
-                        alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                        $('.tanchu-close').click();
-                    }
-                })
-            }
-        })
-    </script>
-    <style>
-        #newBridge {
-            display: none !important;
-        }
-    </style>
     <script>
         (function () {
             var c = document.createElement('script');
