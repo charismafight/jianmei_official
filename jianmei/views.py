@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import *
 
 
 # Create your views here.
@@ -7,4 +8,5 @@ def index(request):
 
 
 def hot_house(request):
-    return render(request, 'jianmei/hot_house.html', None)
+    context = {'data': HouseProject.objects.all()}
+    return render(request, 'jianmei/hot_house.html', context)

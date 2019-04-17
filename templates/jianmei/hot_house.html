@@ -27,207 +27,33 @@
                         <p class=""></p>
                         <div class="reading">
                             <ul>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/3649.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-06-30/5b373601cf2fc.jpg"
-                                            alt="华鹏梧桐邑"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/3649.html" class="head_title">华鹏梧桐邑
-                                        </a>
-                                        <div class="tabpag">
+                                {% for p in data %}
+                                    <li class="clearfix">
+                                        <a target="_blank" href="/Article/detail/id/3649.html"><img
+                                                src=""
+                                                alt="{{ p.name }}"></a>
+                                        <div class="reading_li_right">
+                                            <a target="_blank" href="/Article/detail/id/3649.html"
+                                               class="head_title">{{ p.name }}
+                                            </a>
+                                            <div class="tabpag">
 
+                                            </div>
+                                            <div class="link_a">
+                                                <p class="reading_li_right_p">
+                                                    {{ p.desc }} <a
+                                                        target="_blank" href="/Article/detail/id/3649.html"
+                                                        class="all_new">查看全部&gt;&gt;</a>
+                                                </p>
+                                            </div>
+                                            <span>咨询户数：{{ p.consult_count }} 户</span>
+                                            <span>签约户数：{{ p.contract_count }} 户</span>
+                                            <span>开工户数：{{ p.started_count }} 户</span>
+                                            <span>竣工户数：{{ p.finished_count }} 户</span>
                                         </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                华鹏·梧桐邑是由鑫鼎集团旗下宜昌华鹏置业有限公司斥巨资倾力打造的100万方精英人文社区!项目占据未来新政务中心核心.. <a
-                                                    target="_blank" href="/Article/detail/id/3649.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：200 户</span>
-                                        <span>签约户数：50 户</span>
-                                        <span>开工户数：3 户</span>
-                                        <span>竣工户数：35 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/3648.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-06-30/5b3734513d613.jpg"
-                                            alt="保利时代"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/3648.html" class="head_title">保利时代
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                保利时代位于东山开发区，东山开发区因其独特的地理位置，成为宜昌交通的“天府之地”，而宜昌保利时代所在区域盘踞东.. <a
-                                                    target="_blank" href="/Article/detail/id/3648.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：130 户</span>
-                                        <span>签约户数：15 户</span>
-                                        <span>开工户数：0 户</span>
-                                        <span>竣工户数：0 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/3444.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-06-29/5b359873da947.jpg"
-                                            alt="巴黎香颂"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/3444.html" class="head_title">巴黎香颂
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                宜化·巴黎香颂是宜化地产运营城市的巨著，项目位于宜昌城东大道与东风路交汇处（运河公园斜对面），总占地面积约14万.. <a
-                                                    target="_blank" href="/Article/detail/id/3444.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：230 户</span>
-                                        <span>签约户数：85 户</span>
-                                        <span>开工户数：2 户</span>
-                                        <span>竣工户数：60 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/2647.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-05-15/5afa3f8e4a0fe.jpg"
-                                            alt="山水华庭"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/2647.html" class="head_title">山水华庭
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                山水华庭项目位于宜昌市伍家岗区，东山大道与东艳路交汇处，交通便利，东依市政规划的白马山公园，南临东山大道，西接.. <a
-                                                    target="_blank" href="/Article/detail/id/2647.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：160 户</span>
-                                        <span>签约户数：26 户</span>
-                                        <span>开工户数：0 户</span>
-                                        <span>竣工户数：23 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/2574.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af801be3c46d.jpg"
-                                            alt="城中金谷"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/2574.html" class="head_title">城中金谷
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                城中金谷项目由宜昌凯利投资有限公司开发，位于东山大道合益路88号（宝塔河站近中南路），是城东片区又一生态大盘。项.. <a
-                                                    target="_blank" href="/Article/detail/id/2574.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：180 户</span>
-                                        <span>签约户数：40 户</span>
-                                        <span>开工户数：1 户</span>
-                                        <span>竣工户数：33 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/2572.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7fabf9db8e.jpg"
-                                            alt="宏峰上上城"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/2572.html" class="head_title">宏峰上上城
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                宏峰·上上城项目是由湖北宏峰房地产发展有限公司开发，总占地约480亩，总建筑面积约75万方，建成后将是集温泉别墅、花.. <a
-                                                    target="_blank" href="/Article/detail/id/2572.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：120 户</span>
-                                        <span>签约户数：35 户</span>
-                                        <span>开工户数：0 户</span>
-                                        <span>竣工户数：26 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/2571.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7f9f96cda8.jpg"
-                                            alt="天域水岸"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/2571.html" class="head_title">天域水岸
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                项目由宜昌鸿泰置业有限公司开发，位于宜昌市伍家岗区金东方校区旁，与长江一路相隔，占据滨江豪宅聚集区的核心位置，.. <a
-                                                    target="_blank" href="/Article/detail/id/2571.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：60 户</span>
-                                        <span>签约户数：10 户</span>
-                                        <span>开工户数：0 户</span>
-                                        <span>竣工户数：10 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/2570.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7f8cb221a9.jpg"
-                                            alt="中建宜昌之星"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/2570.html" class="head_title">中建宜昌之星
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                中建宜昌之星项目总占地面积约760亩，总建筑面积约170万平米，其中住宅约100万平米，商业７0万平米，投资额150亿元。规.. <a
-                                                    target="_blank" href="/Article/detail/id/2570.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：366 户</span>
-                                        <span>签约户数：59 户</span>
-                                        <span>开工户数：3 户</span>
-                                        <span>竣工户数：23 户</span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a target="_blank" href="/Article/detail/id/2569.html"><img
-                                            src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7f790b7836.jpg"
-                                            alt="清江月亮湾"></a>
-                                    <div class="reading_li_right">
-                                        <a target="_blank" href="/Article/detail/id/2569.html" class="head_title">清江月亮湾
-                                        </a>
-                                        <div class="tabpag">
-
-                                        </div>
-                                        <div class="link_a">
-                                            <p class="reading_li_right_p">
-                                                清江月亮湾是清能地产集团在宜昌倾力打造的第五个楼盘，凝聚国企实力，高端品质保证。项目紧邻宜昌火车客运站及汽车客.. <a
-                                                    target="_blank" href="/Article/detail/id/2569.html" class="all_new">查看全部&gt;&gt;</a>
-                                            </p>
-                                        </div>
-                                        <span>咨询户数：69 户</span>
-                                        <span>签约户数：12 户</span>
-                                        <span>开工户数：1 户</span>
-                                        <span>竣工户数：5 户</span>
-                                    </div>
-                                </li>
+                                    </li>
+                                {% endfor %}
                             </ul>
-
-
                         </div>
 
                         <div class="paginator">

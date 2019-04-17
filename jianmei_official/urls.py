@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from jianmei import views
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('house/', views.hot_house)
+    path('house/', views.hot_house),
+    path(r'^favicon\.ico$', RedirectView.as_view(url=r'static/jianmei/image/favicon.ico')),
 ]

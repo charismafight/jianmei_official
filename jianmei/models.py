@@ -16,14 +16,19 @@ class Designer(models.Model):
 class HouseProject(models.Model):
     class Meta:
         verbose_name = '楼盘信息'
+        verbose_name_plural = '楼盘信息'
 
     name = models.CharField('楼盘名称', max_length=50)
+    image = models.ImageField('楼盘图片', null=True)
     desc = models.CharField('楼盘描述', max_length=2000)
     consult_count = models.IntegerField('咨询户数', default=0)
     contract_count = models.IntegerField('签约户数', default=0)
     started_count = models.IntegerField('开工户数', default=0)
     finished_count = models.IntegerField('竣工户数', default=0)
-    designers = models.ManyToManyField(Designer, verbose_name='所属设计师')
+    designers = models.ManyToManyField(Designer, verbose_name='所属设计师', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class HouseType(models.Model):
