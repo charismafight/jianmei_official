@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from jianmei import views
 from django.views.generic.base import RedirectView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index),
-    path('house/', views.hot_house),
-    path(r'^favicon\.ico$', RedirectView.as_view(url=r'static/jianmei/image/favicon.ico')),
-]
+                  path('admin/', admin.site.urls),
+                  path('', views.index),
+                  path('house/', views.hot_house),
+                  path(r'^favicon\.ico$', RedirectView.as_view(url=r'static/jianmei/image/favicon.ico')),
+                  path(r'house/<int:pid>', views.project_detail),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

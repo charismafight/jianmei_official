@@ -1,0 +1,98 @@
+{% extends 'jianmei/base_house.html' %}
+{% load static %}
+{% block house_block %}
+    <div class="reading">
+        <ul>
+            <li class="clearfix">
+                <a target="_blank" href="{% get_media_prefix %}{{ p.image }}"><img
+                        src="{% get_media_prefix %}{{ p.image }}"
+                        alt="{{ p.name }}"></a>
+                <div class="reading_li_right">
+                    <a target="_blank" class="head_title">{{ p.name }}
+                    </a>
+                    <div class="tabpag">
+                    </div>
+                    <span>咨询户数：{{ p.consult_count }} 户</span>
+                    <span>签约户数：{{ p.contract_count }} 户</span>
+                    <span>开工户数：{{ p.started_count }} 户</span>
+                    <span>竣工户数：{{ p.finished_count }} 户</span>
+                </div>
+            </li>
+        </ul>
+
+        <h2 class="win-title"><span class="tit">楼盘案例</span></h2>
+        <div class="row case">
+            {% for c in cases %}
+                <div class="col-xs-4">
+                    <div class="item">
+                        <a href="/Article/detail/id/3658.html" class="pic"><img
+                                src="/Websites/shenghuojia/Uploads/Picture/2018-06-30/5b3741b77a920.jpg" width="254"
+                                height="230"></a>
+                        {#                        设计师照片#}
+                        <a href="/Article/detail/id/3647.html" class="headPic">
+                            <img width="63" height="63" class="lazy"
+                                 data-original="/Websites/shenghuojia/Uploads/Picture/2019-01-17/5c3fe75a71831.jpg"
+                                 src="/Websites/shenghuojia/Uploads/Picture/2019-01-17/5c3fe75a71831.jpg"
+                                 style="display: inline;">
+                        </a>
+                        <div class="info">
+                            <p class="p1">华鹏梧桐邑-110平-简约</p>
+                            <p class="p2"> 三居&nbsp;|&nbsp;110平 </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="fen_floor_cont" style="padding:0;">
+            <h2 class="win-title">
+                <span class="tit" style="line-height:70px;">户型解析</span>
+            </h2>
+            {% for house_type in house_types %}
+                <div class="floor_parsing rezhuang">
+                    <div class=" clearfix" style="padding-bottom: 10px;border-bottom: 1px solid #e3e3e3">
+                        <div class="pic pull-left"><a href="/Article/detail/id/3659.html" target="_blank">
+                            <img src="/Websites/shenghuojia/Uploads/Picture/2018-06-30/5b3741eb4738a.jpg"></a>
+                        </div>
+                        <dl class="pull-right">
+                            <dt class="clearfix">
+                                <h2><a href="/Article/detail/id/3659.html" target="_blank">梧桐邑110</a></h2>
+                                <p> 户型：<span>三居</span> | 面积：<span>110㎡</span> | 风格：<span>简约</span>
+                                </p>
+                            </dt>
+                            <dd> ... <a href="/Article/detail/id/3659.html" target="_blank" class="a_more">[详情]</a></dd>
+                        </dl>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="win-title"><span class="tit" style="line-height:70px;">专属设计师</span></h2>
+        <div class="bg-white elite-list elite-detaile-content">
+            <div class="list bg-white">
+                <div class="row">
+                    {% for d in designers %}
+                        <div class="col-xs-4">
+                            <div class="item text-center">
+                                <div class="box1">
+                                    <a href="/Article/detail/id/3647.html"
+                                       style="background: url('/media/{{ d.portrait }}')  73% 0%;height: 254px;width: 251px;display: block;"></a>
+                                </div>
+                                <div class="box2">
+                                    <span class="name">{{ d.name }}</span>
+                                    <span class="job">首席设计师</span>
+                                </div>
+                                <div class="box3 row">
+                                    <div class="col-xs-6">案例作品：<span class="text-red">140</span>套</div>
+                                    <div class="col-xs-6">从业经验：<span class="text-red">12</span>年</div>
+                                    <div class="col-xs-12">所属店面：北京海天装饰宜昌分公司</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

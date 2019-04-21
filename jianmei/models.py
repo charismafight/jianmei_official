@@ -1,3 +1,5 @@
+from distutils.command import upload
+
 from django.db import models
 
 
@@ -5,12 +7,16 @@ from django.db import models
 class Designer(models.Model):
     class Meta:
         verbose_name = '设计师'
+        verbose_name_plural = '设计师'
 
     name = models.CharField('姓名', max_length=10)
     title = models.CharField('职称', max_length=10)
     case_count = models.IntegerField('案例作品数量')
     exp = models.IntegerField('从业年份')
-    portrait = models.ImageField('照片')
+    portrait = models.ImageField('照片', upload_to='designer')
+
+    def __str__(self):
+        return self.name
 
 
 class HouseProject(models.Model):
@@ -19,7 +25,7 @@ class HouseProject(models.Model):
         verbose_name_plural = '楼盘信息'
 
     name = models.CharField('楼盘名称', max_length=50)
-    image = models.ImageField('楼盘图片', null=True)
+    image = models.ImageField('楼盘图片', null=True, upload_to='house_project')
     desc = models.CharField('楼盘描述', max_length=2000)
     consult_count = models.IntegerField('咨询户数', default=0)
     contract_count = models.IntegerField('签约户数', default=0)
@@ -34,6 +40,7 @@ class HouseProject(models.Model):
 class HouseType(models.Model):
     class Meta:
         verbose_name = '户型'
+        verbose_name_plural = '户型'
 
     project = models.ForeignKey(HouseProject, verbose_name='所属楼盘', on_delete=models.CASCADE)
     type = models.CharField('楼盘户型', max_length=30)
@@ -47,6 +54,7 @@ class HouseType(models.Model):
 class Case(models.Model):
     class Meta:
         verbose_name = '楼盘案例'
+        verbose_name_plural = '楼盘案例'
 
     name = models.CharField('案例名称', max_length=20)
     house_type = models.ForeignKey(HouseType, verbose_name='户型', on_delete=models.CASCADE)
@@ -55,6 +63,7 @@ class Case(models.Model):
 class CaseImage(models.Model):
     class Meta:
         verbose_name = '案例图片'
+        verbose_name_plural = '案例图片'
 
     case = models.ForeignKey(Case, verbose_name='所属案例', on_delete=models.CASCADE)
-    image = models.ImageField
+    image = models.ImageField('案例图片', null=True, upload_to='case_image')

@@ -1,0 +1,105 @@
+{#楼盘列表和详情的base页面#}
+{% extends 'jianmei/base.html' %}
+{% load static %}
+{% block body_block %}
+    <link rel="stylesheet" href="{% static 'jianmei/css/news.css' %}"/>
+    <link rel="stylesheet" href="{% static 'jianmei/css/loupan_detail.css' %}"/>
+    <div class=" all">
+        <div class="list_mian theon">
+            <div class="image"><img src="{% static 'jianmei/image/banner.jpg' %}">
+            </div>
+
+            <style>
+                .reading li span {
+                    display: block;
+                    width: 50%;
+                    float: left;
+                }
+
+                .leftright_all {
+                    word-spacing: 0px
+                }
+            </style>
+
+            <div class="leftright_all">
+                {% block house_block %}
+                {% endblock %}
+                <div class="mian_right">
+                    <div class="mian_right_top">
+                        <h3>推荐阅读</h3>
+                        <ul>
+                        </ul>
+                    </div>
+
+
+                    <div class="case_tel">
+                        <p>服务热线</p>
+                        <p> 0717-6590399 </p>
+                    </div>
+                    <div class="tab_form">
+                        <h3>抢免费设计名额</h3>
+                        <div class="many">
+                            <a>今日剩下</a>
+                            <span>1</span>
+                            <span>6</span>
+                            <span>8</span>
+                            <a>个免费名额</a>
+                        </div>
+                        <div class="center_form">
+                            <form onsubmit="return false">
+                                <div class="the_height"><input type="text" name="mianji" placeholder="请输入面积"
+                                                               style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                                </div>
+                                <div class="the_height"><input type="text" name="diqu" placeholder="请输入所在地区"></div>
+                                <div class="the_height"><input type="text" name="name" placeholder="您的称呼"></div>
+                                <div class="the_height"><input type="text" name="phone" placeholder="填写手机号码，获取免费设计名额">
+                                </div>
+                                <a href="javascript:;" class="go_for gonglve_liuyan">立即申请</a>
+                                <input type="hidden" name="laiyuan" value="91装修攻略留言">
+                            </form>
+                            <script>
+                                $(function () {
+                                    $('.gonglve_liuyan').on('click', function () {
+
+                                        var form = $(this).closest('form');
+                                        var name = $.trim(form.find('input[name=name]').val());
+                                        if ('' == name) {
+                                            alert('请填写您的称呼');
+                                            return false;
+                                        }
+                                        if (validatemobile(form.find('input[name=phone]').val())) {
+                                            $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                                                if (msg.status) {
+                                                    alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                                                    location.reload();
+                                                }
+                                            })
+                                        }
+
+                                    })
+                                })
+                            </script>
+                        </div>
+                    </div>
+                    <div class="module">
+                        <div class="module_top">
+                            <h3>推荐模块</h3>
+                            <!-- <a href="javascript:;">更多>></a>-->
+                        </div>
+                        <div class="more_pag clearfix">
+                            <ul>
+                                <li><a href="/Article/lists/category/8.html">装修设计</a></li>
+                                <li><a href="/Article/lists/category/32.html">装修材料</a></li>
+                                <li><a href="/Article/lists/category/7.html">装修日记</a></li>
+                                <li><a href="/Article/lists/category/53.html">施工工艺</a></li>
+                                <li><a href="/Article/lists/category/54.html">装修省钱</a></li>
+                                <li><a href="/Article/lists/category/55.html">家具软装</a></li>
+                                <li><a href="/Article/lists/category/56.html">装修风水</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
