@@ -59,6 +59,9 @@ class Case(models.Model):
     name = models.CharField('案例名称', max_length=20)
     house_type = models.ForeignKey(HouseType, verbose_name='户型', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class CaseImage(models.Model):
     class Meta:
@@ -67,3 +70,12 @@ class CaseImage(models.Model):
 
     case = models.ForeignKey(Case, verbose_name='所属案例', on_delete=models.CASCADE)
     image = models.ImageField('案例图片', null=True, upload_to='case_image')
+
+
+class HouseTypeImage(models.Model):
+    class Meta:
+        verbose_name = '户型图'
+        verbose_name_plural = '户型图'
+
+    house_type = models.ForeignKey(HouseType, verbose_name='所属户型', on_delete=models.CASCADE)
+    image = models.ImageField('户型图', null=True, upload_to='house_type_image')

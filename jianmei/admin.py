@@ -14,6 +14,14 @@ class CaseAdmin(admin.ModelAdmin):
     ]
 
 
+class HouseTypeImageInline(admin.TabularInline):
+    model = HouseTypeImage
+
+
+@admin.register(HouseType)
+class HouseTypeAdmin(admin.ModelAdmin):
+    inlines = [HouseTypeImageInline]
+
+
 admin.site.register(HouseProject)
-admin.site.register(HouseType)
 admin.site.register(Designer)

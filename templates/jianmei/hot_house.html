@@ -1,41 +1,39 @@
 {% extends 'jianmei/base_house.html' %}
 {% load static %}
 {% block house_block %}
-    <div class="mian_left clearfix">
-        <div class="main_botton news_h3">
-            <img src="{% static 'jianmei/image/logo.jpg' %}" height="40" width="40">
-            <h3>热装楼盘</h3>
-            <p class=""></p>
-            <div class="reading">
-                <ul>
-                    {% for p in data %}
-                        <li class="clearfix">
-                            <a target="_blank" href="{% get_media_prefix %}{{ p.image }}"><img
-                                    src="{% get_media_prefix %}{{ p.image }}"
-                                    alt="{{ p.name }}"></a>
-                            <div class="reading_li_right">
-                                <a target="_blank" href="/Article/detail/id/3649.html"
-                                   class="head_title">{{ p.name }}
-                                </a>
-                                <div class="tabpag">
+    <div class="main_botton news_h3">
+        <img src="{% static 'jianmei/image/logo.jpg' %}" height="40" width="40">
+        <h3>热装楼盘</h3>
+        <p class=""></p>
+        <div class="reading">
+            <ul>
+                {% for p in data %}
+                    <li class="clearfix">
+                        <a target="_blank" href="{% get_media_prefix %}{{ p.image }}"><img
+                                src="{% get_media_prefix %}{{ p.image }}"
+                                alt="{{ p.name }}"></a>
+                        <div class="reading_li_right">
+                            <a target="_blank" href="{{ p.id }}"
+                               class="head_title">{{ p.name }}
+                            </a>
+                            <div class="tabpag">
 
-                                </div>
-                                <div class="link_a">
-                                    <p class="reading_li_right_p">
-                                        {{ p.desc }} <a
-                                            target="_blank" href="/Article/detail/id/3649.html"
-                                            class="all_new">查看全部&gt;&gt;</a>
-                                    </p>
-                                </div>
-                                <span>咨询户数：{{ p.consult_count }} 户</span>
-                                <span>签约户数：{{ p.contract_count }} 户</span>
-                                <span>开工户数：{{ p.started_count }} 户</span>
-                                <span>竣工户数：{{ p.finished_count }} 户</span>
                             </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+                            <div class="link_a">
+                                <p class="reading_li_right_p">
+                                    {{ p.desc }} <a
+                                        target="_blank" href="/Article/detail/id/3649.html"
+                                        class="all_new">查看全部&gt;&gt;</a>
+                                </p>
+                            </div>
+                            <span>咨询户数：{{ p.consult_count }} 户</span>
+                            <span>签约户数：{{ p.contract_count }} 户</span>
+                            <span>开工户数：{{ p.started_count }} 户</span>
+                            <span>竣工户数：{{ p.finished_count }} 户</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 {% endblock %}
