@@ -72,6 +72,7 @@ class CaseImage(models.Model):
     image = models.ImageField('案例图片', null=True, upload_to='case_image')
 
 
+# 户型外键
 class HouseTypeImage(models.Model):
     class Meta:
         verbose_name = '户型图'
