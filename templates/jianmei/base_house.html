@@ -4,7 +4,8 @@
 {% block body_block %}
     <link rel="stylesheet" href="{% static 'jianmei/css/news.css' %}"/>
     <link rel="stylesheet" href="{% static 'jianmei/css/loupan_detail.css' %}"/>
-    <div class=" all">
+    <link rel="stylesheet" href="{% static 'jianmei/css/decorate_gallery_list.css' %}">
+    <div class="all">
         <div class="list_mian theon">
             <div class="image"><img src="{% static 'jianmei/image/banner.jpg' %}">
             </div>
@@ -21,7 +22,7 @@
                 }
             </style>
 
-            <div class="leftright_all">
+            <div class="leftright_all xgt_details_bg">
                 <div class="mian_left clearfix">
                     {% block house_block %}
                     {% endblock %}

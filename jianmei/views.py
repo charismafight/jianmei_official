@@ -25,3 +25,8 @@ def project_detail(request, pid):
         'cases': cases
     }
     return render(request, 'jianmei/project_detail.html', context)
+
+
+def case_detail(request, cid):
+    obj = get_object_or_404(Case, pk=cid)
+    return render(request, 'jianmei/case_detail.html', {'case': obj})

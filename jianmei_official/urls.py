@@ -26,4 +26,5 @@ urlpatterns = [
                   path('house/', views.hot_house),
                   path(r'^favicon\.ico$', RedirectView.as_view(url=r'static/jianmei/image/favicon.ico')),
                   path(r'house/<int:pid>', views.project_detail),
+                  path(r'case/<int:cid>', views.case_detail),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
