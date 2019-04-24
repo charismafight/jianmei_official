@@ -30,3 +30,12 @@ def project_detail(request, pid):
 def case_detail(request, cid):
     obj = get_object_or_404(Case, pk=cid)
     return render(request, 'jianmei/case_detail.html', {'case': obj})
+
+
+def house_type_detail(request, htid):
+    obj = get_object_or_404(HouseType, pk=htid)
+    return render(request, 'jianmei/house_type_detail.html', {'house_type': obj})
+
+
+def technology(request):
+    return render(request, 'jianmei/technology.html', None)

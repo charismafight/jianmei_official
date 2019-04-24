@@ -21,13 +21,85 @@
 <script type="text/javascript" src="{% static 'jianmei/js/three.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'jianmei/js/uevent.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'jianmei/js/index.js' %}"></script>
+<script type="text/javascript" src="{% static 'jianmei/js/push.js' %}"></script>
 <link rel="stylesheet" href="{% static 'jianmei/css/global.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/css.css-0720.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/main.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/new_global.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/photo-sphere-viewer.min.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/style.css' %}">
 <link rel="shortcut icon" type="image/png" href="{% static 'jianmei/image/favicon.ico' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/jquery.fancybox.css' %}">
+<script type="text/javascript" src="{% static 'jianmei/js/jquery.fancybox.js-v=2.1.4' %}"></script>
+<link rel="stylesheet" href="{% static 'jianmei/css/decorate_gallery_list.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/css.css' %}">
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $("img").lazyload({
+            placeholder: "/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/lazy.png",
+            effect: "fadeIn"
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //预约 - 浮动显示
+        $(window).scroll(function () {
+            var scroHs = $(this).scrollTop();
+            if (scroHs > 298) {
+                $(".look_case .right").css({"position": "fixed", "top": "0", "margin-top": 0});
+            } else {
+                $(".look_case .right").removeAttr("style");
+            }
+        })
+
+        $(".xdbc_main_content img").each(function (index, element) {
+
+            $(this).removeAttr("onload");
+            $(this).removeAttr("width");
+            $(this).removeAttr("height");
+
+        });
+        $('.fancybox').fancybox();
+        $(".fancybox-thumbs").fancybox({
+            helpers: {
+                title: {
+                    type: 'outside'
+                },
+                overlay: {
+                    speedOut: 0
+                }
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    function showimg() {
+        if ($.cookie('showimg')) {
+            $.cookie('showimg', parseInt($.cookie('showimg')) + 1);
+        } else {
+            $.cookie('showimg', 1);
+        }
+
+        if ($.cookie('showimg') % 5 == 1) {
+            $(".showimg").fadeIn();
+        }
+    }
+
+    setTimeout(showimg, 3000);
+
+
+    function changeprice() {
+        var num = parseInt(Math.random() * 100) + $("#get_price em").html();
+        if (num > 188888) {
+            num = parseInt(Math.random() * 100000);
+        }
+        $("#get_price em").html(num);
+    }
+
+
+</script>
 <div class="head" style="z-index: 999">
     {#    top#}
     <div class="headCenter">
@@ -88,8 +160,7 @@
                 </li>
                 <li id="menu4" data-id="1" class="bigmenu">
                     <i class="navList-hot"></i>
-
-                    <a href="/page/1">家装黑科技</a></li>
+                    <a href="/technology">家装黑科技</a></li>
                 <li id="menu5" data-id="6" class="bigmenu">
 
                     <a href="/page/6">装修攻略</a></li>

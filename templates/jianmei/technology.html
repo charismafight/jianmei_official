@@ -1,0 +1,171 @@
+{% extends 'jianmei/base.html' %}
+{% load static %}
+<style>
+    .nav .navCenter .navList li a:before {
+        background: #E60012;
+        position: absolute;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        content: "";
+        bottom: 0px;
+        height: 4px;
+        left: 50%;
+        right: 50%;
+        -webkit-transition-property: left, right;
+        -moz-transition-property: left, right;
+        -ms-transition-property: left, right;
+        transition-property: left, right;
+        -webkit-transition-duration: 0.4s;
+        -moz-transition-duration: 0.4s;
+        -ms-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        -webkit-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -ms-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+</style>
+<script type="text/javascript">
+
+    $(document).ready(function (e) {
+        $(".headArea span").bind("mouseover", function (e) {
+            $(".headArea").find("ul").show();
+        });
+        $(".headArea ul").bind("mouseleave", function (e) {
+            $(".headArea").find("ul").hide();
+        });
+
+        $(".navList li").mouseenter(function () {
+            var index = $(this).index();
+            $(this).stop().children(".list_none").fadeIn();
+            return false;
+        });
+        $(".navList li").mouseleave(function () {
+            var index = $(this).index();
+            $(this).children(".list_none").stop().fadeOut();
+            return false;
+        });
+
+    });
+
+
+    $(function () {
+        $(".bigmenu").mouseenter(function () {
+            $(".submenu").hide();
+            var id = $(this).attr("data-id");
+            $("#submenu" + id).fadeIn();
+        })
+        $(".submenu").mouseleave(function () {
+            $(".submenu").hide();
+        })
+        $(".head").mouseenter(function () {
+            $(".submenu").hide();
+        })
+
+
+    })
+</script>
+{% block body_block %}
+    <div class="index_all">
+        <div class="img_bg1">
+            <div class="conter_pos">
+            </div>
+        </div>
+        <a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">
+            <div class="img_bg2"></div>
+        </a>
+        <div class="fast_build">
+            <div class="fast_build_con">
+                <div class="fast_build_con_one">
+                    <h3>快速搭建属于</h3>
+                    <p>你自己的设计方案</p>
+                    <span>一键选取户型 在线装修设计</span>
+                </div>
+                <div class="fast_build_con_two">
+                    <p class="two_p"></p>
+                    <ul>
+                        <li class="on">客厅搭建</li>
+                        <li>餐厅搭建</li>
+                        <li>厨房搭建</li>
+                        <li>卧室搭建</li>
+                    </ul>
+                    <img src="{% static 'jianmei/image/img1.png' %}">
+                </div>
+                <div class="fast_build_con_three">
+                    <ul>
+                        <li class="in">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </div>
+                <div class="fast_build_con_four">
+                    <ul>
+                        <li><img src="{% static 'jianmei/image/tab1.jpg' %}"></li>
+                        <li style="display: none;"><img
+                                src="{% static 'jianmei/image/tab2.jpg' %}"></li>
+                        <li style="display: none;"><img
+                                src="{% static 'jianmei/image/tab3.jpg' %}"></li>
+                        <li style="display: none;"><img
+                                src="{% static 'jianmei/image/tab4.jpg' %}"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fast_style">
+            <div class="fast_build_con con_height">
+                <div class="fast_build_con_top">
+                    <h3>各种装修风格任你选择/立即呈现</h3>
+                    <p>多种装修风格，作为你的装修参考</p>
+                </div>
+                <div class="fast_build_con_bot">
+                    <ul class="fast_build_con_bot_ul">
+                        <li class="">时尚简约风</li>
+                        <li class="actve">回归原生态</li>
+                        <li>摩登轻古典</li>
+                    </ul>
+                    <div class="style_ban">
+                        <ul>
+                            <li style="display: none;"><img
+                                    src="{% static 'jianmei/image/ban1.jpg' %}"></li>
+                            <li style=""><img src="{% static 'jianmei/image/ban2.jpg' %}">
+                            </li>
+                            <li style="display: none;"><img
+                                    src="{% static 'jianmei/image/ban3.jpg' %}"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="img_bg3"></div>
+        <div class="img_bg4"></div>
+        <div class="img_bg5"></div>
+        <div class="img_bg6"></div>
+        <!--
+        <div class="img_bg7"></div>
+        -->
+        <div class="img_bg8">
+            <div class="conter_go">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $(".fast_build_con_two ul li,.fast_build_con_three ul li").mouseover(function () {
+                var index = $(this).index();
+                console.log(index)
+                $(".fast_build_con_two ul li").eq(index).addClass("on").siblings().removeClass("on");
+                $(".fast_build_con_three ul li").eq(index).addClass("in").siblings().removeClass("in");
+                $(".fast_build_con_four ul li").eq(index).show().siblings().hide();
+
+            })
+            $(".fast_build_con_bot_ul li").mouseover(function () {
+                var index = $(this).index();
+                $(this).addClass("actve").siblings().removeClass("actve");
+                $(".style_ban ul li").eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+
+{% endblock %}
