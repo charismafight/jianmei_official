@@ -410,74 +410,27 @@
                 </div>
                 <div class="loupan_content clearFix">
                     <ul>
-                        <li>
-                            <a href="/Article/detail/id/2647.html" target="_blank" class="ZgPush">
-
-                                <p>
-                                    <span>咨询：<font class="text-red">160户</font></span>
-                                    <span>签约：<font class="text-red">26户</font></span>
-                                    <span>施工：<font class="text-red">户</font></span>
-                                </p>
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-15/5afa3f8e4a0fe.jpg"
-                                     width="289" height="216" alt="装修效果图" style="display: block;">
-                                <h2>山水华庭</h2>
-                            </a>
-                            <!--<div class="tips">免费参观工地<i></i></div>-->
-                        </li>
-                        <li>
-                            <a href="/Article/detail/id/2574.html" target="_blank" class="ZgPush">
-
-                                <p>
-                                    <span>咨询：<font class="text-red">180户</font></span>
-                                    <span>签约：<font class="text-red">40户</font></span>
-                                    <span>施工：<font class="text-red">户</font></span>
-                                </p>
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af801be3c46d.jpg"
-                                     width="289" height="216" alt="装修效果图" style="display: block;">
-                                <h2>城中金谷</h2>
-                            </a>
-                            <!--<div class="tips">免费参观工地<i></i></div>-->
-                        </li>
-                        <li>
-                            <a href="/Article/detail/id/2572.html" target="_blank" class="ZgPush">
-
-                                <p>
-                                    <span>咨询：<font class="text-red">120户</font></span>
-                                    <span>签约：<font class="text-red">35户</font></span>
-                                    <span>施工：<font class="text-red">户</font></span>
-                                </p>
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7fabf9db8e.jpg"
-                                     width="289" height="216" alt="装修效果图" style="display: block;">
-                                <h2>宏峰上上城</h2>
-                            </a>
-                            <!--<div class="tips">免费参观工地<i></i></div>-->
-                        </li>
-                        <li>
-                            <a href="/Article/detail/id/2571.html" target="_blank" class="ZgPush">
-
-                                <p>
-                                    <span>咨询：<font class="text-red">60户</font></span>
-                                    <span>签约：<font class="text-red">10户</font></span>
-                                    <span>施工：<font class="text-red">户</font></span>
-                                </p>
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-13/5af7f9f96cda8.jpg"
-                                     width="289" height="216" alt="装修效果图" style="display: block;">
-                                <h2>天域水岸</h2>
-                            </a>
-                            <!--<div class="tips">免费参观工地<i></i></div>-->
-                        </li>
+                        {% for project in projects %}
+                            <li>
+                                <a href="/house/{{ project.id }}" target="_blank" class="ZgPush">
+                                    <p>
+                                        <span>咨询：<font class="text-red">{{ project.consult_count }}户</font></span>
+                                        <span>签约：<font class="text-red">{{ project.contract_count }}户</font></span>
+                                        <span>施工：<font class="text-red">{{ project.started_count }}户</font></span>
+                                    </p>
+                                    <img src="{% get_media_prefix %}{{ project.image }}"
+                                         width="289" height="216" alt="装修效果图" style="display: block;">
+                                    <h2>{{ project.name }}</h2>
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
         </div>
         <div class="clear"></div>
-        <!--<link rel="stylesheet" href="http://wuhan.djzs.cn/Public/Home/css/common/common.css" type="text/css"/>-->
-        <!--<link rel="stylesheet" href="http://wuhan.djzs.cn/Public/Home/css/index.css" type="text/css"/>-->
-        <style>
-            .index_case {
-                width: 100%;
-            }
 
+        <style>
             .wraper {
                 width: 1200px;
                 margin: 0 auto;
@@ -736,7 +689,7 @@
                         <h1 class="h1_color1">家装案例</h1>
                         <p class="p_color1">海量实拍家装美图，发现新家装修灵感</p>
                     </div>
-                    <div class="in-con-head-right"><a href="/lists/3/fenzhan/91.html" target="_blank">查看更多</a>
+                    <div class="in-con-head-right"><a href="/house" target="_blank">查看更多</a>
                     </div>
                 </div>
                 <div class="case_content clearFix">

@@ -22,10 +22,11 @@
 <script type="text/javascript" src="{% static 'jianmei/js/uevent.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'jianmei/js/index.js' %}"></script>
 <script type="text/javascript" src="{% static 'jianmei/js/push.js' %}"></script>
-<link rel="stylesheet" href="{% static 'jianmei/css/global.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/css.css-0720.css' %}">
-<link rel="stylesheet" href="{% static 'jianmei/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/swiper.2.0.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/new_global.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/global.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/main.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/photo-sphere-viewer.min.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/index.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/style.css' %}">
@@ -131,142 +132,143 @@
             </a>
         </div>
     </div>
-    {#    导航#}
-    <div class="nav">
-        <div class="navCenter">
-            <h1 class="logo">
-                <a href="/">
-                    <img class="logoImg" src="{% static "jianmei/image/logo.jpg" %}" alt="简美装饰"
-                         style="height: 61px;width: 206px;">
+</div>
+{#    导航#}
+<div class="nav">
+    <div class="navCenter">
+        <h1 class="logo">
+            <a href="/">
+                <img class="logoImg" src="{% static "jianmei/image/logo.jpg" %}" alt="简美装饰"
+                     style="height: 61px;width: 206px;">
+            </a>
+        </h1>
+        <div class="navList" style="margin-right: 80px">
+            <li class="bigmenu" id="menu0">
+                <a href="/" target="" class=""><span>首页</span></a>
+            </li>
+            <li id="menu1" data-id="21" class="bigmenu">
+                <i class="navList-hot"></i>
+
+                <a href="/lists/21">套餐</a>
+            </li>
+            <li id="menu2" data-id="18" class="bigmenu">
+
+                <a href="/lists/18">实景样板间</a>
+            </li>
+            <li id="menu3" data-id="3" class="bigmenu">
+                <i class="navList-hot"></i>
+
+                <a href="/lists/3/fenzhan/91">装修案例</a>
+            </li>
+            <li id="menu4" data-id="1" class="bigmenu">
+                <i class="navList-hot"></i>
+                <a href="/technology">家装黑科技</a></li>
+            <li id="menu5" data-id="6" class="bigmenu">
+
+                <a href="/page/6">装修攻略</a></li>
+            <li class="bigmenu">
+                <a target="_blank" href="http://shop237394971.taobao.com">
+                    天猫店铺
                 </a>
-            </h1>
-            <div class="navList" style="margin-right: 80px">
-                <li class="bigmenu" id="menu0">
-                    <a href="/" target="" class=""><span>首页</span></a>
-                </li>
-                <li id="menu1" data-id="21" class="bigmenu">
-                    <i class="navList-hot"></i>
-
-                    <a href="/lists/21">套餐</a>
-                </li>
-                <li id="menu2" data-id="18" class="bigmenu">
-
-                    <a href="/lists/18">实景样板间</a>
-                </li>
-                <li id="menu3" data-id="3" class="bigmenu">
-                    <i class="navList-hot"></i>
-
-                    <a href="/lists/3/fenzhan/91">装修案例</a>
-                </li>
-                <li id="menu4" data-id="1" class="bigmenu">
-                    <i class="navList-hot"></i>
-                    <a href="/technology">家装黑科技</a></li>
-                <li id="menu5" data-id="6" class="bigmenu">
-
-                    <a href="/page/6">装修攻略</a></li>
-                <li class="bigmenu">
-                    <a target="_blank" href="http://shop237394971.taobao.com">
-                        天猫店铺
-                    </a>
-                </li>
-            </div>
-        </div>
-
-        <style>
-            .submenu {
-                height: 90px;
-                width: 100%;
-                position: absolute;
-                top: 97px;
-                background: white;
-                z-index: 9999;
-                display: none;
-            }
-
-            .submenu a {
-                display: inline-block;
-                margin: 5px 50px;
-                color: black;
-                text-align: center;
-            }
-
-            .submenu .submenuCenter {
-                text-align: center;
-                width: 100%;
-                margin: 0 auto;
-                height: 61px;
-            }
-        </style>
-
-        <div class="submenu" id="submenu21" style="display: none;">
-            <!---二级导航-->
-            <div class="submenuCenter">
-
-                <a href="#"><img src="{% static 'jianmei/image/net_privilege.jpg' %}">
-                    <div align="center">网络特权优惠</div>
-                </a></div>
-        </div>
-        <div class="submenu" id="submenu3" style="display: none;">
-            <!---二级导航-->
-            <div class="submenuCenter">
-
-                <a href="/house/"><img src="{% static 'jianmei/image/hot_houses.png' %}">
-                    <div align="center">热装楼盘</div>
-                </a>
-            </div>
-        </div>
-        <div class="submenu" id="submenu6" style="display: none;">
-            <!---二级导航-->
-            <div class="submenuCenter">
-
-                <a href="/lists/8"><img src="{% static 'jianmei/image/design.jpg' %}">
-                    <div align="center">装修设计</div>
-                </a>
-                <a href="/lists/32"><img src="{% static 'jianmei/image/material.jpg' %}">
-                    <div align="center">装修材料</div>
-                </a>
-                <a href="/lists/7"><img src="{% static 'jianmei/image/note.jpg' %}">
-                    <div align="center">装修日记</div>
-                </a>
-            </div>
+            </li>
         </div>
     </div>
 
-    {% block body_block %}
-    {% endblock %}
+    <style>
+        .submenu {
+            height: 90px;
+            width: 100%;
+            position: absolute;
+            top: 97px;
+            background: white;
+            z-index: 9999;
+            display: none;
+        }
 
-    {#    底部#}
-    <div class="new-footer">
-        <div class="footer-cen" style="padding: 20px 0 93px 0">
-            <div class="footer-cen1">
+        .submenu a {
+            display: inline-block;
+            margin: 5px 50px;
+            color: black;
+            text-align: center;
+        }
+
+        .submenu .submenuCenter {
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            height: 61px;
+        }
+    </style>
+
+    <div class="submenu" id="submenu21" style="display: none;">
+        <!---二级导航-->
+        <div class="submenuCenter">
+
+            <a href="#"><img src="{% static 'jianmei/image/net_privilege.jpg' %}">
+                <div align="center">网络特权优惠</div>
+            </a></div>
+    </div>
+    <div class="submenu" id="submenu3" style="display: none;">
+        <!---二级导航-->
+        <div class="submenuCenter">
+
+            <a href="/house/"><img src="{% static 'jianmei/image/hot_houses.png' %}">
+                <div align="center">热装楼盘</div>
+            </a>
+        </div>
+    </div>
+    <div class="submenu" id="submenu6" style="display: none;">
+        <!---二级导航-->
+        <div class="submenuCenter">
+
+            <a href="/lists/8"><img src="{% static 'jianmei/image/design.jpg' %}">
+                <div align="center">装修设计</div>
+            </a>
+            <a href="/lists/32"><img src="{% static 'jianmei/image/material.jpg' %}">
+                <div align="center">装修材料</div>
+            </a>
+            <a href="/lists/7"><img src="{% static 'jianmei/image/note.jpg' %}">
+                <div align="center">装修日记</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% block body_block %}
+{% endblock %}
+
+{#    底部#}
+<div class="new-footer">
+    <div class="footer-cen" style="padding: 20px 0 93px 0">
+        <div class="footer-cen1">
+        </div>
+
+        <div class="footer-cen2">
+            <p class="p1">联系我们</p>
+            <p class="p2">电话： 0717-6590399 </p>
+            <p class="p2">总部地址： 宜昌市伍家岗区香山福久源10栋1005号 </p>
+            <p class="p2">备案号： </p>
+            <p class="p2">版权所有：宜昌市简美装饰有限公司</p>
+        </div>
+
+        <div class="footer-form">
+            <div class="footer-form-head">
+                <p>获取免费设计服务</p>
             </div>
-
-            <div class="footer-cen2">
-                <p class="p1">联系我们</p>
-                <p class="p2">电话： 0717-6590399 </p>
-                <p class="p2">总部地址： 宜昌市伍家岗区香山福久源10栋1005号 </p>
-                <p class="p2">备案号： </p>
-                <p class="p2">版权所有：宜昌市简美装饰有限公司</p>
-            </div>
-
-            <div class="footer-form">
-                <div class="footer-form-head">
-                    <p>获取免费设计服务</p>
+            <form>
+                <div class="footer-form-main">
+                    <input type="text" name="name" placeholder="请输入您的称呼">
+                    <input type="text" name="phone" placeholder="请输入您的手机号码">
+                    <!--<input type="hidden" name="action" value="postnew"/>-->
+                    <input type="hidden" name="laiyuan" value="宜昌首页底部留言">
+                    <select style="display: none;" name="city">
+                        <option value="武汉">武汉</option>
+                    </select>
+                    <a href="javascript:;" id="footer-form">立即免费获取</a>
                 </div>
-                <form>
-                    <div class="footer-form-main">
-                        <input type="text" name="name" placeholder="请输入您的称呼">
-                        <input type="text" name="phone" placeholder="请输入您的手机号码">
-                        <!--<input type="hidden" name="action" value="postnew"/>-->
-                        <input type="hidden" name="laiyuan" value="宜昌首页底部留言">
-                        <select style="display: none;" name="city">
-                            <option value="武汉">武汉</option>
-                        </select>
-                        <a href="javascript:;" id="footer-form">立即免费获取</a>
-                    </div>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 </html>

@@ -58,6 +58,7 @@ class Case(models.Model):
 
     name = models.CharField('案例名称', max_length=20)
     house_type = models.ForeignKey(HouseType, verbose_name='户型', on_delete=models.CASCADE)
+    show_index = models.IntegerField('首页显示顺序', null=True)
 
     def __str__(self):
         return self.name
@@ -70,6 +71,7 @@ class CaseImage(models.Model):
 
     case = models.ForeignKey(Case, verbose_name='所属案例', on_delete=models.CASCADE)
     image = models.ImageField('案例图片', null=True, upload_to='case_image')
+    is_show_on_index = models.BooleanField('是否在首页展示（仅一张图片）', default=False)
 
 
 # 户型外键

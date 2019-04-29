@@ -4,7 +4,8 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return render(request, 'jianmei/index.html', None)
+    context = {'projects': HouseProject.objects.all()[0:3]}
+    return render(request, 'jianmei/index.html', context)
 
 
 def hot_house(request):
