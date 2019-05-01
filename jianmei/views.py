@@ -4,7 +4,12 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    context = {'projects': HouseProject.objects.all()[0:3]}
+    cases = Case.objects.all()[0:5]
+    context = {
+        'projects': HouseProject.objects.all()[0:3],
+        'cases': cases,
+        'caseimages': list(map(lambda c: c.caseimage_set.get(is_show_on_index=True), cases))
+    }
     return render(request, 'jianmei/index.html', context)
 
 
