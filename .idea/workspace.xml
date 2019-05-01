@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="82c41c77-d43a-4362-b5af-8607a4703468" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jianmei/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/jianmei/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/jianmei/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jianmei/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +106,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/jianmei/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
+            <state relative-caret-position="709">
               <caret line="1225" column="40" selection-start-line="1225" selection-start-column="40" selection-end-line="1225" selection-end-column="40" />
               <folding>
                 <element signature="e#81#93#0#DjangoTemplate" />
@@ -426,7 +423,7 @@
       <workItem from="1556103858100" duration="10515000" />
       <workItem from="1556174074187" duration="1267000" />
       <workItem from="1556541328602" duration="5213000" />
-      <workItem from="1556692146988" duration="7971000" />
+      <workItem from="1556692146988" duration="8597000" />
     </task>
     <task id="LOCAL-00001" summary="add house page and some images">
       <created>1555345398168</created>
@@ -505,11 +502,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556547191419</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="case images on index page">
+      <created>1556705957115</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556705957115</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31335000" />
+    <option name="totallyTimeSpent" value="31961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,7 +567,8 @@
     <MESSAGE value="push test" />
     <MESSAGE value="add case detail page" />
     <MESSAGE value="add tech and some pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tech and some pictures" />
+    <MESSAGE value="case images on index page" />
+    <option name="LAST_COMMIT_MESSAGE" value="case images on index page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -892,7 +897,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/jianmei/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
+        <state relative-caret-position="709">
           <caret line="1225" column="40" selection-start-line="1225" selection-start-column="40" selection-end-line="1225" selection-end-column="40" />
           <folding>
             <element signature="e#81#93#0#DjangoTemplate" />
