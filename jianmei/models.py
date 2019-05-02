@@ -14,6 +14,7 @@ class Designer(models.Model):
     case_count = models.IntegerField('案例作品数量')
     exp = models.IntegerField('从业年份')
     portrait = models.ImageField('照片', upload_to='designer')
+    desc = models.CharField('描述', max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.name

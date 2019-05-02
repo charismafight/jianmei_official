@@ -1056,8 +1056,8 @@ select::-ms-expand {
 
 .nav .navCenter .logo {
     float: left;
-    max-width: 425px;
-    height: 61px;
+    width: 150px;
+    height: 60px;
 }
 
 .nav .navCenter .logo a {
