@@ -2,8 +2,10 @@ from distutils.command import upload
 
 from django.db import models
 
-
 # Create your models here.
+from django.utils import timezone
+
+
 class Designer(models.Model):
     class Meta:
         verbose_name = '设计师'
@@ -83,3 +85,15 @@ class HouseTypeImage(models.Model):
 
     house_type = models.ForeignKey(HouseType, verbose_name='所属户型', on_delete=models.CASCADE)
     image = models.ImageField('户型图', null=True, upload_to='house_type_image')
+
+
+class Article(models.Model):
+    class Meta:
+        verbose_name = '装修攻略'
+        verbose_name_plural = '装修攻略'
+
+    title = models.CharField('标题', max_length=50)
+    publish_date = models.DateTimeField('发布时间', default=timezone.now)
+    content = models.TextField('正文', blank=True)
+    click_count = models.IntegerField('点击次数', editable=False)
+

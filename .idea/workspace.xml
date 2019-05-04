@@ -2,15 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82c41c77-d43a-4362-b5af-8607a4703468" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jianmei/static/jianmei/image/bg_home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/case_image/1_Oy34LGR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/case_image/5b359f33311ff.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/house_project/5b359f33311ff.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg-0.8.0.dist-info/DESCRIPTION.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg-0.8.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg-0.8.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg-0.8.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg-0.8.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg-0.8.0.dist-info/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg-0.8.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/alloyeditor/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/alloyeditor/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/ckeditor/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/ckeditor/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/froala/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/froala/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/redactor/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/redactor/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/tinymce/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/tinymce/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/tinymce_advanced/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/tinymce_advanced/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/yui/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/yui/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/yui_advanced/editor_instance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/django_wysiwyg/yui_advanced/includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templates/my-app-name/admin/change_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/templatetags/wysiwyg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_wysiwyg/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jianmei/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/jianmei/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jianmei/static/jianmei/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/jianmei/static/jianmei/css/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/jianmei/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jianmei/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/jianmei/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jianmei/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jianmei/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+            <state relative-caret-position="22">
+              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <marker date="1555937045518" expanded="true" signature="308:444" ph="..." />
@@ -68,22 +90,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/jianmei/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="140" column="79" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="79" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/views/templates/default_urlconf.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
+            <state relative-caret-position="1600">
               <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
             </state>
           </provider>
@@ -92,38 +101,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="26475">
               <caret line="1059" column="14" selection-start-line="1059" selection-start-column="14" selection-end-line="1059" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/jianmei/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="979" lean-forward="true" selection-start-line="979" selection-end-line="979" />
+            <state relative-caret-position="263">
+              <caret line="978" column="18" selection-start-line="978" selection-start-column="18" selection-end-line="978" selection-end-column="18" />
               <folding>
                 <element signature="e#81#93#0#DjangoTemplate" />
-                <element signature="e#281#389#0#HTML" expanded="true" />
-                <element signature="e#20567#20577#0#DjangoTemplate" />
-                <element signature="e#26051#26080#0#DjangoTemplate" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jianmei/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+                <marker date="1556980541482" expanded="true" signature="160:612" ph="..." />
+                <marker date="1556980541482" expanded="true" signature="1323:1717" ph="..." />
+                <marker date="1556980541482" expanded="true" signature="2468:2473" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jianmei/models.py">
+        <entry file="file://$PROJECT_DIR$/jianmei_official/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-                <marker date="1556787816670" expanded="true" signature="125:577" ph="..." />
-                <marker date="1556787816670" expanded="true" signature="1288:1682" ph="..." />
-                <marker date="1556787816670" expanded="true" signature="2433:2438" ph="..." />
-              </folding>
+            <state relative-caret-position="422">
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -131,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/css.css-0720.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
+            <state relative-caret-position="5975">
               <caret line="239" column="1" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
             </state>
           </provider>
@@ -209,7 +224,6 @@
         <option value="$PROJECT_DIR$/jianmei/static/jianmei/js/hot_house.js" />
         <option value="$PROJECT_DIR$/jianmei/static/jianmei/css/news.css" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f364f48d-0197-4a5d-9a29-e6c3fa58f151/console.sql" />
-        <option value="$PROJECT_DIR$/jianmei_official/settings.py" />
         <option value="$PROJECT_DIR$/templates/jianmei/house_detail.html" />
         <option value="$PROJECT_DIR$/templates/jianmei/hot_house.html" />
         <option value="$PROJECT_DIR$/jianmei/admin.py" />
@@ -227,12 +241,13 @@
         <option value="$PROJECT_DIR$/jianmei/views.py" />
         <option value="$PROJECT_DIR$/jianmei/static/jianmei/css/global.css" />
         <option value="$PROJECT_DIR$/templates/jianmei/base.html" />
-        <option value="$PROJECT_DIR$/jianmei/models.py" />
         <option value="$PROJECT_DIR$/templates/jianmei/index.html" />
+        <option value="$PROJECT_DIR$/jianmei_official/settings.py" />
+        <option value="$PROJECT_DIR$/jianmei/models.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -268,7 +283,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,14 +317,6 @@
             <path>
               <item name="jianmei_official" type="b2602c69:ProjectViewProjectNode" />
               <item name="jianmei_official" type="462c0819:PsiDirectoryNode" />
-              <item name="jianmei" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="jianmei" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jianmei_official" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jianmei_official" type="462c0819:PsiDirectoryNode" />
               <item name="jianmei_official" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -328,6 +334,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,9 +343,9 @@
     <property name="SearchEverywhereHistoryKey" value="index-form-screen-sz&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jianmei/static/jianmei/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/jianmei/admin" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -352,11 +359,12 @@
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\jianmei_official\templates\jianmei\admin" />
+      <recent name="F:\jianmei_official\jianmei\static\jianmei\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\jianmei_official\jianmei\static\jianmei\css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\jianmei_official\jianmei\static\jianmei\image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -414,7 +422,8 @@
       <workItem from="1556174074187" duration="1267000" />
       <workItem from="1556541328602" duration="5213000" />
       <workItem from="1556692146988" duration="8627000" />
-      <workItem from="1556768395370" duration="6264000" />
+      <workItem from="1556768395370" duration="6332000" />
+      <workItem from="1556978646548" duration="2169000" />
     </task>
     <task id="LOCAL-00001" summary="add house page and some images">
       <created>1555345398168</created>
@@ -507,11 +516,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556709361892</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="case images on index page">
+      <created>1556804667856</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556804667856</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38255000" />
+    <option name="totallyTimeSpent" value="40492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -525,7 +541,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.22454448" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.22775991" />
       <window_info id="Structure" order="1" sideWeight="0.5011136" side_tool="true" weight="0.26502147" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -768,13 +784,6 @@
     <entry file="file://$PROJECT_DIR$/jianmei_official/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei_official/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="108" column="15" lean-forward="true" selection-start-line="108" selection-start-column="15" selection-end-line="108" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jianmei/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -831,15 +840,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei/admin.py">
+    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/logo.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/banner.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/bg_screen.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/bg_home.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jianmei/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        <state relative-caret-position="3500">
+          <caret line="140" column="79" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="79" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1555937045518" expanded="true" signature="308:444" ph="..." />
-            <marker date="1555937045518" expanded="true" signature="404:444" ph="..." />
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/views/templates/default_urlconf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1600">
+          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26475">
+          <caret line="1059" column="14" selection-start-line="1059" selection-start-column="14" selection-end-line="1059" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/css.css-0720.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5975">
+          <caret line="239" column="1" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -853,72 +894,47 @@
     <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/views/templates/default_urlconf.html">
+    <entry file="file://$PROJECT_DIR$/templates/jianmei/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+        <state relative-caret-position="263">
+          <caret line="978" column="18" selection-start-line="978" selection-start-column="18" selection-end-line="978" selection-end-column="18" />
+          <folding>
+            <element signature="e#81#93#0#DjangoTemplate" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/global.css">
+    <entry file="file://$PROJECT_DIR$/jianmei/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="1059" column="14" selection-start-line="1059" selection-start-column="14" selection-end-line="1059" selection-end-column="14" />
+        <state relative-caret-position="22">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1555937045518" expanded="true" signature="308:444" ph="..." />
+            <marker date="1555937045518" expanded="true" signature="404:444" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/css.css-0720.css">
+    <entry file="file://$PROJECT_DIR$/templates/jianmei/admin/change_form.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianmei_official/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="239" column="1" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
+        <state relative-caret-position="422">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/logo.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/banner.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/bg_screen.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/jianmei/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state relative-caret-position="147">
+          <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <marker date="1556787816670" expanded="true" signature="125:577" ph="..." />
-            <marker date="1556787816670" expanded="true" signature="1288:1682" ph="..." />
-            <marker date="1556787816670" expanded="true" signature="2433:2438" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/image/bg_home.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jianmei/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="140" column="79" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="79" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jianmei/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="979" lean-forward="true" selection-start-line="979" selection-end-line="979" />
-          <folding>
-            <element signature="e#81#93#0#DjangoTemplate" />
-            <element signature="e#281#389#0#HTML" expanded="true" />
-            <element signature="e#20567#20577#0#DjangoTemplate" />
-            <element signature="e#26051#26080#0#DjangoTemplate" />
+            <marker date="1556980541482" expanded="true" signature="160:612" ph="..." />
+            <marker date="1556980541482" expanded="true" signature="1323:1717" ph="..." />
+            <marker date="1556980541482" expanded="true" signature="2468:2473" ph="..." />
           </folding>
         </state>
       </provider>
