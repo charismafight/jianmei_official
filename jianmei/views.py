@@ -45,3 +45,7 @@ def house_type_detail(request, htid):
 
 def technology(request):
     return render(request, 'jianmei/technology.html', None)
+
+
+def designer(request, id):
+    return render(request, 'jianmei/designer.html', {'designer': Designer.objects.get(id=id)})

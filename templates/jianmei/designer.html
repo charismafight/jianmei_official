@@ -1,0 +1,107 @@
+{% extends 'jianmei/base.html' %}
+{% load static %}
+{% block body_block %}
+    <link rel="stylesheet" href="{% static 'jianmei/css/design.css' %}">
+    <div class="bg-gray elite-detaile clearfix">
+        <!--面包屑/s-->
+        <div class="container">
+            <div class="here"><span>当前位置：</span> <a href="/">首页</a>
+                &gt;
+                <a href="/lists/2.html">精英团队</a> &gt;
+                {{ designer.name }} 设计师的案例
+            </div>
+        </div>
+
+        <!--设计师个人-->
+        <div class="elite-detaile-banner"
+             style=" background:url({% get_static_prefix %}jianmei/image/img7.jpg) no-repeat center center;">
+            <div class="text-center">
+                <span><img class="headPic" src="{% get_media_prefix %}{{ designer.portrait }}"></span>
+                <p class="name"> {{ designer.name }} </p>
+                <p class="guanzhu">{{ designer.title }}</p>
+                <p class="jingyan">从业经验：{{ designer.exp }}年 | 案例作品：{{ designer.case_count }}套 | {{ designer.desc }} </p>
+            </div>
+        </div>
+        <!--设计师个人信息-->
+        <div class="container content">
+            <div class="AreaL">
+                <div class="bg-white elite-detaile-content">
+                    <h2 class="win-title">
+                        <span class="tit">赵炜的案例作品</span>
+                    </h2>
+                    <div class="row case">
+                        <div class="col-xs-4">
+                            <div class="item">
+                                <a href="/Article/detail/id/3652.html" class="pic" target="_blank"><img
+                                        data-original="/Websites/shenghuojia/Uploads/Picture/2018-08-14/5b729e6754ff6.jpg"
+                                        src="/Websites/shenghuojia/Uploads/Picture/2018-08-14/5b729e6754ff6.jpg"
+                                        width="280" style="display: inline;"></a>
+                                <div class="info">
+                                    <p class="p1"><a href="bencandy-htm-fid-2-id-37.html" target="_blank"></a></p>
+                                    <p class="p2">
+                                        <span>四居</span>&nbsp;|&nbsp;<span>简约</span>&nbsp;|&nbsp;<span>127平</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="item">
+                                <a href="/Article/detail/id/3650.html" class="pic" target="_blank"><img
+                                        data-original="/Websites/shenghuojia/Uploads/Picture/2018-08-14/5b72a0255dc04.jpg"
+                                        src="/Websites/shenghuojia/Uploads/Picture/2018-08-14/5b72a0255dc04.jpg"
+                                        width="280" style="display: inline;"></a>
+                                <div class="info">
+                                    <p class="p1"><a href="bencandy-htm-fid-2-id-37.html" target="_blank"></a></p>
+                                    <p class="p2">
+                                        <span>四居</span>&nbsp;|&nbsp;<span>简约</span>&nbsp;|&nbsp;<span>127平</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="item">
+                                <a href="/Article/detail/id/2648.html" class="pic" target="_blank"><img
+                                        data-original="/Websites/shenghuojia/Uploads/Picture/2018-05-15/5afa409105b15.jpg"
+                                        src="/Websites/shenghuojia/Uploads/Picture/2018-05-15/5afa409105b15.jpg"
+                                        width="280" style="display: inline;"></a>
+                                <div class="info">
+                                    <p class="p1"><a href="bencandy-htm-fid-2-id-37.html" target="_blank"></a></p>
+                                    <p class="p2">
+                                        <span>四居</span>&nbsp;|&nbsp;<span>欧式</span>&nbsp;|&nbsp;<span>130平</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white elite-list elite-detaile-content mt20">
+                    <h2 class="win-title">
+                        <span class="tit">相关设计师推荐</span>
+                        <a href="/lists/2.html" target="_blank ">更多&gt;&gt;</a>
+                    </h2>
+                    <div class="list bg-white">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="AreaR">
+                <div class="submit-info bg-white">
+                    <img src="{% get_media_prefix %}{{ designer.portrait }}" width="250">
+                    <div class="intro">
+                        <p><strong>{{ designer.name }}-{{ designer.title }}</strong></p>
+                        <p><strong>从业经验：{{ designer.exp }}年</strong></p>
+                        <p><strong>案例作品：{{ designer.case_count }}套</strong></p>
+                        <p>{{ designer.desc }}</p>
+                        <p>所在店面：北京海天装饰宜昌分公司</p>
+                    </div>
+                    <div class="content">
+                        <p>设计级别：首席设计师</p>
+                        <p>所属分店：北京海天装饰宜昌分公司</p>
+                        <p>从业时间：15年</p>
+                        <p>毕业院校：武汉大学</p>
+                        <p>设计理念：设计不仅仅是形式上的展现，而是文化与内涵的体现。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

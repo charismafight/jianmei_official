@@ -16,7 +16,7 @@ class Designer(models.Model):
     case_count = models.IntegerField('案例作品数量')
     exp = models.IntegerField('从业年份')
     portrait = models.ImageField('照片', upload_to='designer')
-    desc = models.CharField('描述', max_length=500, blank=True, null=True)
+    desc = models.CharField('描述', max_length=500, blank=True)
 
     def __str__(self):
         return self.name
@@ -34,7 +34,7 @@ class HouseProject(models.Model):
     contract_count = models.IntegerField('签约户数', default=0)
     started_count = models.IntegerField('开工户数', default=0)
     finished_count = models.IntegerField('竣工户数', default=0)
-    designers = models.ManyToManyField(Designer, verbose_name='所属设计师', null=True, blank=True)
+    designers = models.ManyToManyField(Designer, verbose_name='所属设计师', blank=True)
 
     def __str__(self):
         return self.name
@@ -95,5 +95,7 @@ class Article(models.Model):
     title = models.CharField('标题', max_length=50)
     publish_date = models.DateTimeField('发布时间', default=timezone.now)
     content = models.TextField('正文', blank=True)
-    click_count = models.IntegerField('点击次数', editable=False)
+    click_count = models.IntegerField('点击次数', editable=False, default=0)
 
+    def __str__(self):
+        return self.title
