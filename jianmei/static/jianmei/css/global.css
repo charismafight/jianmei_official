@@ -1586,10 +1586,10 @@ select::-ms-expand {
 }
 
 .indexBanner {
-    min-width: 1210px !important;
+    min-width: 1920px !important;
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 700px;
 }
 
 .indexBanner ul {
