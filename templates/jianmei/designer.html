@@ -27,7 +27,7 @@
             <div class="AreaL">
                 <div class="bg-white elite-detaile-content">
                     <h2 class="win-title">
-                        <span class="tit">赵炜的案例作品</span>
+                        <span class="tit">{{ designer.name }}的案例作品</span>
                     </h2>
                     <div class="row case">
                         <div class="col-xs-4">
@@ -90,15 +90,7 @@
                         <p><strong>{{ designer.name }}-{{ designer.title }}</strong></p>
                         <p><strong>从业经验：{{ designer.exp }}年</strong></p>
                         <p><strong>案例作品：{{ designer.case_count }}套</strong></p>
-                        <p>{{ designer.desc }}</p>
-                        <p>所在店面：北京海天装饰宜昌分公司</p>
-                    </div>
-                    <div class="content">
-                        <p>设计级别：首席设计师</p>
-                        <p>所属分店：北京海天装饰宜昌分公司</p>
-                        <p>从业时间：15年</p>
-                        <p>毕业院校：武汉大学</p>
-                        <p>设计理念：设计不仅仅是形式上的展现，而是文化与内涵的体现。</p>
+                        <p><strong>个人介绍：{{ designer.desc }}</strong></p>
                     </div>
                 </div>
             </div>

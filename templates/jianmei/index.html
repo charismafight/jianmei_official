@@ -283,51 +283,11 @@
         <!--装修套餐-->
         <div class="decoration clearfix">
             <div class="wrap">
-                <!--left-->
-                <div class="decoration-slide1">
-                    <div class="decoration-banner1" style="width: 1544px; left: -772px;">
-                        <a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">
-                            <div class="decoration-left">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner666.jpg"
-                                     alt="装修攻略">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
-                                     class="img-gif">
-                            </div>
-                        </a>
-                        <a href="/lists/21.html" target="_blank">
-                            <div class="decoration-left slide_left">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner161.jpg"
-                                     alt="装修攻略">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
-                                     class="img-gif2">
-                            </div>
-                        </a>
-
-                        <a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank">
-                            <div class="decoration-left">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner666.jpg"
-                                     alt="装修攻略">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
-                                     class="img-gif">
-                            </div>
-                        </a>
-                        <a href="/lists/21.html" target="_blank">
-                            <div class="decoration-left slide_left">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/index_left_banner161.jpg"
-                                     alt="装修攻略">
-                                <img src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/0423/btn-detail.gif"
-                                     class="img-gif2">
-                            </div>
-                        </a>
-                    </div>
-                    <!--<div class="decoration-button-left"><span class="decoration-button1 slide_left"> </span></div>-->
-                </div>
-                <!--right-->
                 <div class="decoration-slide2">
                     <!--<div class="vider_tp_pf"></div>-->
                     <a href="/lists/21.html" target="_blank">
                         <img class="decoration-slide2-video"
-                             src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/video_bg.jpg"></a>
+                             src="{% get_static_prefix %}jianmei/image/video_bg.jpg"></a>
                 </div>
             </div>
         </div>
@@ -800,66 +760,23 @@
             <div class="index-auto-box">
                 <div class="index-normal-hd">
                     <dl class="normal-hd-tit">
-                        <dt>人气设计师</dt
+                        <dt>人气设计师</dt>
                     </dl>
                 </div>
                 <div class="index-normal-bd">
                     <div class="team-list">
-                        <div class="team-item">
-                            <a href="/Designer/Detail/248" class="img-box">
-                                <img src="http://picfw.yzf.com.cn/100058/2018/2/8/1927543781219.jpg_300x400.jpg"
-                                     alt="家装设计师 胡东宇">
-                            </a>
-                            <dl>
-                                <dt>胡东宇</dt>
-                                <dd>整体决定方向 细节...</dd>
-                            </dl>
-                            <a href="/Designer/Detail/248" class="btn btn-line">预约设计&gt;</a>
-                        </div>
-                        <div class="team-item">
-                            <a href="/Designer/Detail/2910" class="img-box">
-                                <img src="http://picfw.yzf.com.cn/100058/2018/2/27/1943651135881.jpg_300x400.jpg"
-                                     alt="家装设计师 杨莉">
-                            </a>
-                            <dl>
-                                <dt>杨莉</dt>
-                                <dd>利用屋内的有限空间...</dd>
-                            </dl>
-                            <a href="/Designer/Detail/2910" class="btn btn-line">预约设计&gt;</a>
-                        </div>
-                        <div class="team-item">
-                            <a href="/Designer/Detail/1086" class="img-box">
-                                <img src="http://picfw.yzf.com.cn/100058/2018/2/7/1926381983761.jpg_300x400.jpg"
-                                     alt="家装设计师 刘海明">
-                            </a>
-                            <dl>
-                                <dt>刘海明</dt>
-                                <dd>以人为本，因人制宜</dd>
-                            </dl>
-                            <a href="/Designer/Detail/1086" class="btn btn-line">预约设计&gt;</a>
-                        </div>
-                        <div class="team-item">
-                            <a href="/Designer/Detail/1029" class="img-box">
-                                <img src="http://picfw.yzf.com.cn/100058/2018/2/6/1925590023188.jpg_300x400.jpg"
-                                     alt="家装设计师 陈俊">
-                            </a>
-                            <dl>
-                                <dt>陈俊</dt>
-                                <dd>力求简洁纯粹，臻于...</dd>
-                            </dl>
-                            <a href="/Designer/Detail/1029" class="btn btn-line">预约设计&gt;</a>
-                        </div>
-                        <div class="team-item">
-                            <a href="/Designer/Detail/476" class="img-box">
-                                <img src="http://picfw.yzf.com.cn/100058/2018/2/6/1925642224545.jpg_300x400.jpg"
-                                     alt="家装设计师 唐从寿">
-                            </a>
-                            <dl>
-                                <dt>唐从寿</dt>
-                                <dd>自然和谐,注重细节...</dd>
-                            </dl>
-                            <a href="/Designer/Detail/476" class="btn btn-line">预约设计&gt;</a>
-                        </div>
+                        {% for d in designers %}
+                            <div class="team-item">
+                                <a href="/designer/{{ d.id }}" class="img-box">
+                                    <img src="{% get_media_prefix %}{{ d.portrait }}" alt="家装设计师 {{ d.name }}">
+                                </a>
+                                <dl>
+                                    <dt>{{ d.name }}</dt>
+                                    <dd>{{ d.desc }}</dd>
+                                </dl>
+                                <a href="/Designer/Detail/248" class="btn btn-line">预约设计&gt;</a>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -1254,7 +1171,6 @@
             </div>
         </div>
 
-
         <div class="pinpaishili_content clearFix ppsl_floors" id="ppsl_box">
             <div class="wraper">
                 <div class="main_box" style="overflow: inherit;">
@@ -1271,6 +1187,16 @@
 
                             </li>
                             <li>
+                                <a href="/lists/2.html" target="_blank" style="display: block;">
+                                    <div class="con_img"
+                                         style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/ssj7.jpg);">
+                                        <div class="con_content">
+                                            <p class="font-titles">设计师</p>
+                                            <p class="font-titles font-blod">私人定制</p></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
 
                                 <div class="con_img"
                                      style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/aztd.jpg);">
@@ -1282,9 +1208,76 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="ppsl_box_middle">
+                        <ul class="clearfloat">
+                            <li>
+
+                                <div class="con_img"
+                                     style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/ppdjs.jpg);">
+                                    <div class="con_content">
+                                        <p class="font-titles">品牌大记事</p>
+                                        <p class="font-titles font-blod">做有温度的事</p></div>
+                                </div>
+
+                                <!----></li>
+                            <li>
+                                <!---->
+                                <div class="con_img"
+                                     style="text-align: center; background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/jczs7.jpg);">
+                                    <p class="shj_titles">简美装饰</p>
+                                    <p style="margin-top: 22px;">
+                                        <a target="_blank"
+                                           href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
+                                           class="home_go_btn">了解简美</a></p>
+                                </div>
+                            </li>
+                            <li>
+
+                                <div class="con_img"
+                                     style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/sggy.jpg);">
+                                    <div class="con_content">
+                                        <p class="font-titles">施工工艺</p>
+                                        <p class="font-titles font-blod">全能精装、省心到家</p></div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ppsl_box_con" style="margin-top: 15px;">
+                        <!--<ul class="clearfloat">
+                            <li>
+
+                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hbxs.jpg);">
+                                  <div class="con_content">
+                                    <p class="font-titles">环保系数</p>
+                                    <p class="font-titles font-blod">比肩国际标准</p></div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/qgls.jpg);">
+                                  <div class="con_content">  <p class="font-titles">实体门店</p>
+                                    <p class="font-titles font-blod">集团站点遍布全国</p></div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hjrz.jpg);">
+                                  <div class="con_content">
+                                    <p class="font-titles">获得奖项</p>
+                                    <p class="font-titles font-blod">权威认证</p></div>
+                                </div>
+
+                            </li>
+                          </ul>-->
+
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="clear"></div>
     {#    服务流程#}

@@ -17,6 +17,7 @@ class Designer(models.Model):
     exp = models.IntegerField('从业年份')
     portrait = models.ImageField('照片', upload_to='designer')
     desc = models.CharField('描述', max_length=500, blank=True)
+    show_on_index = models.BooleanField('是否在首页展示', default=False)
 
     def __str__(self):
         return self.name
@@ -96,6 +97,7 @@ class Article(models.Model):
     publish_date = models.DateTimeField('发布时间', default=timezone.now)
     content = models.TextField('正文', blank=True)
     click_count = models.IntegerField('点击次数', editable=False, default=0)
+    image = models.ImageField('正文图片', null=True)
 
     def __str__(self):
         return self.title
