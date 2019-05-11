@@ -98,6 +98,7 @@ class Article(models.Model):
     content = models.TextField('正文', blank=True)
     click_count = models.IntegerField('点击次数', editable=False, default=0)
     image = models.ImageField('正文图片', null=True)
+    type = models.CharField('类别', default='装修百科', max_length=50)
 
     def __str__(self):
         return self.title

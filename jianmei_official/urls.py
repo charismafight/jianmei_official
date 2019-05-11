@@ -27,7 +27,7 @@ urlpatterns = [
                   path(r'house/<int:pid>', views.project_detail),
                   path(r'case/<int:cid>', views.case_detail),
                   path(r'house-type/<int:htid>', views.house_type_detail),
-                  path(r'^favicon.ico$', RedirectView.as_view(url=r'static/favicon.ico')),
+                  path(r'favicon.ico', RedirectView.as_view(url=r'static/favicon.ico')),
                   path(r'technology', views.technology),
                   path(r'designer/<int:id>', views.designer),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
