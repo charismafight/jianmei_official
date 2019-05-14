@@ -793,132 +793,75 @@
             </div>
             <div class="left">
                 <ul class="left_nav">
-                    <li class="active"><img
-                            src="{% get_static_prefix %}jianmei/image/course_knowledge_on.png"
-                            alt="装修百科"><a href="/page/6.html" target="_blank">
-                        <p>装修百科</p>
-                    </a></li>
-                    <li><img
-                            src="{% get_static_prefix %}jianmei/image/course_jour.png"><a
-                            target="_blank" href="/page/6.html">
-                        <p>装修学堂</p>
-                    </a></li>
+                    <li class="active">
+                        <img src="{% get_static_prefix %}jianmei/image/course_knowledge_on.png" alt="装修百科">
+                        <a href="#" target="_blank">
+                            <p>装修百科</p>
+                        </a>
+                    </li>
+                    <li>
+                        <img src="{% get_static_prefix %}jianmei/image/course_jour.png">
+                        <a target="_blank" href="#">
+                            <p>装修学堂</p>
+                        </a>
+                    </li>
                 </ul>
+                {#                百科、学堂切换，分别加载#}
                 <div class="right_nav">
                     <dl>
-                        <dd>
-                            <a href="/Article/detail/id/5190.html" target="_blank">
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-22/5b03c9f91f2f5.jpg"
-                                     alt="阳台装修设计技巧以及注意事项">
-                                <p>阳台装修设计技巧以及..</p>
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="/Article/detail/id/5191.html" target="_blank">
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-05-21/5b022e900fc40.jpg"
-                                     alt="实用简单装修方案让家简约不简单">
-                                <p>实用简单装修方案让家..</p>
-                            </a>
-                        </dd>
+                        {% for e in encyclopediaTop %}
+                            <dd>
+                                <a href="/Article/detail/id/5190.html" target="_blank">
+                                    <img src="{% get_media_prefix %}{{ e.image }}"
+                                         alt="{{ e.title }}">
+                                    <p>{{ e.title }}</p>
+                                </a>
+                            </dd>
+                        {% endfor %}
                     </dl>
                     <div class="box">
                         <h4>装修百科</h4>
                         <ul>
-                            <li>
-                                <a target="_blank" href="/Article/detail/id/5190.html">
-                                    <span>阳台装修设计技巧以及注意事项                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="阳台装修设计技巧以及注意事项">
+                            {% for eb in encyclopediaBottom %}
+                                <li>
+                                    <a target="_blank" href="/Article/detail/id/5190.html">
+                                    <span>{{ eb.title }}
+                                        <img src="{% get_static_prefix %}jianmei/image/span_HOT.gif"
+                                             class="span-hot" alt="{{ eb.title }}">
                                     </span>
-                                    <span>2018-11-12</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="/Article/detail/id/5191.html">
-                                    <span>实用简单装修方案让家简约不简单                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="实用简单装修方案让家简约不简单">
-                                    </span>
-                                    <span>2018-11-12</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="/Article/detail/id/5188.html">
-                                    <span>家居客厅装修的三大原则                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="家居客厅装修的三大原则">
-                                    </span>
-                                    <span>2018-11-11</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="/Article/detail/id/5187.html">
-                                    <span>厨房装修有哪些需要注意 小细节分享                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="厨房装修有哪些需要注意 小细节分享">
-                                    </span>
-                                    <span>2018-11-07</span>
-                                </a>
-                            </li>
+                                        <span>{{ eb.publish_date|date:"Y-m-d" }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
                 <div class="right_nav" style="display:none;">
                     <dl>
-                        <dd>
-                            <a href="/Article/detail/id/5490.html" target="_blank">
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-12-06/5c088c2038fc6.jpg"
-                                     alt="吊顶怎么装修好看">
-                                <p>吊顶怎么装修好看</p>
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="/Article/detail/id/5489.html" target="_blank">
-                                <img src="/Websites/shenghuojia/Uploads/Picture/2018-12-06/5c088ba6289d6.jpg"
-                                     alt="地板拱起的原因有哪些">
-                                <p>地板拱起的原因有哪些</p>
-                            </a>
-                        </dd>
+                        {% for st in schoolTop %}
+                            <dd>
+                                <a href="/Article/detail/id/5190.html" target="_blank">
+                                    <img src="{% get_media_prefix %}{{ st.image }}"
+                                         alt="{{ st.title }}">
+                                    <p>{{ st.title }}</p>
+                                </a>
+                            </dd>
+                        {% endfor %}
                     </dl>
                     <div class="box">
                         <h4>装修学堂</h4>
                         <ul>
-                            <li>
-                                <a href="/Article/detail/id/5490.html" target="_blank">
-                                    <span>吊顶怎么装修好看                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="吊顶怎么装修好看">
+                            {% for sb in schoolBottom %}
+                                <li>
+                                    <a target="_blank" href="/Article/detail/id/5190.html">
+                                    <span>{{ sb.title }}
+                                        <img src="{% get_static_prefix %}jianmei/image/span_HOT.gif"
+                                             class="span-hot" alt="{{ sb.title }}">
                                     </span>
-                                    <span>2018-12-06</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Article/detail/id/5489.html" target="_blank">
-                                    <span>地板拱起的原因有哪些                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="地板拱起的原因有哪些">
-                                    </span>
-                                    <span>2018-12-06</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Article/detail/id/5193.html" target="_blank">
-                                    <span>几种常见的怎么处理墙面瓷砖空鼓的方法                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="几种常见的怎么处理墙面瓷砖空鼓的方法">
-                                    </span>
-                                    <span>2018-11-12</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Article/detail/id/5192.html" target="_blank">
-                                    <span>如何选购优质瓷砖                                        <img
-                                            src="/Websites/shenghuojia/Templates/pc/Static/style/201608/pc/images/ico/span_HOT.gif"
-                                            class="span-hot" alt="如何选购优质瓷砖">
-                                    </span>
-                                    <span>2018-11-12</span>
-                                </a>
-                            </li>
+                                        <span>{{ sb.publish_date|date:"Y-m-d" }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
