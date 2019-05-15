@@ -30,4 +30,5 @@ urlpatterns = [
                   path(r'favicon.ico', RedirectView.as_view(url=r'static/favicon.ico')),
                   path(r'technology', views.technology),
                   path(r'designer/<int:id>', views.designer),
+                  path(r'article/<int:id>', views.article),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -55,3 +55,8 @@ def technology(request):
 
 def designer(request, id):
     return render(request, 'jianmei/designer.html', {'designer': Designer.objects.get(id=id)})
+
+
+def article(request, id):
+    latest = Article.objects.order_by('-publish_date')[:2]
+    return render(request, 'jianmei/article.html', {'article': Article.objects.get(id=id), 'latest': latest})

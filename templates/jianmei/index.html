@@ -811,7 +811,7 @@
                     <dl>
                         {% for e in encyclopediaTop %}
                             <dd>
-                                <a href="/Article/detail/id/5190.html" target="_blank">
+                                <a href="/article/{{ e.id }}" target="_blank">
                                     <img src="{% get_media_prefix %}{{ e.image }}"
                                          alt="{{ e.title }}">
                                     <p>{{ e.title }}</p>
@@ -824,7 +824,7 @@
                         <ul>
                             {% for eb in encyclopediaBottom %}
                                 <li>
-                                    <a target="_blank" href="/Article/detail/id/5190.html">
+                                    <a target="_blank" href="/article/{{ eb.id }}">
                                     <span>{{ eb.title }}
                                         <img src="{% get_static_prefix %}jianmei/image/span_HOT.gif"
                                              class="span-hot" alt="{{ eb.title }}">
@@ -840,7 +840,7 @@
                     <dl>
                         {% for st in schoolTop %}
                             <dd>
-                                <a href="/Article/detail/id/5190.html" target="_blank">
+                                <a href="/article/{{ st.id }}" target="_blank">
                                     <img src="{% get_media_prefix %}{{ st.image }}"
                                          alt="{{ st.title }}">
                                     <p>{{ st.title }}</p>
@@ -853,7 +853,7 @@
                         <ul>
                             {% for sb in schoolBottom %}
                                 <li>
-                                    <a target="_blank" href="/Article/detail/id/5190.html">
+                                    <a target="_blank" href="/article/{{ sb.id }}">
                                     <span>{{ sb.title }}
                                         <img src="{% get_static_prefix %}jianmei/image/span_HOT.gif"
                                              class="span-hot" alt="{{ sb.title }}">
