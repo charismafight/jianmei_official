@@ -5,6 +5,13 @@ from .models import *
 # Create your views here.
 def index(request):
     if request.method == 'POST':
+        p = Appointment(
+            name=request.POST['name'],
+            mobile_phone=request.POST['phone'],
+            area=request.POST.get('area', 0),
+            district=request.POST.get('district', '')
+        )
+        Appointment.save(p)
         return render(request, 'jianmei/index.html', None)
     else:
         cases = Case.objects.all()[0:5]

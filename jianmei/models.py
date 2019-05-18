@@ -113,5 +113,11 @@ class Appointment(models.Model):
     mobile_phone = models.CharField('联系电话', max_length=12)
     area = models.IntegerField('面积', default=0)
     district = models.CharField('地区', max_length=20)
-    reply = models.BooleanField('是否回复', default=False)
+    replied = models.BooleanField('是否回复', default=False)
     succeed = models.BooleanField('是否成单', default=False)
+
+    def __str__(self):
+        reply_str = '否'
+        if self.replied:
+            reply_str = '是'
+        return '%s  联系电话：%s 是否回复：%s' % (self.name, self.mobile_phone, reply_str)

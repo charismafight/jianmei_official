@@ -41,6 +41,15 @@
             effect: "fadeIn"
         });
     });
+
+    $(function () {
+        $.ajaxSetup({headers: {"X-CSRFToken": getCookie("csrftoken")}});
+    });
+
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg)) return unescape(arr[2]); else return null;
+    }
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -255,6 +264,7 @@
                 <p>获取免费设计服务</p>
             </div>
             <form>
+                {% csrf_token %}
                 <div class="footer-form-main">
                     <input type="text" name="name" placeholder="请输入您的称呼">
                     <input type="text" name="phone" placeholder="请输入您的手机号码">

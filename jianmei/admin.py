@@ -26,3 +26,4 @@ class HouseTypeAdmin(admin.ModelAdmin):
 admin.site.register(HouseProject)
 admin.site.register(Designer)
 admin.site.register(Article)
+admin.site.register(Appointment)

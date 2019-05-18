@@ -1,6 +1,7 @@
 {% extends 'jianmei/base.html' %}
 {% load static %}
 {% block body_block %}
+    {% csrf_token %}
     <link rel="stylesheet" href="{% static 'jianmei/css/yzfmain.css' %}">
     {#    大logo及报价#}
     <div class="index-banvessel">
@@ -252,7 +253,7 @@
         {#            </div>#}
         {#        </div>#}
     </div>
-
+    <input type="reset" style="display:none;" class="reset">
     {#    磁贴部分#}
     <div class="column-vessel">
         <ul class="column in-con">
@@ -1186,37 +1187,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="ppsl_box_con" style="margin-top: 15px;">
-                        <!--<ul class="clearfloat">
-                            <li>
-
-                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hbxs.jpg);">
-                                  <div class="con_content">
-                                    <p class="font-titles">环保系数</p>
-                                    <p class="font-titles font-blod">比肩国际标准</p></div>
-                                </div>
-
-                            </li>
-                            <li>
-
-                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/qgls.jpg);">
-                                  <div class="con_content">  <p class="font-titles">实体门店</p>
-                                    <p class="font-titles font-blod">集团站点遍布全国</p></div>
-                                </div>
-
-                            </li>
-                            <li>
-
-                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hjrz.jpg);">
-                                  <div class="con_content">
-                                    <p class="font-titles">获得奖项</p>
-                                    <p class="font-titles font-blod">权威认证</p></div>
-                                </div>
-
-                            </li>
-                          </ul>-->
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -1344,8 +1314,6 @@
 //		     twol_right=parseInt($(".decoration-banner2").css("left"))-twow_right;
                     showCurrent(twol);
                 }
-
-
             });
 
             function showCurrent(twol) {
@@ -1372,7 +1340,8 @@
         $(function () {
             setTimeout(function () {
                 $(".tanchu").fadeIn();
-            }, 60000);
+                //弹窗时间
+            }, 1);
             $(".tanchu-close").click(function () {
                 $(".tanchu").fadeOut();
             })
@@ -1381,7 +1350,8 @@
 
     <div class="tanchu" style="display: none;">
         <div class="tanchu-close"></div>
-        <form onsubmit="return false;">
+        <form onsubmit="return false;" action="/" method="post">
+            {% csrf_token %}
             <div class="tanchu-flex hidden-get-price">
                 <div class="tanchu-left">
                     <div class="tanchu-left-head">
@@ -1407,8 +1377,10 @@
                 <div class="tanchu-fg">
                     <div class="tanchu-fgx"></div>
                     <div class="tanchu-fg-but">
-                        <div class="tanchu-fg-butrotate"></div>
-                        <a href="javascript:;" class="index_tanchu">点击预约</a></div>
+                        <div class="tanchu-fg-butrotate">
+                        </div>
+                        <a href="javascript:;" class="index_tanchu">点击预约</a>
+                    </div>
                 </div>
                 <div class="tanchu-right">
                     <a href="/Article/detail/id/3150.html" target="_blank">
@@ -1462,9 +1434,8 @@
                     return false;
                 }
                 if (validatemobile(form.find('input[name=phone]').val())) {
-                    $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                    $.post('/', function (msg) {
                         if (msg.status) {
-//                        $('.index_float_baojia_block').show();
                             alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
                             $(".reset").click();
                         }
@@ -1480,16 +1451,113 @@
                     return false;
                 }
                 if (validatemobile(form.find('input[name=phone]').val())) {
-                    $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
-                        if (msg.status) {
-//                        $('.index_float_yuyue_block').show();
-                            alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                            $(".reset").click();
-                        }
+                    $.post('/', form.serialize(), function (msg) {
+                        alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                        $(".reset").click();
+                    })
+                }
+            })
+
+            $('#footer-form').on('click', function () {
+                var form = $(this).closest('form');
+                var name = $.trim(form.find('input[name=name]').val());
+                if ('' == name) {
+                    alert('请填写您的称呼');
+                    return false;
+                }
+                if (validatemobile(form.find('input[name=phone]').val())) {
+                    $.post('/', form.serialize(), function (msg) {
+                        alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                        form.find('input[name=name]').val("");
+                        form.find('input[name=phone]').val("");
                     })
                 }
             })
         })
+    </script>
+
+    <script>
+        function init_price() {
+            var Tprice = {
+                "price": 51000,
+                "cailiao": 30090,
+                "rengong": 13260,
+                "sheji": 3570,
+                "zhijian": 4080,
+            };
+            $(".get_price em").html(Tprice.price);
+            $(".cl em").html(Tprice.cailiao);
+            $(".rg em").html(Tprice.rengong);
+            $(".sj em").html(Tprice.sheji);
+            $(".zj em").html(Tprice.zhijian);
+
+        }
+
+        function change_price() {
+            var num = Math.ceil(Math.random() * 20000);
+
+            if (parseInt($(".get_price em").html()) > 160000) {
+                init_price();
+            }
+            $(".get_price em").html(parseInt($(".get_price em").html()) + num);
+            $(".cl em").html(parseInt($(".cl em").html()) + parseInt(num / 3));
+            $(".rg em").html(parseInt($(".rg em").html()) + parseInt(num / 7));
+            $(".sj em").html(parseInt($(".sj em").html()) + parseInt(num / 200));
+            $(".zj em").html(parseInt($(".zj em").html()) + parseInt(num / 200));
+
+        }
+
+        $(function () {
+            init_price();
+            var t = setInterval(change_price, 200);
+            var regObj = new RegExp("[^0-9]", "g");
+            var MonTime = 12;
+
+            function Mon() {
+                var Money = ($(".tanchu-jgright-poinput").val() / MonTime) + ($(".tanchu-jgright-poinput").val() * 0.0799 * (MonTime / 12) / MonTime);
+                $(".tanchu-jgright-poshow span.jg.htm"
+                ).html(Money.toFixed(2));
+            }
+
+            $(".tanchu-jgright-poinput").change(function () {
+                Mon();
+            })
+
+            $(".tanchu-jgright-point-main p").click(function () {
+                var index = $(this).index() + 1;
+                MonTime = index * 12;
+                $(".tanchu-jgright-point-main").removeClass("bg1").removeClass("bg2").removeClass("bg3").addClass("bg" + index);
+                Mon();
+
+            })
+
+            $(".tanchu-jgright-poinput").keydown(function () {
+                $(this).val($(this).val().replace(regObj, ""));
+                Mon();
+            })
+
+            $(".tanchu-jgright-poinput").keyup(function () {
+                $(this).val($(this).val().replace(regObj, ""));
+                Mon();
+            })
+
+            $('.index_tanchu').on('click', function () {
+                var form = $(this).closest('form');
+                var name = $.trim(form.find('input[name=name]').val());
+                if ('' == name) {
+                    alert('请填写您的姓名');
+                    return false;
+                }
+                if (validatemobile(form.find('input[name=phone]').val())) {
+                    $.post('/',
+                        form.serialize(),
+                        function (msg) {
+                            alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                            $('.tanchu-close').click();
+                        })
+                }
+            })
+        });
     </script>
 
     <script>
