@@ -4,19 +4,23 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    cases = Case.objects.all()[0:5]
-    context = {
-        'projects': HouseProject.objects.all()[0:3],
-        'cases': cases,
-        'caseimages': list(map(lambda c: c.caseimage_set.get(is_show_on_index=True), cases)),
-        'designers': Designer.objects.filter(show_on_index=True)[0:4],
-        # 百科
-        'encyclopediaTop': Article.objects.filter(image__isnull=False).filter(type='装修百科')[0:1],
-        'encyclopediaBottom': Article.objects.filter(type='装修百科')[0:3],
-        'schoolTop': Article.objects.filter(image__isnull=False).filter(type='装修学堂')[0:1],
-        'schoolBottom': Article.objects.filter(type='装修学堂')[0:3],
-    }
-    return render(request, 'jianmei/index.html', context)
+    if request.method == 'POST':
+        return render(request, 'jianmei/index.html', None)
+    else:
+        cases = Case.objects.all()[0:5]
+        context = {
+            'projects': HouseProject.objects.all()[0:3],
+            'cases': cases,
+            'caseimages': list(map(lambda c: c.caseimage_set.get(is_show_on_index=True), cases)),
+            'designers': Designer.objects.filter(show_on_index=True)[0:4],
+            # 百科
+            'encyclopediaTop': Article.objects.filter(image__isnull=False).filter(type='装修百科')[0:1],
+            'encyclopediaBottom': Article.objects.filter(type='装修百科')[0:3],
+            'schoolTop': Article.objects.filter(image__isnull=False).filter(type='装修学堂')[0:1],
+            'schoolBottom': Article.objects.filter(type='装修学堂')[0:3],
+            'appointmentCount': Appointment.objects.count(),
+        }
+        return render(request, 'jianmei/index.html', context)
 
 
 def hot_house(request):

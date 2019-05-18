@@ -102,3 +102,16 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Appointment(models.Model):
+    class Meta:
+        verbose_name = '预约'
+        verbose_name_plural = '预约'
+
+    name = models.CharField('姓名', max_length=20)
+    mobile_phone = models.CharField('联系电话', max_length=12)
+    area = models.IntegerField('面积', default=0)
+    district = models.CharField('地区', max_length=20)
+    reply = models.BooleanField('是否回复', default=False)
+    succeed = models.BooleanField('是否成单', default=False)
