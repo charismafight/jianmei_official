@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82c41c77-d43a-4362-b5af-8607a4703468" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jianmei/static/jianmei/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/jianmei/static/jianmei/css/css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jianmei/static/jianmei/css/loupan_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/jianmei/static/jianmei/css/loupan_detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/jianmei/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jianmei/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="82c41c77-d43a-4362-b5af-8607a4703468" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,23 +90,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/jianmei/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+            <state relative-caret-position="625">
+              <caret line="25" column="72" lean-forward="true" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/css.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="765" selection-start-line="765" selection-end-line="765" />
             </state>
           </provider>
         </entry>
@@ -427,7 +413,7 @@
       <workItem from="1557926123782" duration="2677000" />
       <workItem from="1558109444547" duration="3791000" />
       <workItem from="1558189265362" duration="12331000" />
-      <workItem from="1558247778951" duration="6544000" />
+      <workItem from="1558247778951" duration="7255000" />
     </task>
     <task id="LOCAL-00001" summary="add house page and some images">
       <created>1555345398168</created>
@@ -597,11 +583,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558201591631</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="css">
+      <created>1558258386408</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1558258386408</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83149000" />
+    <option name="totallyTimeSpent" value="83860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -614,7 +607,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.18167202" />
       <window_info id="Structure" order="1" sideWeight="0.5011136" side_tool="true" weight="0.26502147" />
@@ -638,7 +630,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.329582" />
-      <window_info anchor="right" id="Database" order="4" weight="0.16720258" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.16720258" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +657,8 @@
     <MESSAGE value="add article detail" />
     <MESSAGE value="add appointment model" />
     <MESSAGE value="appointment" />
-    <option name="LAST_COMMIT_MESSAGE" value="appointment" />
+    <MESSAGE value="css" />
+    <option name="LAST_COMMIT_MESSAGE" value="css" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -983,16 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jianmei/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/jianmei/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
@@ -1006,8 +989,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jianmei/static/jianmei/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="765" selection-start-line="765" selection-end-line="765" />
+        <state relative-caret-position="152">
+          <caret line="753" column="21" lean-forward="true" selection-start-line="753" selection-start-column="21" selection-end-line="753" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jianmei/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="25" column="72" lean-forward="true" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
