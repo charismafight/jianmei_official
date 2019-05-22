@@ -4961,7 +4961,7 @@ nav .pagination li a:hover {
 
 .index-team {
     height: 687px;
-    background: url(../image/index-a-team.jpg) center no-repeat;
+    /*background: url(../image/index-a-team.jpg) center no-repeat;*/
     overflow: hidden;
 }
 
