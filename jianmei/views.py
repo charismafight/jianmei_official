@@ -14,7 +14,7 @@ def index(request):
         Appointment.save(p)
         return render(request, 'jianmei/index.html', None)
     else:
-        cases = Case.objects.all()[0:5]
+        cases = Case.objects.filter(caseimage__is_show_on_index=True)[0:5]
         context = {
             'projects': HouseProject.objects.all()[0:3],
             'cases': cases,
