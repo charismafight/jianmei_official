@@ -1,0 +1,198 @@
+{% extends 'jianmei/base.html' %}
+{% load static %}
+{% block body_block %}
+    <link rel="stylesheet" href="{% static 'jianmei/css/wangyuejin.css' %}">
+    <script type="text/javascript" src="{% static 'jianmei/js/jquery.zoom.min.js' %}"></script>
+    <body style="background: url('{% get_static_prefix %}jianmei/image/l1.jpg');">
+    <div class="wraper">
+        <div class="shj-product-detail-header">
+            <div class="shj-product-detail-left">
+                <div class="shj-product-image-gallery">
+                    <div class="shj-product-image-gallery-main is-ready" style="background:#dcdcdc;">
+                        <a href="{% get_static_prefix %}jianmei/image/5aaf39e7665d3.jpg">
+                            <img width="100%" height="100%"
+                                 src="{% get_static_prefix %}jianmei/image/5aaf39e7665d3.jpg">
+                        </a>
+                    </div>
+                    <div class="shj-product-image-gallery-thumbile">
+                        <img class="shj-product-image-gallery-thumbile-left-arrow"
+                             src="{% get_static_prefix %}jianmei/image/pro_left.png">
+                        <div class="shj-product-image-gallery-thumbile-box">
+                            <div class="shj-product-image-gallery-thumbile-list" style="width: 511px;">
+                                <div data-url="{% get_static_prefix %}jianmei/image/5cc661cc1ef2a.jpg"
+                                     style="background-image: url('{% get_static_prefix %}jianmei/image/5cc661cc1ef2a.jpg');"></div>
+                                <div data-url="{% get_static_prefix %}jianmei/image/5cc7eb2c87341.jpg"
+                                     style="background-image: url('{% get_static_prefix %}jianmei/image/5cc7eb2c87341.jpg');"></div>
+                                <div data-url="{% get_static_prefix %}jianmei/image/5cc7eb1dbf045.jpg"
+                                     style="background-image: url('{% get_static_prefix %}jianmei/image/5cc7eb1dbf045.jpg');"></div>
+                                <div data-url="{% get_static_prefix %}jianmei/image/5cc7eb0bc17dc.jpg"
+                                     style="background-image: url('{% get_static_prefix %}jianmei/image/5cc7eb0bc17dc.jpg');"></div>
+                                <div data-url="{% get_static_prefix %}jianmei/image/5cc7eaf5787f7.jpg"
+                                     style="background-image: url('{% get_static_prefix %}jianmei/image/5cc7eaf5787f7.jpg');"></div>
+                                <div data-url="{% get_static_prefix %}jianmei/image/5cc7eae456742.jpg"
+                                     style="background-image: url('{% get_static_prefix %}jianmei/image/5cc7eae456742.jpg');"></div>
+                                <div data-url="{% get_static_prefix %}jianmei/image/5cc7eacf70716.jpg"
+                                     style="background-image: url('{% get_static_prefix %}jianmei/image/5cc7eacf70716.jpg');"></div>
+                            </div>
+                        </div>
+                        <img class="shj-product-image-gallery-thumbile-right-arrow"
+                             src="{% get_static_prefix %}jianmei/image/pro_right.png">
+                    </div>
+                </div>
+            </div>
+            <div class="shj-product-detai-right" id="baoming">
+                <div class="shj-product-detail-title">全屋定制装修公司-网络特权优惠</div>
+                <form onsubmit="return false">
+                    <div><span>所在地区：</span><input type="text" name="diqu" placeholder="请输入所在地区"
+                                                  >
+                    </div>
+                    <div><span>您的称呼：</span><input type="text" name="name" placeholder="请输入您的称呼" ></div>
+                    <div><span>联系方式：</span><input type="text" name="phone" placeholder="请输入联系方式" ></div>
+                    <div><span>房屋面积：</span><input type="text" name="mianji" placeholder="请输入房屋面积" ></div>
+                    <div align="center">
+                        <a href="" class="index-form-main-a a-fa1 index_float_baojia">立即预约</a>
+                        <a href="http://kefu.cckefu.com/vclient/chat/?websiteid=110699" target="_blank"
+                           class="index-form-main-a a-fa1">联系客服</a>
+                    </div>
+                    <input type="reset" style="display:none;" class="reset">
+                </form>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <script>
+
+
+        $(function () {
+
+            $('.shj-product-image-gallery-main').easyZoom()
+            var api = $('.shj-product-image-gallery-main').easyZoom().data('easyZoom');
+
+            $(".shj-product-image-gallery-thumbile-list div").hover(function () {
+                var url = $(this).data('url');
+                $('.shj-product-image-gallery-main img').attr('src', url);
+                $('.shj-product-image-gallery-main a').attr('href', url);
+                $(this).siblings().css('border', '2px solid #fff');
+                $(this).css('border', '2px solid #73b434');
+                api.swap(url, url)
+
+            })
+            var thumbile_num = $(".shj-product-image-gallery-thumbile-list div").length;
+            $('.shj-product-image-gallery-thumbile-list').css('width', thumbile_num * 73 + 'px');
+            var thumbile_index = 0;
+            var left_px = 0;
+            var isanimated = false;
+
+            $('.shj-product-image-gallery-thumbile-left-arrow').on('click', function () {
+                if (isanimated) return false;
+                isanimated = true;
+
+                if (thumbile_index >= 0 && thumbile_index < (thumbile_num - 5)) {
+                    //left
+                    left_px = left_px - 73;
+
+                    $('.shj-product-image-gallery-thumbile-list').animate({
+                            left: left_px + "px"
+                        },
+                        500, function () {
+                            /* stuff to do after animation is complete */
+                            thumbile_index++;
+
+                            isanimated = false;
+                        });
+                } else {
+                    isanimated = false;
+
+                }
+
+            });
+
+            $('.shj-product-image-gallery-thumbile-right-arrow').on('click', function () {
+
+                if (isanimated) return false;
+                isanimated = true;
+
+                if (thumbile_index <= (thumbile_num - 5) && thumbile_index > 0) {
+                    //right
+
+                    left_px = left_px + 73;
+                    $('.shj-product-image-gallery-thumbile-list').animate({
+                            left: left_px + "px"
+                        },
+                        500, function () {
+                            /* stuff to do after animation is complete */
+                            thumbile_index--;
+                            isanimated = false;
+                        });
+                } else {
+                    isanimated = false;
+                }
+
+            });
+
+        })
+
+        $(function () {
+            var description = $("#detailed_description>div");
+            description.eq(0).css("display", "block");
+            $("#detailed_description img").lazyload({
+                effect: "fadeIn"
+            });
+            $('body').css("background", "url(../static/jianmei/image/l1.jpg)")
+        });
+
+        $(function () {
+            $('.index_float_baojia').on('click', function () {
+                var form = $(this).closest('form');
+                var name = $.trim(form.find('input[name=name]').val());
+                if ('' == name) {
+                    alert('请填写您的称呼');
+                    return false;
+                }
+                if (validatemobile(form.find('input[name=phone]').val())) {
+                    $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                        if (msg.status) {
+                            alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                            location.reload();
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+    <style>
+        .detailed_introduce img {
+            margin-bottom: -10px;
+            max-width: 100%;
+        }
+    </style>
+    <div class="clearfix wraper">
+        <!-- 商品介绍选项卡-->
+        <div class="introduction">
+
+            <div id="detailed_description">
+                <!-- 商品介绍 如果商品关联了专题,则取专题的内容,否则取商品的详情内容-->
+                <div class="detailed_introduce mt20" style="display: block;">
+                    <a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                            src="{% get_static_prefix %}jianmei/image/5be8dd23309ec.jpg" alt=""></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                        src="{% get_static_prefix %}jianmei/image/5be8dd237e82e.jpg" alt=""></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                        src="{% get_static_prefix %}jianmei/image/5be8dd23cae8f.jpg" alt=""></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                        src="{% get_static_prefix %}jianmei/image/5be8dd241f150.jpg" alt=""></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                        src="{% get_static_prefix %}jianmei/image/5be8dd249aaeb.jpg" alt=""></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                        src="{% get_static_prefix %}jianmei/image/5be8dd24eeeae.jpg" alt=""></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                        src="{% get_static_prefix %}jianmei/image/5be8dd2533966.jpg" alt=""></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"></a><a
+                        href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699" target="_blank"><img
+                        src="{% get_static_prefix %}jianmei/image/5be8dd2576d4d.jpg" alt=""></a></div>
+                <!-- 商品介绍 over-->
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

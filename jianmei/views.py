@@ -71,3 +71,7 @@ def designer(request, id):
 def article(request, id):
     latest = Article.objects.order_by('-publish_date')[:2]
     return render(request, 'jianmei/article.html', {'article': Article.objects.get(id=id), 'latest': latest})
+
+
+def network_discount(request):
+    return render(request, 'jianmei/network_discount.html')
