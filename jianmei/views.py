@@ -69,6 +69,11 @@ def designer(request, id):
 
 
 def article(request, id):
+    # 每一次get记录增加1
+    current_article = Article.objects.get(id=id)
+    if current_article:
+        current_article.click_count += 1
+        Article.save(current_article)
     latest = Article.objects.order_by('-publish_date')[:2]
     return render(request, 'jianmei/article.html', {'article': Article.objects.get(id=id), 'latest': latest})
 

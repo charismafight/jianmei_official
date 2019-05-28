@@ -43,12 +43,10 @@
             <div class="shj-product-detai-right" id="baoming">
                 <div class="shj-product-detail-title">全屋定制装修公司-网络特权优惠</div>
                 <form onsubmit="return false">
-                    <div><span>所在地区：</span><input type="text" name="diqu" placeholder="请输入所在地区"
-                                                  >
-                    </div>
-                    <div><span>您的称呼：</span><input type="text" name="name" placeholder="请输入您的称呼" ></div>
-                    <div><span>联系方式：</span><input type="text" name="phone" placeholder="请输入联系方式" ></div>
-                    <div><span>房屋面积：</span><input type="text" name="mianji" placeholder="请输入房屋面积" ></div>
+                    <div><span>所在地区：</span><input type="text" name="district" placeholder="请输入所在地区"></div>
+                    <div><span>您的称呼：</span><input type="text" name="name" placeholder="请输入您的称呼"></div>
+                    <div><span>联系方式：</span><input type="text" name="phone" placeholder="请输入联系方式"></div>
+                    <div><span>房屋面积：</span><input type="text" name="area" placeholder="请输入房屋面积"></div>
                     <div align="center">
                         <a href="" class="index-form-main-a a-fa1 index_float_baojia">立即预约</a>
                         <a href="http://kefu.cckefu.com/vclient/chat/?websiteid=110699" target="_blank"
@@ -141,24 +139,6 @@
             $('body').css("background", "url(../static/jianmei/image/l1.jpg)")
         });
 
-        $(function () {
-            $('.index_float_baojia').on('click', function () {
-                var form = $(this).closest('form');
-                var name = $.trim(form.find('input[name=name]').val());
-                if ('' == name) {
-                    alert('请填写您的称呼');
-                    return false;
-                }
-                if (validatemobile(form.find('input[name=phone]').val())) {
-                    $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
-                        if (msg.status) {
-                            alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                            location.reload();
-                        }
-                    })
-                }
-            })
-        })
     </script>
     <style>
         .detailed_introduce img {

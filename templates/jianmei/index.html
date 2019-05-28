@@ -1414,58 +1414,6 @@
     </div>
 
     <script>
-        $(function () {
-            $('.index_float_baojia').on('click', function () {
-                var form = $(this).closest('form');
-                var name = $.trim(form.find('input[name=name]').val());
-                if ('' == name) {
-                    alert('请填写您的称呼');
-                    return false;
-                }
-                if (validatemobile(form.find('input[name=phone]').val())) {
-                    $.post('/', function (msg) {
-                        if (msg.status) {
-                            alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                            $(".reset").click();
-                        }
-                    })
-                }
-            })
-
-            $('.index_float_yuyue').on('click', function () {
-                var form = $(this).closest('form');
-                var name = $.trim(form.find('input[name=name]').val());
-                if ('' == name) {
-                    alert('请填写您的称呼');
-                    return false;
-                }
-                if (validatemobile(form.find('input[name=phone]').val())) {
-                    $.post('/', form.serialize(), function (msg) {
-                        alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                        $(".reset").click();
-                    })
-                }
-            })
-
-            $('#footer-form').on('click', function () {
-                var form = $(this).closest('form');
-                var name = $.trim(form.find('input[name=name]').val());
-                if ('' == name) {
-                    alert('请填写您的称呼');
-                    return false;
-                }
-                if (validatemobile(form.find('input[name=phone]').val())) {
-                    $.post('/', form.serialize(), function (msg) {
-                        alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                        form.find('input[name=name]').val("");
-                        form.find('input[name=phone]').val("");
-                    })
-                }
-            })
-        })
-    </script>
-
-    <script>
         function init_price() {
             var Tprice = {
                 "price": 51000,
@@ -1528,23 +1476,6 @@
             $(".tanchu-jgright-poinput").keyup(function () {
                 $(this).val($(this).val().replace(regObj, ""));
                 Mon();
-            })
-
-            $('.index_tanchu').on('click', function () {
-                var form = $(this).closest('form');
-                var name = $.trim(form.find('input[name=name]').val());
-                if ('' == name) {
-                    alert('请填写您的姓名');
-                    return false;
-                }
-                if (validatemobile(form.find('input[name=phone]').val())) {
-                    $.post('/',
-                        form.serialize(),
-                        function (msg) {
-                            alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
-                            $('.tanchu-close').click();
-                        })
-                }
             })
         });
     </script>

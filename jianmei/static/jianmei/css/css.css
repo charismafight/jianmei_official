@@ -765,7 +765,6 @@
 }
 
 
-
 .index_case ul li div strong {
     float: left;
     width: 100%;
@@ -1151,7 +1150,7 @@
 }
 
 .index_course .left .left_nav li.active {
-    background: #ffe100 url("../images/ico/left_tran.png") right 80px no-repeat;
+    background: #ffe100 url("../image/left_tran.png") right 80px no-repeat;
 }
 
 .index_course .left .left_nav li.active a p {
