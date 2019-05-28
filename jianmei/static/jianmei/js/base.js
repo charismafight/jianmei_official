@@ -4,6 +4,8 @@ $(function () {
     $('.gonglve_liuyan').on('click', submnit);
 
     $('.index_float_baojia').on('click', submnit)
+
+    $('.index_tanchu').on('click', submnit);
 })
 
 function submnit() {
