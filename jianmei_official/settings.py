@@ -24,7 +24,7 @@ SECRET_KEY = '6jn#&v(4wi*(taqj4-lw!+41gp$1!3_t-)x@*9_uhz^_ok8%=c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['leeeeeesama.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -117,7 +117,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR, "static"),
-    ]
