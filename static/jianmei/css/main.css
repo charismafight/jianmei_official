@@ -1,0 +1,18 @@
+.head .headCenter .headArea ul {
+    width: 300px;
+    position: absolute;
+    left: 105px;
+    top: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+.head .headCenter .headArea ul li a {
+    float: left;
+    color: #fff;
+    width: 60px;
+    text-align: center;
+    line-height: 28px;
+    display: block;
+}
