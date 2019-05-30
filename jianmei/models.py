@@ -31,10 +31,8 @@ class HouseProject(models.Model):
     name = models.CharField('楼盘名称', max_length=50)
     image = models.ImageField('楼盘图片', null=True, upload_to='house_project')
     desc = models.CharField('楼盘描述', max_length=2000)
-    consult_count = models.IntegerField('咨询户数', default=0)
     contract_count = models.IntegerField('签约户数', default=0)
-    started_count = models.IntegerField('开工户数', default=0)
-    finished_count = models.IntegerField('竣工户数', default=0)
+    finished_count = models.IntegerField('施工户数', default=0)
     designers = models.ManyToManyField(Designer, verbose_name='所属设计师', blank=True)
 
     def __str__(self):
@@ -49,7 +47,6 @@ class HouseType(models.Model):
     project = models.ForeignKey(HouseProject, verbose_name='所属楼盘', on_delete=models.CASCADE)
     type = models.CharField('楼盘户型', max_length=30)
     area = models.IntegerField('面积')
-    style = models.CharField('风格', max_length=20)
 
     def __str__(self):
         return '%s %s' % (self.project.name, self.area)
@@ -62,6 +59,7 @@ class Case(models.Model):
 
     name = models.CharField('案例名称', max_length=20)
     house_type = models.ForeignKey(HouseType, verbose_name='户型', on_delete=models.CASCADE)
+    style = models.CharField('装修风格', max_length=20, default='')
     show_index = models.IntegerField('首页显示顺序', null=True)
 
     def __str__(self):

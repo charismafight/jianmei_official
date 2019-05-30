@@ -1,3 +1,4 @@
+
 """jianmei_official URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -31,4 +32,5 @@ urlpatterns = [
                   path(r'technology', views.technology),
                   path(r'designer/<int:id>', views.designer),
                   path(r'article/<int:id>', views.article),
+                  path('network-discount', views.network_discount),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

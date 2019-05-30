@@ -1,6 +1,7 @@
 {% extends 'jianmei/base.html' %}
 {% load static %}
 {% block body_block %}
+    {% csrf_token %}
     <link rel="stylesheet" href="{% static 'jianmei/css/yzfmain.css' %}">
     {#    大logo及报价#}
     <div class="index-banvessel">
@@ -252,7 +253,7 @@
         {#            </div>#}
         {#        </div>#}
     </div>
-
+    <input type="reset" style="display:none;" class="reset">
     {#    磁贴部分#}
     <div class="column-vessel">
         <ul class="column in-con">
@@ -265,7 +266,7 @@
             <li class="column-li2 lace">
                 <h4>网络特权优惠</h4>
                 <p>线上报名，独享特权优惠</p>
-                <a href="/page/80.html" target="_blank" class="transition35"><span class="transition35"><i
+                <a href="/network-discount" target="_blank" class="transition35"><span class="transition35"><i
                         class="transition70">+</i>去看看</span></a>
             </li>
             <li class="column-li4 lace">
@@ -285,7 +286,7 @@
             <div class="wrap">
                 <div class="decoration-slide2">
                     <!--<div class="vider_tp_pf"></div>-->
-                    <a href="/lists/21.html" target="_blank">
+                    <a href="technology" target="_blank">
                         <img class="decoration-slide2-video"
                              src="{% get_static_prefix %}jianmei/image/video_bg.jpg"></a>
                 </div>
@@ -375,7 +376,6 @@
                             <li>
                                 <a href="/house/{{ project.id }}" target="_blank" class="ZgPush">
                                     <p>
-                                        <span>咨询：<font class="text-red">{{ project.consult_count }}户</font></span>
                                         <span>签约：<font class="text-red">{{ project.contract_count }}户</font></span>
                                         <span>施工：<font class="text-red">{{ project.started_count }}户</font></span>
                                     </p>
@@ -481,16 +481,6 @@
                 overflow: hidden;
                 margin-right: 11px;
                 position: relative;
-            }
-
-            .case_content .synopsis_box {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                background: rgba(892, 0, 6, 0.6);
-                display: none;
             }
 
             .case_content .img_b:hover .synopsis_box {
@@ -644,7 +634,7 @@
             }
         </style>
         <div class="index_case" style="height: 945px">
-            <div class="loupan_content clearFix">
+            <div>
                 <div class="in-con-head">
                     <div class="in-con-head-text">
                         <h1 class="h1_color1">家装案例</h1>
@@ -669,9 +659,9 @@
                                     </div>
                                 </a>
                             </div>
-                            <ul class="clearFis">
+                            <ul>
                                 {% if cases.1 %}
-                                    <li class="fl">
+                                    <li>
                                         <a href="case/{{ cases.1.id }}" target="_blank">
                                             <img src="{% get_media_prefix %}{{ caseimages.1.image }}"
                                                  width="100%" height="100%" alt="{{ cases.1.name }}">
@@ -1186,37 +1176,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="ppsl_box_con" style="margin-top: 15px;">
-                        <!--<ul class="clearfloat">
-                            <li>
-
-                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hbxs.jpg);">
-                                  <div class="con_content">
-                                    <p class="font-titles">环保系数</p>
-                                    <p class="font-titles font-blod">比肩国际标准</p></div>
-                                </div>
-
-                            </li>
-                            <li>
-
-                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/qgls.jpg);">
-                                  <div class="con_content">  <p class="font-titles">实体门店</p>
-                                    <p class="font-titles font-blod">集团站点遍布全国</p></div>
-                                </div>
-
-                            </li>
-                            <li>
-
-                                <div class="con_img" style="background: url(/Websites/shenghuojia/Uploads/Picture/2018-03-17/hjrz.jpg);">
-                                  <div class="con_content">
-                                    <p class="font-titles">获得奖项</p>
-                                    <p class="font-titles font-blod">权威认证</p></div>
-                                </div>
-
-                            </li>
-                          </ul>-->
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -1344,8 +1303,6 @@
 //		     twol_right=parseInt($(".decoration-banner2").css("left"))-twow_right;
                     showCurrent(twol);
                 }
-
-
             });
 
             function showCurrent(twol) {
@@ -1372,7 +1329,8 @@
         $(function () {
             setTimeout(function () {
                 $(".tanchu").fadeIn();
-            }, 60000);
+                //弹窗时间
+            }, 30000);
             $(".tanchu-close").click(function () {
                 $(".tanchu").fadeOut();
             })
@@ -1381,11 +1339,12 @@
 
     <div class="tanchu" style="display: none;">
         <div class="tanchu-close"></div>
-        <form onsubmit="return false;">
+        <form onsubmit="return false;" action="/" method="post">
+            {% csrf_token %}
             <div class="tanchu-flex hidden-get-price">
                 <div class="tanchu-left">
                     <div class="tanchu-left-head">
-                        <h3>免费方案 <span> 已有5895位业主在线预约</span></h3>
+                        <h3>免费方案 <span> 已有{{ appointmentCount }}位业主在线预约</span></h3>
                     </div>
                     <div class="tanchu-left-form">
                         <div class="tanchu-left-formcon tanchu-left-form1">
@@ -1395,11 +1354,11 @@
                             <input name="phone" type="text" placeholder="请输入您的手机号码">
                         </div>
                         <div class="tanchu-left-formcon tanchu-left-form1">
-                            <input name="mianji" type="text" placeholder="请输入房屋面积">
+                            <input name="area" type="text" placeholder="请输入房屋面积">
                             <span class="pf">㎡</span>
                         </div>
                         <div class="tanchu-left-formcon tanchu-left-form1">
-                            <input name="laiyuan" type="text" placeholder="请输入所在地区">
+                            <input name="district" type="text" placeholder="请输入所在地区">
                         </div>
                     </div>
                 </div>
@@ -1407,8 +1366,10 @@
                 <div class="tanchu-fg">
                     <div class="tanchu-fgx"></div>
                     <div class="tanchu-fg-but">
-                        <div class="tanchu-fg-butrotate"></div>
-                        <a href="javascript:;" class="index_tanchu">点击预约</a></div>
+                        <div class="tanchu-fg-butrotate">
+                        </div>
+                        <a href="javascript:;" class="index_tanchu">点击预约</a>
+                    </div>
                 </div>
                 <div class="tanchu-right">
                     <a href="/Article/detail/id/3150.html" target="_blank">
@@ -1451,6 +1412,73 @@
             </div>
         </form>
     </div>
+
+    <script>
+        function init_price() {
+            var Tprice = {
+                "price": 51000,
+                "cailiao": 30090,
+                "rengong": 13260,
+                "sheji": 3570,
+                "zhijian": 4080,
+            };
+            $(".get_price em").html(Tprice.price);
+            $(".cl em").html(Tprice.cailiao);
+            $(".rg em").html(Tprice.rengong);
+            $(".sj em").html(Tprice.sheji);
+            $(".zj em").html(Tprice.zhijian);
+
+        }
+
+        function change_price() {
+            var num = Math.ceil(Math.random() * 20000);
+
+            if (parseInt($(".get_price em").html()) > 160000) {
+                init_price();
+            }
+            $(".get_price em").html(parseInt($(".get_price em").html()) + num);
+            $(".cl em").html(parseInt($(".cl em").html()) + parseInt(num / 3));
+            $(".rg em").html(parseInt($(".rg em").html()) + parseInt(num / 7));
+            $(".sj em").html(parseInt($(".sj em").html()) + parseInt(num / 200));
+            $(".zj em").html(parseInt($(".zj em").html()) + parseInt(num / 200));
+
+        }
+
+        $(function () {
+            init_price();
+            var t = setInterval(change_price, 200);
+            var regObj = new RegExp("[^0-9]", "g");
+            var MonTime = 12;
+
+            function Mon() {
+                var Money = ($(".tanchu-jgright-poinput").val() / MonTime) + ($(".tanchu-jgright-poinput").val() * 0.0799 * (MonTime / 12) / MonTime);
+                $(".tanchu-jgright-poshow span.jg.htm"
+                ).html(Money.toFixed(2));
+            }
+
+            $(".tanchu-jgright-poinput").change(function () {
+                Mon();
+            })
+
+            $(".tanchu-jgright-point-main p").click(function () {
+                var index = $(this).index() + 1;
+                MonTime = index * 12;
+                $(".tanchu-jgright-point-main").removeClass("bg1").removeClass("bg2").removeClass("bg3").addClass("bg" + index);
+                Mon();
+
+            })
+
+            $(".tanchu-jgright-poinput").keydown(function () {
+                $(this).val($(this).val().replace(regObj, ""));
+                Mon();
+            })
+
+            $(".tanchu-jgright-poinput").keyup(function () {
+                $(this).val($(this).val().replace(regObj, ""));
+                Mon();
+            })
+        });
+    </script>
 
     <script>
         (function () {
