@@ -419,12 +419,6 @@
                 margin: 0 4px;
             }
 
-            .index_case .case_content .left, .index_case .case_content .right {
-                width: 595px;
-                height: 800px;
-                overflow: hidden;
-            }
-
             .case_content .left .img_b {
                 margin-bottom: 11px;
             }
@@ -461,13 +455,7 @@
 
             .index_case .case_content .left, .index_case .case_content .right {
                 width: 595px;
-                height: 800px;
-                overflow: hidden;
-            }
-
-            .index_case .case_content .left, .index_case .case_content .right {
-                width: 595px;
-                height: 800px;
+                height: auto;
                 overflow: hidden;
             }
 
@@ -608,7 +596,7 @@
 
             .case_content .img_b {
                 width: 100%;
-                height: 525px;
+                height: 100%;
                 overflow: hidden;
                 position: relative;
             }
@@ -659,38 +647,38 @@
                                     </div>
                                 </a>
                             </div>
-                            <ul>
-                                {% if cases.1 %}
-                                    <li>
-                                        <a href="case/{{ cases.1.id }}" target="_blank">
-                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"
-                                                 width="100%" height="100%" alt="{{ cases.1.name }}">
-                                            <div class="synopsis_box caseDIV">
-                                                <div class="synopsis">
-                                                    <h3>【{{ cases.1.name }}】</h3>
-                                                    <span></span>
-                                                    <p class="p2"></p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                {% endif %}
-                                {% if cases.2 %}
-                                    <li class="fl center" style="margin: 0px;">
-                                        <a href="case/{{ cases.2.id }}" target="_blank">
-                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"
-                                                 width="100%" height="100%" alt="{{ cases.2.name }}">
-                                            <div class="synopsis_box caseDIV">
-                                                <div class="synopsis">
-                                                    <h3>【{{ cases.2.name }}】</h3>
-                                                    <span></span>
-                                                    <p class="p2"></p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                {% endif %}
-                            </ul>
+                            {#                            <ul>#}
+                            {#                                {% if cases.1 %}#}
+                            {#                                    <li>#}
+                            {#                                        <a href="case/{{ cases.1.id }}" target="_blank">#}
+                            {#                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"#}
+                            {#                                                 width="100%" height="100%" alt="{{ cases.1.name }}">#}
+                            {#                                            <div class="synopsis_box caseDIV">#}
+                            {#                                                <div class="synopsis">#}
+                            {#                                                    <h3>【{{ cases.1.name }}】</h3>#}
+                            {#                                                    <span></span>#}
+                            {#                                                    <p class="p2"></p>#}
+                            {#                                                </div>#}
+                            {#                                            </div>#}
+                            {#                                        </a>#}
+                            {#                                    </li>#}
+                            {#                                {% endif %}#}
+                            {#                                {% if cases.2 %}#}
+                            {#                                    <li class="fl center" style="margin: 0px;">#}
+                            {#                                        <a href="case/{{ cases.2.id }}" target="_blank">#}
+                            {#                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"#}
+                            {#                                                 width="100%" height="100%" alt="{{ cases.2.name }}">#}
+                            {#                                            <div class="synopsis_box caseDIV">#}
+                            {#                                                <div class="synopsis">#}
+                            {#                                                    <h3>【{{ cases.2.name }}】</h3>#}
+                            {#                                                    <span></span>#}
+                            {#                                                    <p class="p2"></p>#}
+                            {#                                                </div>#}
+                            {#                                            </div>#}
+                            {#                                        </a>#}
+                            {#                                    </li>#}
+                            {#                                {% endif %}#}
+                            {#                            </ul>#}
                         </div>
                     {% endif %}
                     <div class="right fr">
@@ -1043,6 +1031,7 @@
             box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
             /* -webkit-transform: translateY(-5px);
             -ms-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
             -moz-transform: translateY(-5px);
             -o-transform: translateY(-5px);
             transform: translateY(-5px);
@@ -1183,85 +1172,85 @@
     </div>
     <div class="clear"></div>
     {#    服务流程#}
-    <div class="index_flowpath">
-        <div class="in-con-head">
-            <div class="in-con-head-text">
-                <h1 class="h1_color1">服务流程</h1>
-                <p>官网预约 先享服务后定装</p>
-            </div>
-            <!--<div class="in-con-head-right"><a href="#">查看更多</a></div>-->
-        </div>
-        <ol>
-            <li class="li1"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">在线预约</a>
-            </li>
-            <li class="li2"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">验房量房</a>
-            </li>
-            <li class="li3"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">设计报价</a>
-            </li>
-            <li class="li4"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">图纸精算</a>
-            </li>
-            <li class="li5"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">签订合同</a>
-            </li>
-            <li class="li6"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">工地施工</a>
-            </li>
-            <li class="li7"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">验收结算</a>
-            </li>
-            <li class="li8"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                               target="_blank">售后服务</a>
-            </li>
-        </ol>
-        <style>
-            .f_banners {
-                margin-bottom: 30px;
-            }
-
-            .f_banners li {
-                float: left;
-                width: 300px;
-                text-align: center;
-            }
-
-            .f_banners li img {
-                max-width: 100%;
-            }
-        </style>
-        <!--banner-->
-        <div class="f_banners">
-            <ul>
-                <li><a href="http://www.bjhtzsgs.com/Article/detail/id/5505.html" target="_blank"><img
-                        src="{% get_static_prefix %}jianmei/image/5cd1403cd2502.jpg"></a></li>
-                <li><a href="http://www.bjhtzsgs.com/lists/21.html" target="_blank"><img
-                        src="{% get_static_prefix %}jianmei/image/5b45c3ec20b93.jpg"></a></li>
-                <li><a href="http://www.bjhtzsgs.com/lists/18.html" target="_blank"><img
-                        src="{% get_static_prefix %}jianmei/image/5aacbb00bc55f.png"></a></li>
-                <li><a href="http://www.bjhtzsgs.com/lists/3/p/10/fenzhan/0.html" target="_blank"><img
-                        src="{% get_static_prefix %}jianmei/image/5af54f203e3c5.png"></a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-        <div class="friend">
-            <p>友情链接</p>
-            <ul class="friend_link">
-                <li>
-                    <a href="http://www.yhzhome.com" target="_blank">宜惠装家居馆</a></li>
-                <li></li>
-                <li>
-                    <a href="http://www.jc498.com" target="_blank">北京吉诚装饰</a></li>
-                <li></li>
-                <li>
-                    <a href="http://www.olundsjg.com" target="_blank">欧伦达装饰</a></li>
-                <li></li>
-            </ul>
-
-        </div>
-    </div>
+    {#    <div class="index_flowpath">#}
+    {#        <div class="in-con-head">#}
+    {#            <div class="in-con-head-text">#}
+    {#                <h1 class="h1_color1">服务流程</h1>#}
+    {#                <p>官网预约 先享服务后定装</p>#}
+    {#            </div>#}
+    {#            <!--<div class="in-con-head-right"><a href="#">查看更多</a></div>-->#}
+    {#        </div>#}
+    {#        <ol>#}
+    {#            <li class="li1"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">在线预约</a>#}
+    {#            </li>#}
+    {#            <li class="li2"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">验房量房</a>#}
+    {#            </li>#}
+    {#            <li class="li3"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">设计报价</a>#}
+    {#            </li>#}
+    {#            <li class="li4"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">图纸精算</a>#}
+    {#            </li>#}
+    {#            <li class="li5"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">签订合同</a>#}
+    {#            </li>#}
+    {#            <li class="li6"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">工地施工</a>#}
+    {#            </li>#}
+    {#            <li class="li7"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">验收结算</a>#}
+    {#            </li>#}
+    {#            <li class="li8"><a href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"#}
+    {#                               target="_blank">售后服务</a>#}
+    {#            </li>#}
+    {#        </ol>#}
+    {#        <style>#}
+    {#            .f_banners {#}
+    {#                margin-bottom: 30px;#}
+    {#            }#}
+    {##}
+    {#            .f_banners li {#}
+    {#                float: left;#}
+    {#                width: 300px;#}
+    {#                text-align: center;#}
+    {#            }#}
+    {##}
+    {#            .f_banners li img {#}
+    {#                max-width: 100%;#}
+    {#            }#}
+    {#        </style>#}
+    {#        <!--banner-->#}
+    {#        <div class="f_banners">#}
+    {#            <ul>#}
+    {#                <li><a href="http://www.bjhtzsgs.com/Article/detail/id/5505.html" target="_blank"><img#}
+    {#                        src="{% get_static_prefix %}jianmei/image/5cd1403cd2502.jpg"></a></li>#}
+    {#                <li><a href="http://www.bjhtzsgs.com/lists/21.html" target="_blank"><img#}
+    {#                        src="{% get_static_prefix %}jianmei/image/5b45c3ec20b93.jpg"></a></li>#}
+    {#                <li><a href="http://www.bjhtzsgs.com/lists/18.html" target="_blank"><img#}
+    {#                        src="{% get_static_prefix %}jianmei/image/5aacbb00bc55f.png"></a></li>#}
+    {#                <li><a href="http://www.bjhtzsgs.com/lists/3/p/10/fenzhan/0.html" target="_blank"><img#}
+    {#                        src="{% get_static_prefix %}jianmei/image/5af54f203e3c5.png"></a></li>#}
+    {#            </ul>#}
+    {#        </div>#}
+    {#        <div class="clear"></div>#}
+    {#        <div class="friend">#}
+    {#            <p>友情链接</p>#}
+    {#            <ul class="friend_link">#}
+    {#                <li>#}
+    {#                    <a href="http://www.yhzhome.com" target="_blank">宜惠装家居馆</a></li>#}
+    {#                <li></li>#}
+    {#                <li>#}
+    {#                    <a href="http://www.jc498.com" target="_blank">北京吉诚装饰</a></li>#}
+    {#                <li></li>#}
+    {#                <li>#}
+    {#                    <a href="http://www.olundsjg.com" target="_blank">欧伦达装饰</a></li>#}
+    {#                <li></li>#}
+    {#            </ul>#}
+    {##}
+    {#        </div>#}
+    {#    </div>#}
     <script type="text/javascript">
         //  轮播
         $(function () {
