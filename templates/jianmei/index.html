@@ -282,16 +282,16 @@
     <div class="h-bgcolor">
         <div class="clear"></div>
         <!--装修套餐-->
-{#        <div class="decoration clearfix">#}
-{#            <div class="wrap">#}
-{#                <div class="decoration-slide2">#}
-{#                    <!--<div class="vider_tp_pf"></div>-->#}
-{#                    <a href="technology" target="_blank">#}
-{#                        <img class="decoration-slide2-video"#}
-{#                             src="{% get_static_prefix %}jianmei/image/video_bg.jpg"></a>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
+        {#        <div class="decoration clearfix">#}
+        {#            <div class="wrap">#}
+        {#                <div class="decoration-slide2">#}
+        {#                    <!--<div class="vider_tp_pf"></div>-->#}
+        {#                    <a href="technology" target="_blank">#}
+        {#                        <img class="decoration-slide2-video"#}
+        {#                             src="{% get_static_prefix %}jianmei/image/video_bg.jpg"></a>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
 
         <div class="clear"></div>
         <style>
@@ -628,183 +628,86 @@
                     </div>
                 </div>
                 <div class="case_content clearFix">
-                    {% if cases.0 %}
-                        <div class="left fl">
-                            <div class="img_b">
-                                <a href="case/{{ cases.0.id }}" target="_blank">
-                                    <img src="{% get_media_prefix %}{{ caseimages.0.image }}"
-                                         width="100%" height="100%" alt="{{ cases.0.name }}">
-                                    <div class="synopsis_box caseDIV">
-                                        <div class="synopsis">
-                                            <h3>【{{ cases.0.name }}】</h3>
-                                            <span></span>
-                                            <p class="p2"></p>
-                                        </div>
+                    <div class="left fl">
+                        <div class="img_b">
+                            <a href="case/{{ cases.0.id }}" target="_blank">
+                                <img src="{% get_media_prefix %}{{ caseimages.0.image }}"
+                                     width="100%" height="100%" alt="{{ cases.0.name }}">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【{{ cases.0.name }}】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
                                     </div>
-                                </a>
-                            </div>
-                            {#                            <ul>#}
-                            {#                                {% if cases.1 %}#}
-                            {#                                    <li>#}
-                            {#                                        <a href="case/{{ cases.1.id }}" target="_blank">#}
-                            {#                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"#}
-                            {#                                                 width="100%" height="100%" alt="{{ cases.1.name }}">#}
-                            {#                                            <div class="synopsis_box caseDIV">#}
-                            {#                                                <div class="synopsis">#}
-                            {#                                                    <h3>【{{ cases.1.name }}】</h3>#}
-                            {#                                                    <span></span>#}
-                            {#                                                    <p class="p2"></p>#}
-                            {#                                                </div>#}
-                            {#                                            </div>#}
-                            {#                                        </a>#}
-                            {#                                    </li>#}
-                            {#                                {% endif %}#}
-                            {#                                {% if cases.2 %}#}
-                            {#                                    <li class="fl center" style="margin: 0px;">#}
-                            {#                                        <a href="case/{{ cases.2.id }}" target="_blank">#}
-                            {#                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"#}
-                            {#                                                 width="100%" height="100%" alt="{{ cases.2.name }}">#}
-                            {#                                            <div class="synopsis_box caseDIV">#}
-                            {#                                                <div class="synopsis">#}
-                            {#                                                    <h3>【{{ cases.2.name }}】</h3>#}
-                            {#                                                    <span></span>#}
-                            {#                                                    <p class="p2"></p>#}
-                            {#                                                </div>#}
-                            {#                                            </div>#}
-                            {#                                        </a>#}
-                            {#                                    </li>#}
-                            {#                                {% endif %}#}
-                            {#                            </ul>#}
+                                </div>
+                            </a>
                         </div>
-                        <div class="left fl">
-                            <div class="img_b">
-                                <a href="case/{{ cases.0.id }}" target="_blank">
-                                    <img src="{% get_media_prefix %}{{ caseimages.0.image }}"
-                                         width="100%" height="100%" alt="{{ cases.0.name }}">
-                                    <div class="synopsis_box caseDIV">
-                                        <div class="synopsis">
-                                            <h3>【{{ cases.0.name }}】</h3>
-                                            <span></span>
-                                            <p class="p2"></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            {#                            <ul>#}
-                            {#                                {% if cases.1 %}#}
-                            {#                                    <li>#}
-                            {#                                        <a href="case/{{ cases.1.id }}" target="_blank">#}
-                            {#                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"#}
-                            {#                                                 width="100%" height="100%" alt="{{ cases.1.name }}">#}
-                            {#                                            <div class="synopsis_box caseDIV">#}
-                            {#                                                <div class="synopsis">#}
-                            {#                                                    <h3>【{{ cases.1.name }}】</h3>#}
-                            {#                                                    <span></span>#}
-                            {#                                                    <p class="p2"></p>#}
-                            {#                                                </div>#}
-                            {#                                            </div>#}
-                            {#                                        </a>#}
-                            {#                                    </li>#}
-                            {#                                {% endif %}#}
-                            {#                                {% if cases.2 %}#}
-                            {#                                    <li class="fl center" style="margin: 0px;">#}
-                            {#                                        <a href="case/{{ cases.2.id }}" target="_blank">#}
-                            {#                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"#}
-                            {#                                                 width="100%" height="100%" alt="{{ cases.2.name }}">#}
-                            {#                                            <div class="synopsis_box caseDIV">#}
-                            {#                                                <div class="synopsis">#}
-                            {#                                                    <h3>【{{ cases.2.name }}】</h3>#}
-                            {#                                                    <span></span>#}
-                            {#                                                    <p class="p2"></p>#}
-                            {#                                                </div>#}
-                            {#                                            </div>#}
-                            {#                                        </a>#}
-                            {#                                    </li>#}
-                            {#                                {% endif %}#}
-                            {#                            </ul>#}
-                        </div>
-                    {% endif %}
+                        {#                            <ul>#}
+                        {#                                {% if cases.1 %}#}
+                        {#                                    <li>#}
+                        {#                                        <a href="case/{{ cases.1.id }}" target="_blank">#}
+                        {#                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"#}
+                        {#                                                 width="100%" height="100%" alt="{{ cases.1.name }}">#}
+                        {#                                            <div class="synopsis_box caseDIV">#}
+                        {#                                                <div class="synopsis">#}
+                        {#                                                    <h3>【{{ cases.1.name }}】</h3>#}
+                        {#                                                    <span></span>#}
+                        {#                                                    <p class="p2"></p>#}
+                        {#                                                </div>#}
+                        {#                                            </div>#}
+                        {#                                        </a>#}
+                        {#                                    </li>#}
+                        {#                                {% endif %}#}
+                        {#                                {% if cases.2 %}#}
+                        {#                                    <li class="fl center" style="margin: 0px;">#}
+                        {#                                        <a href="case/{{ cases.2.id }}" target="_blank">#}
+                        {#                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"#}
+                        {#                                                 width="100%" height="100%" alt="{{ cases.2.name }}">#}
+                        {#                                            <div class="synopsis_box caseDIV">#}
+                        {#                                                <div class="synopsis">#}
+                        {#                                                    <h3>【{{ cases.2.name }}】</h3>#}
+                        {#                                                    <span></span>#}
+                        {#                                                    <p class="p2"></p>#}
+                        {#                                                </div>#}
+                        {#                                            </div>#}
+                        {#                                        </a>#}
+                        {#                                    </li>#}
+                        {#                                {% endif %}#}
+                        {#                            </ul>#}
+                    </div>
                     <div class="right fr">
-{#                        <ul class="clearFis">#}
-{#                            {% if cases.3 %}#}
-{#                                <li class="fl">#}
-{#                                    <a href="case/{{ cases.3.id }}" target="_blank">#}
-{#                                        <img src="{% get_media_prefix %}{{ caseimages.3.image }}"#}
-{#                                             width="100%" height="100%" alt="{{ cases.3.name }}">#}
-{#                                        <div class="synopsis_box caseDIV">#}
-{#                                            <div class="synopsis">#}
-{#                                                <h3>【{{ cases.3.name }}】</h3>#}
-{#                                                <span></span>#}
-{#                                                <p class="p2"></p>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                            {% endif %}#}
-{#                            {% if cases.4 %}#}
-{#                                <li class="fl">#}
-{#                                    <a href="case/{{ cases.4.id }}" target="_blank">#}
-{#                                        <img src="{% get_media_prefix %}{{ caseimages.4.image }}"#}
-{#                                             width="100%" height="100%" alt="{{ cases.4.name }}">#}
-{#                                        <div class="synopsis_box caseDIV">#}
-{#                                            <div class="synopsis">#}
-{#                                                <h3>【{{ cases.4.name }}】</h3>#}
-{#                                                <span></span>#}
-{#                                                <p class="p2"></p>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                            {% endif %}#}
-{#                        </ul>#}
-                        {% if cases.1 %}
-                            <div class="img_b">
-                                <a href="case/{{ cases.1.id }}" target="_blank">
-                                    <img src="{% get_media_prefix %}{{ caseimages.1.image }}"
-                                         width="100%" height="100%" alt="{{ cases.1.name }}">
-                                    <div class="synopsis_box caseDIV">
-                                        <div class="synopsis">
-                                            <h3>【{{ cases.1.name }}】</h3>
-                                            <span></span>
-                                            <p class="p2"></p>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        {% endif %}
-                    </div>
-                <div class="right fr">
-{#                        <ul class="clearFis">#}
-{#                            {% if cases.3 %}#}
-{#                                <li class="fl">#}
-{#                                    <a href="case/{{ cases.3.id }}" target="_blank">#}
-{#                                        <img src="{% get_media_prefix %}{{ caseimages.3.image }}"#}
-{#                                             width="100%" height="100%" alt="{{ cases.3.name }}">#}
-{#                                        <div class="synopsis_box caseDIV">#}
-{#                                            <div class="synopsis">#}
-{#                                                <h3>【{{ cases.3.name }}】</h3>#}
-{#                                                <span></span>#}
-{#                                                <p class="p2"></p>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                            {% endif %}#}
-{#                            {% if cases.4 %}#}
-{#                                <li class="fl">#}
-{#                                    <a href="case/{{ cases.4.id }}" target="_blank">#}
-{#                                        <img src="{% get_media_prefix %}{{ caseimages.4.image }}"#}
-{#                                             width="100%" height="100%" alt="{{ cases.4.name }}">#}
-{#                                        <div class="synopsis_box caseDIV">#}
-{#                                            <div class="synopsis">#}
-{#                                                <h3>【{{ cases.4.name }}】</h3>#}
-{#                                                <span></span>#}
-{#                                                <p class="p2"></p>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                            {% endif %}#}
-{#                        </ul>#}
+                        {#                        <ul class="clearFis">#}
+                        {#                            {% if cases.3 %}#}
+                        {#                                <li class="fl">#}
+                        {#                                    <a href="case/{{ cases.3.id }}" target="_blank">#}
+                        {#                                        <img src="{% get_media_prefix %}{{ caseimages.3.image }}"#}
+                        {#                                             width="100%" height="100%" alt="{{ cases.3.name }}">#}
+                        {#                                        <div class="synopsis_box caseDIV">#}
+                        {#                                            <div class="synopsis">#}
+                        {#                                                <h3>【{{ cases.3.name }}】</h3>#}
+                        {#                                                <span></span>#}
+                        {#                                                <p class="p2"></p>#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                    </a>#}
+                        {#                                </li>#}
+                        {#                            {% endif %}#}
+                        {#                            {% if cases.4 %}#}
+                        {#                                <li class="fl">#}
+                        {#                                    <a href="case/{{ cases.4.id }}" target="_blank">#}
+                        {#                                        <img src="{% get_media_prefix %}{{ caseimages.4.image }}"#}
+                        {#                                             width="100%" height="100%" alt="{{ cases.4.name }}">#}
+                        {#                                        <div class="synopsis_box caseDIV">#}
+                        {#                                            <div class="synopsis">#}
+                        {#                                                <h3>【{{ cases.4.name }}】</h3>#}
+                        {#                                                <span></span>#}
+                        {#                                                <p class="p2"></p>#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                    </a>#}
+                        {#                                </li>#}
+                        {#                            {% endif %}#}
+                        {#                        </ul>#}
                         {% if cases.1 %}
                             <div class="img_b">
                                 <a href="case/{{ cases.1.id }}" target="_blank">
@@ -821,445 +724,541 @@
                         {% endif %}
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-        {#设计师#}
-        <div class="index-team">
-            <div class="index-auto-box">
-                <div class="index-normal-hd">
-                    <dl class="normal-hd-tit">
-                        <dt>人气设计师</dt>
-                    </dl>
-                </div>
-                <div class="index-normal-bd">
-                    <div class="team-list">
-                        {% for d in designers %}
-                            <div class="team-item">
-                                <a href="/designer/{{ d.id }}" class="img-box">
-                                    <img src="{% get_media_prefix %}{{ d.portrait }}" alt="家装设计师 {{ d.name }}">
-                                </a>
-                                <dl>
-                                    <dt>{{ d.name }}</dt>
-                                    <dd>{{ d.desc }}</dd>
-                                </dl>
-                                <a href="/Designer/Detail/248" class="btn btn-line">预约设计&gt;</a>
-                            </div>
-                        {% endfor %}
+                <div class="case_content clearFix">
+                    <div class="left fl">
+                        <div class="img_b">
+                            <a href="case/{{ cases.2.id }}" target="_blank">
+                                <img src="{% get_media_prefix %}{{ caseimages.2.image }}"
+                                     width="100%" height="100%" alt="{{ cases.2.name }}">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【{{ cases.2.name }}】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {#                            <ul>#}
+                        {#                                {% if cases.1 %}#}
+                        {#                                    <li>#}
+                        {#                                        <a href="case/{{ cases.1.id }}" target="_blank">#}
+                        {#                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"#}
+                        {#                                                 width="100%" height="100%" alt="{{ cases.1.name }}">#}
+                        {#                                            <div class="synopsis_box caseDIV">#}
+                        {#                                                <div class="synopsis">#}
+                        {#                                                    <h3>【{{ cases.1.name }}】</h3>#}
+                        {#                                                    <span></span>#}
+                        {#                                                    <p class="p2"></p>#}
+                        {#                                                </div>#}
+                        {#                                            </div>#}
+                        {#                                        </a>#}
+                        {#                                    </li>#}
+                        {#                                {% endif %}#}
+                        {#                                {% if cases.2 %}#}
+                        {#                                    <li class="fl center" style="margin: 0px;">#}
+                        {#                                        <a href="case/{{ cases.2.id }}" target="_blank">#}
+                        {#                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"#}
+                        {#                                                 width="100%" height="100%" alt="{{ cases.2.name }}">#}
+                        {#                                            <div class="synopsis_box caseDIV">#}
+                        {#                                                <div class="synopsis">#}
+                        {#                                                    <h3>【{{ cases.2.name }}】</h3>#}
+                        {#                                                    <span></span>#}
+                        {#                                                    <p class="p2"></p>#}
+                        {#                                                </div>#}
+                        {#                                            </div>#}
+                        {#                                        </a>#}
+                        {#                                    </li>#}
+                        {#                                {% endif %}#}
+                        {#                            </ul>#}
+                    </div>
+                    <div class="right fr">
+                        {#                        <ul class="clearFis">#}
+                        {#                            {% if cases.3 %}#}
+                        {#                                <li class="fl">#}
+                        {#                                    <a href="case/{{ cases.3.id }}" target="_blank">#}
+                        {#                                        <img src="{% get_media_prefix %}{{ caseimages.3.image }}"#}
+                        {#                                             width="100%" height="100%" alt="{{ cases.3.name }}">#}
+                        {#                                        <div class="synopsis_box caseDIV">#}
+                        {#                                            <div class="synopsis">#}
+                        {#                                                <h3>【{{ cases.3.name }}】</h3>#}
+                        {#                                                <span></span>#}
+                        {#                                                <p class="p2"></p>#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                    </a>#}
+                        {#                                </li>#}
+                        {#                            {% endif %}#}
+                        {#                            {% if cases.4 %}#}
+                        {#                                <li class="fl">#}
+                        {#                                    <a href="case/{{ cases.4.id }}" target="_blank">#}
+                        {#                                        <img src="{% get_media_prefix %}{{ caseimages.4.image }}"#}
+                        {#                                             width="100%" height="100%" alt="{{ cases.4.name }}">#}
+                        {#                                        <div class="synopsis_box caseDIV">#}
+                        {#                                            <div class="synopsis">#}
+                        {#                                                <h3>【{{ cases.4.name }}】</h3>#}
+                        {#                                                <span></span>#}
+                        {#                                                <p class="p2"></p>#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                    </a>#}
+                        {#                                </li>#}
+                        {#                            {% endif %}#}
+                        {#                        </ul>#}
+                        {% if cases.3 %}
+                            <div class="img_b">
+                                <a href="case/{{ cases.3.id }}" target="_blank">
+                                    <img src="{% get_media_prefix %}{{ caseimages.3.image }}"
+                                         width="100%" height="100%" alt="{{ cases.3.name }}">
+                                    <div class="synopsis_box caseDIV">
+                                        <div class="synopsis">
+                                            <h3>【{{ cases.3.name }}】</h3>
+                                            <span></span>
+                                            <p class="p2"></p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-        </div>
-        {#    装修攻略#}
-        <div class="index_course">
-            <div class="in-con-head">
-                <div class="in-con-head-text">
-                    <h1 class="h1_color1">装修攻略</h1>
-                    <p class="p_color1">完整装修流程与攻略</p>
-                </div>
-                <div class="in-con-head-right"><a href="/page/6.html" target="_blank">查看更多</a>
+            <div class="clear"></div>
+            {#设计师#}
+            <div class="index-team">
+                <div class="index-auto-box">
+                    <div class="index-normal-hd">
+                        <dl class="normal-hd-tit">
+                            <dt>人气设计师</dt>
+                        </dl>
+                    </div>
+                    <div class="index-normal-bd">
+                        <div class="team-list">
+                            {% for d in designers %}
+                                <div class="team-item">
+                                    <a href="/designer/{{ d.id }}" class="img-box">
+                                        <img src="{% get_media_prefix %}{{ d.portrait }}" alt="家装设计师 {{ d.name }}">
+                                    </a>
+                                    <dl>
+                                        <dt>{{ d.name }}</dt>
+                                        <dd>{{ d.desc }}</dd>
+                                    </dl>
+                                    <a href="/Designer/Detail/248" class="btn btn-line">预约设计&gt;</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="left">
-                <ul class="left_nav">
-                    <li class="active">
-                        <img src="{% get_static_prefix %}jianmei/image/course_knowledge_on.png" alt="装修百科">
-                        <a href="#" target="_blank">
-                            <p>装修百科</p>
-                        </a>
-                    </li>
-                    <li>
-                        <img src="{% get_static_prefix %}jianmei/image/course_jour.png">
-                        <a target="_blank" href="#">
-                            <p>装修学堂</p>
-                        </a>
-                    </li>
-                </ul>
-                {#                百科、学堂切换，分别加载#}
-                <div class="right_nav">
-                    <dl>
-                        {% for e in encyclopediaTop %}
-                            <dd>
-                                <a href="/article/{{ e.id }}" target="_blank">
-                                    <img src="{% get_media_prefix %}{{ e.image }}"
-                                         alt="{{ e.title }}">
-                                    <p>{{ e.title }}</p>
-                                </a>
-                            </dd>
-                        {% endfor %}
-                    </dl>
-                    <div class="box">
-                        <h4>装修百科</h4>
-                        <ul>
-                            {% for eb in encyclopediaBottom %}
-                                <li>
-                                    <a target="_blank" href="/article/{{ eb.id }}">
+            {#    装修攻略#}
+            <div class="index_course">
+                <div class="in-con-head">
+                    <div class="in-con-head-text">
+                        <h1 class="h1_color1">装修攻略</h1>
+                        <p class="p_color1">完整装修流程与攻略</p>
+                    </div>
+                    <div class="in-con-head-right"><a href="/page/6.html" target="_blank">查看更多</a>
+                    </div>
+                </div>
+                <div class="left">
+                    <ul class="left_nav">
+                        <li class="active">
+                            <img src="{% get_static_prefix %}jianmei/image/course_knowledge_on.png" alt="装修百科">
+                            <a href="#" target="_blank">
+                                <p>装修百科</p>
+                            </a>
+                        </li>
+                        <li>
+                            <img src="{% get_static_prefix %}jianmei/image/course_jour.png">
+                            <a target="_blank" href="#">
+                                <p>装修学堂</p>
+                            </a>
+                        </li>
+                    </ul>
+                    {#                百科、学堂切换，分别加载#}
+                    <div class="right_nav">
+                        <dl>
+                            {% for e in encyclopediaTop %}
+                                <dd>
+                                    <a href="/article/{{ e.id }}" target="_blank">
+                                        <img src="{% get_media_prefix %}{{ e.image }}"
+                                             alt="{{ e.title }}">
+                                        <p>{{ e.title }}</p>
+                                    </a>
+                                </dd>
+                            {% endfor %}
+                        </dl>
+                        <div class="box">
+                            <h4>装修百科</h4>
+                            <ul>
+                                {% for eb in encyclopediaBottom %}
+                                    <li>
+                                        <a target="_blank" href="/article/{{ eb.id }}">
                                     <span>{{ eb.title }}
                                         <img src="{% get_static_prefix %}jianmei/image/span_HOT.gif"
                                              class="span-hot" alt="{{ eb.title }}">
                                     </span>
-                                        <span>{{ eb.publish_date|date:"Y-m-d" }}</span>
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                                            <span>{{ eb.publish_date|date:"Y-m-d" }}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="right_nav" style="display:none;">
-                    <dl>
-                        {% for st in schoolTop %}
-                            <dd>
-                                <a href="/article/{{ st.id }}" target="_blank">
-                                    <img src="{% get_media_prefix %}{{ st.image }}"
-                                         alt="{{ st.title }}">
-                                    <p>{{ st.title }}</p>
-                                </a>
-                            </dd>
-                        {% endfor %}
-                    </dl>
-                    <div class="box">
-                        <h4>装修学堂</h4>
-                        <ul>
-                            {% for sb in schoolBottom %}
-                                <li>
-                                    <a target="_blank" href="/article/{{ sb.id }}">
+                    <div class="right_nav" style="display:none;">
+                        <dl>
+                            {% for st in schoolTop %}
+                                <dd>
+                                    <a href="/article/{{ st.id }}" target="_blank">
+                                        <img src="{% get_media_prefix %}{{ st.image }}"
+                                             alt="{{ st.title }}">
+                                        <p>{{ st.title }}</p>
+                                    </a>
+                                </dd>
+                            {% endfor %}
+                        </dl>
+                        <div class="box">
+                            <h4>装修学堂</h4>
+                            <ul>
+                                {% for sb in schoolBottom %}
+                                    <li>
+                                        <a target="_blank" href="/article/{{ sb.id }}">
                                     <span>{{ sb.title }}
                                         <img src="{% get_static_prefix %}jianmei/image/span_HOT.gif"
                                              class="span-hot" alt="{{ sb.title }}">
                                     </span>
-                                        <span>{{ sb.publish_date|date:"Y-m-d" }}</span>
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                                            <span>{{ sb.publish_date|date:"Y-m-d" }}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="right"><strong>装修日记</strong>
+                    <p class="ppp">了解装修新闻资讯</p>
+                    <a href="/lists/7.html" target="_blank">立即查看</a>
+                </div>
             </div>
-            <div class="right"><strong>装修日记</strong>
-                <p class="ppp">了解装修新闻资讯</p>
-                <a href="/lists/7.html" target="_blank">立即查看</a>
-            </div>
+            <script type="text/javascript">
+                $(function () {
+                    var left_index = 0;
+                    $(".left .left_nav li").mouseover(function (e) {
+                        if (left_index == $(this).index()) return;
+                        else {
+                            left_index = $(this).index();
+                        }
+                        $(".left .left_nav li").removeClass("active");
+                        $(this).addClass("active");
+                        $(this).children("img").attr("src", $(this).children("img").attr("src").replace(".png", "_on.png"));
+                        $(this).siblings().children("img").attr("src", $(this).children("img").attr("src").replace("_on.png", ".png"));
+                        $(".left .right_nav").hide();
+                        $(".left .right_nav").eq($(this).index()).fadeIn();
+                    });
+                });
+            </script>
         </div>
         <script type="text/javascript">
             $(function () {
-                var left_index = 0;
-                $(".left .left_nav li").mouseover(function (e) {
-                    if (left_index == $(this).index()) return;
-                    else {
-                        left_index = $(this).index();
-                    }
-                    $(".left .left_nav li").removeClass("active");
-                    $(this).addClass("active");
-                    $(this).children("img").attr("src", $(this).children("img").attr("src").replace(".png", "_on.png"));
-                    $(this).siblings().children("img").attr("src", $(this).children("img").attr("src").replace("_on.png", ".png"));
-                    $(".left .right_nav").hide();
-                    $(".left .right_nav").eq($(this).index()).fadeIn();
+                $(".index_Journalism .left li").eq(0).find(".signer_all").show();
+
+                $(".index_Journalism .left .signer_right").mouseover(function (e) {
+                    var index = $(this).parents("li").index();
+                    $(".index_Journalism .left").find(".signer_all").hide();
+                    $(".index_Journalism .left .signer_all").eq(index).show();
                 });
+                $(".index_Journalism .left .signer_all img").each(function (index, element) {
+                    $(this).attr("src", $(this).attr("src").replace(/\.gif/g, ''));
+                });
+
+                $(".index_Journalism .left .context").each(function (index, element) {
+                    $(this).html($(this).html().replace(/\/\#\//g, ' '));
+                });
+
             });
         </script>
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            $(".index_Journalism .left li").eq(0).find(".signer_all").show();
+        <style>
+            .index_pinpaishili .in-con-head-text {
+                float: none !important;
+                width: 100%;
+                text-align: center
+            }
 
-            $(".index_Journalism .left .signer_right").mouseover(function (e) {
-                var index = $(this).parents("li").index();
-                $(".index_Journalism .left").find(".signer_all").hide();
-                $(".index_Journalism .left .signer_all").eq(index).show();
-            });
-            $(".index_Journalism .left .signer_all img").each(function (index, element) {
-                $(this).attr("src", $(this).attr("src").replace(/\.gif/g, ''));
-            });
+            .floor_pinpaishili {
+                background: #efeef3;
+                padding-bottom: 40px;
+            }
 
-            $(".index_Journalism .left .context").each(function (index, element) {
-                $(this).html($(this).html().replace(/\/\#\//g, ' '));
-            });
+            /*新css开始*/
+            .clearfloat:before, .clearfloat:after {
+                content: "";
+                display: table;
+            }
 
-        });
-    </script>
-    <style>
-        .index_pinpaishili .in-con-head-text {
-            float: none !important;
-            width: 100%;
-            text-align: center
-        }
+            .clearfloat:after {
+                clear: both;
+            }
 
-        .floor_pinpaishili {
-            background: #efeef3;
-            padding-bottom: 40px;
-        }
+            /* For IE 6/7 (trigger hasLayout) */
+            .clearfloat {
+                *zoom: 1;
+            }
 
-        /*新css开始*/
-        .clearfloat:before, .clearfloat:after {
-            content: "";
-            display: table;
-        }
+            /* center class */
+            .ppsl_box_con {
+                margin-top: 30px;
+            }
 
-        .clearfloat:after {
-            clear: both;
-        }
+            .ppsl_floors .ppsl_box_con ul {
+                width: 110%;
+            }
 
-        /* For IE 6/7 (trigger hasLayout) */
-        .clearfloat {
-            *zoom: 1;
-        }
+            .ppsl_floors .ppsl_box_con ul li {
+                width: 390px;
+                height: 180px;
+                float: left;
+                margin-right: 15px;
+                background: #fff;
+                /* -webkit-transition: transform 0.3s 0s ease-out;
+                transition: transform 0.3s 0s ease-out;
+                -ms-transition: transform 0.3s 0s ease-out;
+                -moz-transition: transform 0.3s 0s ease-out;
+                -o-transition: transform 0.3s 0s ease-out;
+                transition: transform 0.3s 0s ease-out; */
+                transition: all 0.3s;
+                -ms-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+            }
 
-        /* center class */
-        .ppsl_box_con {
-            margin-top: 30px;
-        }
+            #ppsl_box {
+                background: #F5F5F5;
+                padding-bottom: 30px
+            }
 
-        .ppsl_floors .ppsl_box_con ul {
-            width: 110%;
-        }
+            #ppsl_box .ppsl_box_con ul li:hover {
+                box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
+                /* -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                -moz-transform: translateY(-5px);
+                -o-transform: translateY(-5px);
+                transform: translateY(-5px);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -ms-transform-origin: center center;
+                -moz-transform-origin: center center;
+                -o-transform-origin: center center; */
+                margin-top: -5px;
+            }
 
-        .ppsl_floors .ppsl_box_con ul li {
-            width: 390px;
-            height: 180px;
-            float: left;
-            margin-right: 15px;
-            background: #fff;
-            /* -webkit-transition: transform 0.3s 0s ease-out;
-            transition: transform 0.3s 0s ease-out;
-            -ms-transition: transform 0.3s 0s ease-out;
-            -moz-transition: transform 0.3s 0s ease-out;
-            -o-transition: transform 0.3s 0s ease-out;
-            transition: transform 0.3s 0s ease-out; */
-            transition: all 0.3s;
-            -ms-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            -o-transition: all 0.3s;
-        }
+            #ppsl_box .ppsl_box_con ul li:hover .font-titles {
+                color: #E60012
+            }
 
-        #ppsl_box {
-            background: #F5F5F5;
-            padding-bottom: 30px
-        }
+            .ppsl_floors .ppsl_box_con ul li .con_img {
+                width: 100%;
+                height: 180px;
+                position: relative;
+            }
 
-        #ppsl_box .ppsl_box_con ul li:hover {
-            box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
-            /* -webkit-transform: translateY(-5px);
-            -ms-transform: translateY(-5px);
-            -moz-transform: translateY(-5px);
-            -o-transform: translateY(-5px);
-            transform: translateY(-5px);
-            -webkit-transform-origin: center center;
-            transform-origin: center center;
-            -ms-transform-origin: center center;
-            -moz-transform-origin: center center;
-            -o-transform-origin: center center; */
-            margin-top: -5px;
-        }
+            .con_content {
+                padding-top: 30px;
+                margin-left: 30px
+            }
 
-        #ppsl_box .ppsl_box_con ul li:hover .font-titles {
-            color: #E60012
-        }
+            .font-titles {
+                font-size: 20px;
+                color: #545454
+            }
 
-        .ppsl_floors .ppsl_box_con ul li .con_img {
-            width: 100%;
-            height: 180px;
-            position: relative;
-        }
+            .font-blod {
+                font-weight: bold;
+                margin-top: 10px;
+            }
 
-        .con_content {
-            padding-top: 30px;
-            margin-left: 30px
-        }
+            /*中间高的部分*/
+            .ppsl_box_middle {
+                margin-top: 15px;
+            }
 
-        .font-titles {
-            font-size: 20px;
-            color: #545454
-        }
+            .ppsl_floors .ppsl_box_middle ul {
+                width: 110%;
+            }
 
-        .font-blod {
-            font-weight: bold;
-            margin-top: 10px;
-        }
+            .ppsl_floors .ppsl_box_middle ul li {
+                width: 390px;
+                height: 276px;
+                float: left;
+                margin-right: 15px;
+                background: #fff;
+                /*  -webkit-transition: transform 0.3s 0s ease-out;
+                 transition: transform 0.3s 0s ease-out;
+                 -ms-transition: transform 0.3s 0s ease-out;
+                 -moz-transition: transform 0.3s 0s ease-out;
+                 -o-transition: transform 0.3s 0s ease-out;
+                 transition: transform 0.3s 0s ease-out; */
+                transition: all 0.3s;
+                -ms-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+            }
 
-        /*中间高的部分*/
-        .ppsl_box_middle {
-            margin-top: 15px;
-        }
+            #ppsl_box .ppsl_box_middle ul li:first-child:hover {
+                box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
+                /* -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                -moz-transform: translateY(-5px);
+                -o-transform: translateY(-5px);
+                transform: translateY(-5px);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -ms-transform-origin: center center;
+                -moz-transform-origin: center center;
+                -o-transform-origin: center center; */
+                margin-top: -5px;
+            }
 
-        .ppsl_floors .ppsl_box_middle ul {
-            width: 110%;
-        }
+            #ppsl_box .ppsl_box_middle ul li:last-child:hover {
+                box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
+                /* -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                -moz-transform: translateY(-5px);
+                -o-transform: translateY(-5px);
+                transform: translateY(-5px);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -ms-transform-origin: center center;
+                -moz-transform-origin: center center;
+                -o-transform-origin: center center; */
+                margin-top: -5px;
+            }
 
-        .ppsl_floors .ppsl_box_middle ul li {
-            width: 390px;
-            height: 276px;
-            float: left;
-            margin-right: 15px;
-            background: #fff;
-            /*  -webkit-transition: transform 0.3s 0s ease-out;
-             transition: transform 0.3s 0s ease-out;
-             -ms-transition: transform 0.3s 0s ease-out;
-             -moz-transition: transform 0.3s 0s ease-out;
-             -o-transition: transform 0.3s 0s ease-out;
-             transition: transform 0.3s 0s ease-out; */
-            transition: all 0.3s;
-            -ms-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            -o-transition: all 0.3s;
-        }
+            #ppsl_box .ppsl_box_middle ul li:hover .font-titles {
+                color: #E60012
+            }
 
-        #ppsl_box .ppsl_box_middle ul li:first-child:hover {
-            box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
-            /* -webkit-transform: translateY(-5px);
-            -ms-transform: translateY(-5px);
-            -moz-transform: translateY(-5px);
-            -o-transform: translateY(-5px);
-            transform: translateY(-5px);
-            -webkit-transform-origin: center center;
-            transform-origin: center center;
-            -ms-transform-origin: center center;
-            -moz-transform-origin: center center;
-            -o-transform-origin: center center; */
-            margin-top: -5px;
-        }
+            .ppsl_floors .ppsl_box_middle ul li .con_img {
+                width: 100%;
+                height: 276px;
+                position: relative;
+            }
 
-        #ppsl_box .ppsl_box_middle ul li:last-child:hover {
-            box-shadow: 0px 12px 30px rgba(152, 152, 152, .3);
-            /* -webkit-transform: translateY(-5px);
-            -ms-transform: translateY(-5px);
-            -ms-transform: translateY(-5px);
-            -moz-transform: translateY(-5px);
-            -o-transform: translateY(-5px);
-            transform: translateY(-5px);
-            -webkit-transform-origin: center center;
-            transform-origin: center center;
-            -ms-transform-origin: center center;
-            -moz-transform-origin: center center;
-            -o-transform-origin: center center; */
-            margin-top: -5px;
-        }
+            .home_go_btn {
+                width: 130px;
+                height: 35px;
+                text-align: center;
+                line-height: 35px;
+                background: #E60012;
+                display: block;
+                color: white;
+                font-size: 14px;
+                margin: auto
+            }
 
-        #ppsl_box .ppsl_box_middle ul li:hover .font-titles {
-            color: #E60012
-        }
+            .shj_titles {
+                color: #fff;
+                font-size: 30px;
+                font-weight: bold;
+                padding-top: 70px;
+            }
 
-        .ppsl_floors .ppsl_box_middle ul li .con_img {
-            width: 100%;
-            height: 276px;
-            position: relative;
-        }
+            .shj_summery {
+                color: #fff;
+                font-size: 16px;
+                margin-top: 8px;
+            }
 
-        .home_go_btn {
-            width: 130px;
-            height: 35px;
-            text-align: center;
-            line-height: 35px;
-            background: #E60012;
-            display: block;
-            color: white;
-            font-size: 14px;
-            margin: auto
-        }
+            /*新css结束*/
 
-        .shj_titles {
-            color: #fff;
-            font-size: 30px;
-            font-weight: bold;
-            padding-top: 70px;
-        }
+        </style>
 
-        .shj_summery {
-            color: #fff;
-            font-size: 16px;
-            margin-top: 8px;
-        }
-
-        /*新css结束*/
-
-    </style>
-
-    {#品牌实力#}
-    <div class="index_pinpaishili">
-        <div class="science wraper">
-            <div class="in-con-head">
-                <div class="in-con-head-text">
-                    <h1 class="h1_color1">品牌实力</h1>
-                    <p class="p_color1">让每一个中国人都能享受品质家居</p>
+        {#品牌实力#}
+        <div class="index_pinpaishili">
+            <div class="science wraper">
+                <div class="in-con-head">
+                    <div class="in-con-head-text">
+                        <h1 class="h1_color1">品牌实力</h1>
+                        <p class="p_color1">让每一个中国人都能享受品质家居</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="pinpaishili_content clearFix ppsl_floors" id="ppsl_box">
-            <div class="wraper">
-                <div class="main_box" style="overflow: inherit;">
-                    <div class="ppsl_box_con">
-                        <ul class="clearfloat">
-                            <li>
+            <div class="pinpaishili_content clearFix ppsl_floors" id="ppsl_box">
+                <div class="wraper">
+                    <div class="main_box" style="overflow: inherit;">
+                        <div class="ppsl_box_con">
+                            <ul class="clearfloat">
+                                <li>
 
-                                <div class="con_img"
-                                     style="background: url({% get_static_prefix %}jianmei/image/ppjs7.jpg)">
-                                    <div class="con_content">
-                                        <p class="font-titles">品牌介绍</p>
-                                        <p class="font-titles font-blod">强势护航</p></div>
-                                </div>
-
-                            </li>
-                            <li>
-                                <a href="/lists/2.html" target="_blank" style="display: block;">
                                     <div class="con_img"
-                                         style="background: url({% get_static_prefix %}jianmei/image/ssj7.jpg)">
+                                         style="background: url({% get_static_prefix %}jianmei/image/ppjs7.jpg)">
                                         <div class="con_content">
-                                            <p class="font-titles">设计师</p>
-                                            <p class="font-titles font-blod">私人定制</p></div>
+                                            <p class="font-titles">品牌介绍</p>
+                                            <p class="font-titles font-blod">强势护航</p></div>
                                     </div>
-                                </a>
-                            </li>
-                            <li>
 
-                                <div class="con_img"
-                                     style="background: url({% get_static_prefix %}jianmei/image/aztd.jpg)">
-                                    <div class="con_content">
-                                        <p class="font-titles">安装团队</p>
-                                        <p class="font-titles font-blod">专业安装团队</p></div>
-                                </div>
+                                </li>
+                                <li>
+                                    <a href="/lists/2.html" target="_blank" style="display: block;">
+                                        <div class="con_img"
+                                             style="background: url({% get_static_prefix %}jianmei/image/ssj7.jpg)">
+                                            <div class="con_content">
+                                                <p class="font-titles">设计师</p>
+                                                <p class="font-titles font-blod">私人定制</p></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
 
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="ppsl_box_middle">
-                        <ul class="clearfloat">
-                            <li>
+                                    <div class="con_img"
+                                         style="background: url({% get_static_prefix %}jianmei/image/aztd.jpg)">
+                                        <div class="con_content">
+                                            <p class="font-titles">安装团队</p>
+                                            <p class="font-titles font-blod">专业安装团队</p></div>
+                                    </div>
 
-                                <div class="con_img"
-                                     style="background: url({% get_static_prefix %}jianmei/image/ppdjs.jpg)">
-                                    <div class="con_content">
-                                        <p class="font-titles">品牌大记事</p>
-                                        <p class="font-titles font-blod">做有温度的事</p></div>
-                                </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ppsl_box_middle">
+                            <ul class="clearfloat">
+                                <li>
 
-                                <!----></li>
-                            <li>
-                                <!---->
-                                <div class="con_img"
-                                     style="text-align: center; background: url({% get_static_prefix %}jianmei/image/jczs7.jpg);">
-                                    <p class="shj_titles">简美装饰</p>
-                                    <p style="margin-top: 22px;">
-                                        <a target="_blank"
-                                           href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
-                                           class="home_go_btn">了解简美</a></p>
-                                </div>
-                            </li>
-                            <li>
+                                    <div class="con_img"
+                                         style="background: url({% get_static_prefix %}jianmei/image/ppdjs.jpg)">
+                                        <div class="con_content">
+                                            <p class="font-titles">品牌大记事</p>
+                                            <p class="font-titles font-blod">做有温度的事</p></div>
+                                    </div>
 
-                                <div class="con_img"
-                                     style="background: url({% get_static_prefix %}jianmei/image/sggy.jpg)">
-                                    <div class="con_content">
-                                        <p class="font-titles">施工工艺</p>
-                                        <p class="font-titles font-blod">全能精装、省心到家</p></div>
-                                </div>
+                                    <!----></li>
+                                <li>
+                                    <!---->
+                                    <div class="con_img"
+                                         style="text-align: center; background: url({% get_static_prefix %}jianmei/image/jczs7.jpg);">
+                                        <p class="shj_titles">简美装饰</p>
+                                        <p style="margin-top: 22px;">
+                                            <a target="_blank"
+                                               href="http://kefu.ziyun.com.cn/vclient/chat/?websiteid=110699"
+                                               class="home_go_btn">了解简美</a></p>
+                                    </div>
+                                </li>
+                                <li>
 
-                            </li>
-                        </ul>
+                                    <div class="con_img"
+                                         style="background: url({% get_static_prefix %}jianmei/image/sggy.jpg)">
+                                        <div class="con_content">
+                                            <p class="font-titles">施工工艺</p>
+                                            <p class="font-titles font-blod">全能精装、省心到家</p></div>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="clear"></div>
     {#    服务流程#}
