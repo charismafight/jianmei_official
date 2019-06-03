@@ -718,7 +718,6 @@
     width: 1210px;
     margin: 0 auto;
     overflow: hidden;
-    padding-bottom: 60px;
 }
 
 .index_case > div:not(.in-con-head) {
@@ -854,6 +853,7 @@
 .in-con-head-text {
     padding-top: 10px;
     float: left;
+    width: 100%;
 }
 
 .in-con-head-text h1 {

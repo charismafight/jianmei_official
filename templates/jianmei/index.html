@@ -3,6 +3,52 @@
 {% block body_block %}
     {% csrf_token %}
     <link rel="stylesheet" href="{% static 'jianmei/css/yzfmain.css' %}">
+    <link rel="stylesheet" href="{% static 'jianmei/css/bootstrap.css' %}">
+    <link rel="stylesheet/less" type="text/css" href="{% static 'jianmei/css/forms.less' %}">
+    {#    悬浮层#}
+    <div class="fixed-menu-wrap">
+        <ul class="fixed-menu">
+            <li>
+                <a href="javascript:void(0)" onclick="doyoo.util.openChat('g=10064066');return false;">
+                    <i class="iconfont icon-erjikefu"></i>
+                    <span>在线咨询</span>
+                </a>
+                <script type="text/javascript" charset="utf-8"
+                        src="http://lead.soperson.com/20001829/10063836.js       "></script>
+                <div id="doyoo_panel"></div>
+
+                <div id="talk99_message"></div>
+                <div id="doyoo_share" style="display:none;"></div>
+                <link rel="stylesheet" type="text/css" href="http://aux.soperson.com/131221/oms.css?181204">
+                <script type="text/javascript" src="http://aux.soperson.com/131221/oms.js?181208"
+                        charset="utf-8"></script>
+
+            </li>
+            <li>
+                <a href="#" data-toggle="modal" data-target="#priceModal">
+                    <i class="iconfont icon-ERP_hetonghao"></i>
+                    <span>免费报价</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" data-toggle="modal" data-target="#yuyuesheji">
+                    <i class="iconfont icon-pan_icon"></i>
+                    <span>预约设计</span>
+                </a>
+            </li>
+            <li class="last">
+                <a href="javascript:;">
+                    <i class="iconfont icon-erweima1"></i>
+                    <span>案例解析</span>
+                    <div class="drop-on">
+                        {#                        TODO 图片#}
+                        <img src="/Images/ecode.jpg">
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <a id="scrollUp" href="javascript:;" class="go-top iconfont icon-jiantou3"></a>
+    </div>
     {#    大logo及报价#}
     <div class="index-banvessel">
         <div class="indexBanner">
@@ -254,6 +300,156 @@
         {#        </div>#}
     </div>
     <input type="reset" style="display:none;" class="reset">
+    <div class="index-a">
+        <div class="index-a-box">
+            <div class="a-media-wrap">
+                <div class="a-media">
+                    <i class="iconfont icon-zuanshi"></i>
+                    <div class="a-media-bd">
+                        <h4>蓝钻工程 更环保</h4>
+                        <p>欧标工程质量管理体系，给你一个安全环保的家。</p>
+                    </div>
+                </div>
+                <div class="a-media">
+                    <i class="iconfont icon-kongjianbangyang"></i>
+                    <div class="a-media-bd">
+                        <h4>高端设计</h4>
+                        <p>汇聚业界设计大咖，定制1+N全案设计。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="a-sec-wrap">
+                <div class="a-sec-l">
+                    <a href="javascript:void(0);" class="sec-link-a">
+                        <i class="iconfont icon-ruler"></i>
+                        <dl>
+                            <dt>免费环保量房</dt>
+                            <dd>环保装修第一步</dd>
+                        </dl>
+                    </a>
+                    <a href="javascript:void(0);" class="sec-link-b" data-toggle="modal" data-target="#exclusiveModal">
+                        <i class="text">
+                            <small>￥</small>
+                            500</i>
+                        <span>官网专属礼包</span>
+                    </a>
+                    <a href="javascript:void(0);" class="sec-link-b" data-toggle="modal" data-target="#yuyuesheji">
+                        <i class="iconfont icon-icon4"></i>
+                        <span>预约设计</span>
+                    </a>
+
+                </div>
+                <div class="a-sec-c">
+                    <div class="sec-form">
+                        <form>
+                            <div class="sec-row">
+                                <label>您的户型</label>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <select class="form-control  remark">
+                                            <option value="1室">1室</option>
+                                            <option value="2室">2室</option>
+                                            <option value="3室" selected="">3室</option>
+                                            <option value="4室">4室</option>
+                                            <option value="5室">5室</option>
+                                            <option value="6室">6室</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <select class="form-control remark">
+                                            <option value="1厅" selected="">1厅</option>
+                                            <option value="2厅">2厅</option>
+                                            <option value="3厅">3厅</option>
+                                            <option value="4厅">4厅</option>
+                                            <option value="5厅">5厅</option>
+                                            <option value="6厅">6厅</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <select class="form-control remark">
+                                            <option value="1卫" selected="">1卫</option>
+                                            <option value="2卫">2卫</option>
+                                            <option value="3卫">3卫</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sec-row">
+                                <label>小区面积</label>
+                                <div class="row">
+                                    <div class="col-xs-4 area">
+                                        <input type="text" class="form-control" name="squareMeters"
+                                               placeholder="输入您的房屋面积">
+                                        <span class="m2">㎡</span>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input name="residentialName" type="text" class="form-control"
+                                               placeholder="输入小区名称">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sec-row">
+                                <label>联系方式</label>
+                                <div class="row">
+                                    <div class="col-xs-4 area">
+                                        <input name="name" type="text" class="form-control" placeholder="输入您的称呼">
+                                        <span class="mast">*</span>
+                                    </div>
+                                    <div class="col-xs-8 area">
+                                        <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号码">
+                                        <span class="mast">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sec-bot submit">
+                                <p class="btn btn-gold">免费预约</p>
+                                <span>* 我们严格遵守《互联网安全法》，保护您的个人隐私安全</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="a-sec-r">
+
+                    <a target="_blank" href="http://a8.yzf.com.cn/spm/kjbystfa"><img src="/images/a-sec-r.jpg"
+                                                                                     alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="index-a-slide" style="display:none;">
+            <h2>更环保的高端装饰</h2>
+            <div id="index-a-slide" class="slideTxtBox">
+                <div class="hd">
+                    <ul>
+
+                        <li>别墅大宅</li>
+                        <li class="on">私人定制</li>
+                        <li>诺华整装</li>
+                    </ul>
+                </div>
+                <div class="tempWrap" style="overflow:hidden; position:relative; width:0px">
+                    <div class="bd"
+                         style="width: 0px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+                        <div class="slide-item" style="float: left; width: 0px;">
+                            <a href="/SpecialTopics3/HeartSaving" class="slide-link"
+                               style="background-image: url(images/index-1-slide.jpg);"></a>
+                        </div>
+                        <div class="slide-item" style="float: left; width: 0px;">
+                            <a href="/SpecialTopics3/PrivateCustom" class="slide-link"
+                               style="background-image: url(images/index-2-slide.jpg);"></a>
+                        </div>
+                        <div class="slide-item" style="float: left; width: 0px;">
+                            <a target="_blank" rel="nofollow" href="http://www.hcsjcd.com" class="slide-link"
+                               style="background-image: url(images/index-3-slide.jpg);"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft">
+                    <a href="javascript:;" class="prev iconfont icon-jiantou-left"></a>
+                    <a href="javascript:;" class="next iconfont icon-jiantou-right"></a>
+                </div>
+            </div>
+        </div>
+    </div>
     {#    磁贴部分#}
     <div class="column-vessel">
         <ul class="column in-con">
@@ -453,14 +649,17 @@
                 overflow: hidden;
             }
 
-            .index_case .case_content .left, .index_case .case_content .right {
-                width: 595px;
+            .index_case .case_content .left {
+                width: 400px;
                 height: auto;
                 overflow: hidden;
             }
 
-            .fr {
-                float: right;
+            .index_case .case_content .right {
+                width: 400px;
+                height: 234px;
+                overflow: hidden;
+                margin-left: 2px;
             }
 
             .case_content ul li {
@@ -617,7 +816,7 @@
                 padding-top: 15px;
             }
         </style>
-        <div class="index_case" style="height: 500px">
+        <div class="index_case">
             <div>
                 <div class="in-con-head">
                     <div class="in-con-head-text">
@@ -675,39 +874,7 @@
                         {#                                {% endif %}#}
                         {#                            </ul>#}
                     </div>
-                    <div class="right fr">
-                        {#                        <ul class="clearFis">#}
-                        {#                            {% if cases.3 %}#}
-                        {#                                <li class="fl">#}
-                        {#                                    <a href="case/{{ cases.3.id }}" target="_blank">#}
-                        {#                                        <img src="{% get_media_prefix %}{{ caseimages.3.image }}"#}
-                        {#                                             width="100%" height="100%" alt="{{ cases.3.name }}">#}
-                        {#                                        <div class="synopsis_box caseDIV">#}
-                        {#                                            <div class="synopsis">#}
-                        {#                                                <h3>【{{ cases.3.name }}】</h3>#}
-                        {#                                                <span></span>#}
-                        {#                                                <p class="p2"></p>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </a>#}
-                        {#                                </li>#}
-                        {#                            {% endif %}#}
-                        {#                            {% if cases.4 %}#}
-                        {#                                <li class="fl">#}
-                        {#                                    <a href="case/{{ cases.4.id }}" target="_blank">#}
-                        {#                                        <img src="{% get_media_prefix %}{{ caseimages.4.image }}"#}
-                        {#                                             width="100%" height="100%" alt="{{ cases.4.name }}">#}
-                        {#                                        <div class="synopsis_box caseDIV">#}
-                        {#                                            <div class="synopsis">#}
-                        {#                                                <h3>【{{ cases.4.name }}】</h3>#}
-                        {#                                                <span></span>#}
-                        {#                                                <p class="p2"></p>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </a>#}
-                        {#                                </li>#}
-                        {#                            {% endif %}#}
-                        {#                        </ul>#}
+                    <div class="right fl">
                         {% if cases.1 %}
                             <div class="img_b">
                                 <a href="case/{{ cases.1.id }}" target="_blank">
@@ -723,100 +890,67 @@
                                 </a></div>
                         {% endif %}
                     </div>
+                    <div class="right fl">
+                        {% if cases.2 %}
+                            <div class="img_b">
+                                <a href="case/{{ cases.2.id }}" target="_blank">
+                                    <img src="{% get_media_prefix %}{{ caseimages.2.image }}"
+                                         width="100%" height="100%" alt="{{ cases.2.name }}">
+                                    <div class="synopsis_box caseDIV">
+                                        <div class="synopsis">
+                                            <h3>【{{ cases.2.name }}】</h3>
+                                            <span></span>
+                                            <p class="p2"></p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-            <div class="clear"></div>
         </div>
-        <div class="index_case" style="height: 500px">
+        <div class="index_case">
             <div class="case_content clearFix">
                 <div class="left fl">
                     <div class="img_b">
-                        <a href="case/{{ cases.2.id }}" target="_blank">
-                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"
-                                 width="100%" height="100%" alt="{{ cases.2.name }}">
+                        <a href="case/{{ cases.3.id }}" target="_blank">
+                            <img src="{% get_media_prefix %}{{ caseimages.3.image }}"
+                                 width="100%" height="100%" alt="{{ cases.3.name }}">
                             <div class="synopsis_box caseDIV">
                                 <div class="synopsis">
-                                    <h3>【{{ cases.2.name }}】</h3>
+                                    <h3>【{{ cases.3.name }}】</h3>
                                     <span></span>
                                     <p class="p2"></p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    {#                            <ul>#}
-                    {#                                {% if cases.1 %}#}
-                    {#                                    <li>#}
-                    {#                                        <a href="case/{{ cases.1.id }}" target="_blank">#}
-                    {#                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"#}
-                    {#                                                 width="100%" height="100%" alt="{{ cases.1.name }}">#}
-                    {#                                            <div class="synopsis_box caseDIV">#}
-                    {#                                                <div class="synopsis">#}
-                    {#                                                    <h3>【{{ cases.1.name }}】</h3>#}
-                    {#                                                    <span></span>#}
-                    {#                                                    <p class="p2"></p>#}
-                    {#                                                </div>#}
-                    {#                                            </div>#}
-                    {#                                        </a>#}
-                    {#                                    </li>#}
-                    {#                                {% endif %}#}
-                    {#                                {% if cases.2 %}#}
-                    {#                                    <li class="fl center" style="margin: 0px;">#}
-                    {#                                        <a href="case/{{ cases.2.id }}" target="_blank">#}
-                    {#                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"#}
-                    {#                                                 width="100%" height="100%" alt="{{ cases.2.name }}">#}
-                    {#                                            <div class="synopsis_box caseDIV">#}
-                    {#                                                <div class="synopsis">#}
-                    {#                                                    <h3>【{{ cases.2.name }}】</h3>#}
-                    {#                                                    <span></span>#}
-                    {#                                                    <p class="p2"></p>#}
-                    {#                                                </div>#}
-                    {#                                            </div>#}
-                    {#                                        </a>#}
-                    {#                                    </li>#}
-                    {#                                {% endif %}#}
-                    {#                            </ul>#}
                 </div>
-                <div class="right fr">
-                    {#                        <ul class="clearFis">#}
-                    {#                            {% if cases.3 %}#}
-                    {#                                <li class="fl">#}
-                    {#                                    <a href="case/{{ cases.3.id }}" target="_blank">#}
-                    {#                                        <img src="{% get_media_prefix %}{{ caseimages.3.image }}"#}
-                    {#                                             width="100%" height="100%" alt="{{ cases.3.name }}">#}
-                    {#                                        <div class="synopsis_box caseDIV">#}
-                    {#                                            <div class="synopsis">#}
-                    {#                                                <h3>【{{ cases.3.name }}】</h3>#}
-                    {#                                                <span></span>#}
-                    {#                                                <p class="p2"></p>#}
-                    {#                                            </div>#}
-                    {#                                        </div>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            {% endif %}#}
-                    {#                            {% if cases.4 %}#}
-                    {#                                <li class="fl">#}
-                    {#                                    <a href="case/{{ cases.4.id }}" target="_blank">#}
-                    {#                                        <img src="{% get_media_prefix %}{{ caseimages.4.image }}"#}
-                    {#                                             width="100%" height="100%" alt="{{ cases.4.name }}">#}
-                    {#                                        <div class="synopsis_box caseDIV">#}
-                    {#                                            <div class="synopsis">#}
-                    {#                                                <h3>【{{ cases.4.name }}】</h3>#}
-                    {#                                                <span></span>#}
-                    {#                                                <p class="p2"></p>#}
-                    {#                                            </div>#}
-                    {#                                        </div>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            {% endif %}#}
-                    {#                        </ul>#}
-                    {% if cases.3 %}
+                <div class="right fl">
+                    {% if cases.4 %}
                         <div class="img_b">
-                            <a href="case/{{ cases.3.id }}" target="_blank">
-                                <img src="{% get_media_prefix %}{{ caseimages.3.image }}"
-                                     width="100%" height="100%" alt="{{ cases.3.name }}">
+                            <a href="case/{{ cases.4.id }}" target="_blank">
+                                <img src="{% get_media_prefix %}{{ caseimages.4.image }}"
+                                     width="100%" height="100%" alt="{{ cases.4.name }}">
                                 <div class="synopsis_box caseDIV">
                                     <div class="synopsis">
-                                        <h3>【{{ cases.3.name }}】</h3>
+                                        <h3>【{{ cases.4.name }}】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
+                                    </div>
+                                </div>
+                            </a></div>
+                    {% endif %}
+                </div>
+                <div class="right fl">
+                    {% if cases.5 %}
+                        <div class="img_b">
+                            <a href="case/{{ cases.5.id }}" target="_blank">
+                                <img src="{% get_media_prefix %}{{ caseimages.5.image }}"
+                                     width="100%" height="100%" alt="{{ cases.5.name }}">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【{{ cases.5.name }}】</h3>
                                         <span></span>
                                         <p class="p2"></p>
                                     </div>
@@ -825,17 +959,68 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="clear"></div>
+        </div>
+        <div class="index_case" style="padding-top: 15px;">
+            <div class="case_content clearFix">
+                <div class="left fl">
+                    {% if cases.6 %}
+                        <div class="img_b">
+                            <a href="case/{{ cases.6.id }}" target="_blank">
+                                <img src="{% get_media_prefix %}{{ caseimages.6.image }}"
+                                     width="100%" height="100%" alt="{{ cases.6.name }}">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【{{ cases.6.name }}】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="right fl">
+                    {% if cases.7 %}
+                        <div class="img_b">
+                            <a href="case/{{ cases.7.id }}" target="_blank">
+                                <img src="{% get_media_prefix %}{{ caseimages.7.image }}"
+                                     width="100%" height="100%" alt="{{ cases.7.name }}">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【{{ cases.7.name }}】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
+                                    </div>
+                                </div>
+                            </a></div>
+                    {% endif %}
+                </div>
+                <div class="right fl">
+                    {% if cases.8 %}
+                        <div class="img_b">
+                            <a href="case/{{ cases.8.id }}" target="_blank">
+                                <img src="{% get_media_prefix %}{{ caseimages.8.image }}"
+                                     width="100%" height="100%" alt="{{ cases.8.name }}">
+                                <div class="synopsis_box caseDIV">
+                                    <div class="synopsis">
+                                        <h3>【{{ cases.8.name }}】</h3>
+                                        <span></span>
+                                        <p class="p2"></p>
+                                    </div>
+                                </div>
+                            </a></div>
+                    {% endif %}
+                </div>
+            </div>
         </div>
         {#设计师#}
-        <div class="index-team">
+        <div class="index-team" style="height: 500px !important;">
             <div class="index-auto-box">
-                <div class="index-normal-hd">
-                    <dl class="normal-hd-tit">
-                        <dt>人气设计师</dt>
-                    </dl>
+                <div class="in-con-head-text" style="width: 100%;padding-bottom: 30px;padding-left: 89px;">
+                    <h1 class="h1_color1">人气设计师</h1>
+                    <p class="p_color1">团队代替单个设计师，触动你的灵感</p>
                 </div>
-                <div class="index-normal-bd">
+                <div class="index-normal-bd" style="padding-left: 89px">
                     <div class="team-list">
                         {% for d in designers %}
                             <div class="team-item">
@@ -1495,7 +1680,6 @@
             </div>
         </form>
     </div>
-
     <script>
         function init_price() {
             var Tprice = {
@@ -1562,13 +1746,13 @@
             })
         });
     </script>
-
-    <script>
-        (function () {
-            var c = document.createElement('script');
-            c.src = '//kefu.ziyun.com.cn/vclient/?webid=110699';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(c, s);
-        })();
-    </script>
+    {#注释客服#}
+    {#    <script>#}
+    {#        (function () {#}
+    {#            var c = document.createElement('script');#}
+    {#            c.src = '//kefu.ziyun.com.cn/vclient/?webid=110699';#}
+    {#            var s = document.getElementsByTagName('script')[0];#}
+    {#            s.parentNode.insertBefore(c, s);#}
+    {#        })();#}
+    {#    </script>#}
 {% endblock %}

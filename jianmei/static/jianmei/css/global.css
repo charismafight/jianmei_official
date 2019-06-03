@@ -3660,7 +3660,7 @@ select::-ms-expand {
 }
 
 .new-footer .footer-form {
-    width: 280px;
+    width: 380px !important;
     overflow: hidden;
     position: absolute;
     right: 0;

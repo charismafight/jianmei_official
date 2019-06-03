@@ -4830,6 +4830,7 @@ nav .pagination li a:hover {
 
 .a-sec-wrap .a-sec-c .sec-form .sec-row .form-control {
     background-color: transparent;
+    width: 200px !important;
 }
 
 .a-sec-wrap .a-sec-c .sec-form .sec-row .row {
@@ -4961,8 +4962,17 @@ nav .pagination li a:hover {
 
 .index-team {
     height: 687px;
+    padding: 30px 0px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
     background: url(../image/index-a-team.jpg) center no-repeat;
     overflow: hidden;
+}
+
+.index-team .in-con-head-text h1.h1_color1 {
+    color: #333333 !important;
 }
 
 .index-team .index-normal-bd:before, .index-team .index-normal-bd:after {
@@ -4975,8 +4985,7 @@ nav .pagination li a:hover {
 }
 
 .index-team .index-normal-bd .team-list {
-    margin-left: -3px;
-    margin-right: -3px;
+    margin-left: 30px;
 }
 
 .index-team .index-normal-bd .team-list:before, .index-team .index-normal-bd .team-list:after {
