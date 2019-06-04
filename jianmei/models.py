@@ -107,7 +107,7 @@ class Appointment(models.Model):
         verbose_name = '预约'
         verbose_name_plural = '预约'
 
-    name = models.CharField('姓名', max_length=20)
+    name = models.CharField('姓名', max_length=20, default='匿名')
     mobile_phone = models.CharField('联系电话', max_length=12)
     area = models.IntegerField('面积', default=0)
     district = models.CharField('地区', max_length=20)
