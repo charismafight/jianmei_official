@@ -6,7 +6,7 @@ from .models import *
 def index(request):
     if request.method == 'POST':
         p = Appointment(
-            name=request.POST['name'],
+            name=request.POST.get('name', '匿名'),
             mobile_phone=request.POST['phone'],
             area=0 if request.POST.get('area', 0) == '' else request.POST.get('area', 0),
             district=request.POST.get('district', '')
