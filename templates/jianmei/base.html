@@ -246,7 +246,7 @@
 {% endblock %}
 
 {#    底部#}
-<div class="new-footer">
+<div class="new-footer" style="height: 450px;">
     <div class="footer-cen" style="padding: 20px 0 93px 0">
         <div class="footer-cen1">
         </div>
@@ -276,6 +276,109 @@
                     <a href="javascript:;" id="footer-form">立即免费获取</a>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+<div id="fixed-bar-wrap" class="fixed-bar-wrap" style="z-index: 10000; bottom: -470px;">
+    <div id="control-bar" class="control-bar"></div>
+    <div class="fixed-white-box">
+        <div class="fixed-white-l">
+            <div class="fixed-panel-header">
+                装修计算器
+                <small>今天已有1354位业主获取了装修预算</small>
+            </div>
+            <div class="fixed-panel-body">
+                <form class="form-horizontal calculator-form">
+                    <input name="channel" value="设计师报价计算器" type="hidden">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <select class="form-control  remark">
+                                        <option value="1室">1室</option>
+                                        <option value="2室">2室</option>
+                                        <option value="3室" selected="">3室</option>
+                                        <option value="4室">4室</option>
+                                        <option value="5室">5室</option>
+                                        <option value="6室">6室</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厅" selected="">1厅</option>
+                                        <option value="2厅">2厅</option>
+                                        <option value="3厅">3厅</option>
+                                        <option value="4厅">4厅</option>
+                                        <option value="5厅">5厅</option>
+                                        <option value="6厅">6厅</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厨" selected="">1厨</option>
+                                        <option value="2厨">2厨</option>
+                                        <option value="3厨">3厨</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1卫" selected="">1卫</option>
+                                        <option value="2卫">2卫</option>
+                                        <option value="3卫">3卫</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1阳台" selected="">1阳台</option>
+                                        <option value="2阳台">2阳台</option>
+                                        <option value="3阳台">3阳台</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-12 area">
+                                    <input type="text" class="form-control" name="squareMeters"
+                                           placeholder="输入您的房屋面积">
+                                    <span class="m2">㎡</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" name="phoneNumber"
+                                           placeholder="报价结果将发送到您的手机">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button class="btn submit-label-btn">开始计算</button>
+                        <span class="circle-animate"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="fixed-white-r">
+            <h3>超精准计算，一步解决预算难题</h3>
+            <div class="fixed-disc">
+                您的装修预算 <strong id="zong">236859</strong> 元
+            </div>
+            <ul class="fixed-result">
+                <li>材料费：<strong id="cai">126580</strong>元</li>
+                <li>人工费：<strong id="ren">92027</strong>元</li>
+                <li>设计费：<strong id="she">11769</strong>元</li>
+                <li>质检费：<strong id="zhi">6483</strong>元</li>
+            </ul>
         </div>
     </div>
 </div>
