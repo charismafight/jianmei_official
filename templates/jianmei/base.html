@@ -35,6 +35,7 @@
 <script type="text/javascript" src="{% static 'jianmei/js/jquery.fancybox.js-v=2.1.4' %}"></script>
 <link rel="stylesheet" href="{% static 'jianmei/css/decorate_gallery_list.css' %}">
 <link rel="stylesheet" href="{% static 'jianmei/css/css.css' %}">
+<link rel="stylesheet" href="{% static 'jianmei/css/vendor-prefixes.less' %}">
 <script type="text/javascript" charset="utf-8">
     $(function () {
         $("img").lazyload({
@@ -124,10 +125,7 @@
         </div>
 
         <div class="headFunction" style="padding-right:176px">
-
-            <h2 class="headWelcome">欢迎来到简美装饰</h2>
-
-            <strong>免费咨询热线： 0717-6590399 </strong>
+            <strong>欢迎来到简美装饰 免费咨询热线： 0717-6590399 </strong>
             <a class="headWechat" style="position: relative" href="#footerMa">
                 <img style="position: absolute; left: -10px; top: 38px; display: none; opacity: 1;" src="" width="160"
                      height="160">
@@ -279,7 +277,8 @@
         </div>
     </div>
 </div>
-<div id="fixed-bar-wrap" class="fixed-bar-wrap" style="z-index: 10000; bottom: -470px;">
+<script type="text/javascript" src="{% get_static_prefix %}jianmei/js/main.js"></script>
+<div id="fixed-bar-wrap" class="fixed-bar-wrap" style="z-index: 10000; bottom: -370px;">
     <div id="control-bar" class="control-bar"></div>
     <div class="fixed-white-box">
         <div class="fixed-white-l">
@@ -289,9 +288,10 @@
             </div>
             <div class="fixed-panel-body">
                 <form class="form-horizontal calculator-form">
+                    {% csrf_token %}
                     <input name="channel" value="设计师报价计算器" type="hidden">
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                        <label class="col-xs-3 control-label">房屋户型：</label>
                         <div class="col-xs-9">
                             <div class="row">
                                 <div class="col-xs-4">
@@ -339,11 +339,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                        <label class="col-xs-3 control-label">房屋面积：</label>
                         <div class="col-xs-9">
                             <div class="row">
                                 <div class="col-xs-12 area">
-                                    <input type="text" class="form-control" name="squareMeters"
+                                    <input type="text" class="form-control" name="area"
                                            placeholder="输入您的房屋面积">
                                     <span class="m2">㎡</span>
                                 </div>
@@ -351,18 +351,20 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                        <label class="col-xs-3 control-label">手机号码：</label>
                         <div class="col-xs-9">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <input type="text" class="form-control" name="phoneNumber"
+                                    <input type="text" class="form-control" name="phone"
                                            placeholder="报价结果将发送到您的手机">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="submit">
-                        <button class="btn submit-label-btn">开始计算</button>
+                        <button type="button" onclick="javascript:void(0)" id="btnButtomSubmit"
+                                class="btn submit-label-btn">开始计算
+                        </button>
                         <span class="circle-animate"></span>
                     </div>
                 </form>
@@ -382,5 +384,34 @@
         </div>
     </div>
 </div>
+<script>
+    $(function () {
+        var zong = $('#zong');
+        var cai = $('#cai');
+        var ren = $('#ren');
+        var she = $('#she');
+        var zhi = $('#zhi');
+        var myArray = [[121459, 58365, 50497, 8218, 4379],
+            [155424, 69322, 77284, 5373, 3445],
+            [108289, 87732, 17309, 1583, 1665],
+            [236859, 126580, 92027, 11769, 6483],
+            [142826, 75720, 52404, 9717, 4985]];
+
+        var i = 0;
+        var timer = setInterval(function () {
+            if (i > 4) {
+                i = 0;
+            }
+            var arraySon = myArray[i];
+            zong.text(arraySon[0]);
+            cai.text(arraySon[1]);
+            ren.text(arraySon[2]);
+            she.text(arraySon[3]);
+            zhi.text(arraySon[4]);
+            i++
+        }, 200);
+    })
+</script>
+
 </div>
 </html>

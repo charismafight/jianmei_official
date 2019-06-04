@@ -8,7 +8,7 @@ def index(request):
         p = Appointment(
             name=request.POST['name'],
             mobile_phone=request.POST['phone'],
-            area=request.POST.get('area', 0),
+            area=0 if request.POST.get('area', 0) == '' else request.POST.get('area', 0),
             district=request.POST.get('district', '')
         )
         Appointment.save(p)

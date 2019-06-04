@@ -6,16 +6,16 @@ $(function () {
     $('.index_float_baojia').on('click', submnit)
 
     $('.index_tanchu').on('click', submnit);
+
+    $('#btnSubmit').on('click', submnit);
+
+    $('#btnButtomSubmit').on('click', submnit);
 })
 
 function submnit() {
     var form = $(this).closest('form');
     var name = $.trim(form.find('input[name=name]').val());
     var area = form.find('input[name=area]').val();
-    if ('' == name) {
-        alert('请填写您的姓名');
-        return false;
-    }
 
     if (area != null && isNaN(area)) {
         alert('请填写正确的面积')
