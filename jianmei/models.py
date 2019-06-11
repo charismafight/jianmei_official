@@ -119,3 +119,11 @@ class Appointment(models.Model):
         if self.replied:
             reply_str = '是'
         return '%s  联系电话：%s 是否回复：%s' % (self.name, self.mobile_phone, reply_str)
+
+
+class Logo(models.Model):
+    class Meta:
+        verbose_name = '首页大幅海报'
+        verbose_name_plural = '首页大幅海报'
+
+    logo = models.ImageField('logo')

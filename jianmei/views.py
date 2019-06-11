@@ -19,7 +19,7 @@ def index(request):
             'projects': HouseProject.objects.all()[0:4],
             'cases': cases,
             'caseimages': list(map(lambda c: c.caseimage_set.get(is_show_on_index=True), cases)),
-            'designers': Designer.objects.filter(show_on_index=True)[0:4],
+            'designers': Designer.objects.filter(show_on_index=True)[0:5],
             # 百科
             'encyclopediaTop': Article.objects.filter(image__isnull=False).filter(type='装修百科')[0:1],
             'encyclopediaBottom': Article.objects.filter(type='装修百科')[0:3],
