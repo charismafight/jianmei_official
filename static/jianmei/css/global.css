@@ -3570,7 +3570,7 @@ select::-ms-expand {
     background: #222222;
     overflow: hidden;
     position: relative;
-    z-index: 999
+    z-index: 99
 }
 
 .new-footer .footer-cen {
@@ -3838,6 +3838,7 @@ select::-ms-expand {
 .tanchu-flex {
     width: 100%;
     display: flex;
+    z-index: 12000;
 }
 
 .tanchu-left {
