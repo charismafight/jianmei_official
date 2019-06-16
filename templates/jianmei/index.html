@@ -13,7 +13,7 @@
                     <i class="iconfont icon-erjikefu"></i>
                     <span>在线咨询</span>
                 </a>
-{#                <script type="text/javascript" charset="utf-8"#}
+                {#                <script type="text/javascript" charset="utf-8"#}
                 {#                        src="http://lead.soperson.com/20001829/10063836.js       "></script>#}
                 {#                <div id="doyoo_panel"></div>#}
 
@@ -53,7 +53,7 @@
         <div class="indexBanner">
             <ul>
                 <li><a title="活动" target="_blank" href="javascript:void(0);"
-                       style="background:url({% static "jianmei/image/bg_home.jpg" %}) no-repeat center top;background-size: cover"></a>
+                       style="background:url('{% get_media_prefix %}{{ logo.logo }}') no-repeat center top;background-size: cover"></a>
                 </li>
             </ul>
             <div class="indexNumber">
@@ -650,7 +650,7 @@
 
             .index_case .case_content .left {
                 width: 400px;
-                height: auto;
+                height: 234px;
                 overflow: hidden;
             }
 
@@ -794,7 +794,6 @@
 
             .case_content .img_b {
                 width: 100%;
-                height: 100%;
                 overflow: hidden;
                 position: relative;
             }
@@ -830,7 +829,7 @@
                         <div class="img_b">
                             <a href="case/{{ cases.0.id }}" target="_blank">
                                 <img src="{% get_media_prefix %}{{ caseimages.0.image }}"
-                                     width="100%" height="100%" alt="{{ cases.0.name }}">
+                                     width="100%" height="245px" alt="{{ cases.0.name }}" style="background-size:100%;">
                                 <div class="synopsis_box caseDIV">
                                     <div class="synopsis">
                                         <h3>【{{ cases.0.name }}】</h3>
@@ -840,45 +839,13 @@
                                 </div>
                             </a>
                         </div>
-                        {#                            <ul>#}
-                        {#                                {% if cases.1 %}#}
-                        {#                                    <li>#}
-                        {#                                        <a href="case/{{ cases.1.id }}" target="_blank">#}
-                        {#                                            <img src="{% get_media_prefix %}{{ caseimages.1.image }}"#}
-                        {#                                                 width="100%" height="100%" alt="{{ cases.1.name }}">#}
-                        {#                                            <div class="synopsis_box caseDIV">#}
-                        {#                                                <div class="synopsis">#}
-                        {#                                                    <h3>【{{ cases.1.name }}】</h3>#}
-                        {#                                                    <span></span>#}
-                        {#                                                    <p class="p2"></p>#}
-                        {#                                                </div>#}
-                        {#                                            </div>#}
-                        {#                                        </a>#}
-                        {#                                    </li>#}
-                        {#                                {% endif %}#}
-                        {#                                {% if cases.2 %}#}
-                        {#                                    <li class="fl center" style="margin: 0px;">#}
-                        {#                                        <a href="case/{{ cases.2.id }}" target="_blank">#}
-                        {#                                            <img src="{% get_media_prefix %}{{ caseimages.2.image }}"#}
-                        {#                                                 width="100%" height="100%" alt="{{ cases.2.name }}">#}
-                        {#                                            <div class="synopsis_box caseDIV">#}
-                        {#                                                <div class="synopsis">#}
-                        {#                                                    <h3>【{{ cases.2.name }}】</h3>#}
-                        {#                                                    <span></span>#}
-                        {#                                                    <p class="p2"></p>#}
-                        {#                                                </div>#}
-                        {#                                            </div>#}
-                        {#                                        </a>#}
-                        {#                                    </li>#}
-                        {#                                {% endif %}#}
-                        {#                            </ul>#}
                     </div>
                     <div class="right fl">
                         {% if cases.1 %}
                             <div class="img_b">
                                 <a href="case/{{ cases.1.id }}" target="_blank">
                                     <img src="{% get_media_prefix %}{{ caseimages.1.image }}"
-                                         width="100%" height="245px" alt="{{ cases.1.name }}">
+                                         width="100%" height="245px" alt="{{ cases.1.name }}" style="background-size:100%;">
                                     <div class="synopsis_box caseDIV">
                                         <div class="synopsis">
                                             <h3>【{{ cases.1.name }}】</h3>
@@ -1592,17 +1559,17 @@
         });
     </script>
 
-{#    <script>#}
-{#        $(function () {#}
-{#            setTimeout(function () {#}
-{#                $(".tanchu").fadeIn();#}
-{#                //弹窗时间#}
-{#            }, 30000);#}
-{#            $(".tanchu-close").click(function () {#}
-{#                $(".tanchu").fadeOut();#}
-{#            })#}
-{#        })#}
-{#    </script>#}
+    {#    <script>#}
+    {#        $(function () {#}
+    {#            setTimeout(function () {#}
+    {#                $(".tanchu").fadeIn();#}
+    {#                //弹窗时间#}
+    {#            }, 30000);#}
+    {#            $(".tanchu-close").click(function () {#}
+    {#                $(".tanchu").fadeOut();#}
+    {#            })#}
+    {#        })#}
+    {#    </script>#}
 
     <div class="tanchu" style="display: none;">
         <div class="tanchu-close"></div>

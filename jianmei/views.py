@@ -26,6 +26,7 @@ def index(request):
             'schoolTop': Article.objects.filter(image__isnull=False).filter(type='装修学堂')[0:1],
             'schoolBottom': Article.objects.filter(type='装修学堂')[0:3],
             'appointmentCount': Appointment.objects.count(),
+            'logo': Logo.objects.first(),
         }
         return render(request, 'jianmei/index.html', context)
 
