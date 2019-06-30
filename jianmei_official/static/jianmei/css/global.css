@@ -1041,17 +1041,15 @@ select::-ms-expand {
 
 .nav {
     min-width: 1210px !important;
-    border-bottom: 1px solid #ddd;
     background-color: #fff;
 }
 
 .nav .navCenter {
     width: 1210px;
     margin: 0 auto;
-    height: 61px;
+    height: 60px;
     line-height: 60px;
     position: relative;
-
 }
 
 .nav .navCenter .logo {

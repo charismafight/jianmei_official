@@ -143,12 +143,10 @@
 {#    导航#}
 <div class="nav">
     <div class="navCenter">
-        <h1 class="logo">
-            <a href="/">
-                <img class="logoImg" src="{% static "jianmei/image/logo.jpg" %}" alt="简美装饰"
-                     style="height: 61px;width: 80px;">
-            </a>
-        </h1>
+        <a href="/">
+            <img class="logoImg" src="{% static "jianmei/image/logo.jpg" %}" alt="简美装饰"
+                 style="height: 60px;width: 200px;">
+        </a>
         <div class="navList" style="margin-right: 80px">
             <li class="bigmenu" id="menu0">
                 <a href="/" target="" class=""><span>首页</span></a>
@@ -277,6 +275,7 @@
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="{% static 'jianmei/css/yzfmain.css' %}">
 <script type="text/javascript" src="{% get_static_prefix %}jianmei/js/main.js"></script>
 <div id="fixed-bar-wrap" class="fixed-bar-wrap" style="z-index: 10000; bottom: -370px;">
     <div id="control-bar" class="control-bar"></div>
