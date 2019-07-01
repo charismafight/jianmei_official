@@ -81,3 +81,7 @@ def article(request, id):
 
 def network_discount(request):
     return render(request, 'jianmei/network_discount.html')
+
+
+def package(request):
+    return render(request, 'jianmei/package.html')

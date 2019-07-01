@@ -1,0 +1,333 @@
+{% extends 'jianmei/base.html' %}
+{% load static %}
+{% block body_block %}
+    {% csrf_token %}
+    {#    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">#}
+    {#    <title>简美无忧装 - 宜昌简美装饰工程有限公司官方网站</title>#}
+    {#    <meta name="keywords" content="简美无忧装">#}
+    {#    <meta name="description" content="宜昌简美装饰工程有限公司是一家专业建筑装饰设计的装修公司，以家居装饰、公共工程、环境艺术等为主营业态，集装饰设计、家居集成、材料配送、工程施工、售后服务于一体，是湖北服务最好，信誉最好，口碑最好的装饰设计公司【装饰设计方案咨询：0717-6590399】">#}
+    <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}jianmei/css/aohua.css">
+    <link href="{% get_static_prefix %}jianmei/css/package-style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{% get_static_prefix %}jianmei/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}jianmei/js/package-index.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}jianmei/js/common.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}jianmei/js/jquery.SuperSlide.2.1.1.source.js"></script>
+    <script type="text/javascript" src="/statics/js/calc.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}jianmei/js/layer.js"></script>
+    <script type="text/javascript">
+        // 设置为主页
+        function SetHome(obj, vrl) {
+            try {
+                obj.style.behavior = 'url(#default#homepage)';
+                obj.setHomePage(vrl);
+            } catch (e) {
+                if (window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                    } catch (e) {
+                        alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                    }
+                    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                    prefs.setCharPref('browser.startup.homepage', vrl);
+                } else {
+                    alert("您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入：" + vrl + "点击确定。");
+                }
+            }
+        }
+
+        // 加入收藏 兼容360和IE6
+        function shoucang(sTitle, sURL) {
+            try {
+                window.external.addFavorite(sURL, sTitle);
+            } catch (e) {
+                try {
+                    window.sidebar.addPanel(sTitle, sURL, "");
+                } catch (e) {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加");
+                }
+            }
+        }
+
+    </script>
+    <link href="{% get_static_prefix %}jianmei/css/wyzsj.css" rel="stylesheet" type="text/css">
+    <div class="indexBanner">
+        <img src="{% get_static_prefix %}jianmei/image/package-logo.jpg" alt="">
+    </div>
+    <div class="wyz_box01">
+        <div class="wyz_tit">
+            <h4>无忧装</h4>
+
+            <h5>包含你想到的 包含你没想到的<br>包含所有你家装修需要的</h5>
+            <h6><img src="/statics/css/2017/images/dsj.png" alt=""></h6>
+
+        </div>
+        <div class="w1200">
+            <div class="hd">
+                <ul>
+                    <li class="">无忧装-玄关</li>
+                    <li class="">无忧装-客厅</li>
+                    <li class="">无忧装-卧室</li>
+                    <li class="">无忧装-卫生间</li>
+                    <li class="on">无忧装-阳台</li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li style="display: none;">
+                        <h2>无忧装-玄关</h2>
+                        <h3>MEETING TAIBEI</h3>
+                        <span>现代风格</span>
+                        <p>整体设计精致简约，<br>
+                            于细微处缀有温馨的元素，<br>
+                            开放式厨房和衣帽间，让空间通透大方，小空间也不将就。</p>
+                        <dl>
+                            <dt>设计主色：</dt>
+                            <dd style="background-color: #e6c13e;"></dd>
+                            <dd style="background-color: #c29a5f;"></dd>
+                            <dd style="background-color: #5b4736;"></dd>
+                        </dl>
+                        <img src="{% get_static_prefix %}jianmei/image/wyzsj.jpg" alt="">
+                    </li>
+                    <li style="display: none;">
+                        <h2>遇见 · 中环</h2>
+                        <h3>MEETING HONGKONG</h3>
+                        <span>港式风格</span>
+                        <p>使用金属线条和光感黑玻来营造出港式的奢华感
+                            时尚不失又简洁，极具质感的家具、小资情调的吧台
+                            兼具品质感与功能性</p>
+                        <dl>
+                            <dt>设计主色：</dt>
+                            <dd style="background-color: #e6d8c4;"></dd>
+                            <dd style="background-color: #b0976f;"></dd>
+                            <dd style="background-color: #571901;"></dd>
+                        </dl>
+                        <img src="{% get_static_prefix %}jianmei/image/wyzsj1.jpg" alt="">
+                    </li>
+                    <li style="display: none;">
+                        <h2>遇见 · 巴黎</h2>
+                        <h3>MEETING PARIS</h3>
+                        <span>简欧风格</span>
+                        <p>整体设计糅合了简约主义的利落、爽洁，
+                            地面拼花又继承了传统欧陆风格的精致、华丽。
+                            多功能房的设计将生活收纳化繁为简，
+                            时尚而富有内涵的，备受年轻新贵的追崇</p>
+                        <dl>
+                            <dt>设计主色：</dt>
+                            <dd style="background-color: #c4c3bd;"></dd>
+                            <dd style="background-color: #b29f84;"></dd>
+                            <dd style="background-color: #639193;"></dd>
+                        </dl>
+                        <img src="{% get_static_prefix %}jianmei/image/wyzsj4.jpg" alt="">
+                    </li>
+                    <li style="display: none;">
+                        <h2>遇见 · 加州</h2>
+                        <h3>MEETING CALIFORNIA</h3>
+                        <span>简美风格</span>
+                        <p>豪华大气中多了份自在、随意的情调感，
+                            没有太多造作的修饰与约束，次卧隐形床的设计，
+                            保留正常休息功能的同时，
+                            也为小孩玩耍、学习提供了开阔的空间。</p>
+                        <dl>
+                            <dt>设计主色：</dt>
+                            <dd style="background-color: #dad3c3;"></dd>
+                            <dd style="background-color: #7b411f;"></dd>
+                            <dd style="background-color: #3a2417;"></dd>
+                        </dl>
+                        <img src="{% get_static_prefix %}jianmei/image/wyzsj2.jpg" alt="">
+                    </li>
+                    <li style="display: list-item;">
+                        <h2>遇见 · 江南</h2>
+                        <h3>MEETING CHINA</h3>
+                        <span>新中式风格</span>
+                        <p>继承传统家居中的经典元素，<br>
+                            造型简朴优美，色彩浓重而成熟。<br>
+                            表达对淡雅含蓄、古典端庄的东方式精神境界的追求</p>
+                        <dl>
+                            <dt>设计主色：</dt>
+                            <dd style="background-color: #d6cbb6;"></dd>
+                            <dd style="background-color: #834127;"></dd>
+                            <dd style="background-color: #572e20;"></dd>
+                        </dl>
+                        <img src="{% get_static_prefix %}jianmei/image/wyzsj3.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+
+            <img src="{% get_static_prefix %}jianmei/image/wyz_bg02.png" alt="" style="margin: 36px 0 0 6px;">
+        </div>
+    </div>
+    <div class="wyz_box02">
+        <img src="{% get_static_prefix %}jianmei/image/wyzsj-s.jpg" alt="">
+    </div>
+    <div class="wyz_box04">
+        <div class="wyz_tit04">
+            <h4>人性家居</h4>
+            <h5>从人性化角度出发 注重生活细节更符合现代人需求</h5>
+        </div>
+        <ul>
+            <li>
+                <h4>01</h4>
+                <span>全屋收纳系统</span>
+                <p>珍惜每一寸空间<br>韩国收纳大师定制</p>
+            </li>
+            <li>
+                <h4>02</h4>
+                <span>人体工学系统</span>
+                <p>每个细节都从人体<br>舒适角度出发</p>
+            </li>
+            <li>
+                <h4>03</h4>
+                <span>宜老宜幼系统</span>
+                <p>老人和小孩是待在室内<br>时间最长的家庭成员 </p>
+            </li>
+            <li>
+                <h4>04</h4>
+                <span>智能家居系统</span>
+                <p>更符合互联网时代的<br>居住习惯</p>
+            </li>
+
+        </ul>
+    </div>
+    <div class="wyz_box05">
+        <div class="wyz_tit04">
+            <h4>精工细节</h4>
+            <h5>114个工程节点 匠心所致 浸透生活每个细微处</h5>
+        </div>
+        <div class="w1200">
+            <div class="hd">
+                <ul>
+                    <li class=""><img src="{% get_static_prefix %}jianmei/image/wyz_icon01.jpg" alt=""><span>拆建项目</span>
+                        <p><em></em></p><i></i></li>
+                    <li class=""><img src="{% get_static_prefix %}jianmei/image/wyz_icon02.jpg" alt=""><span>水电工程</span>
+                        <p><em></em></p><i></i></li>
+                    <li class=""><img src="{% get_static_prefix %}jianmei/image/wyz_icon03.jpg" alt=""><span>湿作业项目</span>
+                        <p><em></em></p><i></i></li>
+                    <li class="on"><img src="{% get_static_prefix %}jianmei/image/wyz_icon04.jpg" alt=""><span>木作业项目</span>
+                        <p><em></em></p><i></i></li>
+                    <li class=""><img src="{% get_static_prefix %}jianmei/image/wyz_icon05.jpg" alt=""><span>涂料油漆</span>
+                        <p><em></em></p><i></i></li>
+                    <li class=""><img src="{% get_static_prefix %}jianmei/image/wyz_icon06.jpg" alt=""><span>竣工验收</span>
+                        <p><em></em></p><i></i></li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li style="display: none;">
+                        <span>按图纸复测、定位</span>
+                        <span>拆除工作结束后清理场地</span>
+                        <span>新砌筑墙体、粉刷</span>
+                        <span>室内三条水平标高线测定、放线</span>
+                        <span>强、弱电箱定位</span>
+                        <span>强弱电管道定数定位放线</span>
+                        <span>墙体管道线管开槽</span>
+                        <span>开孔洞</span>
+                        <span>原墙面腻子层铲除</span>
+                        <span>清理场地、备料</span>
+                        <span><img src="{% get_static_prefix %}jianmei/image/wyz_icon03.png" alt=""></span>
+                    </li>
+                    <li style="display: none;">
+                        <span>中央空调施工</span>
+                        <span>橱柜初量</span>
+                        <span>封闭阳台测量</span>
+                        <span>成品门及门套测量</span>
+                        <span>卫、洁具设施/设备定位</span>
+                        <span>水、电路材料验收</span>
+                        <span>排水管道排放固定</span>
+                        <span>排水管道专用盖帽保护</span>
+                        <span>给水管道排放固定</span>
+                        <span>给水管道水压测试</span>
+                        <span>强弱电线管排放固定穿线</span>
+                        <span>开关、插座底盒固定</span>
+                        <span>万用表测试线路</span>
+                        <span>开关、插座底盒专用盖板保护</span>
+                        <span>清理场地、备料</span>
+                        <span><img src="{% get_static_prefix %}jianmei/image/wyz_icon03.png" alt=""></span>
+                    </li>
+                    <li style="display: none;">
+                        <span>隐蔽工程管道开槽处修复</span>
+                        <span>厨卫墙面基层处理</span>
+                        <span>厨卫墙面防水</span>
+                        <span>面砖碰角、留缝、拼花 </span>
+                        <span>厨卫门压石</span>
+                        <span>厨卫地面找平找坡</span>
+                        <span>厨卫、阳台地面防水</span>
+                        <span>地面防水蓄水试验</span>
+                        <span>地漏及排水管接口到位</span>
+                        <span>地漏泛水坡度</span>
+                        <span>瓷砖勾缝</span>
+                        <span>石材地面／拼花</span>
+                        <span>石材波打线</span>
+                        <span>石材门窗套</span>
+                        <span>地暖瓜米石找平</span>
+                        <span><img src="{% get_static_prefix %}jianmei/image/wyz_icon03.png" alt=""></span>
+                    </li>
+
+                    <li style="display: inline-block;">
+                        <span>标高水平复测</span>
+                        <span>吊顶基层轻钢龙骨、木龙骨安装</span>
+                        <span>吊顶罩面板、饰面板封板</span>
+                        <span>照明线路及灯孔预留</span>
+                        <span>轻钢龙骨隔墙竖龙骨天地</span>
+                        <span>贯穿龙骨安装</span>
+                        <span>隔音材料安装</span>
+                        <span>轻钢龙骨隔墙罩面板封板及加固</span>
+                        <span>门、窗套木质基层到位</span>
+                        <span>木质墙饰基层制作</span>
+                        <span>线条平整度、拼角</span>
+                        <span><img src="{% get_static_prefix %}jianmei/image/wyz_icon03.png" alt=""></span>
+                    </li>
+                    <li style="display: none;">
+                        <span>石膏板钉眼防锈处理</span>
+                        <span>墙面基层处理</span>
+                        <span>防开裂处理</span>
+                        <span>满批腻子</span>
+                        <span>复批腻子</span>
+                        <span>滚涂乳胶漆底漆</span>
+                        <span>滚涂乳胶漆面漆两遍</span>
+                        <span>阳角保护</span>
+                        <span><img src="{% get_static_prefix %}jianmei/image/wyz_icon03.png" alt=""></span>
+                    </li>
+                    <li style="display: none;">
+                        <span>厨卫集成吊顶安装</span>
+                        <span>橱柜安装</span>
+                        <span>暖气片安装</span>
+                        <span>开关插座面板安装</span>
+                        <span>灯具安装、调试</span>
+                        <span>强电箱控制回路标示</span>
+                        <span>中央空调调试</span>
+                        <span>卫、洁具设施／设备安装</span>
+                        <span>成品门及门套安装</span>
+                        <span>成品家具安装</span>
+                        <span>成品楼梯扶手及踏步安装</span>
+                        <span>实木地板龙骨安装、调试、固定</span>
+                        <span>实木地板、踢脚线安装</span>
+                        <span>墙面修补</span>
+                        <span>缝隙硅胶封闭</span>
+                        <span>现场清理、保洁</span>
+                        <span><img src="{% get_static_prefix %}jianmei/image/wyz_icon03.png" alt=""></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wyz_box06">
+        <div class="pplogo">
+            <img src="{% get_static_prefix %}jianmei/image/pplogo.png" style="display: block;">
+        </div>
+    </div>
+    <div class="wyz_box07">
+        <div class="wyz_tit04">
+            <h4>权威认证</h4>
+            <h5>源头严控材料选择，通过国内外多项权威验证环保、品质有保障，<br>
+                即装即住，全程无忧，让家的美好早一日享受！ </h5>
+
+        </div>
+
+        <div class="qwrz">
+            <img src="{% get_static_prefix %}jianmei/image/wyzsj-c.png" alt="">
+        </div>
+    </div>
+    <div class="wyz_box08">
+        <img src="{% get_static_prefix %}jianmei/image/wyzsj-d.jpg" alt="">
+    </div>
+{% endblock %}
