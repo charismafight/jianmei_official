@@ -2,7 +2,7 @@
 {% load static %}
 {% block house_block %}
     <div class="mian_left clearfix">
-        <img height="40" width="40" src="{% get_static_prefix %}jianmei/image/logo.jpg">
+        <img src="{% static 'jianmei/image/house-base-logo.jpg' %}" height="60" width="200">
         <h3>{{ article.title }}</h3>
         <p class="time_now main_top_p">发布时间：{{ article.publish_date|date:"DATETIME_FORMAT" }}</p>
         <style>
