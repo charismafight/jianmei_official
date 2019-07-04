@@ -85,3 +85,7 @@ def network_discount(request):
 
 def package(request):
     return render(request, 'jianmei/package.html')
+
+
+def designer_list(request):
+    return render(request, 'jianmei/designer_list.html', {'designers': Designer.objects.all()})

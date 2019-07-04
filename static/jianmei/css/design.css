@@ -78,16 +78,12 @@ body {
 
 .trip-list-item .inner {
     background: #fff;
-    height: 495px;
+    height: 460px;
 }
 
 .trip-list-v2 .trip-list-item {
     float: left;
     margin: 0 10px 20px 0;
-}
-
-.trip-list-v2 .designer {
-    height: 480px;
 }
 
 .trip-list-v2 .designer h1.name {

@@ -1,0 +1,25 @@
+{% extends 'jianmei/base.html' %}
+{% load static %}
+{% block body_block %}
+    {% csrf_token %}
+    <link rel="stylesheet" href="{% static 'jianmei/css/design.css' %}">
+    <div class="page-container">
+
+        <div class="trip-list-v2" style="width: 1440px;">
+            {% for d in designers %}
+                <div class="trip-list-item designer">
+                    <div class="inner" style="width: 190px;">
+                        <p class="name1"><span>{{ d.name }}　{{ d.title }}</span></p>
+                        <div class="cover-image">
+                            <a href="/designer/{{ d.id }}" target="_blank">
+                                <img alt="{{ d.name }}" class="lazy" data-original="{% get_media_prefix %}{{ d.portrait }}"
+                                     src="{% get_media_prefix %}{{ d.portrait }}" style="display: block;height: 100%;width: auto;"></a>
+                        </div>
+                        <p>个人介绍：{{ d.desc }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div style="clear:both"></div>
+    </div>
+{% endblock %}
