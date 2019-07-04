@@ -980,12 +980,19 @@
             </div>
         </div>
         {#设计师#}
-        <div class="index-team" style="height: 500px !important;">
-            <div class="index-auto-box">
-                <div class="in-con-head-text" style="width: 100%;padding-bottom: 30px;padding-left: 89px;">
+        <div class="index_case">
+            <div class="in-con-head">
+                <div class="in-con-head-text">
                     <h1 class="h1_color1">人气设计师</h1>
                     <p class="p_color1">团队代替单个设计师，触动你的灵感</p>
                 </div>
+                <div class="in-con-head-right">
+                    <a href="/all-designer" target="_blank">查看更多</a>
+                </div>
+            </div>
+        </div>
+        <div class="index-team" style="height: 500px !important;">
+            <div class="index-auto-box">
                 <div class="index-normal-bd" style="padding-left: 89px">
                     <div class="team-list">
                         {% for d in designers %}
@@ -997,7 +1004,6 @@
                                     <dt>{{ d.name }}</dt>
                                     <dd>{{ d.desc }}</dd>
                                 </dl>
-                                <a href="/Designer/Detail/248" class="btn btn-line">预约设计&gt;</a>
                             </div>
                         {% endfor %}
                     </div>
