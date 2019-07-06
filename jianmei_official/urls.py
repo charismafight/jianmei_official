@@ -33,5 +33,6 @@ urlpatterns = [
                   path(r'article/<int:id>', views.article),
                   path('network-discount', views.network_discount),
                   path('package', views.package),
-                  path('all-designer', views.designer_list)
+                  path('all-designer', views.designer_list),
+                  path('all-case/<int:page_num>', views.all_case),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

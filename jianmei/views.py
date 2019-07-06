@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.core.paginator import Paginator
 from .models import *
 
 
@@ -89,3 +90,15 @@ def package(request):
 
 def designer_list(request):
     return render(request, 'jianmei/designer_list.html', {'designers': Designer.objects.all()})
+
+
+def all_case(request, page_num):
+    cases = Case.objects.all()
+    count_per_page = 9
+    page_count = int(len(cases) / count_per_page) + 1 if len(cases) % count_per_page == 0 else int(len(cases) / count_per_page)
+    p = Paginator(cases, count_per_page)
+    return render(request, 'jianmei/case.html',
+                  {'cases': p.page(page_num),
+                   'page_count_range': range(page_count),
+                   'page_count': page_count,
+                   'page_num': page_num})

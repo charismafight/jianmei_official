@@ -33,7 +33,6 @@ class HouseProject(models.Model):
     desc = models.CharField('楼盘描述', max_length=2000)
     contract_count = models.IntegerField('签约户数', default=0)
     finished_count = models.IntegerField('施工户数', default=0)
-    designers = models.ManyToManyField(Designer, verbose_name='所属设计师', blank=True)
 
     def __str__(self):
         return self.name
@@ -61,6 +60,7 @@ class Case(models.Model):
     house_type = models.ForeignKey(HouseType, verbose_name='户型', on_delete=models.CASCADE)
     style = models.CharField('装修风格', max_length=20, default='')
     show_index = models.IntegerField('首页显示顺序', null=True)
+    designer = models.ForeignKey(Designer, verbose_name='所属设计师', null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
