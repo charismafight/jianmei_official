@@ -1,0 +1,37 @@
+{% extends 'jianmei/base.html' %}
+{% load static %}
+{% block body_block %}
+    <link rel="stylesheet" href="{% static 'jianmei/css/design.css' %}">
+    <div class="page-container">
+        <div class="trip-list-v2 clearfix">
+            <div class="trip-list-item lace" style="width: 400px;">
+                {% for c in cases %}
+                    <div class="inner">
+                        <div class="cover-image">
+                            <a href="/case/{{ }}" target="_blank"><img alt="" class="lazy" data-original="/Websites/shenghuojia/Uploads/Picture/2019-02-18/5c6a65259fd3a.png"
+                                                                       src="/Websites/shenghuojia/Uploads/Picture/2019-02-18/5c6a65259fd3a.png" style="display: block;"></a>
+                        </div>
+                        <a href="/Article/detail/id/5504.html"><h1 class="name">平安景苑124平现代简约</h1></a>
+                        <a href="/Article/detail/id/1426.html" class="user" target="_blank">
+                            <img alt="" class="lazy" data-original="/Websites/shenghuojia/Uploads/Picture/2018-07-12/5b471db9a8af6.jpg" src="/Websites/shenghuojia/Uploads/Picture/2018-07-12/5b471db9a8af6.jpg" style="display: inline;">
+                        </a></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <div class="Paging">
+            <div class="pages">
+                <ul>
+                    <ul class="paging_ul">
+                        <li class="paging_first"><a href="/lists/3/p/1.html">首</a></li>
+                        {% for x in page_count %}
+                            <li class="current"><a href="/lists/3/p/1.html">1</a></li>
+                        {% endfor %}
+                        <li class="paging_last"><a href="/lists/3/p/56.html">尾</a></li>
+                        <li class="total"><a style="width:auto;" href="#"><font color="red">1</font>/56</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
