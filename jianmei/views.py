@@ -99,6 +99,6 @@ def all_case(request, page_num):
     p = Paginator(cases, count_per_page)
     return render(request, 'jianmei/case.html',
                   {'cases': p.page(page_num),
-                   'page_count_range': range(page_count),
+                   'page_count_range': range(1, page_count + 1),
                    'page_count': page_count,
                    'page_num': page_num})

@@ -29,7 +29,7 @@
                         <li class="paging_first"><a href="/all-case/1">首</a></li>
                         {% for x in page_count_range %}
                             <li {% if page_num == x %}class="current" {% endif %}>
-                                <a href="/all-case/{{ x|add:"1" }}">{{ x|add:"1" }}</a>
+                                <a href="/all-case/{{ x }}">{{ x }}</a>
                             </li>
                         {% endfor %}
                         <li class="paging_last"><a href="/all-case/{{ page_count }}">尾</a></li>
