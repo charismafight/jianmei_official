@@ -39,10 +39,10 @@ def hot_house(request):
 
 def project_detail(request, pid):
     obj = get_object_or_404(HouseProject, pk=pid)
-    designers = obj.designers.all()
     house_type_ids = obj.housetype_set.values('id')
     # 楼盘-楼盘房型-案例-案例图片
     cases = Case.objects.select_related('house_type').filter(house_type_id__in=house_type_ids)
+    designers = [x.designer for x in cases if x.designer is not None]
 
     context = {
         'p': obj,

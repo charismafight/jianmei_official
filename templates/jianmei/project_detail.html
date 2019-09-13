@@ -34,10 +34,10 @@
                                  height="230">
                         </a>
                         {#                        设计师照片#}
-                        <a href="/Article/detail/id/3647.html" class="headPic">
+                        <a href="/designer/{{ c.designer.id }}" class="headPic">
                             <img width="63" height="63" class="lazy"
-                                 data-original="/Websites/shenghuojia/Uploads/Picture/2019-01-17/5c3fe75a71831.jpg"
-                                 src="/Websites/shenghuojia/Uploads/Picture/2019-01-17/5c3fe75a71831.jpg"
+                                 data-original="/media/{{ c.designer.portrait }}"
+                                 src="/media/{{ c.designer.portrait }}"
                                  style="display: inline;">
                         </a>
                         <div class="info">
@@ -80,25 +80,27 @@
         <div class="bg-white elite-list elite-detaile-content">
             <div class="list bg-white">
                 <div class="row">
-                    {% for d in designers %}
-                        <div class="col-xs-4">
-                            <div class="item text-center">
-                                <div class="box1">
-                                    <a href="/designer/{{ d.id }}"
-                                       style="background: url('/media/{{ d.portrait }}')  73% 0%;height: 254px;width: 251px;display: block;background-size:100% 100%;"></a>
-                                </div>
-                                <div class="box2">
-                                    <span class="name">{{ d.name }}</span>
-                                    <span class="job">{{ d.title }}</span>
-                                </div>
-                                <div class="box3 row designer-desc">
-                                    <div class="col-xs-6">案例作品：<span class="text-red">{{ d.case_count }}</span>套</div>
-                                    <div class="col-xs-6">从业经验：<span class="text-red">{{ d.exp }}</span>年</div>
-                                    <div class="col-xs-12">所属店面：宜昌市简美装饰有限公司</div>
+                    {% if designers %}
+                        {% for d in designers %}
+                            <div class="col-xs-4">
+                                <div class="item text-center">
+                                    <div class="box1">
+                                        <a href="/designer/{{ d.id }}"
+                                           style="background: url('/media/{{ d.portrait }}')  73% 0%;height: 254px;width: 251px;display: block;background-size:100% 100%;"></a>
+                                    </div>
+                                    <div class="box2">
+                                        <span class="name">{{ d.name }}</span>
+                                        <span class="job">{{ d.title }}</span>
+                                    </div>
+                                    <div class="box3 row designer-desc">
+                                        <div class="col-xs-6">案例作品：<span class="text-red">{{ d.case_count }}</span>套</div>
+                                        <div class="col-xs-6">从业经验：<span class="text-red">{{ d.exp }}</span>年</div>
+                                        <div class="col-xs-12">所属店面：宜昌市简美装饰有限公司</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
