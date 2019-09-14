@@ -6,7 +6,7 @@
     <script src="{% static 'jianmei/js/jquery.min.js' %}"></script>
     <script src="{% static 'jianmei/js/common_index.js' %}/Public/mobile/js/common_index.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
-
+    <meta name="chinaz-site-verification" content="47319C0B41AE7E06">
     <title>宜昌简美装饰公司,宜昌装修,宜昌装修公司,宜昌专业整装公司</title>
 
     <link rel="stylesheet" href="{% static 'jianmei/css/headerFooter_index-b.css' %}">
@@ -206,37 +206,6 @@
             })
         }
 
-        //填写验证码
-        function add_ad4(telephone) {
-            var dom =
-                '<div id="pop_bg4" style="width:100%;height: 100%;background: rgba(0, 0, 0, 0.6);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);display: flex;flex-flow:column;display: -webkit-flex;align-items: center;  justify-content:center;position: absolute;top: 0;left: 0;z-index:999;">' +
-                '<div id="pop_ad4" style="width: 320px;height: 300px;margin: 0 auto;background-color: #fff;overflow: hidden;position: relative;   z-index: 3333;">' +
-                '<div id="title10" style="width:200px;margin:auto;text-align:center;' +
-                ' font-size:18px;margin-top:20px;border-bottom:1px solid rgb(208,4,18);line-height:30px;color:rgb(51,51,51)">验证手机' +
-                '</div>' +
-                '<div id="p4" style="font-size:12px;line-height:20px;width:180px;margin:auto;color:rgb(208,4,18);margin-top:20px">验证码已发送到' +
-                telephone + ', 30分钟内输入有效, 请勿泄漏' +
-                '</div>' +
-
-                '<form style="margin-top:20px;" action="/index.php/                _index / showprice .html" method="post" id="add_form4">' +
-                '<div style="margin-top:20px;width:300px;margin:auto;display:flex;justify-content:space-between;">' +
-                '<input type="text" name="code" id="code" placeholder="短信验证码" style="width:140px;height:40px; text-align:left;  background:#fff;font-size:12px;color:#8f8f8f;text-indent:1em;border:1px solid #efefef"/>' +
-                '<input id="re4" type="button" style="font-size:12px;width:140px;height:40px;line-height:40px;text-align:center;background:#fafafa;border:0;color:#8f8f8f;" value="">' +
-                '</div>' +
-                '<input type="button" id="tijiao" value="提交" style="width:300px;height:40px; text-align:center;  border:0px;background:#f55855;font-size:18px;color:#fff;margin-top:50px;margin-left:10px"/>' +
-                '</form>' +
-
-                '</div>' +
-                '<div id="pop_close4"  style="width: 100%;height: 100%;z-index:999;position:absolute">' +
-
-                '</div>'
-            '</div>';
-            $("body").append(dom);
-            $("#pop_close4").unbind("click").click(function () {
-                $("#pop_bg4").remove();
-            });
-        }
-
         //查询报价
         $(".send").on("click", function () {
             var telephone = $(".ipt_number_input").val();
@@ -250,52 +219,8 @@
                 return false;
             }
             var send_url = $("#price").attr("action");
-            var data = $("#price").serialize(); //alert(data);return false;
-            $.post(send_url, data, function (data) {
-                if (data.code == 1) {
-                    //短信发送成功
-                    var id = data.id;
-                    add_ad4(telephone);
-                    var re4 = document.getElementById("re4");
-                    settime(re4); //修改按钮状态
-                    $("#re4").on("click", function () {
-                        settime(this);
-                        //重新发送验证码
-                        var again_url = "Index/againsend";
-                        $.post(again_url, {
-                            'telephone': telephone
-                        }, function (data) {
-                            if (data.code == 1) {
-                                alert(data.msg);
-                            } else {
-                                alert(data.msg);
-                            }
-                        }, 'json');
-                    });
-                    $("#tijiao").on("click", function () {
-                        //提交验证码
-                        var sms = $("#code").val();
-                        var submit_url = $("#add_form4").attr("action");
-                        $("#pop_bg4").remove();
-                        $.post(submit_url, {
-                            'id': id,
-                            'sms': sms
-                        }, function (data) {
-                            if (data.code == 1) {
-                                add_ad5(data.price);
-                                $(".button5").on("click", function () {
-                                    location.href =
-                                        "https://pft.zoosnet.net/lr/chatpre.aspx?id=pft94739708&lng=cn&r=&rf1=http%3A//m.ao-hua&rf2=.com/&p=http%3A//m.ao-hua.com/index.php/Index/index";
-                                });
-                            } else {
-                                alert(data.msg); //短信验证码错误
-                            }
-                        }, 'json');
-                    })
-                } else {
-                    alert(data.msg); //短信发送失败
-                }
-            }, 'json');
+            var data = $("#price").serialize();
+            //提交报价
             return false;
         });
 
@@ -668,22 +593,6 @@
                     <div class="ipt_number"><input type="text" name="telephone" class="ipt_number_input" placeholder="请输入手机号码"></div>
                     <div class="send">测一测我家装修多少钱</div>
                 </form>
-                <div class="swiper_1">
-                    <div class="swiper-container" id="swiper_container_1">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="ofSus">
-                                    <div class="icon"></div>
-                                    <div class="user">可**报价成功</div>
-                                    <div class="area">84㎡</div>
-                                    <div class="phone">176****6753</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
         </div>
         <script type="text/javascript">
@@ -740,20 +649,6 @@
                 }, time);
             }
         </script>
-
-        <!-- 风格和报价测试 -->
-        <div class="banner">
-            <ul class="banner-img">
-                <li>
-                    <a href="https://m.ao-hua.com/index.php/Offer/take_price1?id=183"><img src="/Public/mobile/images/baojiacs.jpg"></a>
-                </li>
-                <li>
-                    <a href="https://m.ao-hua.com/index.php/Wuyou/activity?id=168"><img src="/Public/mobile/images/cs_aaa.png"></a>
-                </li>
-
-            </ul>
-
-        </div>
 
         <!-- 风格和报价测试js -->
         <script type="text/javascript">
@@ -955,41 +850,6 @@
                 </div>
             </div>
         </div>
-
-        <!--专题入口-->
-        <div class="entrance">
-
-
-            <a href="https://m.ao-hua.com/index.php/xq/index.html" class="entrance-left">
-                <div class="entrance-left-box">
-                    <span>热装小区</span>
-                    <div>预约参观工地</div>
-                </div>
-            </a>
-
-            <div class="entrance-right">
-                <a href="https://m.ao-hua.com/spe/sj/wuyou.html">
-                    <div class="entrance-right-top">
-                        <div class="entrance-right-top-box">
-                            <span>无忧装2.0</span>
-                            <div>让装修变得简单有趣</div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="https://m.ao-hua.com/spe/six/ah.html">
-                    <div class="entrance-right-buttom">
-                        <div class="entrance-right-buttom-box">
-                            <span>了解澳华</span>
-                            <div>武汉本土26年大事纪</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="clearfix"></div>
-
-
-        </div>
         <!-- 设计团队 -->
 
         <div class="title_group">
@@ -1057,63 +917,25 @@
             </div>
         </div>
 
-
-        <!--装修知识  -->
-
-        <div class="title_group">
-            <div class="z">装修知识</div>
-            <div class="y"><a href="/index.php/decoration/index.html" style="text-decoration:none;color: #000;">更多 ＞</a></div>
-        </div>
-
-        <div id="knowledge">
-            <a href="/index.php/decoration/detail/id/1541.html">
-                <div class="pic" style="background: url(/Public/attached/2019/07/05/5d1eee1851096.jpg) no-repeat 50% 50%;background-size: 100%;">
-                    <div class="title"><span class="tc">工地巡检第七期|全新工艺 更高要求 澳华巡检再出发！</span></div>
-                </div>
-            </a>
-            <a href="/index.php/decoration/detail/id/1552.html" style="text-decoration:none;">
-                <div class="article">
-                    <div class="title">
-                        <div class="titleCon">90%家庭，厨房都会存在这些问题……</div>
-                    </div>
-                    <div class="pic"><img src="/Public/attached/2019/07/09/5d2456b0c1b7d.jpg" style="width:1.1rem;height:1.1rem;"></div>
-                </div>
-            </a><a href="/index.php/decoration/detail/id/1555.html" style="text-decoration:none;">
-            <div class="article">
-                <div class="title">
-                    <div class="titleCon">澳华26周年感恩有你 | 因为有你，未来可期</div>
-                </div>
-                <div class="pic"><img src="/Public/attached/2019/07/18/5d303a6d9dd8c.jpg" style="width:1.1rem;height:1.1rem;"></div>
-            </div>
-        </a><a href="/index.php/decoration/detail/id/1556.html" style="text-decoration:none;">
-            <div class="article">
-                <div class="title">
-                    <div class="titleCon">七月大放“价”| 清凉一夏 玛雅海滩浪起来！</div>
-                </div>
-                <div class="pic"><img src="/Public/attached/2019/07/20/5d32b9f7f2cdd.jpg" style="width:1.1rem;height:1.1rem;"></div>
-            </div>
-        </a></div>
-
         <div class="ewm">
             <div class="phone">
                 <div class="rexian">装修热线</div>
                 <div class="text">
-                    <a href="tel:027-82790100">027-82790100</a>
+                    <a href="tel:027-82790100">0717-6590399</a>
 
                 </div>
             </div>
             <div class="slogan">
-                <p>武汉更受欢迎的中高档装修品牌</p>
-                <em> 版权所有：武汉澳华装饰设计工程有限公司 </em>
-                <em> 备案号：鄂ICP备11005316号-1
+                <p>宜昌更受欢迎的中高档装修品牌</p>
+                <em> 版权所有：宜昌简美装饰工程有限公司 </em>
+                <em> 备案号：
                     <span id="cnzz_stat_icon_1262356453">
-        <a href="http://www.cnzz.com/stat/website.php?web_id=1262356453" target="_blank" title="站长统计">
-          <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
-        </a>
-      </span>
+                        <a href="http://www.cnzz.com/stat/website.php?web_id=1262356453" target="_blank" title="站长统计">
+    <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+                        </a>
+                    </span>
                     <script src=" http://s19.cnzz.com/z_stat.php?id=1262356453&amp;show=pic" type="text/javascript"></script>
                     <script src="http://c.cnzz.com/core.php?web_id=1262356453&amp;show=pic&amp;t=z" charset="utf-8" type="text/javascript"></script>
-
                 </em>
             </div>
 
@@ -1171,7 +993,7 @@
 
 
 <footer>
-    <div class="home" url="/index.php/index/index.html">
+    <div class="home" url="/">
         <div class="icon"></div>
         <div class="text">首页</div>
     </div>
