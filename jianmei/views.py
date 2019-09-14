@@ -102,3 +102,7 @@ def all_case(request, page_num):
                    'page_count_range': range(1, page_count + 1),
                    'page_count': page_count,
                    'page_num': page_num})
+
+
+def mobile(request):
+    return render(request, 'jianmei/m_index.html')
