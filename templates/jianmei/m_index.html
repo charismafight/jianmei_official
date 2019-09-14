@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
     <script src="{% static 'jianmei/js/jquery.min.js' %}"></script>
-    <script src="{% static 'jianmei/js/common_index.js' %}/Public/mobile/js/common_index.js"></script>
+    <script src="{% static 'jianmei/js/common_index.js' %}"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
     <meta name="chinaz-site-verification" content="47319C0B41AE7E06">
     <title>宜昌简美装饰公司,宜昌装修,宜昌装修公司,宜昌专业整装公司</title>
@@ -19,7 +20,43 @@
     <script src="{% static 'jianmei/js/touch.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'jianmei/js/jquery.countup.min.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'jianmei/js/jquery.js' %}" type="text/javascript" charset="utf-8"></script>
-
+    <script src="{% static 'jianmei/js/baojia.js' %}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".home").on("click", function () {
+                var href = $(this).attr("url");
+                location.href = href;
+            });
+            $(".consult").on("click", function () {
+                location.href = "https://pft.zoosnet.net/lr/chatpre.aspx?id=pft94739708&lng=cn&r=&rf1=http%3A//m.ao-hua&rf2=.com/&p=http%3A//m.ao-hua.com/index.php/Index/index";
+            });
+            $(".mu").click(function () {
+                $("#menu").css({
+                    "display": "flex"
+                });
+                $("#menu .menu_content").css({
+                    "display": "flex"
+                }).show().css({
+                    "right": "0"
+                });
+            });
+            $("#menu").css({
+                "display": "none"
+            });
+            $("#menu").click(function (e) {
+                $("#menu").css({
+                    "display": "none"
+                });
+                $("#menu .menu_content").css({
+                    "right": "-4.8rem"
+                });
+            });
+            $(".menu_content .m_grp").on("click", function () {
+                var url = $(this).attr("href");
+                location.href = url;
+            });
+        });
+    </script>
 
     <style>
         .jiantou {
@@ -54,24 +91,25 @@
 <header>
     <div class="logo">
         <a href="/">
-            <img src="{% static "jianmei/image/logo.jpg" %}" alt="" width="200px" height="40px"></a>
+            <img src="{% static "jianmei/image/logo.jpg" %}" alt="简美装饰">
+        </a>
     </div>
-    <div class="menu">
+    <div id="btnMenu" class="menu">
         <div class="mu"></div>
     </div>
 </header>
 <div id="menu" style="position: fixed;top: 0;z-index: 1000;">
     <div class="menu_content">
-        <div class="m_grp" href="/index.php/xq/index.html">
-            <div class="icon"><img src="/"/></div>
+        <div class="m_grp" href="/m">
+            <div class="icon"><img src="{% static "jianmei/image/2.png" %}"/></div>
             <div class="text">热装小区</div>
         </div>
         <div class="m_grp" href="/">
-            <div class="icon"><img src="/Public/mobile/images/menu/3.png"/></div>
+            <div class="icon"><img src="{% static "jianmei/image/3.png" %}"/></div>
             <div class="text">设计团队</div>
         </div>
         <div class="m_grp" href="/">
-            <div class="icon"><img src="/Public/mobile/images/menu/5.png"/></div>
+            <div class="icon"><img src="{% static "jianmei/image/5.png" %}"/></div>
             <div class="text">案例展示</div>
         </div>
     </div>
@@ -124,25 +162,6 @@
     }
 </style>
 <script type="text/javascript">
-    var countdown = 60;
-
-    function settime(obj) {
-
-        if (countdown == 0) {
-            obj.removeAttribute("disabled");
-            obj.value = "重新获取验证码";
-            countdown = 60;
-            return;
-        } else {
-            obj.setAttribute("disabled", true);
-            obj.value = "重新发送(" + countdown + ")";
-            countdown--;
-        }
-        setTimeout(function () {
-            settime(obj)
-        }, 1000);
-    }
-
     $(function () {
         function add_ad6() {
             var dom =
@@ -458,8 +477,6 @@
 </script>
 
 <section>
-
-
     <div class="swiper-container swiper-container1">
         <div class="swiper-wrapper">
             <div class="swiper-slide banner_list" href="http://m.ao-hua.com/index.php/Wuyou/activity?id=203">
@@ -468,7 +485,6 @@
             <div class="swiper-slide banner_list" href="https://m.ao-hua.com/spe/sj/wuyou.html">
                 <img width="100%" src="/Public/attached/2018/07/27/5b5ab6e7c8fb3.jpg"/>
             </div>
-
             <div class="swiper-pagination swiper-pagination-white swiper-pagination1"></div>
         </div>
 
@@ -498,13 +514,11 @@
                 </a>
             </div>
         </div>
-
-
         <!--报价计算器-->
 
         <div id="offer">
             <div class="content">
-                <img src="/Public/mobile/images/cyc.png">
+                <img src="{% static "jianmei/image/cyc.png" %}">
                 <div class="text1">
                     <div class="yuan">
                         <p>元</p>
@@ -941,56 +955,8 @@
 
 
         </div>
+    </div>
 </section>
-<script src="/Public/mobile/js/jquery.min.js"></script>
-<script src="/Public/mobile/js/index.js"></script>
-<script src="/Public/mobile/js/common_index.js"></script>
-<script src="/Public/mobile/js/Headroom/Headroom_index.js"></script>
-<script src="/Public/mobile/js/swiper/swiper.min_index.js"></script>
-<script src="/Public/mobile/js/baojia.js"></script>
-
-
-<!-------------------------------------------------------------->
-
-<script type="text/javascript">
-    $(function () {
-        $(".home").on("click", function () {
-            var href = $(this).attr("url");
-            location.href = href;
-        });
-        $(".consult").on("click", function () {
-            location.href = "https://pft.zoosnet.net/lr/chatpre.aspx?id=pft94739708&lng=cn&r=&rf1=http%3A//m.ao-hua&rf2=.com/&p=http%3A//m.ao-hua.com/index.php/Index/index";
-        });
-        $(".mu").click(function () {
-            $("#menu").css({
-                "display": "flex"
-            });
-            $("#menu .menu_content").css({
-                "display": "flex"
-            }).show().css({
-                "right": "0"
-            });
-        });
-        $("#menu").css({
-            "display": "none"
-        });
-        $("#menu").click(function (e) {
-            // if (e.target.id == "menu") {
-            $("#menu").css({
-                "display": "none"
-            });
-            $("#menu .menu_content").css({
-                "right": "-4.8rem"
-            });
-            // }
-        });
-        $(".menu_content .m_grp").on("click", function () {
-            var url = $(this).attr("href");
-            location.href = url;
-        });
-    });
-</script>
-
 
 <footer>
     <div class="home" url="/">

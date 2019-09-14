@@ -451,14 +451,13 @@ body {
 
 .case .item .pic {
     width: 280px;
-    height: 220px;
+    height: 158px;
     overflow: hidden;
     display: block;
 }
 
 .case .item .pic img {
     width: 280px;
-    height: 220px;
 }
 
 .case .item .headPic {

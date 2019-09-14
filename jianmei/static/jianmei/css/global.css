@@ -1041,22 +1041,20 @@ select::-ms-expand {
 
 .nav {
     min-width: 1210px !important;
-    border-bottom: 1px solid #ddd;
     background-color: #fff;
 }
 
 .nav .navCenter {
     width: 1210px;
     margin: 0 auto;
-    height: 61px;
+    height: 60px;
     line-height: 60px;
     position: relative;
-
 }
 
 .nav .navCenter .logo {
     float: left;
-    width: 200px;
+    width: 150px;
     height: 60px;
 }
 
@@ -3570,7 +3568,7 @@ select::-ms-expand {
     background: #222222;
     overflow: hidden;
     position: relative;
-    z-index: 99
+    z-index: 999
 }
 
 .new-footer .footer-cen {
@@ -3660,7 +3658,7 @@ select::-ms-expand {
 }
 
 .new-footer .footer-form {
-    width: 380px !important;
+    width: 280px;
     overflow: hidden;
     position: absolute;
     right: 0;
@@ -3838,7 +3836,6 @@ select::-ms-expand {
 .tanchu-flex {
     width: 100%;
     display: flex;
-    z-index: 12000;
 }
 
 .tanchu-left {

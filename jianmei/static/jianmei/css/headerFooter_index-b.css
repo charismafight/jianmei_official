@@ -1,0 +1,281 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+}
+
+html, body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    -webkit-appearance: none;
+}
+
+
+/**********************å¤´éƒ¨begin**************************/
+body {
+    height: 100%;
+    width: 7.5rem;
+}
+
+header {
+    font-size: 0.35rem;
+    width: 7.5rem;
+    height: 0.9rem;
+    background-color: #ffffff;
+    /*position: fixed;*/
+    /*top: 0;*/
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+header .home {
+    width: 0.4rem;
+
+    height: 1.46rem;
+    background: url("../images/icon/home.png") no-repeat center center;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("../images/icon/home.png");
+    margin-left: 0.6rem;
+}
+
+
+header .logo img {
+    width: 2.0rem;
+    height: 0.9rem;
+    margin-left: -2.3rem;
+}
+
+header .logo1 {
+    font-size: 0.44rem;
+    font-weight: 600;
+    width: 2.2rem;
+    height: 100%;
+    margin-top: 0.2rem;
+    /* margin-left: 1.6rem; */
+}
+
+header .menu {
+    /*width: 0.8rem;*/
+    height: 100%;
+    /*background-color: #007aff;*/
+    display: flex;
+    margin-right: 0.4rem;
+}
+
+header .menu .mu {
+    width: 0.4rem;
+    height: 100%;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("../image/menu.png");
+    margin-left: 0.2rem;
+    /*background: url("../images/icon/menu.png") no-repeat center center;*/
+}
+
+/**********************å¤´éƒ¨end**************************/
+
+
+.anniversary a img {
+    width: 7.5rem;
+    display: block;
+}
+
+
+/**********************å°¾éƒ¨begin**************************/
+footer {
+    width: 7.5rem;
+    height: 1rem;
+    background: url("../images/icon/footer-bg.png") no-repeat 50% 50%;
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+footer .home, .offer, .consult, .taxi {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0.1rem;
+}
+
+footer .phone {
+    width: 0.7rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+footer .home .icon {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url("../images/icon/home2.png") no-repeat 50% 50%;
+    background-size: contain;
+    /*margin-top: 0.1rem;*/
+}
+
+footer .offer .icon {
+    width: 0.36rem;
+    height: 0.36rem;
+    background: url("../images/icon/offer.png") no-repeat 50% 50%;
+    background-size: contain;
+}
+
+footer .phone .icon {
+    /* width: 1.72rem;
+    height: 1.32rem; */
+    width: 0.5rem;
+    height: 0.4rem;
+    background: url("../images/icon/phone.png") no-repeat 50% 50%;
+    text-align: center;
+    color: #fff;
+    line-height: 1.3rem;
+    background-size: contain;
+    margin-top: 0.12rem;
+    /* margin-left: -0.48rem  */
+}
+
+/*footer .phone:after{
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #d12525;
+    position: absolute;
+    top: -0.4rem;
+    left: -0.25rem;
+    border-radius: 100%;
+    z-index: -1;
+}*/
+
+footer .consult .icon {
+    width: 0.44rem;
+    height: 0.44rem;
+    background: url("../images/icon/consult.png") no-repeat 50% 50%;
+    background-size: contain;
+}
+
+footer .taxi .icon img {
+    width: 0.36rem;
+    height: 0.3rem;
+    padding-top: 0.04rem;
+
+
+}
+
+/****/
+footer .home .text {
+    width: 100%;
+    height: 0.5rem;
+    color: #ffffff;
+    text-align: center;
+    /*line-height: 200%;*/
+}
+
+footer .offer .text {
+    width: 100%;
+    height: 0.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer .phone .text {
+    width: 100%;
+    height: 0.3rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 50%;
+}
+
+footer .consult .text {
+    width: 100%;
+    height: 0.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer .taxi .text {
+    height: 0.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/*#footer .home,.offer,.consult,.taxi .text{*/
+/*width: 100%;*/
+/*height: 50%;*/
+/*}*/
+
+/*#footer .phone .icon,.text{*/
+/*width: 100%;*/
+/*height: 50%;*/
+/*}*/
+/**********************å°¾éƒ¨end**************************/
+
+/**********************èœå•å†…å®¹**************************/
+#menu {
+    width: 7.5rem;
+    height: 100%;
+    background-color: transparent;
+    display: none;
+}
+
+#menu .menu_content {
+    width: 3.4rem;
+    height: 100%;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin-left: 2.7rem;
+    z-index: 1000;
+    opacity: .7;
+}
+
+#menu .menu_content .logo {
+
+}
+
+#menu .menu_content .m_grp {
+    width: 100%;
+    height: 0.4rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+}
+
+#menu .menu_content .m_grp .icon {
+    width: 0.45rem;
+    height: 100%;
+    margin-right: 0.4rem;
+}
+
+#menu .menu_content .m_grp .icon img {
+    width: 100%;
+}
+
+#menu .menu_content .m_grp .text {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 0.4rem;
+    margin-left: 0;
+}

@@ -718,6 +718,7 @@
     width: 1210px;
     margin: 0 auto;
     overflow: hidden;
+    padding-bottom: 60px;
 }
 
 .index_case > div:not(.in-con-head) {
@@ -762,6 +763,7 @@
     width: 385px;
     height: 260px;
 }
+
 
 
 .index_case ul li div strong {
@@ -1149,7 +1151,7 @@
 }
 
 .index_course .left .left_nav li.active {
-    background: #ffe100 url("../image/left_tran.png") right 80px no-repeat;
+    background: #ffe100 url("../images/ico/left_tran.png") right 80px no-repeat;
 }
 
 .index_course .left .left_nav li.active a p {

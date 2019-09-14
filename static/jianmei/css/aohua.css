@@ -1,4 +1,0 @@
-/* 隐藏 IFRAME 样式 */
-	.mainframe {position: fixed; top: 50%; left: 50%; visibility: hidden; z-index: 9999999999;}
-
-

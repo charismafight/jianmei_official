@@ -5,7 +5,8 @@ function random(obj) {
 function randoms(obj) {
     if (Math.floor(Math.random() * 10) % 2 == 0) {
         obj.eq(1).show();
-    } else {
+    }
+    else {
         obj.eq(1).hide();
     }
 }
@@ -40,6 +41,44 @@ $(function () {
     $(".head").mouseenter(function () {
         $(".submenu").hide();
     });
+
+
+    // 报价、预约
+    $('.index_float_baojia').on('click', function () {
+        var form = $(this).closest('form');
+        var name = $.trim(form.find('input[name=name]').val());
+        if ('' == name) {
+            alert('请填写您的称呼');
+            return false;
+        }
+        if (validatemobile(form.find('input[name=phone]').val())) {
+            $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                if (msg.status) {
+//                        $('.index_float_baojia_block').show();
+                    alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                    $(".reset").click();
+                }
+            })
+        }
+    })
+
+    $('.index_float_yuyue').on('click', function () {
+        var form = $(this).closest('form');
+        var name = $.trim(form.find('input[name=name]').val());
+        if ('' == name) {
+            alert('请填写您的称呼');
+            return false;
+        }
+        if (validatemobile(form.find('input[name=phone]').val())) {
+            $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+                if (msg.status) {
+//                        $('.index_float_yuyue_block').show();
+                    alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                    $(".reset").click();
+                }
+            })
+        }
+    })
 
     // 随机生成报价数字
     var t1 = setInterval(function () {
@@ -235,3 +274,22 @@ $(function () {
         Mon();
     })
 });
+
+$('.index_tanchu').on('click', function () {
+//        $('.tanchu-maincen').show();
+//        $('.hidden-get-price').hide();
+    var form = $(this).closest('form');
+    var name = $.trim(form.find('input[name=name]').val());
+    if ('' == name) {
+        alert('请填写您的称呼');
+        return false;
+    }
+    if (validatemobile(form.find('input[name=phone]').val())) {
+        $.post('/index.php?s=/Zhuangxiu/receive', form.serialize(), function (msg) {
+            if (msg.status) {
+                alert('提交成功,我们将尽快联系您,感谢您的信任^v^');
+                $('.tanchu-close').click();
+            }
+        })
+    }
+})
