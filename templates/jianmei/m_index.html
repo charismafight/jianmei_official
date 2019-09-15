@@ -2,6 +2,7 @@
 <html lang="en">
 {% load static %}
 {% load staticfiles %}
+{% csrf_token %}
 <head>
     <meta charset="UTF-8">
     <script src="{% static 'jianmei/js/jquery.min.js' %}"></script>
@@ -12,7 +13,7 @@
 
     <link rel="stylesheet" href="{% static 'jianmei/css/headerFooter_index-b.css' %}">
     <link rel="stylesheet" href="{% static 'jianmei/css/m_index.css' %}">
-    <link rel="stylesheet" href="{% static 'jianmei/css/swipermin_index.css' %}">
+    <link rel="stylesheet" href="{% static 'jianmei/js/swipermin_index.css' %}">
     <link rel="stylesheet" href="{% static 'jianmei/css/animate_index.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'jianmei/image/favicon.ico' %}">
     <script src="{% static 'jianmei/js/Headroom_index.js' %}"></script>
@@ -21,6 +22,7 @@
     <script src="{% static 'jianmei/js/jquery.countup.min.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'jianmei/js/jquery.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'jianmei/js/baojia.js' %}"></script>
+    <script src="{% static 'jianmei/js/right.float.js' %}"></script>
     <script type="text/javascript">
         $(function () {
             $(".home").on("click", function () {
@@ -28,7 +30,7 @@
                 location.href = href;
             });
             $(".consult").on("click", function () {
-                location.href = "https://pft.zoosnet.net/lr/chatpre.aspx?id=pft94739708&lng=cn&r=&rf1=http%3A//m.ao-hua&rf2=.com/&p=http%3A//m.ao-hua.com/index.php/Index/index";
+                location.href = "/m";
             });
             $(".mu").click(function () {
                 $("#menu").css({
@@ -169,7 +171,7 @@
                 '<div id="pop_ad6" style="width: 320px;height: 260px;margin: 0 auto;background-color: #fff;border-radius: 5px;overflow: hidden;position: relative;">' +
                 '<div id="title18" style="width: 250px;;margin-top:30px;margin-bottom:10px;margin-left:35px;text-align:center;font-size:32px;color:#c6b690;font-weight:bolder;">预约成功</div>' +
                 '<div id="title19" style="width: 150px;height: 30px;margin-top:30px;margin:auto;left:10px;color:rgb(51,51,51)"><p style="font-size:12px;    text-align: center;">请保持手机畅通，我们的客服人员会第一时间联系您<p></div>' +
-                '<div id="title20" style="width: 150px;height: 30px;margin:auto;border:1px solid rgb(208,4,18);border-radius:30px;margin-top:20px;color:rgb(208,4,18);font-size:20px;text-align:center">027-87493333</div>' +
+                '<div id="title20" style="width: 150px;height: 30px;margin:auto;border:1px solid rgb(208,4,18);border-radius:30px;margin-top:20px;color:rgb(208,4,18);font-size:20px;text-align:center">0717-6590399</div>' +
                 '<div style="display:flex; justify-content:space-between;width:200px;margin:auto;margin-top:20px">' +
                 '<div id="button6" style="width:90px;height:30px;border:1px solid #c6b690;line-height:30px;font-size:18px;text-align:center;color:#c6b690;">线上咨询' +
                 '</div>' +
@@ -178,7 +180,7 @@
                 '</div>' +
                 '</div>' +
                 '<div id="pop_close6"  style="width: 32px;height: 32px;margin:10px;">' +
-                '<img src="/Public/mobile/images/2.png" width="100%">' +
+                '<img src="{% static "jianmei/image/m_close.png" %}" width="100%">' +
                 '</div>'
             '</div>';
             $("body").append(dom);
@@ -187,7 +189,7 @@
             });
             $("#button6").on("click", function () {
                 location.href =
-                    "https://pft.zoosnet.net/lr/chatpre.aspx?id=pft94739708&lng=cn&r=&rf1=http%3A//m.ao-hua&rf2=.com/&p=http%3A//m.ao-hua.com/index.php/Index/index";
+                    "/m";
             });
             $("#button7").on("click", function () {
                 var href = $(this).attr("href");
@@ -204,19 +206,18 @@
                 '<div id="title14" style="width: 250px;;margin-top:30px;text-align:center;margin:auto;color:rgb(51,51,51);font-size:32px;color:#c6b690">' +
                 price + '元</div>' +
                 '<div id="title15" style="width: 150px;height: 30px;margin-top:30px;margin:auto;left:10px;color:rgb(51,51,51)"><p style="font-size:12px;    text-align: center;">此报价仅供参考,如您需要精准报价请电话详询客服<p></div>' +
-                '<div id="title16" style="width: 150px;height: 30px;margin:auto;border:1px solid rgb(208,4,18);border-radius:30px;margin-top:20px;color:rgb(208,4,18);font-size:20px;text-align:center">027-87493333</div>' +
+                '<div id="title16" style="width: 150px;height: 30px;margin:auto;border:1px solid rgb(208,4,18);border-radius:30px;margin-top:20px;color:rgb(208,4,18);font-size:20px;text-align:center">0717-6590399</div>' +
                 '<div style="display:flex; justify-content:space-between;width:200px;margin:auto;margin-top:20px">' +
                 '<div class="button5" style="width:90px;height:30px;border:1px solid #c6b690;line-height:30px;font-size:18px;text-align:center;color:#c6b690;">线上咨询' +
                 '</div>' +
                 '<div class="button5" style="width:90px;height:30px;border:1px solid #c6b690;line-height:30px;font-size:18px;text-align:center;color:#c6b690" href="/index.php/                _wuyou / index .html">无忧装' +
                 '</div>' +
-
                 '</div>' +
                 '</div>' +
 
 
                 '<div id="pop_close5"  style="width: 32px;height: 32px;margin:10px;z-index:999;">' +
-                '<img src="/Public/mobile/images/2.png" width="100%">' +
+                '<img src="{% static "jianmei/image/m_close.png" %}" width="100%">' +
                 '</div>'
             '</div>';
             $("body").append(dom);
@@ -248,7 +249,7 @@
             var dom =
                 '<div id="pop_bg3" style="width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);display: flex;flex-flow:column;display: -webkit-flex;align-items: center;  justify-content:center;position: absolute;top: 0;left: 0;z-index:99;">' +
                 '<div id="pop_ad3" style="width: 320px;height: 450px;margin: 0 auto;background-color:#f4f4f4;position: relative;">' +
-                '<img src="/Public/mobile/images/1.png" width="100%" height="100%">' +
+                '<img src="{% static "jianmei/image/1.png" %}" width="100%" height="100%">' +
                 '<div id="title7" style="width: 250px;height: 30px;position: absolute; top:60px;text-align:center;margin:auto;left:30px;color:#ffffff"><p style="font-size:18px">预约设计<p></div>' +
                 '<div id="pop_into3" style="width: 250px;height: 30px;position: absolute; top:130px; left: 30px;">' +
                 '<form style="text-align:center" action="/index.php/                _designer / order_designer .html" method="post" id="form3">' +
@@ -256,16 +257,16 @@
                 '<input type="hidden" name="url" value="http://m.ao-hua.com/"/>' +
                 '<select name="fengge" id="fengge3" style="width:250px;height:40px; text-align:left;background:#fff;font-size:16px;border:1px solid #F1F1F1;"><option value="">请选择装修风格</option><option value="简约">简约</option><option value="简欧">简欧</option><option value="美式">美式</option><option value="田园">田园</option><option value="中式">中式</option><option value="地中海">地中海</option><option value="港式">港式</option><option value="新古典">新古典</option></select>' +
                 '<input type="text" name="price" id="price3" placeholder="您的预算(单位:万元)" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;margin:.1rem;border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="text" name="username" id="username3" placeholder="您的称呼" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:0.1rem;border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="text" name="telephone" id="telephone3" placeholder="电话号码" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:0.1rem; border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="username" id="name" placeholder="您的称呼" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:0.1rem;border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="telephone" id="phone" placeholder="电话号码" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:0.1rem; border-bottom:1px solid #F1F1F1;"/>' +
                 '<input type="text" name="plotname" id="plotname3" placeholder="居住小区" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:0.1rem; border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="submit" value="马上预约" style="width:150px;height:40px; text-align:center; border-radius:30px; border:0px;background-color:#ef6a71;font-size:16px;color:#fff;margin-top:20px;"/>' +
+                '<input type="submit" id="btnSubmit" value="马上预约" style="width:150px;height:40px; text-align:center; border-radius:30px; border:0px;background-color:#ef6a71;font-size:16px;color:#fff;margin-top:20px;"/>' +
                 '</form>' +
                 '</div>' +
                 '<div id="title9" style="width: 300px;position: absolute; top:380px;margin:auto;left:10px;color:rgb(128,128,128)"></div>' +
                 '</div>' +
                 '<div id="pop_close3"  style="width: 32px;height: 32px;margin:10px;">' +
-                '<img src="/Public/mobile/images/2.png" width="100%">' +
+                '<img src="{% static "jianmei/image/m_close.png" %}" width="100%">' +
                 '</div>'
             '</div>';
             $("body").append(dom);
@@ -280,25 +281,25 @@
             var dom =
                 '<div id="pop_bg2" style="width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);display: flex;flex-flow:column;display: -webkit-flex;align-items: center;  justify-content:center;position: absolute;top: 0;left: 0;z-index:99;">' +
                 '<div id="pop_ad2" style="width: 320px;height: 500px;margin: 0 auto;background-color: #fff;position: relative;">' +
-                '<img src="/Public/mobile/images/1.png" width="100%" height="100%">' +
+                '<img src="{% static "jianmei/image/1.png" %}" width="100%" height="100%">' +
                 '<div id="title4" style="width: 250px;height: 30px;position: absolute; top:20px;text-align:center;margin:auto;left:30px;color:#ffffff"><p style="font-size:18px">预约设计<p></div>' +
                 '<div id="title5" style="width: 250px;height: 30px;position: absolute; top:60px;text-align:center;margin:auto;left:30px;color:white"><p style="font-size:14px">选风格填面积，抢订免费设计服务<p></div>' +
                 '<div id="pop_into" style="width: 250px;height: 30px;position: absolute; top:130px; left: 30px;">' +
-                '<form style="text-align:center" action="/index.php/                _case / order_design .html" method="post" id="form2">' +
+                '<form style="text-align:center" action="/" method="post" id="form2">' +
                 '<input type="hidden" name="belongto" value="预约设计"/>' +
                 '<input type="hidden" name="url" value="http://m.ao-hua.com/"/>' +
                 '<select name="fengge" id="fengge2" style="width:250px;height:40px; text-align:left;background:#f4f4f4;font-size:16px;border:1px solid #F1F1F1;"><option value="">请选择装修风格</option><option value="简约">简约</option><option value="简欧">简欧</option><option value="美式">美式</option><option value="田园">田园</option><option value="中式">中式</option><option value="地中海">地中海</option><option value="港式">港式</option><option value="新古典">新古典</option></select>' +
                 '<input type="text" name="price" id="price2" placeholder="您的预算(单位:万元)" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:.1rem;border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="text" name="username" id="username2" placeholder="您的称呼" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:.1rem;border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="text" name="telephone" id="telephone2" placeholder="电话号码" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:.1rem; border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="username" id="name" placeholder="您的称呼" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:.1rem;border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="telephone" id="phone" placeholder="电话号码" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:.1rem; border-bottom:1px solid #F1F1F1;"/>' +
                 '<input type="text" name="plotname" id="plotname2" placeholder="居住小区" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:.1rem; border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="submit" value="急速申请" style="width:150px;height:40px; text-align:center; border-radius:30px; border:0px;background-color:#ef6a71;font-size:16px;color:#fff;margin-top:80px;"/>' +
+                '<input type="submit" id="btnSubmit" value="急速申请" style="width:150px;height:40px; text-align:center; border-radius:30px; border:0px;background-color:#ef6a71;font-size:16px;color:#fff;margin-top:80px;"/>' +
                 '</form>' +
                 '</div>' +
                 '<div id="title6" style="width: 300px;height: 30px;position: absolute; top:360px;margin:auto;left:10px;color:rgb(128,128,128)"><p style="font-size:12px">我们承诺:提供该项免费服务,绝不会产生任何费用,为了您的利益以及我们的口碑,您的隐私将被严格保密。<p></div>' +
                 '</div>' +
                 '<div id="pop_close2"  style="width: 32px;height: 32px;margin:10px;">' +
-                '<img src="/Public/mobile/images/2.png" width="100%">' +
+                '<img src="{% static "jianmei/image/m_close.png" %}" width="100%">' +
                 '</div>'
             '</div>';
             $("body").append(dom);
@@ -313,24 +314,24 @@
             var dom =
                 '<div id="pop_bg1" style="width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);display: flex;flex-flow:column;display: -webkit-flex;align-items: center;  justify-content:center;position: absolute;top: 0;left: 0;z-index:99;">' +
                 '<div id="pop_ad1" style="width: 320px;height: 420px;margin: 0 auto;background-color: #f4f4f4;position: relative;">' +
-                '<img src="/Public/mobile/images/1.png" width="100%" height="100%">' +
+                '<img src="{% static "jianmei/image/1.png" %}" width="100%" height="100%">' +
                 '<div id="title1" style="width: 250px;height: 30px;position: absolute; top:20px;text-align:center;margin:auto;left:30px;color:#ffffff"><p style="font-size:18px">参观样板间<p></div>' +
                 '<div id="title2" style="width: 250px;height: 30px;position: absolute; top:60px;text-align:center;margin:auto;left:30px;color:white;"><p style="font-size:14px">在自家小区，看真实案例<p></div>' +
                 '<div id="pop_into" style="width: 250px;height: 30px;position: absolute; top:130px; left: 30px;">' +
                 '<form style="text-align:center" action="/index.php/                _xq / orderscan_add .html" method="post" id="form1">' +
                 '<input type="hidden" name="belongto" value="参观样板间"/>' +
                 '<input type="hidden" name="url" value="http://m.ao-hua.com/"/>' +
-                '<input type="text" name="username" id="username1" placeholder="您的称呼" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="text" name="area" id="area1" placeholder="装修面积" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="username" id="name" placeholder="您的称呼" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="area" id="area" placeholder="装修面积" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;border-bottom:1px solid #F1F1F1;"/>' +
                 '<input type="text" name="plotname" id="plotname1" placeholder="居住小区" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px; border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="text" name="telephone" id="telephone1" placeholder="电话号码" style="width:250px;height:40px; text-align:left;border:0px;background:#fff;font-size:16px; border-bottom:1px solid #F1F1F1;"/>' +
-                '<input type="submit" value="急速申请" style="width:150px;height:40px; text-align:center; border-radius:30px; border:0px;background-color:#ef6a71;font-size:16px;color:#fff;margin-top:40px;"/>' +
+                '<input type="text" name="telephone" id="phone" placeholder="电话号码" style="width:250px;height:40px; text-align:left;border:0px;background:#fff;font-size:16px; border-bottom:1px solid #F1F1F1;"/>' +
+                '<input id="btnSubmit" type="submit" value="急速申请" style="width:150px;height:40px; text-align:center; border-radius:30px; border:0px;background-color:#ef6a71;font-size:16px;color:#fff;margin-top:40px;"/>' +
                 '</form>' +
                 '</div>' +
                 '<div id="title3" style="width: 300px;height: 5px;position: absolute; top:380px;margin:auto;left:10px;color:rgb(128,128,128)"><p style="font-size:12px"><p></div>' +
                 '</div>' +
                 '<div id="pop_close1"  style="width: 32px;height: 32px;margin:10px;">' +
-                '<img src="/Public/mobile/images/2.png" width="100%">' +
+                '<img src="{% static "jianmei/image/m_close.png" %}" width="100%">' +
                 '</div>'
             '</div>';
             $("body").append(dom);
@@ -340,63 +341,20 @@
             });
         }
 
-        //首页--参观样板间
-        $(".loupan").on("click", function () {
-            add_ad1();
-            $("#form1").on("submit", function () {
-                var username = $("#username1").val();
-                if (username == '') {
-                    alert("请填写您的姓名");
-                    return false;
-                }
-                var telephone = $("#telephone1").val();
-                if (telephone == '') {
-                    alert("请填写您的电话号码");
-                    return false;
-                }
-                var test = /1[34578]{1}\d{9}/.test(telephone);
-                if (!test) {
-                    alert("电话号码格式不正确");
-                    return false;
-                }
-                var data = $("#form1").serialize();
-                var url = $("#form1").attr("action");
-                $.post(url, data, function (data) {
-                    console.log(data);
-                    if (data.code == 1) {
-                        // alert(data.msg);
-                        add_ad6();
-                        $("#pop_bg1").remove();
-                        // location.reload();
-                    } else {
-                        alert(data.msg);
-                    }
-                }, 'json');
-                return false;
-            });
-        });
         //首页-案例-预约设计
         $(".case").on("click", function () {
             add_ad2();
             $("#form2").on("submit", function () {
-                var username = $("#username2").val();
+                var username = $("#name").val();
                 var fengge = $("#fengge2").val();
                 var price = $("#price2").val();
                 if (username == '') {
                     alert("请填写您的姓名");
                     return false;
                 }
-                var telephone = $("#telephone2").val();
+                var telephone = $("#phone").val();
                 if (telephone == '') {
                     alert("请填写您的电话号码");
-                    return false;
-                }
-                if (fengge == '') {
-                    alert("请选择装修风格");
-                    return false;
-                }
-                if (price == '') {
-                    alert("请填写预算（单位：万元）");
                     return false;
                 }
                 var test = /1[34578]{1}\d{9}/.test(telephone);
@@ -404,10 +362,10 @@
                     alert("电话号码格式不正确");
                     return false;
                 }
+
                 var data = $("#form2").serialize();
                 var url = $("#form2").attr("action");
                 $.post(url, data, function (data) {
-                    console.log(data);
                     if (data.code == 1) {
                         // alert(data.msg);
                         add_ad6();
@@ -477,513 +435,473 @@
 </script>
 
 <section>
-    <div class="swiper-container swiper-container1">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide banner_list" href="http://m.ao-hua.com/index.php/Wuyou/activity?id=203">
-                <img width="100%" src="/Public/attached/2019/09/03/5d6dc871e3a20.jpg"/>
+    <div class="swiper-container swiper-container1 swiper-container-horizontal">
+        <div class="swiper-wrapper" style="transform: translate3d(-2199px, 0px, 0px); transition-duration: 0ms;">
+            <div class="swiper-slide banner_list swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev" href="#" data-swiper-slide-index="1" style="width: 733px;">
+                <img width="100%" src="{% static "jianmei/image/5b5ab6e7c8fb3.jpg" %}">
             </div>
-            <div class="swiper-slide banner_list" href="https://m.ao-hua.com/spe/sj/wuyou.html">
-                <img width="100%" src="/Public/attached/2018/07/27/5b5ab6e7c8fb3.jpg"/>
+            <div class="swiper-slide banner_list swiper-slide-duplicate-active" href="#" data-swiper-slide-index="0" style="width: 733px;">
+                <img width="100%" src="{% static "jianmei/image/5b5ab6e7c8fb3.jpg" %}">
             </div>
-            <div class="swiper-pagination swiper-pagination-white swiper-pagination1"></div>
-        </div>
-
-        <div id="adg">
-            <div class="zzcp">
-                <a href="/index.php/designer/index.html" style="color:#000000;text-decoration:none;">
-                    <div class="icon"></div>
-                    <div class="text">免费设计</div>
-                </a>
+            <div class="swiper-slide banner_list swiper-slide-prev swiper-slide-duplicate-next" href="#" data-swiper-slide-index="1" style="width: 733px;">
+                <img width="100%" src="{% static "jianmei/image/5b5ab6e7c8fb3.jpg" %}">
             </div>
-            <div class="rzxq">
-                <a href="/index.php/wuyou/service.html" style="color:#000000;text-decoration:none;">
-                    <div class="icon"></div>
-                    <div class="text">品质保障</div>
-                </a>
-            </div>
-            <div class="sjtd">
-                <a href="/index.php/case/index.html" style="color:#000000;text-decoration:none;">
-                    <div class="icon"></div>
-                    <div class="text">实景案例</div>
-                </a>
-            </div>
-            <div class="fwsh">
-                <a href="https://m.ao-hua.com/index.php/Wuyou/activity?id=203" style="color:#000000;text-decoration:none;">
-                    <div class="icon"></div>
-                    <div class="text">装修福利</div>
-                </a>
+            <div class="swiper-slide banner_list swiper-slide-duplicate swiper-slide-visible swiper-slide-active" href="#" data-swiper-slide-index="0" style="width: 733px;">
+                <img width="100%" src="{% static "jianmei/image/5b5ab6e7c8fb3.jpg" %}">
             </div>
         </div>
-        <!--报价计算器-->
 
-        <div id="offer">
-            <div class="content">
-                <img src="{% static "jianmei/image/cyc.png" %}">
-                <div class="text1">
-                    <div class="yuan">
-                        <p>元</p>
+        <div class="swiper-pagination swiper-pagination-white swiper-pagination1 swiper-pagination-clickable swiper-pagination-bullets">
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+                  aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+    <div id="adg">
+        <div class="zzcp">
+            <a href="#" style="color:#000000;text-decoration:none;">
+                <div class="icon"></div>
+                <div class="text">免费设计</div>
+            </a>
+        </div>
+        <div class="rzxq">
+            <a href="#" style="color:#000000;text-decoration:none;">
+                <div class="icon"></div>
+                <div class="text">品质保障</div>
+            </a>
+        </div>
+        <div class="sjtd">
+            <a href="#" style="color:#000000;text-decoration:none;">
+                <div class="icon"></div>
+                <div class="text">实景案例</div>
+            </a>
+        </div>
+        <div class="fwsh">
+            <a href="#" style="color:#000000;text-decoration:none;">
+                <div class="icon"></div>
+                <div class="text">装修福利</div>
+            </a>
+        </div>
+    </div>
+
+    <!--报价计算器-->
+    <div id="offer">
+        <div class="content">
+            <img src="{% static "jianmei/image/cyc.png" %}">
+            <div class="text1">
+                <div class="yuan">
+                    <p>元</p>
+                </div>
+                <div class="num-window clearfix clear">
+                    <div class="ge" style="display: block;">
+                        <img src="{% static "jianmei/image/zxbj_n0.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n1.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n2.png" %}" alt="" style="display: inline;">
+                        <img src="{% static "jianmei/image/zxbj_n3.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n4.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n5.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n6.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n7.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n8.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n9.png" %}" alt="" style="display: none;">
                     </div>
-                    <div class="num-window clearfix clear">
-                        <div class="ge" style="display: block;">
-                            <img src="/Public/mobile/images/zxbj_n0.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n1.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n2.png" alt="" style="display: inline;">
-                            <img src="/Public/mobile/images/zxbj_n3.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n4.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n5.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n6.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n7.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n8.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n9.png" alt="" style="display: none;">
-                        </div>
-                        <div class="shi" style="display: block;">
-                            <img src="/Public/mobile/images/zxbj_n0.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n1.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n2.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n3.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n4.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n5.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n6.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n7.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n8.png" alt="" style="display: inline;">
-                            <img src="/Public/mobile/images/zxbj_n9.png" alt="" style="display: none;">
-                        </div>
-                        <div class="bai" style="display: block;">
-                            <img src="/Public/mobile/images/zxbj_n0.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n1.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n2.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n3.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n4.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n5.png" alt="" style="display: inline;">
-                            <img src="/Public/mobile/images/zxbj_n6.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n7.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n8.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n9.png" alt="" style="display: none;">
-                        </div>
-                        <div class="qian" style="display: block;">
-                            <img src="/Public/mobile/images/zxbj_n0.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n1.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n2.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n3.png" alt="" style="display: inline;">
-                            <img src="/Public/mobile/images/zxbj_n4.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n5.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n6.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n7.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n8.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n9.png" alt="" style="display: none;">
-                        </div>
-                        <div class="wan" style="display: block;">
-                            <img src="/Public/mobile/images/zxbj_n0.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n1.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n2.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n3.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n4.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n5.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n6.png" alt="" style="display: inline;">
-                            <img src="/Public/mobile/images/zxbj_n7.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n8.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n9.png" alt="" style="display: none;">
-                        </div>
-                        <div class="shiwan" style="display: block;">
-                            <img src="/Public/mobile/images/zxbj_n0.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n1.png" alt="" style="display: inline;">
-                            <img src="/Public/mobile/images/zxbj_n2.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n3.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n4.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n5.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n6.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n7.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n8.png" alt="" style="display: none;">
-                            <img src="/Public/mobile/images/zxbj_n9.png" alt="" style="display: none;">
-                        </div>
+                    <div class="shi" style="display: block;">
+                        <img src="{% static "jianmei/image/zxbj_n0.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n1.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n2.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n3.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n4.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n5.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n6.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n7.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n8.png" %}" alt="" style="display: inline;">
+                        <img src="{% static "jianmei/image/zxbj_n9.png" %}" alt="" style="display: none;">
+                    </div>
+                    <div class="bai" style="display: block;">
+                        <img src="{% static "jianmei/image/zxbj_n0.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n1.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n2.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n3.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n4.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n5.png" %}" alt="" style="display: inline;">
+                        <img src="{% static "jianmei/image/zxbj_n6.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n7.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n8.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n9.png" %}" alt="" style="display: none;">
+                    </div>
+                    <div class="qian" style="display: block;">
+                        <img src="{% static "jianmei/image/zxbj_n0.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n1.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n2.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n3.png" %}" alt="" style="display: inline;">
+                        <img src="{% static "jianmei/image/zxbj_n4.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n5.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n6.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n7.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n8.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n9.png" %}" alt="" style="display: none;">
+                    </div>
+                    <div class="wan" style="display: block;">
+                        <img src="{% static "jianmei/image/zxbj_n0.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n1.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n2.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n3.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n4.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n5.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n6.png" %}" alt="" style="display: inline;">
+                        <img src="{% static "jianmei/image/zxbj_n7.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n8.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n9.png" %}" alt="" style="display: none;">
+                    </div>
+                    <div class="shiwan" style="display: block;">
+                        <img src="{% static "jianmei/image/zxbj_n0.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n1.png" %}" alt="" style="display: inline;">
+                        <img src="{% static "jianmei/image/zxbj_n2.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n3.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n4.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n5.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n6.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n7.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n8.png" %}" alt="" style="display: none;">
+                        <img src="{% static "jianmei/image/zxbj_n9.png" %}" alt="" style="display: none;">
                     </div>
                 </div>
-
-                <form action="/index.php/index/sendcode.html" method="post" id="price">
-                    <input type="hidden" name="belongto" value="首页-报价"/>
-                    <input type="hidden" name="url" value="http://m.ao-hua.com/"/>
-                    <div class="ipt_area"><input type="text" name="username" class="ipt_area_input" placeholder="请输入您的称呼"></div>
-                    <div class="ipt_area"><input type="text" name="area" class="ipt_area_input" placeholder="请输入房屋面积/㎡"></div>
-                    <div class="ipt_number"><input type="text" name="telephone" class="ipt_number_input" placeholder="请输入手机号码"></div>
-                    <div class="send">测一测我家装修多少钱</div>
-                </form>
             </div>
+
+            <form action="/" method="post" id="price" name="price">
+                <input type="hidden" name="belongto" value="首页-报价"/>
+                <input type="hidden" name="url" value="#"/>
+                <div class="ipt_area"><input type="text" name="name" class="ipt_area_input" placeholder="请输入您的称呼"></div>
+                <div class="ipt_area"><input type="text" name="area" class="ipt_area_input" placeholder="请输入房屋面积/㎡"></div>
+                <div class="ipt_number"><input type="text" name="phone" class="ipt_number_input" placeholder="请输入手机号码"></div>
+                <div id="btnSubmit" class="send">测一测我家装修多少钱</div>
+            </form>
         </div>
-        <script type="text/javascript">
-            $(document).click(function (e) {
-                if ((!$(e.target).parents().hasClass('js-noclick') && !$(e.target).hasClass('js-noclick'))) {
-                    $(".js-noclick ul").hide();
-                }
-            });
-            $(window).scroll(function () {
+    </div>
+    <script type="text/javascript">
+        $(document).click(function (e) {
+            if ((!$(e.target).parents().hasClass('js-noclick') && !$(e.target).hasClass('js-noclick'))) {
                 $(".js-noclick ul").hide();
-            })
+            }
+        });
+        $(window).scroll(function () {
+            $(".js-noclick ul").hide();
+        })
 
-            $('.table .t .text').click(function () {
-                $(this).parent().addClass('on');
-                $(this).next(".type-list").show();
-            });
+        $('.table .t .text').click(function () {
+            $(this).parent().addClass('on');
+            $(this).next(".type-list").show();
+        });
 
-            $(".table .t ul li").click(function () {
-                var text1 = $(this).html();
-                $(this).parents(".t").find('.text').html(text1);
-                $(".table .t ul").hide();
-            });
+        $(".table .t ul li").click(function () {
+            var text1 = $(this).html();
+            $(this).parents(".t").find('.text').html(text1);
+            $(".table .t ul").hide();
+        });
 
+        $('.index .index-case .case-new .list1 ul li a .pic').height($('.index .index-case .case-new .list1 ul li a .pic').width() * (440 / 444));
+        $(window).resize(function () {
             $('.index .index-case .case-new .list1 ul li a .pic').height($('.index .index-case .case-new .list1 ul li a .pic').width() * (440 / 444));
-            $(window).resize(function () {
-                $('.index .index-case .case-new .list1 ul li a .pic').height($('.index .index-case .case-new .list1 ul li a .pic').width() * (440 / 444));
-            })
+        })
 
-            changeNum(200); // 每200ms变换数字
+        changeNum(200); // 每200ms变换数字
 
-            /*
-             * 产生固定范围的随机数
-             */
-            function rangeRandom(minnum, maxnum) {
-                return Math.floor(minnum + Math.random() * (maxnum - minnum + 1));
-            }
+        /*
+         * 产生固定范围的随机数
+         */
+        function rangeRandom(minnum, maxnum) {
+            return Math.floor(minnum + Math.random() * (maxnum - minnum + 1));
+        }
 
-            /*
-             * time 更改间歇时间
-             */
-            function changeNum(time) {
-                var zbj,
-                    i;
-                number_time = setInterval(function () {
-                    zbj = rangeRandom(10000, 200000) + '';
-                    // 换数字之前先全隐藏
-                    $('.num-window div').hide().find('img').hide();
-                    // 遍历数字,个位在length-1处
-                    var strl = zbj.length - 1;
-                    for (i = strl; i >= 0; i--) {
-                        // 遍历显示数字
-                        $('.num-window div').eq(strl - i).find('img').eq(zbj[i]).show().end().end().show();
-                    }
-                }, time);
-            }
-        </script>
-
-        <!-- 风格和报价测试js -->
-        <script type="text/javascript">
-            $(function () {
-                var $banner = $('.banner');
-                var $banner_ul = $('.banner-img');
-                var $btn = $('.banner-btn');
-                var $btn_a = $btn.find('a')
-                var v_width = $banner.width();
-
-                var page = 1;
-
-                var timer = null;
-                var btnClass = null;
-
-                var page_count = $banner_ul.find('li').length; //把这个值赋给小圆点的个数
-
-                var banner_cir = "<li class='selected' href='#'><a></a></li>";
-                for (var i = 1; i < page_count; i++) {
-                    //动态添加小圆点
-                    banner_cir += "<li><a href='#'></a></li>";
+        /*
+         * time 更改间歇时间
+         */
+        function changeNum(time) {
+            var zbj,
+                i;
+            number_time = setInterval(function () {
+                zbj = rangeRandom(10000, 200000) + '';
+                // 换数字之前先全隐藏
+                $('.num-window div').hide().find('img').hide();
+                // 遍历数字,个位在length-1处
+                var strl = zbj.length - 1;
+                for (i = strl; i >= 0; i--) {
+                    // 遍历显示数字
+                    $('.num-window div').eq(strl - i).find('img').eq(zbj[i]).show().end().end().show();
                 }
-                $('.banner-circle').append(banner_cir);
+            }, time);
+        }
+    </script>
 
-                var cirLeft = $('.banner-circle').width() * (-0.5);
-                $('.banner-circle').css({
-                    'marginLeft': cirLeft
-                });
+    <!-- 风格和报价测试js -->
+    <script type="text/javascript">
+        $(function () {
+            var $banner = $('.banner');
+            var $banner_ul = $('.banner-img');
+            var $btn = $('.banner-btn');
+            var $btn_a = $btn.find('a')
+            var v_width = $banner.width();
 
-                $banner_ul.width(page_count * v_width);
+            var page = 1;
 
-                function move(obj, classname) {
-                    //手动及自动播放
-                    if (!$banner_ul.is(':animated')) {
-                        if (classname == 'prevBtn') {
-                            if (page == 1) {
-                                $banner_ul.animate({
-                                    left: -v_width * (page_count - 1)
-                                });
-                                page = page_count;
-                                cirMove();
-                            } else {
-                                $banner_ul.animate({
-                                    left: '+=' + v_width
-                                }, "slow");
-                                page--;
-                                cirMove();
-                            }
+            var timer = null;
+            var btnClass = null;
+
+            var page_count = $banner_ul.find('li').length; //把这个值赋给小圆点的个数
+
+            var banner_cir = "<li class='selected' href='#'><a></a></li>";
+            for (var i = 1; i < page_count; i++) {
+                //动态添加小圆点
+                banner_cir += "<li><a href='#'></a></li>";
+            }
+            $('.banner-circle').append(banner_cir);
+
+            var cirLeft = $('.banner-circle').width() * (-0.5);
+            $('.banner-circle').css({
+                'marginLeft': cirLeft
+            });
+
+            $banner_ul.width(page_count * v_width);
+
+            function move(obj, classname) {
+                //手动及自动播放
+                if (!$banner_ul.is(':animated')) {
+                    if (classname == 'prevBtn') {
+                        if (page == 1) {
+                            $banner_ul.animate({
+                                left: -v_width * (page_count - 1)
+                            });
+                            page = page_count;
+                            cirMove();
                         } else {
-                            if (page == page_count) {
-                                $banner_ul.animate({
-                                    left: 0
-                                });
-                                page = 1;
-                                cirMove();
-                            } else {
-                                $banner_ul.animate({
-                                    left: '-=' + v_width
-                                }, "slow");
-                                page++;
-                                cirMove();
-                            }
+                            $banner_ul.animate({
+                                left: '+=' + v_width
+                            }, "slow");
+                            page--;
+                            cirMove();
+                        }
+                    } else {
+                        if (page == page_count) {
+                            $banner_ul.animate({
+                                left: 0
+                            });
+                            page = 1;
+                            cirMove();
+                        } else {
+                            $banner_ul.animate({
+                                left: '-=' + v_width
+                            }, "slow");
+                            page++;
+                            cirMove();
                         }
                     }
                 }
+            }
 
-                function cirMove() {
-                    //检测page的值，使当前的page与selected的小圆点一致
-                    $('.banner-circle li').eq(page - 1).addClass('selected')
-                        .siblings().removeClass('selected');
-                }
+            function cirMove() {
+                //检测page的值，使当前的page与selected的小圆点一致
+                $('.banner-circle li').eq(page - 1).addClass('selected')
+                    .siblings().removeClass('selected');
+            }
 
-                $banner.mouseover(function () {
-                    $btn.css({
-                        'display': 'block'
-                    });
-                    clearInterval(timer);
-                }).mouseout(function () {
-                    $btn.css({
-                        'display': 'none'
-                    });
-                    clearInterval(timer);
-                    timer = setInterval(move, 3000);
-                }).trigger("mouseout"); //激活自动播放
-
-                $btn_a.mouseover(function () {
-                    //实现透明渐变，阻止冒泡
-                    $(this).animate({
-                        opacity: 0.6
-                    }, 'fast');
-                    $btn.css({
-                        'display': 'block'
-                    });
-                    return false;
-                }).mouseleave(function () {
-                    $(this).animate({
-                        opacity: 0.3
-                    }, 'fast');
-                    $btn.css({
-                        'display': 'none'
-                    });
-                    return false;
-                }).click(function () {
-                    //手动点击清除计时器
-                    btnClass = this.className;
-                    clearInterval(timer);
-                    timer = setInterval(move, 3000);
-                    move($(this), this.className);
+            $banner.mouseover(function () {
+                $btn.css({
+                    'display': 'block'
                 });
-
-                $('.banner-circle li').live('click', function () {
-                    var index = $('.banner-circle li').index(this);
-                    $banner_ul.animate({
-                        left: -v_width * index
-                    }, 'slow');
-                    page = index + 1;
-                    cirMove();
+                clearInterval(timer);
+            }).mouseout(function () {
+                $btn.css({
+                    'display': 'none'
                 });
+                clearInterval(timer);
+                timer = setInterval(move, 3000);
+            }).trigger("mouseout"); //激活自动播放
+
+            $btn_a.mouseover(function () {
+                //实现透明渐变，阻止冒泡
+                $(this).animate({
+                    opacity: 0.6
+                }, 'fast');
+                $btn.css({
+                    'display': 'block'
+                });
+                return false;
+            }).mouseleave(function () {
+                $(this).animate({
+                    opacity: 0.3
+                }, 'fast');
+                $btn.css({
+                    'display': 'none'
+                });
+                return false;
+            }).click(function () {
+                //手动点击清除计时器
+                btnClass = this.className;
+                clearInterval(timer);
+                timer = setInterval(move, 3000);
+                move($(this), this.className);
             });
-        </script>
 
-        <div class="title_group">
-            <div class="z">案例展示</div>
-            <div class="y"><a href="/index.php/case/index.html" style="text-decoration:none;color: #000;">更多 ＞</a></div>
-        </div>
+            $('.banner-circle li').live('click', function () {
+                var index = $('.banner-circle li').index(this);
+                $banner_ul.animate({
+                    left: -v_width * index
+                }, 'slow');
+                page = index + 1;
+                cirMove();
+            });
+        });
+    </script>
 
-        <div id="casePrs">
-            <div class="swiper-container" id="swiper_container_case">
-                <div class="swiper-wrapper case-lb">
-                    <div class="swiper-slide banner_list" href="/index.php/case/detail/id/2096.html">
-                        <!-- <div class="style">美式</div> -->
+    <div class="title_group">
+        <div class="z">案例展示</div>
+        <div class="y"><a href="#" style="text-decoration:none;color: #000;">更多 ＞</a></div>
+    </div>
+
+    <div id="casePrs">
+        <div class="swiper-container" id="swiper_container_case">
+            <div class="swiper-wrapper case-lb">
+                {% for c in cases %}
+                    <div class="swiper-slide banner_list" href="#">
                         <div class="pic">
-                            <img src="/Public/attached/2019/06/21/5d0c3a1cc5a06.jpg"/>
-
+                            <img src="{% get_media_prefix %}{{ c.caseimage_set.first.image }}"/>
                         </div>
-                        <div class="area">金地天悦120-150平</div>
-                        <div class="yy_group">
-                            <div class="btn1">
-                                <!-- <div class="icon"></div> -->
-                                <div class="text case">预约设计</div>
-                            </div>
-                        </div>
+                        <div class="area">{{ c.name }}{{ c.house_type.area }}平</div>
                     </div>
-                    <div class="swiper-slide banner_list" href="/index.php/case/detail/id/2086.html">
-                        <!-- <div class="style">中式</div> -->
-                        <div class="pic">
-                            <img src="/Public/attached/2019/04/28/5cc5023254705.jpg"/>
-
-                        </div>
-                        <div class="area">绿地金融国际城200平以上</div>
-                        <div class="yy_group">
-                            <div class="btn1">
-                                <!-- <div class="icon"></div> -->
-                                <div class="text case">预约设计</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide banner_list" href="/index.php/case/detail/id/2098.html">
-                        <!-- <div class="style">简约</div> -->
-                        <div class="pic">
-                            <img src="/Public/attached/2019/07/24/5d37c9a325283.jpg"/>
-
-                        </div>
-                        <div class="area">汉口新界120-150平</div>
-                        <div class="yy_group">
-                            <div class="btn1">
-                                <!-- <div class="icon"></div> -->
-                                <div class="text case">预约设计</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide banner_list" href="/index.php/case/detail/id/2092.html">
-                        <!-- <div class="style"></div> -->
-                        <div class="pic">
-                            <img src="/Public/attached/2019/05/29/5cede5aa35c98.jpg"/>
-
-                        </div>
-                        <div class="area">遇见哥本哈根80-100平</div>
-                        <div class="yy_group">
-                            <div class="btn1">
-                                <!-- <div class="icon"></div> -->
-                                <div class="text case">预约设计</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide banner_list" href="/index.php/case/detail/id/2093.html">
-                        <!-- <div class="style"></div> -->
-                        <div class="pic">
-                            <img src="/Public/attached/2019/05/29/5ceded0af2b92.jpg"/>
-                        </div>
-                        <div class="area">遇见波尔多80-100平</div>
-                        <div class="yy_group">
-                            <div class="btn1">
-                                <!-- <div class="icon"></div> -->
-                                <div class="text case">预约设计</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
-        <!-- 设计团队 -->
+    </div>
+    <!-- 设计团队 -->
 
-        <div class="title_group">
-            <div class="z">设计团队</div>
-            <div class="y"><a href="/index.php/designer/index.html" style="text-decoration:none;color: #000;">更多 ＞</a></div>
-        </div>
+    <div class="title_group">
+        <div class="z">设计团队</div>
+        <div class="y"><a href="#" style="text-decoration:none;color: #000;">更多 ＞</a></div>
+    </div>
 
-        <div id="designTeam">
-            <div class="swiper-container" id="swiper_container_team">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide banner_list" href="/index.php/designer/detail/id/240.html">
+    <div id="designTeam">
+        <div class="swiper-container" id="swiper_container_team">
+            <div class="swiper-wrapper">
+                {% for d in designers %}
+                    <div class="swiper-slide banner_list" href="#">
                         <div class="pic">
-                            <img src="/uploadfile/2017/0915/20170915114236335.jpg"/>
+                            <img src="{% get_media_prefix %}{{ d.portrait }}"/>
                         </div>
                         <div class="desInfo">
-                            <div class="name">张凯</div>
-                            <div class="job">设计总监</div>
+                            <div class="name">{{ d.name }}</div>
+                            <div class="job">{{ d.title }}</div>
                         </div>
                     </div>
-                    <div class="swiper-slide banner_list" href="/index.php/designer/detail/id/226.html">
-                        <div class="pic">
-                            <img src="/uploadfile/2017/1014/20171014120956756.jpg"/>
-                        </div>
-                        <div class="desInfo">
-                            <div class="name">张婷婷</div>
-                            <div class="job">设计总监</div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide banner_list" href="/index.php/designer/detail/id/263.html">
-                        <div class="pic">
-                            <img src="/uploadfile/2017/0915/20170915114614114.jpg"/>
-                        </div>
-                        <div class="desInfo">
-                            <div class="name">闫骞</div>
-                            <div class="job">设计总监</div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide banner_list" href="/index.php/designer/detail/id/235.html">
-                        <div class="pic">
-                            <img src="/uploadfile/2017/0915/20170915113326915.jpg"/>
-                        </div>
-                        <div class="desInfo">
-                            <div class="name">行雷</div>
-                            <div class="job">设计总监</div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide banner_list" href="/index.php/designer/detail/id/195.html">
-                        <div class="pic">
-                            <img src="/uploadfile/2017/0915/20170915112433524.jpg"/>
-                        </div>
-                        <div class="desInfo">
-                            <div class="name">赵雯婷</div>
-                            <div class="job">设计总监</div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
+        </div>
+        <div class="icon"></div>
+    </div>
+
+    <div class="button_group">
+        <div class="btn2">
             <div class="icon"></div>
+            <div class="text"><a href="/index.php/designer/index.html" style="text-decoration:none;">更多设计师</a></div>
         </div>
+    </div>
 
-        <div class="button_group">
-            <div class="btn2">
-                <div class="icon"></div>
-                <div class="text"><a href="/index.php/designer/index.html" style="text-decoration:none;">更多设计师</a></div>
+    <div class="ewm">
+        <div class="phone">
+            <div class="rexian">装修热线</div>
+            <div class="text">
+                <a href="tel:0717-6590399">0717-6590399</a>
+
             </div>
         </div>
-
-        <div class="ewm">
-            <div class="phone">
-                <div class="rexian">装修热线</div>
-                <div class="text">
-                    <a href="tel:027-82790100">0717-6590399</a>
-
-                </div>
-            </div>
-            <div class="slogan">
-                <p>宜昌更受欢迎的中高档装修品牌</p>
-                <em> 版权所有：宜昌简美装饰工程有限公司 </em>
-                <em> 备案号：
-                    <span id="cnzz_stat_icon_1262356453">
+        <div class="slogan">
+            <p>宜昌更受欢迎的中高档装修品牌</p>
+            <em> 版权所有：宜昌简美装饰工程有限公司 </em>
+            <em> 备案号：
+                <span id="cnzz_stat_icon_1262356453">
                         <a href="http://www.cnzz.com/stat/website.php?web_id=1262356453" target="_blank" title="站长统计">
     <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
                         </a>
                     </span>
-                    <script src=" http://s19.cnzz.com/z_stat.php?id=1262356453&amp;show=pic" type="text/javascript"></script>
-                    <script src="http://c.cnzz.com/core.php?web_id=1262356453&amp;show=pic&amp;t=z" charset="utf-8" type="text/javascript"></script>
-                </em>
-            </div>
-
-
+                <script src=" http://s19.cnzz.com/z_stat.php?id=1262356453&amp;show=pic" type="text/javascript"></script>
+                <script src="http://c.cnzz.com/core.php?web_id=1262356453&amp;show=pic&amp;t=z" charset="utf-8" type="text/javascript"></script>
+            </em>
         </div>
+
+
     </div>
 </section>
+<script src="{% static 'jianmei/js/jquery.min.js' %}"></script>
+<script src="{% static 'jianmei/js/m_index.js' %}"></script>
+<script src="{% static 'jianmei/js/common_index.js' %}"></script>
+<script src="{% static 'jianmei/js/Headroom_index.js' %}"></script>
+<script src="{% static 'jianmei/js/swiper.min_index.js' %}"></script>
+<script type="text/javascript">
+    $(function () {
+        /*$("img").lazyload({
+        effect:"fadeIn" //加载图片使用的效果(淡入)
+    });*/
 
+        $(".home").on("click", function () {
+            var href = $(this).attr("url");
+            location.href = href;
+        });
+        $(".consult").on("click", function () {
+            location.href = "/m";
+        });
+        $(".mu").click(function () {
+            $("#menu").css({
+                "display": "flex"
+            });
+            $("#menu .menu_content").css({
+                "display": "flex"
+            }).show().css({
+                "right": "0"
+            });
+        });
+        $("#menu").css({
+            "display": "none"
+        });
+        $("#menu").click(function (e) {
+            // if (e.target.id == "menu") {
+            $("#menu").css({
+                "display": "none"
+            });
+            $("#menu .menu_content").css({
+                "right": "-4.8rem"
+            });
+            // }
+        });
+        $(".menu_content .m_grp").on("click", function () {
+            var url = $(this).attr("href");
+            location.href = url;
+        });
+    });
+</script>
 <footer>
     <div class="home" url="/">
         <div class="icon"></div>
         <div class="text">首页</div>
     </div>
-    <div class="offer home" url="/index.php/offer/index.html">
+    <div class="offer home" url="/m">
         <div class="icon"></div>
         <div class="text">报价</div>
     </div>
     <div class="phone">
-        <a class="icon" href="tel:027-82790100">电话</a>
-        <!-- <a class="text" href="tel:027-82790100" style="text-decoration:none;"></a> -->
+        <a class="icon" href="tel:0717-6590399">电话</a>
     </div>
     <div class="consult">
         <div class="icon"></div>
         <div class="text">咨询</div>
     </div>
     <div class="taxi">
-
-        <a href="http://m.ao-hua.com/index.php/Wuyou/activity?id=71" class="icon">
-
-            <img src="/Public/mobile/images/icon/taxi.png" alt="">
+        <a href="#" class="icon">
+            <img src="{% static "jianmei/image/taxi.png" %}" alt="">
         </a>
         <div class="text">叫车</div>
     </div>
 </footer>
-<script language="javascript" src="http://pft.zoosnet.net/JS/LsJS.aspx?siteid=PFT94739708&float=1&lng=cn"></script>
+<script language="javascript" src="{% static 'jianmei/js/lsjs.js' %}"></script>
+<link rel="stylesheet" href="{% static 'jianmei/css/swipermin_index.css' %}">
+<script src="{% static 'jianmei/js/swiper.min_index.js' %}"></script>
+<script src="{% static 'jianmei/js/base.js' %}"></script>
 </body>
 </html>

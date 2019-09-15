@@ -94,7 +94,7 @@ ul {
 }
 
 @-moz-keyframes mymove1
-/* Firefox */
+    /* Firefox */
 
 {
     from {
@@ -106,7 +106,7 @@ ul {
 }
 
 @-webkit-keyframes mymove1
-/* Safari and Chrome */
+    /* Safari and Chrome */
 
 {
     from {
@@ -118,7 +118,7 @@ ul {
 }
 
 @-o-keyframes mymove1
-/* Opera */
+    /* Opera */
 
 {
     from {
@@ -164,7 +164,7 @@ ul {
 }
 
 @-moz-keyframes mymove
-/* Firefox */
+    /* Firefox */
 
 {
     from {
@@ -176,7 +176,7 @@ ul {
 }
 
 @-webkit-keyframes mymove
-/* Safari and Chrome */
+    /* Safari and Chrome */
 
 {
     from {
@@ -188,7 +188,7 @@ ul {
 }
 
 @-o-keyframes mymove
-/* Opera */
+    /* Opera */
 
 {
     from {
@@ -456,7 +456,7 @@ ul {
     margin-top: -0.1rem;
 }
 
-#offer .content>img {
+#offer .content > img {
     width: 60%;
     margin: auto;
     display: block;
@@ -814,7 +814,7 @@ ul {
 .button_group .btn2 .icon {
     width: 0.35rem;
     height: 100%;
-    background: url("../images/icon/moreCase.png") no-repeat 50% 50%;
+    background: url("../image/moreCase.png") no-repeat 50% 50%;
     background-size: contain;
     margin-right: -0.3rem;
 }
@@ -910,7 +910,7 @@ ul {
     float: left;
     width: 3.64rem;
     border-right: 0.01rem #fff solid;
-    background: url(../images/liaojieaohua.jpg)no-repeat center;
+    background: url(../images/liaojieaohua.jpg) no-repeat center;
     background-size: cover;
     height: 5.01rem;
 }
@@ -940,7 +940,7 @@ ul {
 }
 
 .entrance-right-top {
-    background: url(../images/wyz.jpg)no-repeat center;
+    background: url(../images/wyz.jpg) no-repeat center;
     background-size: cover;
     height: 2.4rem;
     padding-left: 0.18rem;
@@ -966,7 +966,7 @@ ul {
 }
 
 .entrance-right-buttom {
-    background: url(../images/sheji.jpg)no-repeat center;
+    background: url(../images/sheji.jpg) no-repeat center;
     background-size: cover;
     height: 2.4rem;
     padding-left: 0.18rem;
@@ -1130,7 +1130,7 @@ ul {
 #designTeam .icon {
     width: 0.62rem;
     height: 0.4rem;
-    background: url("../images/icon/yh2.png") no-repeat 50% 50%;
+    background: url("../image/yh2.png") no-repeat 50% 50%;
     background-size: contain;
     position: absolute;
     right: 0.6rem;
@@ -1272,8 +1272,7 @@ ul {
 }
 
 .entrance1 .entrance1-box {
-    width: 7.1rem;
-    ;
+    width: 7.1rem;;
     margin: 0 auto;
 }
 
@@ -1292,8 +1291,7 @@ ul {
 
 .entrance1-box .entrance1-title em {
     font-style: normal;
-    font-size: 0.2rem;
-    ;
+    font-size: 0.2rem;;
     color: #969696;
 }
 

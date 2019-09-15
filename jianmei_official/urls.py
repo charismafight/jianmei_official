@@ -35,5 +35,5 @@ urlpatterns = [
                   path('package', views.package),
                   path('all-designer', views.designer_list),
                   path('all-case/<int:page_num>', views.all_case),
-                  path('m', views.mobile),
+                  path('m', views.mobile_index),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

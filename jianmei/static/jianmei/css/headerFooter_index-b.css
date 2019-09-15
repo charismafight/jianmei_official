@@ -40,11 +40,11 @@ header .home {
     width: 0.4rem;
 
     height: 1.46rem;
-    background: url("../images/icon/home.png") no-repeat center center;
+    background: url("../image/home.png") no-repeat center center;
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-image: url("../images/icon/home.png");
+    background-image: url("../image/home.png");
     margin-left: 0.6rem;
 }
 
@@ -83,20 +83,15 @@ header .menu .mu {
     /*background: url("../images/icon/menu.png") no-repeat center center;*/
 }
 
-/**********************å¤´éƒ¨end**************************/
-
-
 .anniversary a img {
     width: 7.5rem;
     display: block;
 }
 
-
-/**********************å°¾éƒ¨begin**************************/
 footer {
     width: 7.5rem;
     height: 1rem;
-    background: url("../images/icon/footer-bg.png") no-repeat 50% 50%;
+    background: url("../image/footer-bg.png") no-repeat 50% 50%;
     position: fixed;
     bottom: 0;
 
@@ -126,7 +121,7 @@ footer .phone {
 footer .home .icon {
     width: 0.4rem;
     height: 0.4rem;
-    background: url("../images/icon/home2.png") no-repeat 50% 50%;
+    background: url("../image/home2.png") no-repeat 50% 50%;
     background-size: contain;
     /*margin-top: 0.1rem;*/
 }
@@ -134,7 +129,7 @@ footer .home .icon {
 footer .offer .icon {
     width: 0.36rem;
     height: 0.36rem;
-    background: url("../images/icon/offer.png") no-repeat 50% 50%;
+    background: url("../image/offer.png") no-repeat 50% 50%;
     background-size: contain;
 }
 
@@ -143,7 +138,7 @@ footer .phone .icon {
     height: 1.32rem; */
     width: 0.5rem;
     height: 0.4rem;
-    background: url("../images/icon/phone.png") no-repeat 50% 50%;
+    background: url("../image/phone.png") no-repeat 50% 50%;
     text-align: center;
     color: #fff;
     line-height: 1.3rem;
@@ -167,7 +162,7 @@ footer .phone .icon {
 footer .consult .icon {
     width: 0.44rem;
     height: 0.44rem;
-    background: url("../images/icon/consult.png") no-repeat 50% 50%;
+    background: url("../image/consult.png") no-repeat 50% 50%;
     background-size: contain;
 }
 

@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.core.paginator import Paginator
+from django.views.decorators.csrf import csrf_exempt
+
 from .models import *
 
 
 # Create your views here.
+@csrf_exempt
 def index(request):
     if request.method == 'POST':
         p = Appointment(
@@ -104,5 +107,19 @@ def all_case(request, page_num):
                    'page_num': page_num})
 
 
-def mobile(request):
-    return render(request, 'jianmei/m_index.html')
+def mobile_index(request):
+    cases = Case.objects.filter(caseimage__is_show_on_index=True)[0:9]
+    context = {
+        'projects': HouseProject.objects.all()[0:4],
+        'cases': cases,
+        'caseimages': list(map(lambda c: c.caseimage_set.get(is_show_on_index=True), cases)),
+        'designers': Designer.objects.filter(show_on_index=True)[0:4],
+        # 百科
+        'encyclopediaTop': Article.objects.filter(image__isnull=False).filter(type='装修百科')[0:1],
+        'encyclopediaBottom': Article.objects.filter(type='装修百科')[0:3],
+        'schoolTop': Article.objects.filter(image__isnull=False).filter(type='装修学堂')[0:1],
+        'schoolBottom': Article.objects.filter(type='装修学堂')[0:3],
+        'appointmentCount': Appointment.objects.count(),
+        'logo': Logo.objects.first(),
+    }
+    return render(request, 'jianmei/m_index.html', context)
