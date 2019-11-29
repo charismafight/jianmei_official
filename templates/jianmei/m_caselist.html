@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px;">
+{% load static %}
+{% load staticfiles %}
+{% csrf_token %}
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'jianmei/js/common_index.js' %}"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
+
+    <title>案例展示-宜昌简美装饰公司</title>
+    <script src="{% static 'jianmei/js/swiper.min_index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'jianmei/css/animate_index.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'jianmei/image/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'jianmei/css/headerFooter_index-b.css' %}">
+
+    <script src="{% static 'jianmei/js/jquery.min.js' %}"></script>
+    <script src="{% static 'jianmei/js/Headroom2.js' %}"></script>
+    <script src="{% static 'jianmei/js/swiper.min_index.js' %}"></script>
+    <script src="{% static 'jianmei/js/common_index.js' %}"></script>
+
+    <script type="text/javascript">
+        var deviceWidth = document.documentElement.clientWidth;
+        if (deviceWidth > 750) deviceWidth = 750;
+        document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px';
+    </script>
+    <style>
+        .jiantou {
+            margin-left: -25px;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8"
+            src="https://pft.zoosnet.net/js/JS_Float.aspx?jid=d&amp;id=94739708&amp;sid=c83aa9472f4d4c7cbd344617b9a5243c&amp;cid=12b9447bbb71432199ed8fdcea1c0a96&amp;lng=cn&amp;p=http%3A//m.ao-hua.com/index.php/case/index.html&amp;r=http%3A//m.ao-hua.com/&amp;e=&amp;AOMB=AGFA&amp;APNB=AHGA&amp;AQOB=AIHA&amp;OKNG=1E48977C504A071E8G1F010208030F01020C07080F02000A0A030d0F0d06070A&amp;s=1920*1080&amp;pt=%u6848%u4F8B%u5C55%u793A-%u6B66%u6C49%u6FB3%u534E%u88C5%u9970%u8BBE%u8BA1%u5DE5%u7A0B%u6709%u9650%u516C%u53F8%u5B98%u65B9%u7F51%u7AD9&amp;f=1&amp;d=1570806271450"></script>
+</head>
+
+<body>
+<header>
+    <div style="margin-top:5px">
+        <a href="javascript:history.go(-1);" class="jiantou"><img src="{% static "jianmei/image/8.png" %}" style="width:10px;height:20px;margin-top:5px;margin-left:5px;"></a>
+    </div>
+    <div class="logo1">案例展示</div>
+    <div class="menu">
+        <div class="mu"></div>
+    </div>
+
+</header>
+<div id="menu" style="position: fixed;top: 0;z-index: 1000;">
+    <div class="menu_content">
+        <div class="m_grp" href="/m">
+            <div class="icon"><img src="{% static "jianmei/image/2.png" %}"/></div>
+            <div class="text">热装小区</div>
+        </div>
+        <div class="m_grp" href="/m">
+            <div class="icon"><img src="{% static "jianmei/image/3.png" %}"/></div>
+            <div class="text">设计团队</div>
+        </div>
+        <div class="m_grp" href="/m">
+            <div class="icon"><img src="{% static "jianmei/image/5.png" %}"/></div>
+            <div class="text">案例展示</div>
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{% static "jianmei/css/anli.css" %}" type="text/css">
+<script type="text/javascript" src="{% static "jianmei/js/anli.js" %}"></script>
+<style>
+    .product {
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    * {
+        padding: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .page_bottom {
+        margin-bottom: 50px;
+    }
+
+    .page_bottom div {
+        margin-left: 20px;
+    }
+
+    .page_bottom li {
+        display: block;
+        float: left;
+        padding: 6px;
+        border: 1px solid #D4DFE3;
+        color: #2283C5;
+    }
+</style>
+
+<section>
+    <div class="context">
+        <a href="/index.php/case/detail/id/2096.html">
+            <div class="img1">
+                <img src="/Public/attached/2019/06/21/5d0c3a1cc5a06.jpg">
+            </div>
+            <div class="img2">
+                <img src="/Public/mobile/images/case/3.png">
+            </div>
+            <div class="title">
+                <p class="chinese" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100%;">金地天悦120-150平</p>
+                <p class="price"> ¥&nbsp;31万</p>
+            </div>
+        </a>
+        <div class="bu case">
+            <div class="bu1">
+            </div>
+            <div class="bu2">
+                预约设计
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    window.onload = function () {
+        history.scrollRestoration = "manual"
+        var top_case = sessionStorage.getItem("top_case");
+        $("html,body").animate({scrollTop: top_case}, 100)
+    }
+    $(function () {
+        function add_ad6() {
+            var dom =
+                '<div id="pop_bg6" style="width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);display: flex;flex-flow:column;display: -webkit-flex;align-items: center;  justify-content:center;position: absolute;top: 0;left: 0;z-index:10;">' +
+                '<div id="pop_ad6" style="width: 320px;height: 320px;margin: 0 auto;background: url(/Public/mobile/images/tanchuangbg.jpg)no-repeat;border-radius: 5px;overflow: hidden;position: relative;">' +
+                '<div id="title18" style="width: 250px;margin-top:60px;margin-bottom:10px;margin-left:35px;text-align:center;font-size:32px;color:#c6b690;font-weight:bolder;">预约成功</div>' +
+                '<div id="title19" style="width: 150px;height: 30px;margin-top:30px;margin:auto;left:10px;color:rgb(51,51,51)"><p style="font-size:12px;    text-align: center;">请保持手机畅通，我们的客服人员会第一时间联系您<p></div>' +
+                '<div id="title20" style="width: 150px;height: 30px;margin:auto;border:1px solid rgb(208,4,18);border-radius:30px;margin-top:20px;color:rgb(208,4,18);font-size:20px;text-align:center">027-87493333</div>' +
+                '<div style="display:flex; justify-content:space-between;width:200px;margin:auto;margin-top:20px">' +
+                '<div id="button6" style="width:90px;height:30px;border:1px solid #c6b690;line-height:30px;font-size:18px;text-align:center;color:#c6b690;">线上咨询' +
+                '</div>' +
+                '<div id="button7" style="width:90px;height:30px;border:1px solid #c6b690;line-height:30px;font-size:18px;text-align:center;color:#c6b690" href="/index.php/wuyou/index.html">无忧装' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div id="pop_close6"  style="width: 32px;height: 32px;margin:10px;">' +
+                '<img src="/Public/mobile/images/2.png" width="100%">' +
+                '</div>'
+            '</div>';
+            $("body").append(dom);
+            $("#pop_close6").unbind("click").click(function () {
+                $("#pop_bg6").remove();
+            });
+            $("#button6").on("click", function () {
+                location.href = "https://pft.zoosnet.net/lr/chatpre.aspx?id=pft94739708&lng=cn&r=&rf1=http%3A//m.ao-hua&rf2=.com/&p=http%3A//m.ao-hua.com/index.php/Index/index";
+            });
+            $("#button7").on("click", function () {
+                var href = $(this).attr("href");
+                location.href = href;
+            });
+        }
+
+        function add_ad() {
+
+            var dom =
+                '<div id="pop_bg" style="width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);display: flex;flex-flow:column;display: -webkit-flex;align-items: center;  justify-content:center;position: absolute;top: 0;left: 0;z-index:99;">' +
+                '<div id="pop_ad" style="width: 320px;height: 450px;margin: 0 auto;background-color: #fff;position: relative;">' +
+                '<img src="/Public/mobile/images/1.png" width="100%" height="100%">' +
+                '<div id="title" style="width: 250px;height: 30px;position: absolute; top:20px;text-align:center;margin:auto;left:30px;color:#ffffff"><p style="font-size:18px">预约设计<p></div>' +
+                '<div id="title2" style="width: 250px;height: 30px;position: absolute; top:60px;text-align:center;margin:auto;left:30px;color:white"><p style="font-size:14px">选风格填面积，抢订免费设计服务<p></div>' +
+                '<div id="pop_into" style="width: 250px;height: 30px;position: absolute; top:130px; left: 30px;">' +
+                '<form style="text-align:center" action="/index.php/case/order_design.html" method="post">' +
+                '<input type="hidden" name="belongto" value="预约设计"/>' +
+                '<input type="hidden" name="url" value="http://m.ao-hua.com/index.php/case/index.html"/>' +
+                '<select name="fengge" id="fengge" style="width:250px;height:40px; text-align:left;background:#fff;font-size:16px;border:1px solid #F1F1F1;"><option value="">请选择装修风格</option><option value="简约">简约</option><option value="简欧">简欧</option><option value="美式">美式</option><option value="田园">田园</option><option value="中式">中式</option><option value="地中海">地中海</option><option value="港式">港式</option><option value="新古典">新古典</option></select>' +
+                '<input type="text" name="price" id="price" placeholder="您的预算(单位:万元)" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;margin:.1rem;border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="username" id="username" placeholder="您的称呼" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;margin:.1rem;border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="telephone" id="telephone" placeholder="电话号码" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:0.1rem; border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="text" name="plotname" id="plotname" placeholder="居住小区" style="width:250px;height:40px; text-align:left;  border:0px;background:#fff;font-size:16px;padding-left:0.1rem; border-bottom:1px solid #F1F1F1;"/>' +
+                '<input type="submit" value="急速申请" style="width:150px;height:40px; text-align:center; border-radius:30px; border:0px;background-color:#ef6a71;font-size:16px;color:#fff;margin-top:50px;"/>' +
+                '</form>' +
+                '</div>' +
+                '<div id="title3" style="width: 300px;height: 30px;position: absolute; top:360px;margin:auto;left:10px;color:rgb(128,128,128)"><p style="font-size:12px">我们承诺:提供该项免费服务,绝不会产生任何费用,为了您的利益以及我们的口碑,您的隐私将被严格保密。<p></div>' +
+                '</div>' +
+                '<div id="pop_close"  style="width: 32px;height: 32px;margin:10px;">' +
+                '<img src="/Public/mobile/images/2.png" width="100%">' +
+                '</div>'
+            '</div>';
+            $("body").append(dom);
+            $("#pop_close").unbind("click").click(function () {
+                $("#pop_bg").remove();
+                localStorage.setItem('closed', false);
+            });
+        }
+
+        $(".case").on("click", function () {
+            add_ad();
+            $("form").on("submit", function () {
+                var username = $("#username").val();
+                var fengge = $("#fengge").val();
+                var price = $("#price").val();
+                if (username == '') {
+                    alert("请填写您的姓名");
+                    return false;
+                }
+                var telephone = $("#telephone").val();
+                if (telephone == '') {
+                    alert("请填写您的电话号码");
+                    return false;
+                }
+                if (fengge == '') {
+                    alert("请选择装修风格");
+                    return false;
+                }
+                if (price == '') {
+                    alert("请填写预算（单位：万元）");
+                    return false;
+                }
+                var test = /1[34578]{1}\d{9}/.test(telephone);
+                if (!test) {
+                    alert("电话号码格式不正确");
+                    return false;
+                }
+                var data = $("form").serialize();
+                var url = $("form").attr("action");
+                $.post(url, data, function (data) {
+                    console.log(data);
+                    if (data.code == 1) {
+                        // alert(data.msg);
+                        $("#pop_bg").remove();
+                        // location.reload();
+                        add_ad6();
+                    } else {
+                        alert(data.msg);
+                    }
+                }, 'json');
+                return false;
+            });
+        });
+        var count = 1;
+        $("body").scroll(function () {
+            var viewH = $(this).height();//可见高度
+            var contentH = $(this).get(0).scrollHeight;//内容高度
+            var scrollTop = $(this).scrollTop();//滚动高度
+            scrollTop = Math.ceil(scrollTop);
+            sessionStorage.setItem("top_case", scrollTop);
+            if (viewH + scrollTop == contentH) {
+                count++;         //每次滑动count加1
+                console.log('下拉bottom');
+                var url = "/index.php/case/index.html";
+                $.get(url, {'page': count}, function (data) {
+                    if (data.code == 1) {
+                        for (var i = 0; i < data.list.length; i++) {
+                            var did = data['list'][i]['id'];
+                            var newdom = '<div class="context"><a href="https://m.ao-hua.com/index.php/Case/detail?id=' + did + '&page=' + count + '"><div class="img1"><img src="' + data['list'][i]['thumb'] + '" ></div><div class="img2"><img src="/Public/mobile/images/case/3.png"/></div><div class="title"><p class="chinese" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100%;">' + data['list'][i]['title'] + data['list'][i]['area'] + '</p><p class="price"> &yen;&nbsp;' + data['list'][i]['price'] + '万</p></div></a>' +
+                                '<div class="bu case"><div class="bu1"></div><div class="bu2">预约设计</div></div></div>';
+                            $("section").append(newdom);
+                        }
+                        $(".case").on("click", function () {
+                            add_ad();
+                            $("form").on("submit", function () {
+                                var username = $("#username").val();
+                                var fengge = $("#fengge").val();
+                                var price = $("#price").val();
+                                if (username == '') {
+                                    alert("请填写您的姓名");
+                                    return false;
+                                }
+                                var telephone = $("#telephone").val();
+                                if (telephone == '') {
+                                    alert("请填写您的电话号码");
+                                    return false;
+                                }
+                                if (fengge == '') {
+                                    alert("请选择装修风格");
+                                    return false;
+                                }
+                                if (price == '') {
+                                    alert("请填写预算（单位：万元）");
+                                    return false;
+                                }
+                                var test = /1[34578]{1}\d{9}/.test(telephone);
+                                if (!test) {
+                                    alert("电话号码格式不正确");
+                                    return false;
+                                }
+                                var data = $("form").serialize();
+                                var url = $("form").attr("action");
+                                $.post(url, data, function (data) {
+                                    console.log(data);
+                                    if (data.code == 1) {
+                                        // alert(data.msg);
+                                        $("#pop_bg").remove();
+                                        // location.reload();
+                                        add_ad6();
+                                    } else {
+                                        alert(data.msg);
+                                    }
+                                }, 'json');
+                                return false;
+                            });
+                        });
+                    }
+                }, 'json');
+            }
+        });
+    })
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1262356453'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1262356453%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<span id="cnzz_stat_icon_1262356453"><a href="https://www.cnzz.com/stat/website.php?web_id=1262356453" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif"></a></span>
+<script src=" http://s19.cnzz.com/z_stat.php?id=1262356453&amp;show=pic" type="text/javascript"></script>
+<script src="http://c.cnzz.com/core.php?web_id=1262356453&amp;show=pic&amp;t=z" charset="utf-8" type="text/javascript"></script>
+
+
+<!-------------------------------------------------------------->
+
+<script type="text/javascript">
+    $(function () {
+        $(".home").on("click", function () {
+            var href = $(this).attr("url");
+            location.href = href;
+        });
+        $(".consult").on("click", function () {
+            location.href = "https://pft.zoosnet.net/lr/chatpre.aspx?id=pft94739708&lng=cn&r=&rf1=http%3A//m.ao-hua&rf2=.com/&p=http%3A//m.ao-hua.com/index.php/Index/index";
+        });
+        $(".mu").click(function () {
+            $("#menu").css({
+                "display": "block"
+            });
+            $("#menu .menu_content").css({
+                "display": "block"
+            }).show().css({
+                "right": "0"
+            });
+        });
+        $("#menu").css({
+            "display": "none"
+        });
+        $("#menu").click(function (e) {
+            if (e.target.id == "menu") {
+                $("#menu").css({
+                    "display": "none"
+                });
+                $("#menu .menu_content").css({
+                    "right": "-4.8rem"
+                });
+            }
+        });
+        $(".menu_content .m_grp").on("click", function () {
+            var url = $(this).attr("href");
+            location.href = url;
+        });
+    });
+</script>
+
+
+<footer>
+    <div class="home" url="/index.php/index/index.html">
+        <div class="icon"></div>
+        <div class="text">首页</div>
+    </div>
+    <div class="offer home" url="/index.php/offer/index.html">
+        <div class="icon"></div>
+        <div class="text">报价</div>
+    </div>
+    <div class="phone">
+        <a class="icon" href="tel:027-82790100">电话</a>
+        <!-- <a class="text" href="tel:027-82790100" style="text-decoration:none;"></a> -->
+    </div>
+    <div class="consult">
+        <div class="icon"></div>
+        <div class="text">咨询</div>
+    </div>
+    <div class="taxi">
+
+        <a href="http://m.ao-hua.com/index.php/Wuyou/activity?id=71" class="icon">
+
+            <img src="/Public/mobile/images/icon/taxi.png" alt="">
+
+        </a>
+        <div class="text">叫车</div>
+
+    </div>
+</footer>
+<script language="javascript" src="http://pft.zoosnet.net/JS/LsJS.aspx?siteid=PFT94739708&amp;float=1&amp;lng=cn"></script>
+<link href="https://pft.zoosnet.net/js/JS5.css" rel="stylesheet" type="text/css">
+<div id="LRdiv0" style="display: block;">
+    <div id="LRfloater0" style="z-index: 2147483647; left: 0px; top: 150px; position: fixed !important;">
+        <div id="swtColse" style="width:20px; height:15px; top:0px; right:0px; position:absolute;background-image: url(https://pft.zoosnet.net/LR/closeimg/7.gif);background-repeat: no-repeat;background-position: right top;cursor:pointer;"
+             onclick="LR_Hidemobileinvite(0);onlinerIcon0.hidden();"></div>
+        <img title="没有客服人员在线,请点击此处留言!我们会尽快答复;" alt="没有客服人员在线,请点击此处留言!我们会尽快答复;" src="https://pft.zoosnet.net/lr/images/offline_cn3.gif" style="cursor:pointer" onclick="openZoosUrl('chatwin');"></div>
+</div>
+<div id="LRdiv1" style="display:none;"></div>
+
+
+<div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+    <div class="xl-chrome-ext-bar__logo"></div>
+
+    <a href="javascript:sendMessageToContentScript('xl_chrome_ext_download')" class="xl-chrome-ext-bar__option">下载视频</a>
+    <a href="javascript:sendMessageToContentScript('xl_chrome_ext_close')" class="xl-chrome-ext-bar__close"></a>
+</div>
+<div id="LRdiv2" style="display: block;">
+    <div id="LRfloater2" style="z-index: 2147483647; right: 0px; bottom: 0px; position: fixed !important;">
+        <div style="width:420px; height:463px;" id="LRMINIWIN">
+            <div id="LRMINIWIN0" style="z-index: 2147483647; position: absolute; height: 30px; overflow: hidden; display: block;right:0"><span
+                    style="float:left;clear:none; width:103px;height:20px; overflow:hidden; margin:0 5px;"></span><span style="CURSOR:pointer;float:right;clear:none; width:20px;height:20px; margin:6px 2px 0 0; overflow:hidden;"
+                                                                                                                        onclick="lr_closemini(1);"><img style="cursor:pointer;" src="https://pft.zoosnet.net/lr/mini_new/close.png" border="0"></span><span
+                    style="CURSOR:pointer;float:right;overflow:hidden;width:20px;height:20px;clear:none;display:block;margin:6px 2px 0 0;" onclick="lrminiMin();"><img src="https://pft.zoosnet.net/lr/mini_new/da1.png" style="cursor:pointer;"
+                                                                                                                                                                       border="0"></span><span
+                    style="CURSOR:pointer;float:right;overflow:hidden;width:20px;height:20px;clear:none;display:block;margin:6px 2px 0 0;" onclick="openZoosUrl('bchatwin');lrminiMin();"><img src="https://pft.zoosnet.net/lr/mini_new/da.png"
+                                                                                                                                                                                               style="cursor:pointer;" border="0"></span><span
+                    style="CURSOR:pointer;float:right;overflow:hidden;width:20px;height:20px;clear:none;display:block;margin:6px 2px 0 0;" onclick="lrmove();"><img src="https://pft.zoosnet.net/lr/mini_new/jiantou.png"
+                                                                                                                                                                    style="cursor:pointer;" border="0"></span></div>
+            <iframe id="LR_miniframe" name="LR_miniframe" width="100%" height="463px" frameborder="0" scrolling="No" allowtransparency="true" src="about:blank"></iframe>
+        </div>
+    </div>
+</div>
+<div id="LRdiv3" style="display: block;">
+    <div id="LRfloater3" style="z-index: 2147483647; right: 0px; bottom: 0px; position: fixed !important;">
+        <div id="LRMINIBar" class="LR_Mini_ICON" style="display:none;right: 15px;bottom: 30px;" onclick="lrminiMax();"><a class="LR-BTN" style="background-color: #5ba4ed;"><span class="LR-ICON LR-ICON-CHAT1" id="LR-BTN-ICON"></span><span
+                id="LR-CIRCLE" style="display:none;background-color: #5ba4ed;"></span> </a>
+            <div id="LR-BUBBLE" style="display:none;width:400px;right: 0;margin-right:34px;cursor:pointer;bottom: 30px;"><span class="LR-ICON" id="LR-BUBBLE-CLOSE" onclick="return closebarhtml(event);"></span>
+                <div id="LR-BUBBLE-INSIDE">
+                    <div id="LR-BUBBLE-title"><img id="LR-BUBBLE-AVATAR" src=""><span id="LR-BUBBLE-NAME"></span></div>
+                    <div id="LR-BUBBLE-MSG"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
